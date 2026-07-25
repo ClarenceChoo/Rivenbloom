@@ -25,7 +25,7 @@ Last updated: 2026-07-25
 
 ## Phase 1 — Foundation
 
-- [ ] Scaffold strict Phaser 3 + TypeScript + Vite.
+- [x] Scaffold strict Phaser 3 + TypeScript + Vite.
 - [ ] Configure ESLint, Prettier, Vitest, and Playwright.
 - [ ] Add deterministic core state machine, event bus, lifecycle scope, and
   service registry.

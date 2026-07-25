@@ -1,0 +1,8 @@
+#app {
+  position: relative;
+  overflow: hidden;
+}
+
+#app canvas {
+  display: block;
+}
