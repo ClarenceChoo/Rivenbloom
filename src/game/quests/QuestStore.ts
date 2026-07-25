@@ -52,7 +52,16 @@ export class QuestStore {
       }
 
       for (const stage of quest.stages) {
+        const prerequisiteIds = new Set<QuestStageId>();
         for (const prerequisiteStageId of stage.prerequisiteStageIds) {
+          if (prerequisiteIds.has(prerequisiteStageId)) {
+            throw new Error(
+              `Quest ${quest.id} stage ${stage.id} has duplicate prerequisite ${prerequisiteStageId}.`
+            );
+          }
+
+          prerequisiteIds.add(prerequisiteStageId);
+
           if (!stageIds.has(prerequisiteStageId)) {
             throw new Error(
               `Quest ${quest.id} stage ${stage.id} has dangling prerequisite ${prerequisiteStageId}.`

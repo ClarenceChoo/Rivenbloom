@@ -123,4 +123,36 @@ describe('resolveDamage', () => {
       )
     ).toMatchObject({ healthDamage: 0, poiseDamage: 0, knockback: 0 });
   });
+
+  it('saturates finite arithmetic overflow without turning full resistance into NaN', () => {
+    const result = resolveDamage(
+      {
+        amount: Number.MAX_VALUE,
+        damageType: physical,
+        criticalMultiplier: 2,
+        poiseDamage: Number.MAX_VALUE,
+        knockback: Number.MAX_VALUE
+      },
+      {
+        armor: 0,
+        resistances: { [physical]: 100 },
+        guard: {
+          kind: 'block',
+          damageMultiplier: 2,
+          poiseMultiplier: 2,
+          knockbackMultiplier: 2
+        },
+        invulnerable: false
+      }
+    );
+
+    expect(result).toMatchObject({
+      healthDamage: 0,
+      poiseDamage: Number.MAX_VALUE,
+      knockback: Number.MAX_VALUE
+    });
+    expect(Number.isFinite(result.healthDamage)).toBe(true);
+    expect(Number.isFinite(result.poiseDamage)).toBe(true);
+    expect(Number.isFinite(result.knockback)).toBe(true);
+  });
 });

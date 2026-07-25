@@ -97,4 +97,23 @@ describe('QuestStore', () => {
         ])
     ).toThrow('dangling prerequisite');
   });
+
+  it('rejects a stage that lists the same prerequisite twice', () => {
+    expect(
+      () =>
+        new QuestStore([
+          {
+            id: reliquary,
+            stages: [
+              { id: reachHollows, triggerEventId: enterHollows, prerequisiteStageIds: [] },
+              {
+                id: collectBell,
+                triggerEventId: findBell,
+                prerequisiteStageIds: [reachHollows, reachHollows]
+              }
+            ]
+          }
+        ])
+    ).toThrow('duplicate prerequisite');
+  });
 });
