@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 
 type PackageManifest = {
+  devDependencies?: Record<string, string>;
   scripts?: Record<string, string>;
 };
 
@@ -11,7 +12,9 @@ type TypeScriptConfig = {
   compilerOptions?: {
     lib?: string[];
     strict?: boolean;
+    types?: string[];
   };
+  include?: string[];
 };
 
 const projectRoot = resolve(import.meta.dirname, '../..');
@@ -40,6 +43,30 @@ describe('project configuration', () => {
       'format:check': expect.any(String),
       check: expect.any(String),
       tauri: expect.any(String)
+    });
+  });
+
+  it('limits Node and Vitest globals to the test and tooling compiler boundary', () => {
+    const applicationConfig = readJson<TypeScriptConfig>('tsconfig.json');
+
+    expect(applicationConfig.compilerOptions?.types).toEqual([]);
+    expect(applicationConfig.include).toEqual(['src']);
+
+    const testConfig = readJson<TypeScriptConfig>('tsconfig.test.json');
+    expect(testConfig.compilerOptions?.types).toEqual(['node', 'vitest/globals']);
+    expect(testConfig.include).toEqual(['tests', 'vite.config.ts', 'vitest.config.ts']);
+  });
+
+  it('pins development tools outside the audited vulnerable version ranges', () => {
+    const packageManifest = readJson<PackageManifest>('package.json');
+
+    expect(packageManifest.devDependencies).toMatchObject({
+      '@playwright/test': '1.62.0',
+      '@typescript-eslint/eslint-plugin': '8.65.0',
+      '@typescript-eslint/parser': '8.65.0',
+      eslint: '10.8.0',
+      vite: '7.3.6',
+      vitest: '3.2.7'
     });
   });
 
