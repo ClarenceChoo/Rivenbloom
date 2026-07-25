@@ -79,8 +79,11 @@ Last updated: 2026-07-25
 
 ## Phase 6 — Presentation
 
-- [ ] Final original Mara sprite/animation set.
-- [ ] Final original enemy and boss sprite/animation sets.
+- [~] Final original Mara sprite/animation set — 16-pose alpha source sheet
+  generated and inspected; atlas trimming/metadata and in-game tuning remain.
+- [~] Final original enemy and boss sprite/animation sets — Briar Scrapper,
+  Duskwing, Spore Scribe, and Barkbound alpha source sheets generated and
+  inspected; Rootlurker, Thorn Sentinel, boss, atlas metadata, and tuning remain.
 - [ ] Terrain, settlement, cave, dungeon, props, doors, chests, checkpoint, and
   collectible art.
 - [ ] Three-plus parallax layers per major visual profile.

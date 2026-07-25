@@ -13,7 +13,15 @@ for generated work.
 
 ## Production Assets
 
-Production entries will record:
+| Asset | Date | Source / tool | Rights and use | Prompt summary / modifications |
+| --- | --- | --- | --- | --- |
+| `public/assets/atlases/source/mara-sheet.png` | 2026-07-25 | OpenAI built-in image generation + local chroma removal | Original project production source | Image 1 was the approved gameplay concept as an identity/style reference. Generated 16 side-view Mara key poses on uniform magenta, then removed the sampled `#fb02f9` border with the installed soft-matte/despill helper. Alpha and silhouette were visually inspected. |
+| `public/assets/atlases/source/briar-scrapper-sheet.png` | 2026-07-25 | OpenAI built-in image generation + local chroma removal | Original project production source | Image 1 was the approved gameplay concept as an enemy/style reference. Generated 12 dormant/walk/telegraph/attack/hurt/death poses on uniform magenta; removed sampled `#fa03f9` with soft matte/despill. Alpha, mask continuity, and twig silhouettes were visually inspected. |
+| `public/assets/atlases/source/duskwing-sheet.png` | 2026-07-25 | OpenAI built-in image generation + local chroma removal | Original project production source | Image 1 was the approved gameplay concept as a style/identity reference. Generated 12 hover/dive/projectile/hurt/death poses with fixed face plate and seed hooks; removed sampled `#fa03f9` with soft matte/despill. Alpha and wing edges were visually inspected. |
+| `public/assets/atlases/source/spore-scribe-sheet.png` | 2026-07-25 | OpenAI built-in image generation + local chroma removal | Original project production source | Image 1 was the approved gameplay concept as a style reference. Generated 12 fungal idle/walk/cast/retreat/hurt/death poses on uniform magenta; removed sampled `#fa03f8` with soft matte/despill. Alpha, cap layering, and reed continuity were visually inspected. |
+| `public/assets/atlases/source/barkbound-sheet.png` | 2026-07-25 | OpenAI built-in image generation + local chroma removal | Original project production source | Image 1 was the approved gameplay concept as a style reference. Generated 12 shield/walk/telegraph/slam/stagger/death poses with fixed bark-door shield and rootglass core; removed sampled `#f603f7` with soft matte/despill. Alpha and shield/core readability were visually inspected. |
+
+Production entries record:
 
 - repository path and stable asset key;
 - creator or generation tool;
