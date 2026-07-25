@@ -1,4 +1,4 @@
-import type { SaveSettings, SaveV1 } from '../saves/SaveSchema';
+import type { SaveSettings, SaveSlotId, SaveV1 } from '../saves/SaveSchema';
 
 export type AccessibilitySettings = SaveSettings;
 export type AccessibilitySettingsUpdate = Omit<Partial<AccessibilitySettings>, 'audio'> & {
@@ -52,6 +52,39 @@ export const normalizeAccessibilitySettings = (
     effects: ratioSetting(settings.audio?.effects, DEFAULT_ACCESSIBILITY_SETTINGS.audio.effects)
   }
 });
+
+export class AccessibilitySettingsState {
+  private settings: AccessibilitySettings;
+
+  public constructor(
+    initial: AccessibilitySettingsUpdate = {},
+    private activeSlotId: SaveSlotId | undefined = undefined
+  ) {
+    this.settings = normalizeAccessibilitySettings(initial);
+  }
+
+  public get current(): AccessibilitySettings {
+    return this.settings;
+  }
+
+  public get sourceSlotId(): SaveSlotId | undefined {
+    return this.activeSlotId;
+  }
+
+  public update(update: AccessibilitySettingsUpdate): AccessibilitySettings {
+    this.settings = normalizeAccessibilitySettings({
+      ...this.settings,
+      ...update,
+      audio: { ...this.settings.audio, ...update.audio }
+    });
+    return this.settings;
+  }
+
+  public replace(settings: AccessibilitySettingsUpdate, sourceSlotId?: SaveSlotId): void {
+    this.settings = normalizeAccessibilitySettings(settings);
+    this.activeSlotId = sourceSlotId;
+  }
+}
 
 export const applyInputPreferences = (
   save: SaveV1,

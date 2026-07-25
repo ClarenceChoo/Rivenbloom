@@ -136,6 +136,7 @@ export const createTitleShell = (options: TitleShellOptions): TitleShell => {
   let settings = options.settings;
   let mode: TitleSlotMode = 'continue';
   let overlay: HTMLElement | undefined;
+  let overlayOpener: HTMLElement | undefined;
 
   const shell = element('main', 'game-surface title-surface');
   shell.dataset.testid = 'title-surface';
@@ -175,10 +176,15 @@ export const createTitleShell = (options: TitleShellOptions): TitleShell => {
     overlay?.remove();
     overlay = undefined;
     shell.removeAttribute('data-overlay-open');
+    const opener = overlayOpener;
+    overlayOpener = undefined;
+    if (opener?.isConnected === true) opener.focus();
   };
 
   const openOverlay = (dialog: HTMLElement): void => {
     closeOverlay();
+    overlayOpener =
+      document.activeElement instanceof HTMLElement ? document.activeElement : undefined;
     overlay = dialog;
     shell.dataset.overlayOpen = 'true';
     shell.append(dialog);
@@ -430,6 +436,25 @@ export const createTitleShell = (options: TitleShellOptions): TitleShell => {
   renderDrawer();
 
   const preventNativeSemanticActivation = (event: KeyboardEvent): void => {
+    if (event.key === 'Tab' && overlay !== undefined) {
+      const controls = Array.from(
+        overlay.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), input:not([disabled]), select:not([disabled])'
+        )
+      );
+      const first = controls[0];
+      const last = controls.at(-1);
+      if (
+        controls.length === 0 ||
+        (!event.shiftKey && document.activeElement === last) ||
+        (event.shiftKey && document.activeElement === first) ||
+        !overlay.contains(document.activeElement)
+      ) {
+        event.preventDefault();
+        (event.shiftKey ? last : first)?.focus();
+      }
+      return;
+    }
     if (
       event.code === 'Enter' ||
       event.code === 'ArrowUp' ||
@@ -494,7 +519,6 @@ export const createTitleShell = (options: TitleShellOptions): TitleShell => {
     back() {
       if (overlay !== undefined) {
         closeOverlay();
-        mainButtons[mode === 'continue' ? 0 : 1]?.focus();
         return;
       }
       mainButtons[mode === 'continue' ? 0 : 1]?.focus();

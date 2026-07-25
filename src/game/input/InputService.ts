@@ -227,8 +227,8 @@ export class InputService {
   private readonly onKeyDown = (event: Event): void => {
     const code = (event as KeyboardEvent).code;
     if (code.length > 0) {
+      if (!this.keys.has(code)) this.pendingKeyPresses.add(code);
       this.keys.add(code);
-      this.pendingKeyPresses.add(code);
     }
   };
 

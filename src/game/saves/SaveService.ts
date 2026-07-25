@@ -1,4 +1,4 @@
-import type { SaveSlotId, SaveV1 } from './SaveSchema';
+import type { SaveSettings, SaveSlotId, SaveV1 } from './SaveSchema';
 import { migrateSaveCandidate, type MigrationResult } from './migrations';
 import type { SaveReadResult, SaveRepository } from './SaveRepository';
 
@@ -88,6 +88,19 @@ export class SaveService {
   public async delete(slot: SaveSlotId): Promise<void> {
     await this.cancelAndWaitForSlot(slot);
     await this.enqueue(slot, () => this.repository.delete(slot));
+  }
+
+  public async updateSettings(slot: SaveSlotId, settings: SaveSettings): Promise<void> {
+    await this.cancelAndWaitForSlot(slot);
+    await this.enqueue(slot, async () => {
+      const result = await this.repository.read(slot);
+      if (result.kind !== 'loaded') return;
+      await this.repository.write(slot, {
+        ...result.save,
+        metadata: { ...result.save.metadata, updatedAt: Date.now() },
+        settings: { ...settings, audio: { ...settings.audio } }
+      });
+    });
   }
 
   public scheduleAutosave(slot: SaveSlotId, save: SaveV1): Promise<void> {

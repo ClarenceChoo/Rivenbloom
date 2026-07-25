@@ -252,3 +252,138 @@ At 1024 × 720:
 - PWA and Tauri checks are outside Task 6 because those projects are not yet
   implemented; the repository already records Rust/Cargo as unavailable for
   later native verification.
+
+## Fix Round 1
+
+### Findings and Resolutions
+
+1. **CRITICAL — repeated keyboard keydowns crossed confirmation boundaries.**
+   `InputService` now queues a keyboard press only when its tracked physical key
+   changes from up to down. Browser auto-repeat keydowns for an already-held
+   Enter key no longer produce fresh semantic `confirm` presses. The unit
+   regression proves a repeat is ignored until keyup, and the Playwright
+   regression holds Enter on an occupied slot, sends three repeat keydowns, and
+   proves the overwrite dialog remains open until a distinct follow-up press.
+2. **IMPORTANT — Boot and downstream consumers used stale default settings.**
+   Boot now reads the most recently updated valid save through the existing
+   repository/`SaveService` path before it creates input or starts preload. It
+   registers an `AccessibilitySettingsState` under
+   `AccessibilitySettingsToken`; Title updates that shared live state instead
+   of a private copy. `SaveService.updateSettings` serializes settings writes
+   through the existing slot queue and `SaveV1.settings` validation path. Title
+   writes changes back to the active save and new/load flows update the shared
+   source slot. Browser coverage changes reduced motion and text scale, waits
+   for the actual IndexedDB save record, reloads, verifies the runtime
+   accessibility state, and verifies the later transition consumes reduced
+   motion.
+3. **IMPORTANT — modal overlays leaked Tab focus and discarded focus on close.**
+   Title overlays now trap native forward and reverse Tab navigation within
+   their enabled controls. Opening captures the invoking element, and closing
+   restores it when it remains connected. Semantic `InputService` navigation,
+   activation/back behavior, and pointer buttons remain intact. Playwright
+   proves Tab stays inside Settings and its Back button restores focus to the
+   Settings opener.
+
+### Files Changed
+
+- `src/game/input/InputService.ts`
+- `src/game/config/accessibility.ts`
+- `src/game/core/GameServices.ts`
+- `src/game/saves/SaveService.ts`
+- `src/game/scenes/BootScene.ts`
+- `src/game/scenes/TitleScene.ts`
+- `src/game/ui/dom/menuShell.ts`
+- `tests/input/InputService.test.ts`
+- `tests/input/accessibility.test.ts`
+- `e2e/title.spec.ts`
+- `.superpowers/sdd/implementation-plan/task-6-report.md`
+
+The controller-owned
+`.superpowers/sdd/implementation-plan/progress.md` remained modified and was
+neither edited nor staged for this fix.
+
+### Regression RED Evidence
+
+Focused unit regressions were added before production changes:
+
+```text
+$ npm test -- tests/input/InputService.test.ts tests/input/accessibility.test.ts
+FAIL — 2 files, 2 failed / 12 passed
+InputService: expected ['confirm'] not to include 'confirm' after repeat keydowns
+Accessibility: AccessibilitySettingsState is not a constructor
+```
+
+The first sandboxed browser attempt could not bind the required local server:
+
+```text
+$ npx playwright test e2e/title.spec.ts --reporter=line
+FAIL — listen EPERM: operation not permitted 127.0.0.1:4186
+```
+
+The approved localhost rerun reached the intended behavior-level RED:
+
+```text
+$ npx playwright test e2e/title.spec.ts --reporter=line
+FAIL — 1 failed / 1 passed
+Expected Settings dialog to contain document.activeElement after Tab;
+received false (5s timeout)
+```
+
+### GREEN and Verification Evidence
+
+```text
+$ npm test -- tests/input/InputService.test.ts tests/input/accessibility.test.ts
+PASS — 2 files, 14 tests
+
+$ npx playwright test e2e/title.spec.ts --reporter=line
+PASS — 2 tests (3.0s)
+
+$ npm run typecheck
+PASS — tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.test.json
+
+$ npm run lint
+PASS — eslint .
+
+$ npm run format:check
+PASS — All matched files use Prettier code style
+
+$ npm test
+PASS — 14 files, 98 tests
+
+$ npm run build
+PASS — 29 modules transformed; production bundle built in 1.82s
+
+$ git diff --check
+PASS
+```
+
+The first sandboxed full `npm test` run reported 13 passing files and one
+failure because its nested Playwright smoke process could not bind localhost.
+The approved rerun passed all 14 files and 98 tests. No source change was made
+for that environmental restriction.
+
+### Self-Review
+
+- Mentally removing the key-held membership guard makes both the focused unit
+  assertion and occupied-slot Playwright confirmation regression fail.
+- Settings remain schema-version-1 `SaveV1.settings`; scenes contain no direct
+  IndexedDB, Tauri, or other platform storage calls.
+- Settings writes use the same per-slot serialization as save mutations, read
+  the latest queued record inside the operation, clone nested audio values, and
+  preserve the repository's validation/backup rotation.
+- Boot selects only available or recoverable slots and initializes input and
+  the shared runtime state from the same save snapshot before Preload.
+- Modal trapping covers button, input, and select controls, including Shift+Tab
+  boundaries, while focus restoration checks that the opener is still
+  connected.
+- Final diff review found no placeholder assets, debug hooks, temporary logs,
+  generated screenshots, dependency changes, or edits to the controller
+  ledger.
+
+### Concerns
+
+- Vite continues to report the pre-existing Phaser entry bundle warning
+  (`1,250.68 kB`, `345.16 kB` gzip); the production build succeeds.
+- Settings changed before any save exists remain live for the new-game write,
+  but there is intentionally no separate platform-specific preferences record
+  outside the existing save/settings contract.

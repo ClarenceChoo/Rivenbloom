@@ -38,6 +38,22 @@ describe('InputService', () => {
     expect(input.sample(101).pressed).toEqual([]);
   });
 
+  it('ignores repeated keydown events until the physical key is released', () => {
+    const target = new EventTarget();
+    const input = new InputService({ target, gamepads: () => [] });
+
+    target.dispatchEvent(keyEvent('keydown', 'Enter'));
+    expect(input.sample(100).pressed).toContain('confirm');
+
+    target.dispatchEvent(keyEvent('keydown', 'Enter'));
+    target.dispatchEvent(keyEvent('keydown', 'Enter'));
+    expect(input.sample(101).pressed).not.toContain('confirm');
+
+    target.dispatchEvent(keyEvent('keyup', 'Enter'));
+    target.dispatchEvent(keyEvent('keydown', 'Enter'));
+    expect(input.sample(102).pressed).toContain('confirm');
+  });
+
   it('uses gamepad axes only once they clear the semantic deadzone', () => {
     const pad = { axes: [-0.24, 0], buttons: [] };
     const input = new InputService({ gamepads: () => [pad] });

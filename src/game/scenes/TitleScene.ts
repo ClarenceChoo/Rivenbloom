@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import {
-  normalizeAccessibilitySettings,
-  type AccessibilitySettings
+  type AccessibilitySettings,
+  type AccessibilitySettingsState
 } from '../config/accessibility';
 import {
   AccessibilitySettingsToken,
@@ -32,7 +32,7 @@ export class TitleScene extends Phaser.Scene {
   private saves: SaveService | undefined;
   private repository: SaveRepository | undefined;
   private shell: TitleShell | undefined;
-  private settings: AccessibilitySettings | undefined;
+  private settingsState: AccessibilitySettingsState | undefined;
   private active = false;
 
   public constructor() {
@@ -51,9 +51,9 @@ export class TitleScene extends Phaser.Scene {
     this.inputService = services.get(InputServiceToken);
     this.saves = services.get(SaveServiceToken);
     this.repository = services.get(SaveRepositoryToken);
-    this.settings = services.get(AccessibilitySettingsToken);
+    this.settingsState = services.get(AccessibilitySettingsToken);
     this.inputService.clearTransient();
-    applyTitleAccessibility(this.settings);
+    applyTitleAccessibility(this.settingsState.current);
     void this.render();
   }
 
@@ -67,19 +67,21 @@ export class TitleScene extends Phaser.Scene {
   }
 
   private async render(): Promise<void> {
-    if (this.repository === undefined || this.settings === undefined) return;
+    if (this.repository === undefined || this.settingsState === undefined) return;
     const slots = await this.repository.list();
     if (!this.active) return;
     const warning = this.registry.get(SAVE_WARNING_REGISTRY_KEY) as string | undefined;
     this.shell = createTitleShell({
       slots,
-      settings: this.settings,
+      settings: this.settingsState.current,
       ...(warning === undefined ? {} : { warning }),
       onCommand: (command) => this.execute(command),
       onSettingsChange: (update) => {
-        if (this.settings === undefined) return;
-        this.settings = normalizeAccessibilitySettings({ ...this.settings, ...update });
-        this.shell?.updateSettings(this.settings);
+        if (this.settingsState === undefined) return;
+        const settings = this.settingsState.update(update);
+        this.shell?.updateSettings(settings);
+        const sourceSlotId = this.settingsState.sourceSlotId;
+        if (sourceSlotId !== undefined) void this.persistSettings(sourceSlotId, settings);
       },
       onExport: (slotId) => this.exportSave(slotId),
       onImport: (slotId, json) => this.previewImport(slotId, json)
@@ -103,25 +105,24 @@ export class TitleScene extends Phaser.Scene {
           await this.refreshSlots();
           return;
         }
-        this.settings = normalizeAccessibilitySettings(loaded.save.settings);
+        this.settingsState?.replace(loaded.save.settings, command.slotId);
         this.scene.start(SceneKeys.Transition, {
           destinationId: loaded.save.metadata.areaId,
           destinationName: formatAreaName(loaded.save.metadata.areaId),
-          reducedMotion: loaded.save.settings.reducedMotion
+          reducedMotion:
+            this.settingsState?.current.reducedMotion ?? loaded.save.settings.reducedMotion
         });
         return;
       }
       case 'new-game': {
         const save = createDefaultSave(command.slotId);
-        const withSettings =
-          this.settings === undefined
-            ? save
-            : {
-                ...save,
-                settings: this.settings
-              };
+        const withSettings = {
+          ...save,
+          settings: this.settingsState?.current ?? save.settings
+        };
         this.saves.scheduleAutosave(command.slotId, withSettings);
         await this.saves.flushAutosaves();
+        this.settingsState?.replace(withSettings.settings, command.slotId);
         this.scene.start(SceneKeys.Transition, {
           destinationId: 'wrens-rest',
           destinationName: "WREN'S REST",
@@ -134,6 +135,20 @@ export class TitleScene extends Phaser.Scene {
   private async refreshSlots(): Promise<void> {
     const slots = await this.repository?.list();
     if (slots !== undefined && this.active) this.shell?.updateSlots(slots);
+  }
+
+  private async persistSettings(
+    slotId: SaveSlotId,
+    settings: AccessibilitySettings
+  ): Promise<void> {
+    try {
+      await this.saves?.updateSettings(slotId, settings);
+    } catch {
+      this.registry.set(
+        SAVE_WARNING_REGISTRY_KEY,
+        'Settings could not be saved. Gameplay can continue.'
+      );
+    }
   }
 
   private async exportSave(slotId: SaveSlotId): Promise<void> {

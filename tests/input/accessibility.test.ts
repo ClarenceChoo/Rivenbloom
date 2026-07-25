@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  AccessibilitySettingsState,
   DEFAULT_ACCESSIBILITY_SETTINGS,
   applyInputPreferences,
   normalizeAccessibilitySettings
@@ -71,6 +72,24 @@ describe('accessibility settings', () => {
     expect(restored.sample(102)).toMatchObject({
       held: { block: true },
       device: 'keyboard'
+    });
+  });
+
+  it('keeps a live settings state and persists title changes through SaveService', async () => {
+    const slot = 'slot-1' as SaveSlotId;
+    const repository = new MemorySaveRepository();
+    const saves = new SaveService(repository);
+    await repository.write(slot, createDefaultSave(slot, 1));
+    const state = new AccessibilitySettingsState(DEFAULT_ACCESSIBILITY_SETTINGS, slot);
+
+    const updated = state.update({ reducedMotion: true, textScale: 1.3 });
+    await saves.updateSettings(slot, updated);
+
+    expect(state.current).toMatchObject({ reducedMotion: true, textScale: 1.3 });
+    const loaded = await saves.load(slot);
+    expect(loaded).toMatchObject({
+      kind: 'loaded',
+      save: { settings: { reducedMotion: true, textScale: 1.3 } }
     });
   });
 });
