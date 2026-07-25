@@ -1,6 +1,19 @@
-import type { QuestId, QuestStageId, StableId } from '../combat/CombatTypes';
+import {
+  parseStableId,
+  stableId,
+  type QuestId,
+  type QuestStageId,
+  type StableId
+} from '../combat/CombatTypes';
 
 export type QuestEventId = StableId<'quest-event'>;
+
+export const parseQuestEventId = (value: string): QuestEventId | undefined =>
+  parseStableId<'quest-event'>(value);
+
+export const questEventId = (value: string): QuestEventId => {
+  return stableId<'quest-event'>('quest event', value);
+};
 
 export type QuestEvent = {
   readonly id: QuestEventId;
@@ -25,9 +38,30 @@ export type QuestTransition = {
 
 export class QuestStore {
   private readonly definitions: readonly QuestDefinition[];
-  private readonly completedStages = new Set<QuestStageId>();
+  private readonly completedStages = new Map<QuestId, Set<QuestStageId>>();
 
   public constructor(definitions: readonly QuestDefinition[]) {
+    for (const quest of definitions) {
+      const stageIds = new Set<QuestStageId>();
+      for (const stage of quest.stages) {
+        if (stageIds.has(stage.id)) {
+          throw new Error(`Quest ${quest.id} has duplicate stage ID ${stage.id}.`);
+        }
+
+        stageIds.add(stage.id);
+      }
+
+      for (const stage of quest.stages) {
+        for (const prerequisiteStageId of stage.prerequisiteStageIds) {
+          if (!stageIds.has(prerequisiteStageId)) {
+            throw new Error(
+              `Quest ${quest.id} stage ${stage.id} has dangling prerequisite ${prerequisiteStageId}.`
+            );
+          }
+        }
+      }
+    }
+
     this.definitions = definitions;
   }
 
@@ -35,13 +69,16 @@ export class QuestStore {
     const transitions: QuestTransition[] = [];
 
     for (const quest of this.definitions) {
+      const completedStages = this.completedStages.get(quest.id) ?? new Set<QuestStageId>();
+      this.completedStages.set(quest.id, completedStages);
+
       for (const stage of quest.stages) {
         if (
           stage.triggerEventId === event.id &&
-          !this.completedStages.has(stage.id) &&
-          stage.prerequisiteStageIds.every((stageId) => this.completedStages.has(stageId))
+          !completedStages.has(stage.id) &&
+          stage.prerequisiteStageIds.every((stageId) => completedStages.has(stageId))
         ) {
-          this.completedStages.add(stage.id);
+          completedStages.add(stage.id);
           transitions.push({ questId: quest.id, stageId: stage.id, status: 'completed' });
         }
       }

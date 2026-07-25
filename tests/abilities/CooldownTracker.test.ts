@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { CooldownTracker } from '../../src/game/abilities/CooldownTracker';
-import type { AbilityId } from '../../src/game/combat/CombatTypes';
+import { abilityId } from '../../src/game/combat/CombatTypes';
 
-const gust = 'gust-step' as AbilityId;
-const ward = 'root-ward' as AbilityId;
+const gust = abilityId('gust-step');
+const ward = abilityId('root-ward');
 
 describe('CooldownTracker', () => {
   it('allows an ability exactly at its cooldown boundary', () => {
@@ -32,5 +32,14 @@ describe('CooldownTracker', () => {
     tracker.tryUse(gust, 1_000);
     expect(tracker.tryUse(gust, 1_200)).toBe(false);
     expect(tracker.tryUse(ward, 1_100)).toBe(false);
+  });
+
+  it('rejects non-finite and negative cooldown definitions at construction', () => {
+    expect(() => new CooldownTracker([{ id: gust, cooldownMs: Number.NaN }])).toThrow(
+      'finite non-negative cooldown'
+    );
+    expect(() => new CooldownTracker([{ id: gust, cooldownMs: -1 }])).toThrow(
+      'finite non-negative cooldown'
+    );
   });
 });

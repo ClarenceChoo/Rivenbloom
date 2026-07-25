@@ -1,7 +1,14 @@
-import type { ItemId, StableId } from '../combat/CombatTypes';
+import { parseStableId, stableId, type ItemId, type StableId } from '../combat/CombatTypes';
 
 export type EquipmentSlotId = StableId<'equipment-slot'>;
 export type EquipmentBonuses = Readonly<Record<string, number>>;
+
+export const parseEquipmentSlotId = (value: string): EquipmentSlotId | undefined =>
+  parseStableId<'equipment-slot'>(value);
+
+export const equipmentSlotId = (value: string): EquipmentSlotId => {
+  return stableId<'equipment-slot'>('equipment slot', value);
+};
 
 export type EquipmentDefinition = {
   readonly itemId: ItemId;

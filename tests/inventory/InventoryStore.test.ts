@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { EquipmentStore } from '../../src/game/inventory/EquipmentStore';
+import { EquipmentStore, equipmentSlotId } from '../../src/game/inventory/EquipmentStore';
 import { InventoryStore } from '../../src/game/inventory/InventoryStore';
-import type { ItemId, StableId } from '../../src/game/combat/CombatTypes';
+import { itemId } from '../../src/game/combat/CombatTypes';
 
-const seed = 'bracken-seed' as ItemId;
-const staff = 'rootglass-staff' as ItemId;
-const ward = 'hollow-ward' as ItemId;
-const weaponSlot = 'weapon' as StableId<'equipment-slot'>;
-const charmSlot = 'charm' as StableId<'equipment-slot'>;
+const seed = itemId('bracken-seed');
+const staff = itemId('rootglass-staff');
+const ward = itemId('hollow-ward');
+const weaponSlot = equipmentSlotId('weapon');
+const charmSlot = equipmentSlotId('charm');
 
 describe('InventoryStore', () => {
   it('adds a positive quantity up to the configured item cap', () => {
@@ -44,12 +44,31 @@ describe('InventoryStore', () => {
     });
   });
 
+  it('rejects non-finite and negative item caps at construction', () => {
+    expect(() => new InventoryStore([{ id: seed, maxQuantity: Number.POSITIVE_INFINITY }])).toThrow(
+      'finite non-negative integer cap'
+    );
+    expect(() => new InventoryStore([{ id: seed, maxQuantity: -1 }])).toThrow(
+      'finite non-negative integer cap'
+    );
+  });
+
+  it('rejects a non-finite quantity at the inventory boundary', () => {
+    const inventory = new InventoryStore([{ id: seed, maxQuantity: 5 }]);
+
+    expect(() => inventory.add(seed, Number.NaN)).toThrow('finite quantity');
+  });
+
   it('rejects equipment whose compatible slot does not match', () => {
     const equipment = new EquipmentStore([
       { itemId: staff, compatibleSlots: [weaponSlot], bonuses: { power: 4, guard: 2 } }
     ]);
 
     expect(equipment.equip(charmSlot, staff)).toBe(false);
+  });
+
+  it('rejects malformed equipment slot IDs', () => {
+    expect(() => equipmentSlotId('Weapon Slot')).toThrow('lowercase-kebab-case');
   });
 
   it('sums bonuses deterministically across equipped slots', () => {

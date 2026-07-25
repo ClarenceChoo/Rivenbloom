@@ -3,6 +3,12 @@ import type { DamagePacket, DamageResult, DefenseSnapshot } from './CombatTypes'
 const clamp = (value: number, minimum: number, maximum: number): number =>
   Math.min(maximum, Math.max(minimum, value));
 
+const finiteNonNegative = (value: number): number =>
+  Number.isFinite(value) && value > 0 ? value : 0;
+
+const resistancePercent = (value: number | undefined): number =>
+  value !== undefined && Number.isFinite(value) ? clamp(value, 0, 100) : 0;
+
 export const resolveDamage = (packet: DamagePacket, target: DefenseSnapshot): DamageResult => {
   if (target.invulnerable) {
     return {
@@ -28,17 +34,26 @@ export const resolveDamage = (packet: DamagePacket, target: DefenseSnapshot): Da
     };
   }
 
-  const resistance = clamp(target.resistances[packet.damageType] ?? 0, 0, 100) / 100;
-  const criticalApplied = target.guard.kind === 'none' && packet.criticalMultiplier > 1;
+  const resistance = resistancePercent(target.resistances[packet.damageType]) / 100;
+  const criticalApplied =
+    target.guard.kind === 'none' &&
+    Number.isFinite(packet.criticalMultiplier) &&
+    packet.criticalMultiplier > 1;
   const criticalMultiplier = criticalApplied ? packet.criticalMultiplier : 1;
   const baseDamage =
-    Math.max(0, packet.amount * criticalMultiplier - Math.max(0, target.armor)) * (1 - resistance);
+    Math.max(
+      0,
+      finiteNonNegative(packet.amount) * criticalMultiplier - finiteNonNegative(target.armor)
+    ) *
+    (1 - resistance);
   const block = target.guard.kind === 'block' ? target.guard : undefined;
 
   return {
-    healthDamage: baseDamage * (block?.damageMultiplier ?? 1),
-    poiseDamage: Math.max(0, packet.poiseDamage) * (block?.poiseMultiplier ?? 1),
-    knockback: Math.max(0, packet.knockback) * (block?.knockbackMultiplier ?? 1),
+    healthDamage: baseDamage * finiteNonNegative(block?.damageMultiplier ?? 1),
+    poiseDamage:
+      finiteNonNegative(packet.poiseDamage) * finiteNonNegative(block?.poiseMultiplier ?? 1),
+    knockback:
+      finiteNonNegative(packet.knockback) * finiteNonNegative(block?.knockbackMultiplier ?? 1),
     criticalApplied,
     blocked: block !== undefined,
     parried: false,

@@ -1,12 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import { resolveDamage } from '../../src/game/combat/DamageResolver';
-import type {
-  DamagePacket,
-  DamageTypeId,
-  DefenseSnapshot
+import type { DamagePacket, DefenseSnapshot } from '../../src/game/combat/CombatTypes';
+import {
+  abilityId,
+  damageTypeId,
+  itemId,
+  parseAbilityId,
+  questId,
+  questStageId
 } from '../../src/game/combat/CombatTypes';
 
-const physical = 'physical' as DamageTypeId;
+const physical = damageTypeId('physical');
 
 const packet: DamagePacket = {
   amount: 100,
@@ -24,6 +28,15 @@ const target: DefenseSnapshot = {
 };
 
 describe('resolveDamage', () => {
+  it('constructs stable IDs only from lowercase kebab-case strings', () => {
+    expect(abilityId('gust-step')).toBe('gust-step');
+    expect(itemId('bracken-seed')).toBe('bracken-seed');
+    expect(questId('rootglass-reliquary')).toBe('rootglass-reliquary');
+    expect(questStageId('collect-bell')).toBe('collect-bell');
+    expect(parseAbilityId('Gust Step')).toBeUndefined();
+    expect(() => damageTypeId('Physical Damage')).toThrow('lowercase-kebab-case');
+  });
+
   it('applies flat armor before percentage resistance', () => {
     expect(resolveDamage(packet, target).healthDamage).toBe(60);
   });
@@ -84,5 +97,30 @@ describe('resolveDamage', () => {
       criticalApplied: false,
       parried: true
     });
+  });
+
+  it('normalizes malformed combat numbers to finite non-negative outputs', () => {
+    expect(
+      resolveDamage(
+        {
+          ...packet,
+          amount: Number.POSITIVE_INFINITY,
+          criticalMultiplier: Number.NaN,
+          poiseDamage: -20,
+          knockback: Number.NaN
+        },
+        {
+          armor: Number.POSITIVE_INFINITY,
+          resistances: { [physical]: Number.NaN },
+          guard: {
+            kind: 'block',
+            damageMultiplier: Number.POSITIVE_INFINITY,
+            poiseMultiplier: -1,
+            knockbackMultiplier: Number.NaN
+          },
+          invulnerable: false
+        }
+      )
+    ).toMatchObject({ healthDamage: 0, poiseDamage: 0, knockback: 0 });
   });
 });

@@ -11,7 +11,15 @@ export class CooldownTracker {
   private latestObservedAt: number | undefined;
 
   public constructor(cooldowns: readonly AbilityCooldown[]) {
-    this.cooldowns = new Map(cooldowns.map(({ id, cooldownMs }) => [id, Math.max(0, cooldownMs)]));
+    this.cooldowns = new Map(
+      cooldowns.map(({ id, cooldownMs }) => {
+        if (!Number.isFinite(cooldownMs) || cooldownMs < 0) {
+          throw new RangeError(`Ability ${id} requires a finite non-negative cooldown.`);
+        }
+
+        return [id, cooldownMs];
+      })
+    );
   }
 
   public tryUse(id: AbilityId, nowMs: number): boolean {
