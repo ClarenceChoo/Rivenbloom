@@ -46,7 +46,19 @@ describe('bindings', () => {
       jump: 'malformed'
     });
 
-    expect(bindings['attack-light']).toEqual([{ kind: 'keyboard', code: 'KeyZ' }]);
+    expect(bindings['attack-light']).toEqual(
+      expect.arrayContaining([
+        { kind: 'keyboard', code: 'KeyZ' },
+        { kind: 'gamepad-button', button: 2 }
+      ])
+    );
     expect(bindings.jump).toEqual(DEFAULT_BINDINGS.jump);
+  });
+
+  it('rejects a saved override that would collide with another action', () => {
+    const bindings = applySerializedBindings({ 'attack-light': 'keyboard:KeyC' });
+
+    expect(bindings['attack-light']).toEqual(DEFAULT_BINDINGS['attack-light']);
+    expect(bindings['attack-heavy']).toEqual(DEFAULT_BINDINGS['attack-heavy']);
   });
 });

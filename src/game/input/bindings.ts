@@ -11,6 +11,7 @@ export type GamepadAxisBinding = {
 
 export type Binding = KeyboardBinding | GamepadButtonBinding | GamepadAxisBinding;
 export type BindingMap = Readonly<Record<InputAction, readonly Binding[]>>;
+export type BindingDevice = 'keyboard' | 'gamepad';
 
 export const AXIS_DEADZONE = 0.25;
 export const INPUT_BUFFER_MS = 120;
@@ -135,6 +136,27 @@ export const deserializeBinding = (serialized: string): Binding | undefined => {
 export const bindingsEqual = (left: Binding, right: Binding): boolean =>
   serializeBinding(left) === serializeBinding(right);
 
+export const bindingDevice = (binding: Binding): BindingDevice =>
+  binding.kind === 'keyboard' ? 'keyboard' : 'gamepad';
+
+export const serializeBindingList = (bindings: readonly Binding[]): string =>
+  bindings.map(serializeBinding).join('|');
+
+export const deserializeBindingList = (serialized: string): readonly Binding[] => {
+  const bindings = serialized.split('|').map(deserializeBinding);
+  if (bindings.some((binding) => binding === undefined)) return [];
+  const resolved = bindings as Binding[];
+  return new Set(resolved.map(bindingDevice)).size === resolved.length ? resolved : [];
+};
+
+export const replaceDeviceBinding = (
+  bindings: readonly Binding[],
+  binding: Binding
+): readonly Binding[] => [
+  ...bindings.filter((existing) => bindingDevice(existing) !== bindingDevice(binding)),
+  binding
+];
+
 const isInputAction = (value: string): value is InputAction =>
   (INPUT_ACTIONS as readonly string[]).includes(value);
 
@@ -146,8 +168,22 @@ export const applySerializedBindings = (
   for (const action of INPUT_ACTIONS) next[action] = [...defaults[action]];
   for (const [action, value] of Object.entries(serialized)) {
     if (!isInputAction(action)) continue;
-    const binding = deserializeBinding(value);
-    if (binding !== undefined) next[action] = [binding];
+    const bindings = deserializeBindingList(value);
+    const conflicts =
+      bindings.length > 0 &&
+      bindings.some((binding) =>
+        INPUT_ACTIONS.some(
+          (candidate) =>
+            candidate !== action &&
+            (next[candidate] ?? []).some((existing) => bindingsEqual(existing, binding))
+        )
+      );
+    if (bindings.length > 0 && !conflicts) {
+      next[action] = bindings.reduce(
+        (current, binding) => replaceDeviceBinding(current, binding),
+        next[action] ?? []
+      );
+    }
   }
   return next as BindingMap;
 };

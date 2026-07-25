@@ -9,8 +9,10 @@ import {
   INPUT_BUFFER_MS,
   applySerializedBindings,
   bindingsEqual,
-  deserializeBinding,
+  deserializeBindingList,
+  replaceDeviceBinding,
   serializeBinding,
+  serializeBindingList,
   type Binding,
   type BindingMap
 } from './bindings';
@@ -79,10 +81,11 @@ export class InputService {
   private readonly events: GameEvents | undefined;
   private previousHeld = actionRecord(false);
   private readonly bufferedAt = new Map<InputAction, number>();
-  private readonly overrides = new Map<InputAction, Binding>();
+  private readonly overrides = new Map<InputAction, readonly Binding[]>();
   private readonly holdToToggle: boolean;
   private blockToggled = false;
   private device: InputDevice = 'keyboard';
+  private gamepadArmed = true;
 
   public constructor(options: InputServiceOptions = {}) {
     this.bindings = cloneBindings(
@@ -93,8 +96,12 @@ export class InputService {
     );
     for (const action of INPUT_ACTIONS) {
       const serialized = options.serializedBindings?.[action];
-      const binding = serialized === undefined ? undefined : deserializeBinding(serialized);
-      if (binding !== undefined) this.overrides.set(action, binding);
+      if (serialized === undefined) continue;
+      const overrides = deserializeBindingList(serialized);
+      const accepted = overrides.every((binding) =>
+        this.bindings[action].some((resolved) => bindingsEqual(resolved, binding))
+      );
+      if (overrides.length > 0 && accepted) this.overrides.set(action, overrides);
     }
     this.gamepads = options.gamepads ?? browserGamepads;
     this.holdToToggle = normalizeAccessibilitySettings(options.settings).holdToToggle;
@@ -107,6 +114,7 @@ export class InputService {
   }
 
   public sample(nowMs: number): Readonly<InputFrame> {
+    if (!this.gamepadArmed && !this.hasActiveRawGamepadBinding()) this.gamepadArmed = true;
     const physicalHeld = actionRecord(false);
     for (const action of INPUT_ACTIONS) {
       physicalHeld[action] = this.bindings[action].some((binding) => this.isBindingActive(binding));
@@ -155,6 +163,7 @@ export class InputService {
     this.previousHeld = actionRecord(false);
     this.bufferedAt.clear();
     this.blockToggled = false;
+    this.gamepadArmed = false;
   };
 
   public dispose(): void {
@@ -171,8 +180,11 @@ export class InputService {
         this.bindings[candidate].some((existing) => bindingsEqual(existing, binding))
     );
     if (conflictingAction !== undefined) return { kind: 'conflict', action: conflictingAction };
-    this.bindings = { ...this.bindings, [action]: [binding] };
-    this.overrides.set(action, binding);
+    this.bindings = {
+      ...this.bindings,
+      [action]: replaceDeviceBinding(this.bindings[action], binding)
+    };
+    this.overrides.set(action, replaceDeviceBinding(this.overrides.get(action) ?? [], binding));
     this.events?.emit('input:binding-changed', {
       actionId: action,
       binding: serializeBinding(binding)
@@ -182,7 +194,7 @@ export class InputService {
 
   public serializeBindings(): Readonly<Record<string, string>> {
     return Object.fromEntries(
-      [...this.overrides].map(([action, binding]) => [action, serializeBinding(binding)])
+      [...this.overrides].map(([action, bindings]) => [action, serializeBindingList(bindings)])
     );
   }
 
@@ -216,6 +228,12 @@ export class InputService {
 
   private isBindingActive(binding: BindingMap[InputAction][number]): boolean {
     if (binding.kind === 'keyboard') return this.keys.has(binding.code);
+    return this.gamepadArmed && this.isRawGamepadBindingActive(binding);
+  }
+
+  private isRawGamepadBindingActive(
+    binding: Exclude<BindingMap[InputAction][number], { readonly kind: 'keyboard' }>
+  ): boolean {
     return this.gamepads().some((gamepad) => {
       if (binding.kind === 'gamepad-button') {
         const button = gamepad.buttons[binding.button];
@@ -223,6 +241,14 @@ export class InputService {
       }
       return (gamepad.axes[binding.axis] ?? 0) * binding.direction >= binding.threshold;
     });
+  }
+
+  private hasActiveRawGamepadBinding(): boolean {
+    return INPUT_ACTIONS.some((action) =>
+      this.bindings[action].some(
+        (binding) => binding.kind !== 'keyboard' && this.isRawGamepadBindingActive(binding)
+      )
+    );
   }
 
   private hasActiveGamepadBinding(): boolean {

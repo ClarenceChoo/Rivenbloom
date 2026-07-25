@@ -65,15 +65,50 @@ describe('InputService', () => {
     expect(input.sample(300).held['attack-light']).toBe(true);
   });
 
-  it('clears held and buffered intents when the browser loses focus', () => {
+  it('keeps the other device binding active when an action is remapped', () => {
     const target = new EventTarget();
-    const input = new InputService({ target, gamepads: () => [] });
+    const buttons = Array.from({ length: 9 }, () => ({ pressed: false, value: 0 }));
+    const input = new InputService({
+      target,
+      gamepads: () => [{ axes: [], buttons }]
+    });
+
+    expect(input.rebind('attack-light', { kind: 'keyboard', code: 'KeyZ' })).toMatchObject({
+      kind: 'rebound'
+    });
+    buttons[2] = { pressed: true, value: 1 };
+    expect(input.sample(400).held['attack-light']).toBe(true);
+    const restored = new InputService({
+      gamepads: () => [{ axes: [], buttons }],
+      serializedBindings: input.serializeBindings()
+    });
+    expect(restored.sample(400).held['attack-light']).toBe(true);
+    buttons[2] = { pressed: false, value: 0 };
+
+    expect(input.rebind('attack-light', { kind: 'gamepad-button', button: 8 })).toMatchObject({
+      kind: 'rebound'
+    });
+    target.dispatchEvent(keyEvent('keydown', 'KeyZ'));
+    expect(input.sample(401).held['attack-light']).toBe(true);
+  });
+
+  it('requires a neutral gamepad sample after focus loss before accepting input again', () => {
+    const target = new EventTarget();
+    const buttons = [{ pressed: true, value: 1 }];
+    const input = new InputService({
+      target,
+      gamepads: () => [{ axes: [], buttons }]
+    });
     target.dispatchEvent(keyEvent('keydown', 'Space'));
     input.sample(100);
 
     target.dispatchEvent(new Event('blur'));
 
     expect(input.sample(101)).toMatchObject({ held: { jump: false }, buffered: [] });
+    buttons[0] = { pressed: false, value: 0 };
+    input.sample(102);
+    buttons[0] = { pressed: true, value: 1 };
+    expect(input.sample(103).held.jump).toBe(true);
   });
 
   it('turns block into a toggle only when hold-to-toggle is enabled', () => {
