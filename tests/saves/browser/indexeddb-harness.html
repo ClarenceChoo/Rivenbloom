@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <script type="module">
+      import { IndexedDbSaveRepository } from '../../../src/game/saves/IndexedDbSaveRepository.ts';
+      import { createDefaultSave } from '../../../src/game/saves/SaveSchema.ts';
+
+      const readRawSlot = (databaseName, slotId) =>
+        new Promise((resolve, reject) => {
+          const request = indexedDB.open(databaseName);
+          request.onerror = () => reject(request.error);
+          request.onsuccess = () => {
+            const transaction = request.result.transaction('save-slots', 'readonly');
+            const get = transaction.objectStore('save-slots').get(slotId);
+            get.onerror = () => reject(get.error);
+            get.onsuccess = () => resolve(get.result);
+          };
+        });
+
+      const writeRawSlot = (databaseName, value) =>
+        new Promise((resolve, reject) => {
+          const request = indexedDB.open(databaseName);
+          request.onerror = () => reject(request.error);
+          request.onsuccess = () => {
+            const transaction = request.result.transaction('save-slots', 'readwrite');
+            transaction.oncomplete = () => resolve();
+            transaction.onerror = () => reject(transaction.error);
+            transaction.objectStore('save-slots').put(value);
+          };
+        });
+
+      window.runIndexedDbSaveRepositoryTest = async () => {
+        const databaseName = `rivenbloom-save-test-${crypto.randomUUID()}`;
+        const repository = new IndexedDbSaveRepository(databaseName);
+        const first = createDefaultSave('slot-1', 1);
+        const second = createDefaultSave('slot-1', 2);
+        const other = createDefaultSave('slot-2', 3);
+
+        await repository.write('slot-1', first);
+        await repository.write('slot-1', { ...second, player: { ...second.player, currency: 9 } });
+        await repository.write('slot-2', { ...other, player: { ...other.player, currency: 4 } });
+
+        const raw = await readRawSlot(databaseName, 'slot-1');
+        await writeRawSlot(databaseName, {
+          ...raw,
+          current: { ...raw.current, checksum: 'tampered' }
+        });
+
+        const recovered = await repository.read('slot-1');
+        const isolated = await repository.read('slot-2');
+        await repository.close();
+        indexedDB.deleteDatabase(databaseName);
+
+        return {
+          slotIsolation: isolated.kind === 'loaded' && isolated.save.player.currency === 4,
+          recoveredCreatedAt:
+            recovered.kind === 'loaded' && recovered.recoveredFromBackup
+              ? recovered.save.metadata.createdAt
+              : -1
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -42,9 +42,10 @@ Last updated: 2026-07-25
 - [~] Inventory and equipment stores complete; currency, XP, and authored
   upgrade flows remain.
 - [x] Quest transition store.
-- [ ] Versioned save schema and migrations.
-- [ ] IndexedDB transactional repository and backup recovery.
-- [ ] Three slots, previews, autosave, import/export, and deletion confirmation.
+- [x] Versioned save schema and migrations.
+- [x] IndexedDB transactional repository and backup recovery.
+- [~] Three slots, previews, autosave, import/export, and deletion support;
+  the menu-level deletion confirmation belongs to the title/menu UI milestone.
 - [ ] Input abstraction, gamepad support, rebinding, and persisted settings.
 
 ## Phase 3 — Playable Core
