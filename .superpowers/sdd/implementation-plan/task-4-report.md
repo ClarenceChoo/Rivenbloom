@@ -81,3 +81,56 @@ after implementation it passed against Chromium's real IndexedDB.
 ## Commit
 
 Implementation commit: `5bfcb44 feat: add versioned save system`.
+
+## Fix Round 1
+
+Addressed all three Important persistence risks from the fresh review.
+
+- `SaveService` now serializes per-slot writes, tracks the active operation,
+  returns a promise from `scheduleAutosave`, and attaches an internal rejection
+  handler so ignored scheduled saves do not create an unhandled rejection.
+  `flushAutosaves` starts pending saves then waits for every active operation;
+  it also rethrows a completed write failure until a later operation replaces
+  it. Confirmed imports and deletions cancel pending autosaves and await a
+  started one before their own serialized operation begins.
+- Slot record resolution now receives the requested slot ID and requires both
+  current and backup validated envelopes to contain that same slot in their
+  payload. A wrong-slot current may only fall back to a valid same-slot backup;
+  wrong-slot current and backup records are corrupt.
+- V0 migration now defaults only fields that are absent. Any present malformed
+  legacy timestamp, playtime, currency, position, health, mana, area, or
+  checkpoint produces `invalid-save` with a source-field error and cannot
+  become an import preview.
+- The Chromium IndexedDB harness now also writes wrong-slot current and backup
+  envelopes and verifies the repository reports the slot corrupt.
+
+### RED/GREEN evidence
+
+- The new migration cases were RED because V0 conversion silently changed
+  invalid values into defaults. They are GREEN after explicit presence-aware V0
+  validation.
+- The wrong-slot memory recovery cases were RED because `slot-1` read a
+  checksum-valid `slot-2` envelope. They are GREEN after expected-slot checks
+  for both current and backup.
+- The stale-autosave/import race was RED because import queued immediately;
+  the observed second write proved that stale work could finish after import.
+  It is GREEN after waiting for the existing slot operation. The failure test
+  was RED because `scheduleAutosave` returned `undefined` and the rejected
+  background write was unhandled; it now returns a rejecting promise and
+  `flushAutosaves` observes the rejection.
+- The Chromium expectation first failed while the harness lacked the
+  wrong-slot assertion; the completed harness is GREEN against real IndexedDB.
+
+### Fix validation
+
+- Focused save suite: 27 tests passed.
+- `npm run typecheck`: passed.
+- `npm run check`: passed: format, lint, typecheck, 77 Vitest tests, and the
+  production build.
+- `npm run test:e2e`: passed.
+- `npx playwright test --config=playwright.saves.config.ts`: passed, 1 real
+  Chromium IndexedDB test.
+
+Fix commit: `d610cff fix: serialize save persistence operations`.
+
+The existing Vite production chunk-size advisory remains the only concern.
