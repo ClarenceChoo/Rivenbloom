@@ -126,3 +126,82 @@ large-chunk advisory for the Phaser bundle (1,208.99 kB / 332.69 kB gzip).
 ## Commit SHA
 
 `c235305` — `feat: add semantic input and settings`
+
+## Fix Round 1
+
+### Files Changed
+
+- `src/game/input/InputService.ts`
+- `src/game/input/bindings.ts`
+- `tests/input/InputService.test.ts`
+- `tests/input/bindings.test.ts`
+
+### Regression Tests and RED Evidence
+
+The tests name these production breaks: a device remap drops its other device
+binding, a saved override bypasses the normal conflict gate, and an already-held
+gamepad control survives a browser focus loss.
+
+```text
+$ npm test -- tests/input/InputService.test.ts
+FAIL keeps the other device binding active when an action is remapped
+expected false to be true after keyboard remap; default gamepad button was lost
+
+$ npm test -- tests/input/bindings.test.ts
+FAIL rejects a saved override that would collide with another action
+received attack-light keyboard:KeyC instead of its default bindings
+
+$ npm test -- tests/input/InputService.test.ts
+FAIL requires a neutral gamepad sample after focus loss before accepting input again
+received held.jump true and buffered actions immediately after blur
+
+$ npm test -- tests/input/InputService.test.ts tests/input/bindings.test.ts
+FAIL restored keyboard remap did not retain the default gamepad binding
+FAIL saved keyboard override did not retain the default gamepad binding
+```
+
+### GREEN Evidence
+
+```text
+$ npm test -- tests/input/InputService.test.ts
+PASS 9 tests
+
+$ npm test -- tests/input/bindings.test.ts
+PASS 4 tests
+
+$ npm test -- tests/input/InputService.test.ts tests/input/bindings.test.ts
+PASS 2 files, 13 tests
+```
+
+### Verification
+
+```text
+$ npm run lint
+PASS
+
+$ npm test -- tests/input/InputService.test.ts tests/input/bindings.test.ts tests/input/accessibility.test.ts
+PASS 3 files, 15 tests
+
+$ npm run typecheck
+PASS
+
+$ npm run format:check
+PASS
+
+$ git diff --check
+PASS
+```
+
+### Self-Review
+
+- Per-device remaps now replace only their own device binding and retain the
+  other device's action binding, including after serialisation/restoration.
+- Saved binding lists are resolved against defaults and rejected atomically if
+  any saved binding conflicts with another action.
+- A focus loss disables gamepad input until an observed neutral sample; a still
+  held gamepad button cannot create a stuck intent, while a subsequent release
+  and press works normally.
+
+### Commit SHA
+
+`9578b56` — `fix: preserve input device bindings`
