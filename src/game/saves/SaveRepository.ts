@@ -33,14 +33,17 @@ export interface SaveRepository {
   delete(slot: SaveSlotId): Promise<void>;
 }
 
-export const resolveSaveSlotRecord = (record: SaveSlotRecord | undefined): SaveReadResult => {
+export const resolveSaveSlotRecord = (
+  slotId: SaveSlotId,
+  record: SaveSlotRecord | undefined
+): SaveReadResult => {
   if (record === undefined || (record.current === undefined && record.backup === undefined))
     return { kind: 'empty' };
   const current = validateSaveEnvelope(record.current);
-  if (current.ok)
+  if (current.ok && current.envelope.save.slotId === slotId)
     return { kind: 'loaded', save: current.envelope.save, recoveredFromBackup: false };
   const backup = validateSaveEnvelope(record.backup);
-  if (backup.ok) {
+  if (backup.ok && backup.envelope.save.slotId === slotId) {
     return {
       kind: 'loaded',
       save: backup.envelope.save,
@@ -55,7 +58,7 @@ export const previewSaveSlot = (
   slotId: SaveSlotId,
   record: SaveSlotRecord | undefined
 ): SaveSlotPreview => {
-  const result = resolveSaveSlotRecord(record);
+  const result = resolveSaveSlotRecord(slotId, record);
   if (result.kind === 'empty') return { slotId, status: 'empty' };
   if (result.kind === 'corrupt') return { slotId, status: 'corrupt' };
   return {

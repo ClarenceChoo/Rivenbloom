@@ -15,5 +15,9 @@ test('IndexedDB saves rotate a backup and keep slot records isolated', async ({ 
     return runner();
   });
 
-  expect(result).toEqual({ slotIsolation: true, recoveredCreatedAt: 1 });
+  expect(result).toEqual({
+    slotIsolation: true,
+    recoveredCreatedAt: 1,
+    wrongSlotRecordsAreCorrupt: true
+  });
 });

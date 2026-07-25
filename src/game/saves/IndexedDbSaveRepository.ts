@@ -51,7 +51,7 @@ export class IndexedDbSaveRepository implements SaveRepository {
   }
 
   public async read(slot: SaveSlotId): Promise<SaveReadResult> {
-    return resolveSaveSlotRecord(await this.readRecord(slot));
+    return resolveSaveSlotRecord(slot, await this.readRecord(slot));
   }
 
   public async write(slot: SaveSlotId, save: SaveV1): Promise<void> {

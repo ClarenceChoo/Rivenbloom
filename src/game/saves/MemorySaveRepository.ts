@@ -25,7 +25,7 @@ export class MemorySaveRepository implements SaveRepository {
   }
 
   public async read(slot: SaveSlotId): Promise<SaveReadResult> {
-    return resolveSaveSlotRecord(this.records.get(slot));
+    return resolveSaveSlotRecord(slot, this.records.get(slot));
   }
 
   public async write(slot: SaveSlotId, save: SaveV1): Promise<void> {

@@ -48,6 +48,13 @@
 
         const recovered = await repository.read('slot-1');
         const isolated = await repository.read('slot-2');
+        const otherRaw = await readRawSlot(databaseName, 'slot-2');
+        await writeRawSlot(databaseName, {
+          ...raw,
+          current: otherRaw.current,
+          backup: otherRaw.current
+        });
+        const wrongSlot = await repository.read('slot-1');
         await repository.close();
         indexedDB.deleteDatabase(databaseName);
 
@@ -56,7 +63,8 @@
           recoveredCreatedAt:
             recovered.kind === 'loaded' && recovered.recoveredFromBackup
               ? recovered.save.metadata.createdAt
-              : -1
+              : -1,
+          wrongSlotRecordsAreCorrupt: wrongSlot.kind === 'corrupt'
         };
       };
     </script>

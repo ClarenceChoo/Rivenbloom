@@ -20,39 +20,69 @@ type UnknownRecord = Record<string, unknown>;
 const isRecord = (value: unknown): value is UnknownRecord =>
   typeof value === 'object' && value !== null && !Array.isArray(value);
 
-const integer = (value: unknown, fallback: number): number =>
-  typeof value === 'number' && Number.isSafeInteger(value) && value >= 0 ? value : fallback;
+const isNonNegativeInteger = (value: unknown): value is number =>
+  typeof value === 'number' && Number.isSafeInteger(value) && value >= 0;
 
-const position = (value: unknown): { readonly x: number; readonly y: number } => {
-  if (!isRecord(value) || typeof value.x !== 'number' || typeof value.y !== 'number')
-    return { x: 0, y: 0 };
-  if (!Number.isFinite(value.x) || !Number.isFinite(value.y) || value.x < 0 || value.y < 0)
-    return { x: 0, y: 0 };
-  return { x: value.x, y: value.y };
-};
+const isNonNegativeNumber = (value: unknown): value is number =>
+  typeof value === 'number' && Number.isFinite(value) && value >= 0;
+
+const isStableId = (value: unknown): value is string =>
+  typeof value === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
+
+const invalidV0 = (errors: readonly string[]): MigrationResult => ({
+  ok: false,
+  reason: 'invalid-save',
+  errors
+});
 
 const migrateV0 = (candidate: UnknownRecord): MigrationResult => {
   if (!isSaveSlotId(candidate.slotId))
     return { ok: false, reason: 'invalid-save', errors: ['slotId must identify a save slot'] };
-  const savedAt = integer(candidate.savedAt, 0);
+  const errors: string[] = [];
+  if (candidate.savedAt !== undefined && !isNonNegativeInteger(candidate.savedAt))
+    errors.push('savedAt');
+  if (candidate.playtimeSeconds !== undefined && !isNonNegativeInteger(candidate.playtimeSeconds))
+    errors.push('playtimeSeconds');
+  if (candidate.currency !== undefined && !isNonNegativeInteger(candidate.currency))
+    errors.push('currency');
+  if (candidate.areaId !== undefined && !isStableId(candidate.areaId)) errors.push('areaId');
+  if (candidate.checkpointId !== undefined && !isStableId(candidate.checkpointId))
+    errors.push('checkpointId');
+  if (candidate.health !== undefined && !isNonNegativeNumber(candidate.health))
+    errors.push('health');
+  if (candidate.mana !== undefined && !isNonNegativeNumber(candidate.mana)) errors.push('mana');
+  if (candidate.position !== undefined) {
+    if (!isRecord(candidate.position) || !isNonNegativeNumber(candidate.position.x))
+      errors.push('position.x');
+    if (!isRecord(candidate.position) || !isNonNegativeNumber(candidate.position.y))
+      errors.push('position.y');
+  }
+  if (errors.length > 0) return invalidV0(errors);
+
+  const savedAt = isNonNegativeInteger(candidate.savedAt) ? candidate.savedAt : 0;
   const save = createDefaultSave(candidate.slotId as SaveSlotId, savedAt);
   const migrated = {
     ...save,
     metadata: {
       ...save.metadata,
       updatedAt: savedAt,
-      playtimeSeconds: integer(candidate.playtimeSeconds, 0),
-      areaId: typeof candidate.areaId === 'string' ? candidate.areaId : save.metadata.areaId,
-      ...(typeof candidate.checkpointId === 'string'
-        ? { checkpointId: candidate.checkpointId }
-        : {}),
-      safePosition: position(candidate.position)
+      playtimeSeconds: isNonNegativeInteger(candidate.playtimeSeconds)
+        ? candidate.playtimeSeconds
+        : 0,
+      areaId: isStableId(candidate.areaId) ? candidate.areaId : save.metadata.areaId,
+      ...(isStableId(candidate.checkpointId) ? { checkpointId: candidate.checkpointId } : {}),
+      safePosition:
+        isRecord(candidate.position) &&
+        isNonNegativeNumber(candidate.position.x) &&
+        isNonNegativeNumber(candidate.position.y)
+          ? { x: candidate.position.x, y: candidate.position.y }
+          : save.metadata.safePosition
     },
     player: {
       ...save.player,
-      health: typeof candidate.health === 'number' ? candidate.health : save.player.health,
-      mana: typeof candidate.mana === 'number' ? candidate.mana : save.player.mana,
-      currency: integer(candidate.currency, save.player.currency)
+      health: isNonNegativeNumber(candidate.health) ? candidate.health : save.player.health,
+      mana: isNonNegativeNumber(candidate.mana) ? candidate.mana : save.player.mana,
+      currency: isNonNegativeInteger(candidate.currency) ? candidate.currency : save.player.currency
     }
   };
   const validation = validateSave(migrated);

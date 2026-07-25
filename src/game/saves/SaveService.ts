@@ -18,11 +18,32 @@ export type ImportPreview =
 
 export type SaveServiceOptions = { readonly autosaveDelayMs?: number };
 
-type PendingAutosave = { readonly save: SaveV1; readonly timer: ReturnType<typeof setTimeout> };
+type Deferred = {
+  readonly promise: Promise<void>;
+  readonly resolve: () => void;
+  readonly reject: (reason: unknown) => void;
+};
+
+type PendingAutosave = {
+  readonly save: SaveV1;
+  readonly timer: ReturnType<typeof setTimeout>;
+  readonly completion: Deferred;
+};
+
+const deferred = (): Deferred => {
+  let resolve = (): void => undefined;
+  let reject = (_reason: unknown): void => undefined;
+  const promise = new Promise<void>((resolvePromise, rejectPromise) => {
+    resolve = resolvePromise;
+    reject = rejectPromise;
+  });
+  return { promise, resolve, reject };
+};
 
 export class SaveService {
   private readonly autosaveDelayMs: number;
   private readonly pendingAutosaves = new Map<SaveSlotId, PendingAutosave>();
+  private readonly slotOperations = new Map<SaveSlotId, Promise<void>>();
 
   public constructor(
     private readonly repository: SaveRepository,
@@ -60,32 +81,37 @@ export class SaveService {
       slotId: destination,
       metadata: { ...preview.save.metadata, updatedAt: Date.now() }
     };
-    await this.repository.write(destination, save);
+    await this.cancelAndWaitForSlot(destination);
+    await this.enqueue(destination, () => this.repository.write(destination, save));
   }
 
   public async delete(slot: SaveSlotId): Promise<void> {
-    this.cancelAutosave(slot);
-    await this.repository.delete(slot);
+    await this.cancelAndWaitForSlot(slot);
+    await this.enqueue(slot, () => this.repository.delete(slot));
   }
 
-  public scheduleAutosave(slot: SaveSlotId, save: SaveV1): void {
+  public scheduleAutosave(slot: SaveSlotId, save: SaveV1): Promise<void> {
     this.cancelAutosave(slot);
+    const completion = deferred();
+    void completion.promise.catch(() => undefined);
     const timer = setTimeout(() => {
+      const pending = this.pendingAutosaves.get(slot);
+      if (pending === undefined || pending.completion !== completion) return;
       this.pendingAutosaves.delete(slot);
-      void this.repository.write(slot, save);
+      void this.enqueue(slot, () => this.repository.write(slot, save)).then(
+        () => completion.resolve(),
+        (reason: unknown) => completion.reject(reason)
+      );
     }, this.autosaveDelayMs);
-    this.pendingAutosaves.set(slot, { save, timer });
+    this.pendingAutosaves.set(slot, { save, timer, completion });
+    return completion.promise;
   }
 
   public async flushAutosaves(): Promise<void> {
-    const pending = [...this.pendingAutosaves.entries()];
-    this.pendingAutosaves.clear();
-    await Promise.all(
-      pending.map(async ([slot, entry]) => {
-        clearTimeout(entry.timer);
-        await this.repository.write(slot, entry.save);
-      })
-    );
+    for (const [slot, pending] of [...this.pendingAutosaves]) {
+      this.startPendingAutosave(slot, pending);
+    }
+    await Promise.all([...this.slotOperations.values()]);
   }
 
   public dispose(): void {
@@ -98,6 +124,37 @@ export class SaveService {
     if (pending === undefined) return;
     clearTimeout(pending.timer);
     this.pendingAutosaves.delete(slot);
+    pending.completion.resolve();
+  }
+
+  private async cancelAndWaitForSlot(slot: SaveSlotId): Promise<void> {
+    this.cancelAutosave(slot);
+    await this.slotOperations.get(slot);
+  }
+
+  private startPendingAutosave(slot: SaveSlotId, pending: PendingAutosave): void {
+    const active = this.pendingAutosaves.get(slot);
+    if (active === undefined || active.completion !== pending.completion) return;
+    clearTimeout(pending.timer);
+    this.pendingAutosaves.delete(slot);
+    void this.enqueue(slot, () => this.repository.write(slot, pending.save)).then(
+      () => pending.completion.resolve(),
+      (reason: unknown) => pending.completion.reject(reason)
+    );
+  }
+
+  private enqueue(slot: SaveSlotId, operation: () => Promise<void>): Promise<void> {
+    const previous = this.slotOperations.get(slot) ?? Promise.resolve();
+    const next = previous.catch(() => undefined).then(operation);
+    void next.catch(() => undefined);
+    this.slotOperations.set(slot, next);
+    void next.then(
+      () => {
+        if (this.slotOperations.get(slot) === next) this.slotOperations.delete(slot);
+      },
+      () => undefined
+    );
+    return next;
   }
 
   private previewMigration(migration: MigrationResult): ImportPreview {
