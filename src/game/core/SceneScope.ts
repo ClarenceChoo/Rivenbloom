@@ -20,8 +20,23 @@ export class SceneScope {
 
     this.disposed = true;
 
+    const errors: unknown[] = [];
+
     while (this.cleanups.length > 0) {
-      this.cleanups.pop()?.();
+      const cleanup = this.cleanups.pop();
+      if (cleanup === undefined) {
+        continue;
+      }
+
+      try {
+        cleanup();
+      } catch (error) {
+        errors.push(error);
+      }
+    }
+
+    if (errors.length > 0) {
+      throw new AggregateError(errors, 'One or more scene cleanups failed');
     }
   }
 }
