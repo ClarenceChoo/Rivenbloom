@@ -1,6 +1,6 @@
 # Rivenbloom Progress
 
-Last updated: 2026-07-25
+Last updated: 2026-07-26
 
 ## Status Legend
 
@@ -44,13 +44,13 @@ Last updated: 2026-07-25
 - [x] Quest transition store.
 - [x] Versioned save schema and migrations.
 - [x] IndexedDB transactional repository and backup recovery.
-- [~] Three slots, previews, autosave, import/export, and deletion support;
-  the menu-level deletion confirmation belongs to the title/menu UI milestone.
+- [x] Three slots, previews, autosave, import/export, and confirmed deletion
+  support.
 - [x] Input abstraction, gamepad support, rebinding, and persisted settings.
 
 ## Phase 3 — Playable Core
 
-- [ ] Boot, preload, title, save-slot, and transition scenes.
+- [x] Boot, preload, title, save-slot, and transition scenes.
 - [ ] Data-driven area runner and content validation.
 - [ ] Responsive player movement and camera.
 - [ ] Sword combo, air/heavy attacks, block/parry, dash, and spells.

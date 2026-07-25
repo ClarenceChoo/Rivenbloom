@@ -75,6 +75,7 @@ const browserGamepads = (): readonly GamepadSnapshot[] => {
 
 export class InputService {
   private readonly keys = new Set<string>();
+  private readonly pendingKeyPresses = new Set<string>();
   private bindings: BindingMap;
   private readonly gamepads: () => readonly GamepadSnapshot[];
   private readonly target: EventTarget | undefined;
@@ -120,7 +121,11 @@ export class InputService {
       physicalHeld[action] = this.bindings[action].some((binding) => this.isBindingActive(binding));
     }
     const pressed = INPUT_ACTIONS.filter(
-      (action) => physicalHeld[action] && !this.previousHeld[action]
+      (action) =>
+        (physicalHeld[action] && !this.previousHeld[action]) ||
+        this.bindings[action].some(
+          (binding) => binding.kind === 'keyboard' && this.pendingKeyPresses.has(binding.code)
+        )
     );
     const released = INPUT_ACTIONS.filter(
       (action) => !physicalHeld[action] && this.previousHeld[action]
@@ -139,6 +144,7 @@ export class InputService {
     for (const action of INPUT_ACTIONS) {
       if (!buffered.includes(action)) this.bufferedAt.delete(action);
     }
+    this.pendingKeyPresses.clear();
     this.previousHeld = physicalHeld;
     const device = this.hasActiveGamepadBinding() ? 'gamepad' : 'keyboard';
     if (device !== this.device) {
@@ -160,6 +166,7 @@ export class InputService {
 
   public clearTransient = (): void => {
     this.keys.clear();
+    this.pendingKeyPresses.clear();
     this.previousHeld = actionRecord(false);
     this.bufferedAt.clear();
     this.blockToggled = false;
@@ -219,7 +226,10 @@ export class InputService {
 
   private readonly onKeyDown = (event: Event): void => {
     const code = (event as KeyboardEvent).code;
-    if (code.length > 0) this.keys.add(code);
+    if (code.length > 0) {
+      this.keys.add(code);
+      this.pendingKeyPresses.add(code);
+    }
   };
 
   private readonly onKeyUp = (event: Event): void => {

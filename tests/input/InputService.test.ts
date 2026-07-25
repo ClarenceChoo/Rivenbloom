@@ -23,6 +23,21 @@ describe('InputService', () => {
     });
   });
 
+  it('preserves a quick semantic key tap that begins and ends between samples', () => {
+    const target = new EventTarget();
+    const input = new InputService({ target, gamepads: () => [] });
+
+    target.dispatchEvent(keyEvent('keydown', 'ArrowDown'));
+    target.dispatchEvent(keyEvent('keyup', 'ArrowDown'));
+
+    expect(input.sample(100)).toMatchObject({
+      held: { 'move-down': false },
+      pressed: ['move-down'],
+      device: 'keyboard'
+    });
+    expect(input.sample(101).pressed).toEqual([]);
+  });
+
   it('uses gamepad axes only once they clear the semantic deadzone', () => {
     const pad = { axes: [-0.24, 0], buttons: [] };
     const input = new InputService({ gamepads: () => [pad] });

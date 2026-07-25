@@ -1,4 +1,8 @@
 import Phaser from 'phaser';
+import { BootScene } from './game/scenes/BootScene';
+import { PreloadScene } from './game/scenes/PreloadScene';
+import { TitleScene } from './game/scenes/TitleScene';
+import { TransitionScene } from './game/scenes/TransitionScene';
 import './styles/global.css';
 import './styles/shell.css';
 
@@ -12,6 +16,10 @@ export function createGame(parent: string): Phaser.Game {
     width: LOGICAL_WIDTH,
     height: LOGICAL_HEIGHT,
     backgroundColor: '#10120f',
+    scene: [BootScene, PreloadScene, TitleScene, TransitionScene],
+    dom: {
+      createContainer: true
+    },
     scale: {
       mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH
