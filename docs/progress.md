@@ -31,7 +31,7 @@ Last updated: 2026-07-25
 
 - [x] Scaffold strict Phaser 3 + TypeScript + Vite.
 - [ ] Configure ESLint, Prettier, Vitest, and Playwright.
-- [ ] Add deterministic core state machine, event bus, lifecycle scope, and
+- [x] Add deterministic core state machine, event bus, lifecycle scope, and
   service registry.
 - [x] Add required npm scripts and baseline CI-style check.
 
