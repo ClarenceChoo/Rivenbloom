@@ -30,17 +30,18 @@ Last updated: 2026-07-25
 ## Phase 1 — Foundation
 
 - [x] Scaffold strict Phaser 3 + TypeScript + Vite.
-- [ ] Configure ESLint, Prettier, Vitest, and Playwright.
+- [x] Configure ESLint, Prettier, Vitest, and Playwright.
 - [x] Add deterministic core state machine, event bus, lifecycle scope, and
   service registry.
 - [x] Add required npm scripts and baseline CI-style check.
 
 ## Phase 2 — Pure Systems and Persistence
 
-- [ ] Damage and player-stat rules.
-- [ ] Cooldowns and ability resource rules.
-- [ ] Inventory, equipment, currency, XP, and upgrades.
-- [ ] Quest transition store.
+- [x] Damage and player-stat rules.
+- [x] Cooldowns and ability resource rules.
+- [~] Inventory and equipment stores complete; currency, XP, and authored
+  upgrade flows remain.
+- [x] Quest transition store.
 - [ ] Versioned save schema and migrations.
 - [ ] IndexedDB transactional repository and backup recovery.
 - [ ] Three slots, previews, autosave, import/export, and deletion confirmation.
@@ -81,14 +82,17 @@ Last updated: 2026-07-25
 
 - [~] Final original Mara sprite/animation set — 16-pose alpha source sheet
   generated and inspected; atlas trimming/metadata and in-game tuning remain.
-- [~] Final original enemy and boss sprite/animation sets — Briar Scrapper,
-  Duskwing, Spore Scribe, and Barkbound alpha source sheets generated and
-  inspected; Rootlurker, Thorn Sentinel, boss, atlas metadata, and tuning remain.
-- [ ] Terrain, settlement, cave, dungeon, props, doors, chests, checkpoint, and
-  collectible art.
-- [ ] Three-plus parallax layers per major visual profile.
-- [ ] NPC/dialogue portraits, HUD/inventory/spell/map icons, logo, menu art, and
-  app icons.
+- [~] Final original enemy and boss sprite/animation sets — all five standard
+  archetypes, Thorn Sentinel, and Pallid Cantor alpha source sheets are
+  generated and inspected; atlas trimming/metadata and in-game tuning remain.
+- [~] Brackenreach terrain/platform kit and checkpoint source are generated and
+  inspected; settlement, cave, dungeon, props, doors, chests, and collectibles
+  remain.
+- [~] Three-layer Brackenreach parallax set generated and inspected; settlement,
+  cave, and dungeon visual profiles remain.
+- [~] Mara/Sela/Orin/Piri dialogue portraits and a 20-icon HUD/menu source sheet
+  are generated and inspected; logo, menu art, app icons, atlas metadata, and
+  in-game tuning remain.
 - [ ] Final HUD, dialogue, map, inventory/equipment, journal, pause, settings,
   death, saves, and credits UI.
 - [ ] Original/licensed menu, outdoor, dungeon, and boss music.
