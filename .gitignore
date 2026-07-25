@@ -1,0 +1,14 @@
+.worktrees/
+.superpowers/
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+.vite/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+src-tauri/target/
