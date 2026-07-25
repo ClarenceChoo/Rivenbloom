@@ -1,5 +1,18 @@
 # Rivenbloom Art Direction
 
+## Approved Visual References
+
+- `docs/concepts/rivenbloom-gameplay-concept.png` — gameplay composition,
+  character/enemy scale, environment layering, combat readability, and HUD
+  language.
+- `docs/concepts/rivenbloom-title-concept.png` — title composition, seed-pod
+  menu geometry, focus treatment, save-slot hierarchy, and village atmosphere.
+
+These images are visual specifications, not production sprites or flattened UI.
+Production art must be generated or authored as separable assets, and all
+interactive text and controls remain code-native. See `docs/visual-spec.md` for
+the extraction ledger.
+
 ## Visual Thesis
 
 Rivenbloom looks like a hand-painted folktale assembled from layered vellum,

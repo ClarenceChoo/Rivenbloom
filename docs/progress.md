@@ -22,6 +22,10 @@ Last updated: 2026-07-25
 - [x] Create `docs/implementation-plan.md`.
 - [x] Create `docs/art-direction.md`.
 - [x] Create the reviewed vertical-slice design specification.
+- [x] Generate and inspect approved gameplay and title/save-slot visual
+  concepts.
+- [x] Extract the visual system, copy lock, icon inventory, and fidelity
+  checklist.
 
 ## Phase 1 — Foundation
 
@@ -29,7 +33,7 @@ Last updated: 2026-07-25
 - [ ] Configure ESLint, Prettier, Vitest, and Playwright.
 - [ ] Add deterministic core state machine, event bus, lifecycle scope, and
   service registry.
-- [ ] Add required npm scripts and baseline CI-style check.
+- [x] Add required npm scripts and baseline CI-style check.
 
 ## Phase 2 — Pure Systems and Persistence
 
