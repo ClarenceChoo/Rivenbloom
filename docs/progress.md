@@ -46,7 +46,7 @@ Last updated: 2026-07-25
 - [x] IndexedDB transactional repository and backup recovery.
 - [~] Three slots, previews, autosave, import/export, and deletion support;
   the menu-level deletion confirmation belongs to the title/menu UI milestone.
-- [ ] Input abstraction, gamepad support, rebinding, and persisted settings.
+- [x] Input abstraction, gamepad support, rebinding, and persisted settings.
 
 ## Phase 3 — Playable Core
 
