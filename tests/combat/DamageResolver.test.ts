@@ -155,4 +155,34 @@ describe('resolveDamage', () => {
     expect(Number.isFinite(result.poiseDamage)).toBe(true);
     expect(Number.isFinite(result.knockback)).toBe(true);
   });
+
+  it('saturates a rounded finite product that overflows after the division guard', () => {
+    const roundedOperand = Number.MAX_VALUE / 1.5;
+    const result = resolveDamage(
+      {
+        amount: roundedOperand,
+        damageType: physical,
+        criticalMultiplier: 1,
+        poiseDamage: roundedOperand,
+        knockback: roundedOperand
+      },
+      {
+        armor: 0,
+        resistances: {},
+        guard: {
+          kind: 'block',
+          damageMultiplier: 1.5,
+          poiseMultiplier: 1.5,
+          knockbackMultiplier: 1.5
+        },
+        invulnerable: false
+      }
+    );
+
+    expect(result).toMatchObject({
+      healthDamage: Number.MAX_VALUE,
+      poiseDamage: Number.MAX_VALUE,
+      knockback: Number.MAX_VALUE
+    });
+  });
 });

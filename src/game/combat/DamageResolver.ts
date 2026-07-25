@@ -11,7 +11,8 @@ const saturatingProduct = (left: number, right: number): number => {
     return 0;
   }
 
-  return left > Number.MAX_VALUE / right ? Number.MAX_VALUE : left * right;
+  const product = left * right;
+  return Number.isFinite(product) ? product : Number.MAX_VALUE;
 };
 
 const resistancePercent = (value: number | undefined): number =>
