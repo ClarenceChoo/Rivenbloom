@@ -1,12 +1,19 @@
 import { describe, expect, it } from 'vitest';
 import { validateContent } from '../../src/game/data/contentValidation';
 import { contentRegistry } from '../../src/game/data/contentRegistry';
-import type { ActorDefinition, ContentIssue, ContentRegistry } from '../../src/game/data/types';
+import type {
+  ActorDefinition,
+  AreaDefinition,
+  ContentIssue,
+  ContentRegistry,
+  TriggerDefinition
+} from '../../src/game/data/types';
 
 function emptyRegistry(): ContentRegistry {
   return {
     areas: [],
     actors: [],
+    bossMechanisms: [],
     attacks: [],
     abilities: [],
     items: [],
@@ -61,6 +68,61 @@ function actorDefinition(overrides: Partial<ActorDefinition> = {}): ActorDefinit
     animationSetId: 'mara-animation-set',
     audioSetId: 'mara-audio-set',
     aiProfileId: 'player-controlled',
+    ...overrides
+  };
+}
+
+function areaDefinition(overrides: Partial<AreaDefinition> = {}): AreaDefinition {
+  return {
+    id: 'test-reach',
+    displayName: 'Test Reach',
+    regionId: 'test-region',
+    bounds: { x: 0, y: 0, width: 1280, height: 720 },
+    defaultSpawnId: 'test-spawn',
+    ambienceProfileId: 'test-ambience',
+    rooms: [
+      {
+        id: 'test-room',
+        displayName: 'Test Room',
+        bounds: { x: 0, y: 0, width: 1280, height: 720 },
+        discoveryId: 'test-room-discovery'
+      }
+    ],
+    layers: [
+      {
+        id: 'test-layer',
+        roomId: 'test-room',
+        kind: 'gameplay',
+        assetKey: 'test-layer',
+        position: { x: 0, y: 0 },
+        size: { width: 1280, height: 720 },
+        depth: 0,
+        scrollFactor: 1
+      }
+    ],
+    surfaces: [
+      {
+        id: 'test-surface',
+        roomId: 'test-room',
+        kind: 'solid',
+        collision: { x: 0, y: 600, width: 1280, height: 120 },
+        materialId: 'test-stone'
+      }
+    ],
+    playerSpawns: [
+      {
+        id: 'test-spawn',
+        roomId: 'test-room',
+        position: { x: 120, y: 600 },
+        facing: 'right'
+      }
+    ],
+    actorSpawns: [],
+    triggers: [],
+    mechanisms: [],
+    checkpoints: [],
+    transitions: [],
+    props: [],
     ...overrides
   };
 }
@@ -178,6 +240,369 @@ describe('validateContent', () => {
       id: 'listen-at-the-arch',
       message: 'Duplicate quest stages ID "listen-at-the-arch".'
     });
+  });
+
+  it('reports duplicate IDs in every area-local collection', () => {
+    const duplicateTrigger = {
+      id: 'duplicate-trigger',
+      roomId: 'duplicate-room',
+      kind: 'room-entry',
+      bounds: { x: 80, y: 80, width: 120, height: 120 },
+      targetId: 'first-discovery',
+      once: false
+    } as const satisfies TriggerDefinition;
+    const duplicateMechanism = {
+      id: 'duplicate-mechanism',
+      roomId: 'duplicate-room',
+      kind: 'lens',
+      position: { x: 300, y: 600 },
+      triggerId: 'duplicate-trigger',
+      persistentFlagId: 'first-mechanism-flag'
+    } as const;
+    const duplicateCheckpoint = {
+      id: 'duplicate-checkpoint',
+      roomId: 'duplicate-room',
+      triggerId: 'duplicate-trigger',
+      spawnId: 'duplicate-player-spawn',
+      position: { x: 120, y: 600 }
+    } as const;
+    const duplicateTransition = {
+      id: 'duplicate-transition',
+      roomId: 'duplicate-room',
+      triggerId: 'duplicate-trigger',
+      destinationAreaId: 'test-reach',
+      destinationSpawnId: 'duplicate-player-spawn'
+    } as const;
+    const duplicateProp = {
+      id: 'duplicate-prop',
+      roomId: 'duplicate-room',
+      position: { x: 420, y: 600 },
+      render: {
+        assetKey: 'test-prop',
+        size: { width: 64, height: 64 },
+        origin: { x: 0.5, y: 1 },
+        depth: 2
+      }
+    } as const;
+    const registry: ContentRegistry = {
+      ...emptyRegistry(),
+      areas: [
+        areaDefinition({
+          defaultSpawnId: 'duplicate-player-spawn',
+          rooms: [
+            {
+              id: 'duplicate-room',
+              displayName: 'First Room',
+              bounds: { x: 0, y: 0, width: 640, height: 720 },
+              discoveryId: 'first-discovery'
+            },
+            {
+              id: 'duplicate-room',
+              displayName: 'Second Room',
+              bounds: { x: 640, y: 0, width: 640, height: 720 },
+              discoveryId: 'second-discovery'
+            }
+          ],
+          layers: [
+            {
+              id: 'duplicate-layer',
+              roomId: 'duplicate-room',
+              kind: 'gameplay',
+              assetKey: 'first-layer',
+              position: { x: 0, y: 0 },
+              size: { width: 640, height: 720 },
+              depth: 0,
+              scrollFactor: 1
+            },
+            {
+              id: 'duplicate-layer',
+              roomId: 'duplicate-room',
+              kind: 'foreground',
+              assetKey: 'second-layer',
+              position: { x: 640, y: 0 },
+              size: { width: 640, height: 720 },
+              depth: 10,
+              scrollFactor: 1
+            }
+          ],
+          surfaces: [
+            {
+              id: 'duplicate-surface',
+              roomId: 'duplicate-room',
+              kind: 'solid',
+              collision: { x: 0, y: 600, width: 640, height: 120 },
+              materialId: 'first-stone'
+            },
+            {
+              id: 'duplicate-surface',
+              roomId: 'duplicate-room',
+              kind: 'one-way',
+              collision: { x: 640, y: 600, width: 640, height: 120 },
+              materialId: 'second-stone'
+            }
+          ],
+          playerSpawns: [
+            {
+              id: 'duplicate-player-spawn',
+              roomId: 'duplicate-room',
+              position: { x: 120, y: 600 },
+              facing: 'right'
+            },
+            {
+              id: 'duplicate-player-spawn',
+              roomId: 'duplicate-room',
+              position: { x: 1120, y: 600 },
+              facing: 'left'
+            }
+          ],
+          actorSpawns: [
+            {
+              id: 'duplicate-actor-spawn',
+              roomId: 'duplicate-room',
+              actorId: 'first-actor',
+              position: { x: 420, y: 600 },
+              facing: 'right'
+            },
+            {
+              id: 'duplicate-actor-spawn',
+              roomId: 'duplicate-room',
+              actorId: 'second-actor',
+              position: { x: 860, y: 600 },
+              facing: 'left'
+            }
+          ],
+          triggers: [
+            duplicateTrigger,
+            {
+              ...duplicateTrigger,
+              targetId: 'second-discovery'
+            }
+          ],
+          mechanisms: [
+            duplicateMechanism,
+            {
+              ...duplicateMechanism,
+              persistentFlagId: 'second-mechanism-flag'
+            }
+          ],
+          checkpoints: [
+            duplicateCheckpoint,
+            {
+              ...duplicateCheckpoint,
+              position: { x: 1120, y: 600 }
+            }
+          ],
+          transitions: [
+            duplicateTransition,
+            {
+              ...duplicateTransition,
+              destinationSpawnId: 'duplicate-player-spawn'
+            }
+          ],
+          props: [
+            duplicateProp,
+            {
+              ...duplicateProp,
+              position: { x: 860, y: 600 }
+            }
+          ]
+        })
+      ]
+    };
+
+    expect(validateContent(registry)).toEqual(
+      expect.arrayContaining([
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].rooms[1].id',
+          id: 'duplicate-room',
+          message: 'Duplicate area rooms ID "duplicate-room".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].layers[1].id',
+          id: 'duplicate-layer',
+          message: 'Duplicate area layers ID "duplicate-layer".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].surfaces[1].id',
+          id: 'duplicate-surface',
+          message: 'Duplicate area surfaces ID "duplicate-surface".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].playerSpawns[1].id',
+          id: 'duplicate-player-spawn',
+          message: 'Duplicate area player spawns ID "duplicate-player-spawn".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].actorSpawns[1].id',
+          id: 'duplicate-actor-spawn',
+          message: 'Duplicate area actor spawns ID "duplicate-actor-spawn".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].triggers[1].id',
+          id: 'duplicate-trigger',
+          message: 'Duplicate area triggers ID "duplicate-trigger".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].mechanisms[1].id',
+          id: 'duplicate-mechanism',
+          message: 'Duplicate area mechanisms ID "duplicate-mechanism".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].checkpoints[1].id',
+          id: 'duplicate-checkpoint',
+          message: 'Duplicate area checkpoints ID "duplicate-checkpoint".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].transitions[1].id',
+          id: 'duplicate-transition',
+          message: 'Duplicate area transitions ID "duplicate-transition".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'areas[0].props[1].id',
+          id: 'duplicate-prop',
+          message: 'Duplicate area props ID "duplicate-prop".'
+        }
+      ])
+    );
+  });
+
+  it('reports duplicate dialogue nodes and node-local choices', () => {
+    const registry: ContentRegistry = {
+      ...emptyRegistry(),
+      dialogues: [
+        {
+          id: 'duplicate-dialogue-content',
+          entryNodeId: 'duplicate-node',
+          nodes: [
+            {
+              id: 'duplicate-node',
+              speakerActorId: 'first-speaker',
+              text: 'Choose.',
+              choices: [
+                {
+                  id: 'duplicate-choice',
+                  text: 'First choice.'
+                },
+                {
+                  id: 'duplicate-choice',
+                  text: 'Second choice.'
+                }
+              ]
+            },
+            {
+              id: 'duplicate-node',
+              speakerActorId: 'second-speaker',
+              text: 'Again.',
+              choices: []
+            }
+          ]
+        }
+      ]
+    };
+
+    expect(validateContent(registry)).toEqual(
+      expect.arrayContaining([
+        {
+          code: 'duplicate-id',
+          path: 'dialogues[0].nodes[1].id',
+          id: 'duplicate-node',
+          message: 'Duplicate dialogue nodes ID "duplicate-node".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'dialogues[0].nodes[0].choices[1].id',
+          id: 'duplicate-choice',
+          message: 'Duplicate dialogue choices ID "duplicate-choice".'
+        }
+      ])
+    );
+  });
+
+  it('reports globally reused room discovery and persistent flag IDs', () => {
+    const sharedMechanismFlag = 'shared-mechanism-flag';
+    const registry: ContentRegistry = {
+      ...emptyRegistry(),
+      areas: [
+        areaDefinition({
+          id: 'first-area',
+          rooms: [
+            {
+              id: 'first-room',
+              displayName: 'First Room',
+              bounds: { x: 0, y: 0, width: 1280, height: 720 },
+              discoveryId: 'shared-room-discovery'
+            }
+          ],
+          mechanisms: [
+            {
+              id: 'first-mechanism',
+              roomId: 'first-room',
+              kind: 'lens',
+              position: { x: 300, y: 600 },
+              triggerId: 'first-trigger',
+              persistentFlagId: sharedMechanismFlag
+            }
+          ]
+        }),
+        areaDefinition({
+          id: 'second-area',
+          rooms: [
+            {
+              id: 'second-room',
+              displayName: 'Second Room',
+              bounds: { x: 0, y: 0, width: 1280, height: 720 },
+              discoveryId: 'shared-room-discovery'
+            }
+          ],
+          mechanisms: [
+            {
+              id: 'second-mechanism',
+              roomId: 'second-room',
+              kind: 'lens',
+              position: { x: 900, y: 600 },
+              triggerId: 'second-trigger',
+              persistentFlagId: 'second-mechanism-flag'
+            }
+          ]
+        })
+      ],
+      bossMechanisms: [
+        {
+          id: 'planned-boss-lens',
+          displayName: 'Planned Boss Lens',
+          kind: 'lens',
+          bossActorId: 'planned-boss',
+          persistentFlagId: sharedMechanismFlag
+        }
+      ]
+    };
+
+    expect(validateContent(registry)).toEqual(
+      expect.arrayContaining([
+        {
+          code: 'duplicate-id',
+          path: 'areas[1].rooms[0].discoveryId',
+          id: 'shared-room-discovery',
+          message: 'Duplicate room discovery ID "shared-room-discovery".'
+        },
+        {
+          code: 'duplicate-id',
+          path: 'bossMechanisms[0].persistentFlagId',
+          id: sharedMechanismFlag,
+          message: `Duplicate persistent flag ID "${sharedMechanismFlag}".`
+        }
+      ])
+    );
   });
 
   it('reports unresolved actor, ability, item, quest, and dialogue references', () => {
@@ -312,6 +737,117 @@ describe('validateContent', () => {
     for (const expectedIssue of expected) {
       expect(issues).toContainEqual(expectedIssue);
     }
+  });
+
+  it('resolves dialogue quest stages within the referenced quest', () => {
+    const registry: ContentRegistry = {
+      ...emptyRegistry(),
+      actors: [actorDefinition()],
+      quests: [
+        {
+          id: 'quest-a',
+          displayName: 'Quest A',
+          kind: 'main',
+          initialStageId: 'quest-a-stage',
+          prerequisiteQuestIds: [],
+          stages: [
+            {
+              id: 'quest-a-stage',
+              objective: 'Complete quest A.',
+              requiredItemIds: [],
+              grantedItemIds: [],
+              grantedAbilityIds: []
+            }
+          ]
+        },
+        {
+          id: 'quest-b',
+          displayName: 'Quest B',
+          kind: 'discovery',
+          initialStageId: 'quest-b-stage',
+          prerequisiteQuestIds: [],
+          stages: [
+            {
+              id: 'quest-b-stage',
+              objective: 'Complete quest B.',
+              requiredItemIds: [],
+              grantedItemIds: [],
+              grantedAbilityIds: []
+            }
+          ]
+        }
+      ],
+      dialogues: [
+        {
+          id: 'crossed-quest-stage',
+          entryNodeId: 'crossed-stage',
+          nodes: [
+            {
+              id: 'crossed-stage',
+              speakerActorId: 'mara-vey',
+              text: 'This stage belongs to another quest.',
+              choices: [],
+              questId: 'quest-a',
+              questStageId: 'quest-b-stage'
+            }
+          ]
+        }
+      ]
+    };
+
+    expect(validateContent(registry)).toContainEqual({
+      code: 'unresolved-reference',
+      path: 'dialogues[0].nodes[0].questStageId',
+      id: 'quest-b-stage',
+      message: 'Unresolved quest "quest-a" stages reference "quest-b-stage".'
+    });
+  });
+
+  it('requires a quest for dialogue quest-stage mutations', () => {
+    const registry: ContentRegistry = {
+      ...emptyRegistry(),
+      actors: [actorDefinition()],
+      quests: [
+        {
+          id: 'quest-a',
+          displayName: 'Quest A',
+          kind: 'main',
+          initialStageId: 'quest-a-stage',
+          prerequisiteQuestIds: [],
+          stages: [
+            {
+              id: 'quest-a-stage',
+              objective: 'Complete quest A.',
+              requiredItemIds: [],
+              grantedItemIds: [],
+              grantedAbilityIds: []
+            }
+          ]
+        }
+      ],
+      dialogues: [
+        {
+          id: 'stage-without-quest',
+          entryNodeId: 'missing-quest',
+          nodes: [
+            {
+              id: 'missing-quest',
+              speakerActorId: 'mara-vey',
+              text: 'This mutation has no quest.',
+              choices: [],
+              questStageId: 'quest-a-stage'
+            }
+          ]
+        }
+      ]
+    };
+
+    expect(validateContent(registry)).toContainEqual({
+      code: 'missing-required-field',
+      path: 'dialogues[0].nodes[0].questId',
+      id: 'missing-quest',
+      message: 'Dialogue quest-stage mutations require a quest ID.'
+    });
   });
 
   it('reports unresolved references inside an authored area graph', () => {
@@ -477,6 +1013,86 @@ describe('validateContent', () => {
     }
   });
 
+  const triggerTargetCases = [
+    {
+      kind: 'room-entry',
+      targetId: 'absent-room-entry-discovery',
+      registryName: 'area room discoveries'
+    },
+    {
+      kind: 'interaction',
+      targetId: 'absent-interaction-mechanism',
+      registryName: 'area mechanisms'
+    },
+    {
+      kind: 'discovery',
+      targetId: 'absent-discovery',
+      registryName: 'area room discoveries'
+    },
+    {
+      kind: 'quest',
+      targetId: 'absent-quest',
+      registryName: 'quests'
+    },
+    {
+      kind: 'transition',
+      targetId: 'absent-transition',
+      registryName: 'area transitions'
+    },
+    {
+      kind: 'checkpoint',
+      targetId: 'absent-checkpoint',
+      registryName: 'area checkpoints'
+    }
+  ] as const;
+
+  it.each(triggerTargetCases)('requires a target for $kind triggers', ({ kind }) => {
+    const triggerId = `${kind}-trigger`;
+    const malformedTrigger = {
+      id: triggerId,
+      roomId: 'test-room',
+      kind,
+      bounds: { x: 80, y: 80, width: 120, height: 120 },
+      once: false
+    } as TriggerDefinition;
+    const registry: ContentRegistry = {
+      ...emptyRegistry(),
+      areas: [areaDefinition({ triggers: [malformedTrigger] })]
+    };
+
+    expect(validateContent(registry)).toContainEqual({
+      code: 'missing-required-field',
+      path: 'areas[0].triggers[0].targetId',
+      id: triggerId,
+      message: `Triggers of kind "${kind}" require a target ID.`
+    });
+  });
+
+  it.each(triggerTargetCases)(
+    'resolves a $kind trigger target against $registryName',
+    ({ kind, targetId, registryName }) => {
+      const trigger: TriggerDefinition = {
+        id: `${kind}-trigger`,
+        roomId: 'test-room',
+        kind,
+        bounds: { x: 80, y: 80, width: 120, height: 120 },
+        targetId,
+        once: false
+      };
+      const registry: ContentRegistry = {
+        ...emptyRegistry(),
+        areas: [areaDefinition({ triggers: [trigger] })]
+      };
+
+      expect(validateContent(registry)).toContainEqual({
+        code: 'unresolved-reference',
+        path: 'areas[0].triggers[0].targetId',
+        id: targetId,
+        message: `Unresolved ${registryName} reference "${targetId}".`
+      });
+    }
+  );
+
   it('reports missing required area and boss content fields', () => {
     const registry: ContentRegistry = {
       ...emptyRegistry(),
@@ -625,6 +1241,34 @@ describe('validateContent', () => {
         }
       ])
     );
+  });
+
+  it('reports valid boss mechanism IDs absent from the registered boss mechanisms', () => {
+    const registry: ContentRegistry = {
+      ...emptyRegistry(),
+      actors: [
+        actorDefinition({
+          id: 'pallid-cantor',
+          displayName: 'The Pallid Cantor',
+          kind: 'boss',
+          boss: {
+            phaseOneAttackIds: ['cantor-chime-slam'],
+            phaseTwoAttackIds: ['cantor-resonant-dive'],
+            transitionAttackId: 'cantor-porcelain-crack',
+            requiredMechanismIds: ['absent-cantor-lens'],
+            defeatItemId: 'cantor-sigil',
+            defeatQuestId: 'silent-bloom'
+          }
+        })
+      ]
+    };
+
+    expect(validateContent(registry)).toContainEqual({
+      code: 'unresolved-reference',
+      path: 'actors[0].boss.requiredMechanismIds[0]',
+      id: 'absent-cantor-lens',
+      message: 'Unresolved boss mechanisms reference "absent-cantor-lens".'
+    });
   });
 
   it('validates the shipped Brackenreach content registry', () => {

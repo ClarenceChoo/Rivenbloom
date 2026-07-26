@@ -64,14 +64,27 @@ export type ActorSpawnDefinition = {
   readonly encounterId?: StableId;
 };
 
-export type TriggerDefinition = {
+type TriggerKind =
+  | 'room-entry'
+  | 'interaction'
+  | 'discovery'
+  | 'quest'
+  | 'transition'
+  | 'checkpoint';
+
+type TriggerBaseDefinition = {
   readonly id: StableId;
   readonly roomId: StableId;
-  readonly kind: 'room-entry' | 'interaction' | 'discovery' | 'quest' | 'transition' | 'checkpoint';
   readonly bounds: RectDefinition;
-  readonly targetId?: StableId;
   readonly once: boolean;
 };
+
+export type TriggerDefinition = {
+  readonly [Kind in TriggerKind]: TriggerBaseDefinition & {
+    readonly kind: Kind;
+    readonly targetId: StableId;
+  };
+}[TriggerKind];
 
 export type MechanismDefinition = {
   readonly id: StableId;
@@ -176,6 +189,14 @@ export type BossDefinition = {
   readonly requiredMechanismIds: readonly StableId[];
   readonly defeatItemId: StableId;
   readonly defeatQuestId: StableId;
+};
+
+export type BossMechanismDefinition = {
+  readonly id: StableId;
+  readonly displayName: string;
+  readonly kind: 'lens';
+  readonly bossActorId: StableId;
+  readonly persistentFlagId: StableId;
 };
 
 export type ActorDefinition = {
@@ -294,6 +315,7 @@ export type AmbienceProfileDefinition = {
 export type ContentRegistry = {
   readonly areas: readonly AreaDefinition[];
   readonly actors: readonly ActorDefinition[];
+  readonly bossMechanisms: readonly BossMechanismDefinition[];
   readonly attacks: readonly AttackDefinition[];
   readonly abilities: readonly AbilityDefinition[];
   readonly items: readonly ItemDefinition[];

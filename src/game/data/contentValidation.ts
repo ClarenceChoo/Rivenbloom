@@ -39,9 +39,30 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
       seenIds.add(definition.id);
     });
   };
+  const validateDuplicateValues = (
+    definitions: readonly {
+      readonly id: string;
+      readonly path: string;
+    }[],
+    registryName: string
+  ): void => {
+    const seenIds = new Set<string>();
+    definitions.forEach(({ id, path }) => {
+      if (seenIds.has(id)) {
+        issues.push({
+          code: 'duplicate-id',
+          path,
+          id,
+          message: `Duplicate ${registryName} ID "${id}".`
+        });
+      }
+      seenIds.add(id);
+    });
+  };
   const collections = [
     ['areas', registry.areas],
     ['actors', registry.actors],
+    ['bossMechanisms', registry.bossMechanisms],
     ['attacks', registry.attacks],
     ['abilities', registry.abilities],
     ['items', registry.items],
@@ -78,6 +99,16 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
     validateStableIdGroup(area.checkpoints, `${areaPath}.checkpoints`);
     validateStableIdGroup(area.transitions, `${areaPath}.transitions`);
     validateStableIdGroup(area.props, `${areaPath}.props`);
+    validateDuplicateIdGroup(area.rooms, `${areaPath}.rooms`, 'area rooms');
+    validateDuplicateIdGroup(area.layers, `${areaPath}.layers`, 'area layers');
+    validateDuplicateIdGroup(area.surfaces, `${areaPath}.surfaces`, 'area surfaces');
+    validateDuplicateIdGroup(area.playerSpawns, `${areaPath}.playerSpawns`, 'area player spawns');
+    validateDuplicateIdGroup(area.actorSpawns, `${areaPath}.actorSpawns`, 'area actor spawns');
+    validateDuplicateIdGroup(area.triggers, `${areaPath}.triggers`, 'area triggers');
+    validateDuplicateIdGroup(area.mechanisms, `${areaPath}.mechanisms`, 'area mechanisms');
+    validateDuplicateIdGroup(area.checkpoints, `${areaPath}.checkpoints`, 'area checkpoints');
+    validateDuplicateIdGroup(area.transitions, `${areaPath}.transitions`, 'area transitions');
+    validateDuplicateIdGroup(area.props, `${areaPath}.props`, 'area props');
     area.rooms.forEach((room, roomIndex) => {
       validateStableId(room.discoveryId, `${areaPath}.rooms[${roomIndex}].discoveryId`);
     });
@@ -93,15 +124,46 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
     validateStableIdGroup(quest.stages, stagesPath);
     validateDuplicateIdGroup(quest.stages, stagesPath, 'quest stages');
   });
+  registry.bossMechanisms.forEach((mechanism, mechanismIndex) => {
+    validateStableId(
+      mechanism.persistentFlagId,
+      `bossMechanisms[${mechanismIndex}].persistentFlagId`
+    );
+  });
   registry.dialogues.forEach((dialogue, dialogueIndex) => {
-    validateStableIdGroup(dialogue.nodes, `dialogues[${dialogueIndex}].nodes`);
+    const nodesPath = `dialogues[${dialogueIndex}].nodes`;
+    validateStableIdGroup(dialogue.nodes, nodesPath);
+    validateDuplicateIdGroup(dialogue.nodes, nodesPath, 'dialogue nodes');
     dialogue.nodes.forEach((node, nodeIndex) => {
-      validateStableIdGroup(
-        node.choices,
-        `dialogues[${dialogueIndex}].nodes[${nodeIndex}].choices`
-      );
+      const choicesPath = `${nodesPath}[${nodeIndex}].choices`;
+      validateStableIdGroup(node.choices, choicesPath);
+      validateDuplicateIdGroup(node.choices, choicesPath, 'dialogue choices');
     });
   });
+  validateDuplicateValues(
+    registry.areas.flatMap((area, areaIndex) =>
+      area.rooms.map((room, roomIndex) => ({
+        id: room.discoveryId,
+        path: `areas[${areaIndex}].rooms[${roomIndex}].discoveryId`
+      }))
+    ),
+    'room discovery'
+  );
+  validateDuplicateValues(
+    [
+      ...registry.areas.flatMap((area, areaIndex) =>
+        area.mechanisms.map((mechanism, mechanismIndex) => ({
+          id: mechanism.persistentFlagId,
+          path: `areas[${areaIndex}].mechanisms[${mechanismIndex}].persistentFlagId`
+        }))
+      ),
+      ...registry.bossMechanisms.map((mechanism, mechanismIndex) => ({
+        id: mechanism.persistentFlagId,
+        path: `bossMechanisms[${mechanismIndex}].persistentFlagId`
+      }))
+    ],
+    'persistent flag'
+  );
 
   const ids = {
     areas: new Set(registry.areas.map(({ id }) => id)),
@@ -199,10 +261,21 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
             actor.id
           );
         }
+        const actorMechanismIds = new Set(
+          registry.bossMechanisms
+            .filter(({ bossActorId }) => bossActorId === actor.id)
+            .map(({ id }) => id)
+        );
         actor.boss.requiredMechanismIds.forEach((mechanismId, mechanismIndex) => {
           validateStableId(
             mechanismId,
             `actors[${actorIndex}].boss.requiredMechanismIds[${mechanismIndex}]`
+          );
+          addUnresolved(
+            mechanismId,
+            actorMechanismIds,
+            `actors[${actorIndex}].boss.requiredMechanismIds[${mechanismIndex}]`,
+            'boss mechanisms'
           );
         });
         actor.boss.phaseOneAttackIds.forEach((attackId, attackIndex) => {
@@ -267,6 +340,15 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
     });
   });
 
+  registry.bossMechanisms.forEach((mechanism, mechanismIndex) => {
+    addUnresolved(
+      mechanism.bossActorId,
+      ids.actors,
+      `bossMechanisms[${mechanismIndex}].bossActorId`,
+      'actors'
+    );
+  });
+
   registry.abilities.forEach((ability, abilityIndex) => {
     if (ability.displayName.trim().length === 0) {
       addMissing(
@@ -301,9 +383,7 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
     });
   });
 
-  const questStageIds = new Set(
-    registry.quests.flatMap(({ stages }) => stages.map(({ id }) => id))
-  );
+  const questsById = new Map(registry.quests.map((quest) => [quest.id, quest] as const));
   registry.quests.forEach((quest, questIndex) => {
     if (quest.displayName.trim().length === 0) {
       addMissing(`quests[${questIndex}].displayName`, 'Quests require a display name.', quest.id);
@@ -366,7 +446,25 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
       addUnresolved(node.speakerActorId, ids.actors, `${nodePath}.speakerActorId`, 'actors');
       addUnresolved(node.nextNodeId, nodeIds, `${nodePath}.nextNodeId`, 'dialogue nodes');
       addUnresolved(node.questId, ids.quests, `${nodePath}.questId`, 'quests');
-      addUnresolved(node.questStageId, questStageIds, `${nodePath}.questStageId`, 'quest stages');
+      if (node.questStageId !== undefined) {
+        if (node.questId === undefined) {
+          addMissing(
+            `${nodePath}.questId`,
+            'Dialogue quest-stage mutations require a quest ID.',
+            node.id
+          );
+        } else {
+          const referencedQuest = questsById.get(node.questId);
+          if (referencedQuest !== undefined) {
+            addUnresolved(
+              node.questStageId,
+              new Set(referencedQuest.stages.map(({ id }) => id)),
+              `${nodePath}.questStageId`,
+              `quest "${node.questId}" stages`
+            );
+          }
+        }
+      }
       node.choices.forEach((choice, choiceIndex) => {
         const choicePath = `${nodePath}.choices[${choiceIndex}]`;
         addUnresolved(choice.nextNodeId, nodeIds, `${choicePath}.nextNodeId`, 'dialogue nodes');
@@ -388,6 +486,9 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
     const triggerIds = new Set(area.triggers.map(({ id }) => id));
     const surfaceIds = new Set(area.surfaces.map(({ id }) => id));
     const mechanismIds = new Set(area.mechanisms.map(({ id }) => id));
+    const checkpointIds = new Set(area.checkpoints.map(({ id }) => id));
+    const transitionIds = new Set(area.transitions.map(({ id }) => id));
+    const discoveryIds = new Set(area.rooms.map(({ discoveryId }) => discoveryId));
 
     if (area.displayName.trim().length === 0) {
       addMissing(`${areaPath}.displayName`, 'Areas require a display name.');
@@ -451,8 +552,55 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
     area.triggers.forEach((trigger, triggerIndex) => {
       const triggerPath = `${areaPath}.triggers[${triggerIndex}]`;
       addUnresolved(trigger.roomId, roomIds, `${triggerPath}.roomId`, 'area rooms');
-      if (trigger.kind === 'interaction') {
-        addUnresolved(trigger.targetId, mechanismIds, `${triggerPath}.targetId`, 'area mechanisms');
+      if (trigger.targetId === undefined) {
+        addMissing(
+          `${triggerPath}.targetId`,
+          `Triggers of kind "${trigger.kind}" require a target ID.`,
+          trigger.id
+        );
+        return;
+      }
+      switch (trigger.kind) {
+        case 'room-entry':
+        case 'discovery':
+          addUnresolved(
+            trigger.targetId,
+            discoveryIds,
+            `${triggerPath}.targetId`,
+            'area room discoveries'
+          );
+          break;
+        case 'interaction':
+          addUnresolved(
+            trigger.targetId,
+            mechanismIds,
+            `${triggerPath}.targetId`,
+            'area mechanisms'
+          );
+          break;
+        case 'quest':
+          addUnresolved(trigger.targetId, ids.quests, `${triggerPath}.targetId`, 'quests');
+          break;
+        case 'transition':
+          addUnresolved(
+            trigger.targetId,
+            transitionIds,
+            `${triggerPath}.targetId`,
+            'area transitions'
+          );
+          break;
+        case 'checkpoint':
+          addUnresolved(
+            trigger.targetId,
+            checkpointIds,
+            `${triggerPath}.targetId`,
+            'area checkpoints'
+          );
+          break;
+        default: {
+          const unhandledTrigger: never = trigger;
+          void unhandledTrigger;
+        }
       }
     });
     area.mechanisms.forEach((mechanism, mechanismIndex) => {
