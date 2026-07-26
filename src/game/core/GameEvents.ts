@@ -66,6 +66,17 @@ type BaseGameEventMap = {
     readonly hookId: string;
     readonly sourceId: string;
   };
+  readonly 'dialogue:started': {
+    readonly dialogueId: string;
+    readonly speakerActorId: string;
+  };
+  readonly 'dialogue:completed': {
+    readonly dialogueId: string;
+    readonly questSignals: readonly {
+      readonly questId: string;
+      readonly questStageId?: string;
+    }[];
+  };
   readonly 'quest:transition-applied': {
     readonly questId: string;
     readonly fromStage?: string;

@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { BootScene } from './game/scenes/BootScene';
+import { DialogueScene } from './game/scenes/DialogueScene';
 import { PreloadScene } from './game/scenes/PreloadScene';
 import { TitleScene } from './game/scenes/TitleScene';
 import { TransitionScene } from './game/scenes/TransitionScene';
@@ -17,7 +18,7 @@ export function createGame(parent: string): Phaser.Game {
     width: LOGICAL_WIDTH,
     height: LOGICAL_HEIGHT,
     backgroundColor: '#10120f',
-    scene: [BootScene, PreloadScene, TitleScene, TransitionScene, WorldScene],
+    scene: [BootScene, PreloadScene, TitleScene, TransitionScene, WorldScene, DialogueScene],
     dom: {
       createContainer: true
     },

@@ -3,7 +3,8 @@ export const SceneKeys = {
   Preload: 'preload',
   Title: 'title',
   Transition: 'transition',
-  World: 'world'
+  World: 'world',
+  Dialogue: 'dialogue'
 } as const;
 
 export type SceneKey = (typeof SceneKeys)[keyof typeof SceneKeys];
