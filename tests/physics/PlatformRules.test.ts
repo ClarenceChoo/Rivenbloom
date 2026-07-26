@@ -138,4 +138,77 @@ describe('PlatformRules', () => {
       velocity: { x: 0, y: 0 }
     });
   });
+
+  it('sweeps the authored collision body against a solid wall', () => {
+    const wall: SurfaceDefinition = {
+      id: 'test-wall',
+      roomId: 'test-room',
+      kind: 'solid',
+      collision: { x: 300, y: 300, width: 40, height: 250 },
+      materialId: 'stone'
+    };
+    const rules = new PlatformRules([wall], roomBounds, playerBody);
+
+    const resolution = rules.resolve(
+      { x: 250, y: 500 },
+      { x: 330, y: 500 },
+      { x: 4800, y: 0 },
+      { ignoreOneWay: false }
+    );
+
+    expect(resolution).toEqual({
+      position: { x: 282, y: 500 },
+      velocity: { x: 0, y: 0 }
+    });
+    expect(
+      rules.resolve(
+        { x: 390, y: 500 },
+        { x: 300, y: 500 },
+        { x: -5400, y: 0 },
+        { ignoreOneWay: false }
+      )
+    ).toEqual({
+      position: { x: 358, y: 500 },
+      velocity: { x: 0, y: 0 }
+    });
+  });
+
+  it('sweeps the authored collision body against a solid ceiling', () => {
+    const ceiling: SurfaceDefinition = {
+      id: 'test-ceiling',
+      roomId: 'test-room',
+      kind: 'solid',
+      collision: { x: 100, y: 300, width: 300, height: 30 },
+      materialId: 'stone'
+    };
+    const rules = new PlatformRules([ceiling], roomBounds, playerBody);
+
+    const resolution = rules.resolve(
+      { x: 200, y: 420 },
+      { x: 200, y: 380 },
+      { x: 0, y: -2400 },
+      { ignoreOneWay: false }
+    );
+
+    expect(resolution).toEqual({
+      position: { x: 200, y: 412 },
+      velocity: { x: 0, y: 0 }
+    });
+  });
+
+  it('permits lateral passage through one-way surfaces', () => {
+    const rules = new PlatformRules([oneWay], roomBounds, playerBody);
+
+    const resolution = rules.resolve(
+      { x: 50, y: 450 },
+      { x: 200, y: 450 },
+      { x: 9000, y: 0 },
+      { ignoreOneWay: false }
+    );
+
+    expect(resolution).toEqual({
+      position: { x: 200, y: 450 },
+      velocity: { x: 9000, y: 0 }
+    });
+  });
 });

@@ -1,11 +1,10 @@
 import type { PlayerSpawnDefinition } from '../../data/types';
 import type { InputService } from '../../input/InputService';
+import { advanceMovementFrame } from '../../physics/MovementFrame';
 import {
   createMovementState,
-  stepMovement,
   type MovementInput,
   type MovementState,
-  type MovementStep,
   type MovementTuning,
   type Vector2
 } from '../../physics/MovementModel';
@@ -47,38 +46,15 @@ export class PlayerController {
       respawn: this.pendingRespawn,
       ...(this.pendingKnockback === undefined ? {} : { knockback: this.pendingKnockback })
     };
-    const ignoreOneWay = this.state.dropThroughRemaining > 0;
-    const contacts = this.options.platforms.query(this.state.position, {
-      ignoreOneWay
-    });
-    const step = stepMovement(
+    const step = advanceMovementFrame(
       this.state,
       movementInput,
-      contacts,
+      this.options.platforms,
       this.options.tuning,
       deltaMs / 1000
     );
-    const resolution = this.options.platforms.resolve(
-      this.state.position,
-      step.state.position,
-      step.state.velocity,
-      { ignoreOneWay: step.state.dropThroughRemaining > 0 }
-    );
-    this.state = {
-      ...step.state,
-      position: resolution.position,
-      velocity: resolution.velocity
-    };
-    const resolvedStep: MovementStep = {
-      ...step,
-      state: this.state,
-      animation: {
-        ...step.animation,
-        state: this.state.machine.value,
-        facing: this.state.facing
-      }
-    };
-    this.options.view.apply(resolvedStep, timeMs);
+    this.state = step.state;
+    this.options.view.apply(step, timeMs);
     this.pendingRespawn = false;
     this.pendingKnockback = undefined;
   }

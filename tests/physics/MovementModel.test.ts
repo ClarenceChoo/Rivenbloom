@@ -283,33 +283,6 @@ describe('stepMovement', () => {
     expect(result.state.machine.value).toBe('fall');
   });
 
-  it('keeps drop-through active across 30 Hz deterministic substeps', () => {
-    const oneWay: MovementContacts = {
-      grounded: true,
-      supportKind: 'one-way',
-      climbable: false
-    };
-
-    const result = stepMovement(
-      createMovementState({ x: 1600, y: 410 }, 'right'),
-      {
-        ...neutralInput,
-        moveY: 1,
-        jumpPressed: true,
-        jumpHeld: true,
-        dropPressed: true
-      },
-      oneWay,
-      tuning,
-      1 / 30
-    );
-
-    expect(result.state.machine.value).toBe('fall');
-    expect(result.state.position.y).toBeCloseTo(412.5, 8);
-    expect(result.state.velocity.y).toBe(90);
-    expect(result.state.dropThroughRemaining).toBeCloseTo(0.18 - 1 / 60, 8);
-  });
-
   it('applies knockback as a locked hurt-state impulse', () => {
     const running = {
       ...createMovementState({ x: 100, y: 566 }, 'right'),
@@ -356,6 +329,22 @@ describe('stepMovement', () => {
       expect(result.state.machine.value).toBe('hurt');
     }
   );
+
+  it('retains hurt while the knockback lock remains active at 60 Hz', () => {
+    const hurt = {
+      ...createMovementState({ x: 100, y: 500 }, 'right'),
+      velocity: { x: -120, y: -60 },
+      machine: { value: 'hurt' as const },
+      grounded: false,
+      knockbackRemaining: 0.16
+    };
+
+    const result = stepMovement(hurt, neutralInput, airborne, tuning, 1 / 60);
+
+    expect(result.state.knockbackRemaining).toBeCloseTo(0.16 - 1 / 60, 8);
+    expect(result.state.machine.value).toBe('hurt');
+    expect(result.state.velocity).toEqual({ x: -120, y: -30 });
+  });
 
   it.each([
     { contacts: grounded, input: neutralInput, expected: 'idle' as const },
@@ -426,37 +415,6 @@ describe('stepMovement', () => {
       knockback: 0
     });
     expect(result.events.respawned).toBe(true);
-  });
-
-  it('produces the same 60 Hz trajectory through moderate 30 Hz frame drops', () => {
-    const runInput = { ...neutralInput, moveX: 1 };
-    let sixtyHz = createMovementState({ x: 0, y: 566 }, 'right');
-    let thirtyHz = createMovementState({ x: 0, y: 566 }, 'right');
-
-    for (let frame = 0; frame < 30; frame += 1) {
-      sixtyHz = stepMovement(sixtyHz, runInput, grounded, tuning, 1 / 60).state;
-    }
-    for (let frame = 0; frame < 15; frame += 1) {
-      thirtyHz = stepMovement(thirtyHz, runInput, grounded, tuning, 1 / 30).state;
-    }
-
-    expect(sixtyHz.velocity.x).toBe(240);
-    expect(sixtyHz.position.x).toBeCloseTo(98, 8);
-    expect(thirtyHz.velocity.x).toBe(sixtyHz.velocity.x);
-    expect(thirtyHz.position.x).toBeCloseTo(sixtyHz.position.x, 8);
-  });
-
-  it('caps oversized frame gaps before deterministic sub-stepping', () => {
-    const result = stepMovement(
-      createMovementState({ x: 0, y: 566 }, 'right'),
-      { ...neutralInput, moveX: 1 },
-      grounded,
-      tuning,
-      0.2
-    );
-
-    expect(result.state.velocity.x).toBeCloseTo(60, 8);
-    expect(result.state.position.x).toBeCloseTo(2, 8);
   });
 
   it('uses the lower authored acceleration rate while airborne', () => {

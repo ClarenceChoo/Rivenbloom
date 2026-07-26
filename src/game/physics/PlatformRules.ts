@@ -23,7 +23,6 @@ export class PlatformRules {
   ) {}
 
   public query(position: Vector2, options: PlatformQueryOptions): MovementContacts {
-    void this.bounds;
     const left = position.x + this.body.offset.x;
     const right = left + this.body.size.width;
     const top = position.y + this.body.offset.y;
@@ -61,12 +60,57 @@ export class PlatformRules {
   ): MotionResolution {
     const minimumX = this.bounds.x - this.body.offset.x;
     const maximumX = this.bounds.x + this.bounds.width - this.body.offset.x - this.body.size.width;
-    const resolvedX = Math.max(minimumX, Math.min(maximumX, proposedPosition.x));
-    const resolvedVelocityX = resolvedX === proposedPosition.x ? velocity.x : 0;
-    if (velocity.y >= 0) {
-      const left = resolvedX + this.body.offset.x;
-      const right = left + this.body.size.width;
-      const previousBottom = previousPosition.y + this.body.offset.y + this.body.size.height;
+    let resolvedX = Math.max(minimumX, Math.min(maximumX, proposedPosition.x));
+    let resolvedVelocityX = resolvedX === proposedPosition.x ? velocity.x : 0;
+    const previousLeft = previousPosition.x + this.body.offset.x;
+    const previousRight = previousLeft + this.body.size.width;
+    const previousTop = previousPosition.y + this.body.offset.y;
+    const previousBottom = previousTop + this.body.size.height;
+    const solidSurfaces = this.surfaces.filter((surface) => surface.kind === 'solid');
+
+    if (resolvedX > previousPosition.x) {
+      const proposedRight = resolvedX + this.body.offset.x + this.body.size.width;
+      const wall = solidSurfaces
+        .filter(({ collision }) => {
+          return (
+            overlaps(previousTop, previousBottom, collision.y, collision.y + collision.height) &&
+            previousRight <= collision.x + CONTACT_EPSILON &&
+            proposedRight >= collision.x
+          );
+        })
+        .sort((leftSurface, rightSurface) => leftSurface.collision.x - rightSurface.collision.x)[0];
+      if (wall !== undefined) {
+        resolvedX = wall.collision.x - this.body.offset.x - this.body.size.width;
+        resolvedVelocityX = 0;
+      }
+    } else if (resolvedX < previousPosition.x) {
+      const proposedLeft = resolvedX + this.body.offset.x;
+      const wall = solidSurfaces
+        .filter(({ collision }) => {
+          const collisionRight = collision.x + collision.width;
+          return (
+            overlaps(previousTop, previousBottom, collision.y, collision.y + collision.height) &&
+            previousLeft >= collisionRight - CONTACT_EPSILON &&
+            proposedLeft <= collisionRight
+          );
+        })
+        .sort(
+          (leftSurface, rightSurface) =>
+            rightSurface.collision.x +
+            rightSurface.collision.width -
+            (leftSurface.collision.x + leftSurface.collision.width)
+        )[0];
+      if (wall !== undefined) {
+        resolvedX = wall.collision.x + wall.collision.width - this.body.offset.x;
+        resolvedVelocityX = 0;
+      }
+    }
+
+    const left = resolvedX + this.body.offset.x;
+    const right = left + this.body.size.width;
+    let resolvedY = proposedPosition.y;
+    let resolvedVelocityY = velocity.y;
+    if (proposedPosition.y > previousPosition.y) {
       const proposedBottom = proposedPosition.y + this.body.offset.y + this.body.size.height;
       const landing = this.surfaces
         .filter((surface) => {
@@ -81,18 +125,35 @@ export class PlatformRules {
         })
         .sort((leftSurface, rightSurface) => leftSurface.collision.y - rightSurface.collision.y)[0];
       if (landing !== undefined) {
-        return {
-          position: {
-            x: resolvedX,
-            y: landing.collision.y - this.body.offset.y - this.body.size.height
-          },
-          velocity: { x: resolvedVelocityX, y: 0 }
-        };
+        resolvedY = landing.collision.y - this.body.offset.y - this.body.size.height;
+        resolvedVelocityY = 0;
+      }
+    } else if (proposedPosition.y < previousPosition.y) {
+      const proposedTop = proposedPosition.y + this.body.offset.y;
+      const ceiling = solidSurfaces
+        .filter(({ collision }) => {
+          const collisionBottom = collision.y + collision.height;
+          return (
+            overlaps(left, right, collision.x, collision.x + collision.width) &&
+            previousTop >= collisionBottom - CONTACT_EPSILON &&
+            proposedTop <= collisionBottom
+          );
+        })
+        .sort(
+          (leftSurface, rightSurface) =>
+            rightSurface.collision.y +
+            rightSurface.collision.height -
+            (leftSurface.collision.y + leftSurface.collision.height)
+        )[0];
+      if (ceiling !== undefined) {
+        resolvedY = ceiling.collision.y + ceiling.collision.height - this.body.offset.y;
+        resolvedVelocityY = 0;
       }
     }
+
     return {
-      position: { x: resolvedX, y: proposedPosition.y },
-      velocity: { x: resolvedVelocityX, y: velocity.y }
+      position: { x: resolvedX, y: resolvedY },
+      velocity: { x: resolvedVelocityX, y: resolvedVelocityY }
     };
   }
 }

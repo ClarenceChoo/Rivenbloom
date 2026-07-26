@@ -99,7 +99,7 @@ const moveToward = (value: number, target: number, amount: number): number => {
   return target;
 };
 
-const stepMovementOnce = (
+export const stepMovement = (
   state: MovementState,
   input: MovementInput,
   contacts: MovementContacts,
@@ -198,15 +198,17 @@ const stepMovementOnce = (
             : Math.min(tuning.maxFallSpeed, verticalStart + tuning.gravity * dt);
   let machine = state.machine;
   if (knockbackStarted) machine = requestPlayerState(machine, 'hurt');
-  else if (dropThroughStarted) machine = requestPlayerState(machine, 'fall');
-  else if (jumped) machine = requestPlayerState(machine, 'jump');
-  else if (climbing) machine = requestPlayerState(machine, 'climb');
-  else if (landed) machine = requestPlayerState(machine, 'land');
-  else if (!effectivelyGrounded && (machine.value !== 'jump' || velocityY >= 0)) {
-    machine = requestPlayerState(machine, 'fall');
-  } else if (controlMoveX !== 0) machine = requestPlayerState(machine, 'run');
-  else if (effectivelyGrounded && velocityX === 0 && !landingLocked) {
-    machine = requestPlayerState(machine, 'idle');
+  else if (!knockbackLocked) {
+    if (dropThroughStarted) machine = requestPlayerState(machine, 'fall');
+    else if (jumped) machine = requestPlayerState(machine, 'jump');
+    else if (climbing) machine = requestPlayerState(machine, 'climb');
+    else if (landed) machine = requestPlayerState(machine, 'land');
+    else if (!effectivelyGrounded && (machine.value !== 'jump' || velocityY >= 0)) {
+      machine = requestPlayerState(machine, 'fall');
+    } else if (controlMoveX !== 0) machine = requestPlayerState(machine, 'run');
+    else if (effectivelyGrounded && velocityX === 0 && !landingLocked) {
+      machine = requestPlayerState(machine, 'idle');
+    }
   }
   const nextState: MovementState = {
     ...state,
@@ -239,54 +241,5 @@ const stepMovementOnce = (
       dropThroughStarted,
       respawned: false
     }
-  };
-};
-
-export const stepMovement = (
-  state: MovementState,
-  input: MovementInput,
-  contacts: MovementContacts,
-  tuning: MovementTuning,
-  dt: number
-): MovementStep => {
-  let remaining = Math.min(tuning.maxFrameTime, Math.max(0, dt));
-  let current = state;
-  let animation: MovementStep['animation'] = {
-    state: state.machine.value,
-    facing: state.facing,
-    speedRatio: Math.abs(state.velocity.x) / tuning.maxRunSpeed
-  };
-  let jumped = false;
-  let landed = false;
-  let dropThroughStarted = false;
-  let respawned = false;
-  let firstStep = true;
-
-  while (remaining > Number.EPSILON) {
-    const stepTime = Math.min(tuning.fixedStep, remaining);
-    const stepInput: MovementInput = firstStep
-      ? input
-      : {
-          ...input,
-          jumpPressed: false,
-          dropPressed: false,
-          respawn: false,
-          knockback: undefined
-        };
-    const step = stepMovementOnce(current, stepInput, contacts, tuning, stepTime);
-    current = step.state;
-    animation = step.animation;
-    jumped ||= step.events.jumped;
-    landed ||= step.events.landed;
-    dropThroughStarted ||= step.events.dropThroughStarted;
-    respawned ||= step.events.respawned;
-    remaining -= stepTime;
-    firstStep = false;
-  }
-
-  return {
-    state: current,
-    animation,
-    events: { jumped, landed, dropThroughStarted, respawned }
   };
 };
