@@ -59,3 +59,5 @@ density through pure impactLeafShapes, authored melee effect+sound cue
 emission, and code-authored runtime visual provenance entries; dash e2e now
 unlocks Wayfinder Dash through the development-only window.__RIVENBLOOM_TEST__
 bridge because a fresh save correctly starts with lumen-bolt only).
+Task 9: complete (commits 0ed3eb4..f337b76, full check + all e2e + browser
+save spec green).
