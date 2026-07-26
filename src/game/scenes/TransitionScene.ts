@@ -1,13 +1,16 @@
 import Phaser from 'phaser';
 import { SceneScope } from '../core/SceneScope';
+import { getAreaDefinition, INITIAL_WORLD_AREA_ID } from '../data/areas';
 import { createTransitionShell } from '../ui/dom/menuShell';
 import { SceneKeys } from './SceneKeys';
 
-type TransitionPayload = {
+export type TransitionPayload = {
   readonly destinationId: string;
   readonly destinationName: string;
   readonly reducedMotion?: boolean;
 };
+
+const TRANSITION_HOLD_MS = 300;
 
 export class TransitionScene extends Phaser.Scene {
   private scope = new SceneScope();
@@ -34,6 +37,14 @@ export class TransitionScene extends Phaser.Scene {
       this.payload.reducedMotion === true
     );
     this.scope.add(() => shell.dispose());
+    const destinationAreaId =
+      getAreaDefinition(this.payload.destinationId)?.id ??
+      (this.payload.destinationId === 'wrens-rest' ? INITIAL_WORLD_AREA_ID : undefined);
+    if (destinationAreaId === undefined) return;
+    const handoff = this.time.delayedCall(TRANSITION_HOLD_MS, () => {
+      this.scene.start(SceneKeys.World, { areaId: destinationAreaId });
+    });
+    this.scope.add(() => handoff.remove(false));
   }
 
   private shutdown(): void {
