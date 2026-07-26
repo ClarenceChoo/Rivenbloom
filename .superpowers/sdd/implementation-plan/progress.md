@@ -72,3 +72,11 @@ region content pass alongside live enemies.
 Task 11: minor (deferred to Task 12): XP awards are defined in balance data but
 no system consumes combat:actor-defeated yet.
 Task 11: complete (commits 9634833..34ac171, full check + all e2e green).
+Task 12: in progress — PuzzleSystem and BreakableSystem landed with tests
+(commit c40218b); the six-area content pass covering all nine named places
+plus the world graph test landed (commit 1f4d318, full check + all e2e
+green). Remaining before Task 12 closes: WorldScene runtime wiring (live
+enemies via EnemyFactory, TriggerSystem/CheckpointSystem/PuzzleSystem/NPC
+routing, area transitions in play, XP awards), the timed critical-path
+traversal, breakable-wall placement, and per-area art keys (deferred to
+Task 15 — new areas reuse the Brackenreach kit meanwhile).
