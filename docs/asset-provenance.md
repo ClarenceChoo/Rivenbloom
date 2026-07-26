@@ -31,6 +31,15 @@ for generated work.
 | `public/assets/ui/ui-icons.png` | 2026-07-25 | OpenAI built-in image generation + local chroma removal | Original project production source | Image 1 was the approved gameplay concept as a material/style reference. Generated 20 original botanical-brass HUD, inventory, navigation, accessibility, input, and save icons on uniform magenta; removed sampled `#f303f5` with soft matte/despill. Grid separation, icon semantics, small-scale contrast, and alpha were visually inspected. |
 | `public/assets/ui/title-wrens-rest-background.png` | 2026-07-25 | OpenAI built-in image generation | Original project production asset | Image 1 was the approved original title concept used only as a palette, material, mood, and world-identity reference. Generated a new full-bleed 16:9 Wren's Rest twilight vista with quiet menu-safe values, original timber/moss/copper architecture, amber seed-lanterns, and the distant Rootglass Reliquary. No concept pixels were cropped or reused. Copied unchanged from the generated output after inspection for accidental text, watermarking, baked UI, visible rain streaks, false ledges, and palette drift; none were found. |
 
+## Code-Authored Runtime Visuals
+
+| Asset | Date | Source / tool | Rights and use | Prompt summary / modifications |
+| --- | --- | --- | --- | --- |
+| Slash ribbon (`drawSlashRibbon`, `src/game/combat/CombatSceneAdapter.ts`) | 2026-07-26 | Hand-authored Phaser Graphics vector shape in repository code | Original project production visual | Amber crescent ribbon with cream edge line drawn from fixed polygon points for melee swings; scaled per combo stage and mirrored per facing. No external imagery or generation tool involved. |
+| Impact leaf burst (`impactLeafShapes`, `src/game/effects/ParticleProfiles.ts`) | 2026-07-26 | Hand-authored deterministic triangle set in repository code | Original project production visual | Up to six cream/amber/coral leaf triangles rendered by `CombatSceneAdapter`; density follows the accessibility-scaled `particleCount` from `combatFeedbackFor`. No external imagery or generation tool involved. |
+| Lumen Bolt projectile leaf (`drawLumenLeaf`, `src/game/combat/CombatSceneAdapter.ts`) | 2026-07-26 | Hand-authored Phaser Graphics vector shape in repository code | Original project production visual | Mint leaf-shaped polygon with cream midrib line used for the Lumen Bolt projectile. No external imagery or generation tool involved. |
+| Botanical ability glyph (`drawBotanicalGlyph`, `src/game/combat/CombatSceneAdapter.ts`) | 2026-07-26 | Hand-authored Phaser Graphics vector shape in repository code | Original project production visual | Five-leaf radial glyph in translucent mint with cream outlines used for Aegis Veil and Resonant Pulse; rotation disabled under reduced motion. No external imagery or generation tool involved. |
+
 Production entries record:
 
 - repository path and stable asset key;

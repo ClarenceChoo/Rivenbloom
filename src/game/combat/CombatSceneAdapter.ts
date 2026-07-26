@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import type { AccessibilitySettingsState } from '../config/accessibility';
 import type { GameEvents } from '../core/GameEvents';
 import { attackDefinitions } from '../data/attacks';
+import type { ProjectileSnapshot } from '../abilities/AbilitySystem';
 import type {
   ActorDefinition,
   ActorSpawnDefinition,
@@ -9,18 +10,27 @@ import type {
   PointDefinition
 } from '../data/types';
 import { EffectPool } from '../effects/EffectPool';
-import { combatFeedbackFor } from '../effects/ParticleProfiles';
+import { combatFeedbackFor, impactLeafShapes } from '../effects/ParticleProfiles';
 import type { PlayerCombatDirective, PlayerCombatState } from './PlayerCombat';
+import type { PlayerProjectileIntercept } from './PlayerCombat';
 import { damageTypeId } from './CombatTypes';
-import { resolveDamage } from './DamageResolver';
-import { HitboxSystem, type AttackInstance } from './HitboxSystem';
+import {
+  CombatTimeline,
+  createProjectileAttackDefinition,
+  type ProjectileAttackDefinition
+} from './CombatTimeline';
+import { HitboxSystem } from './HitboxSystem';
 import type { Facing } from '../physics/MovementModel';
+import {
+  CombatAbilityRuntime,
+  type CombatRuntimeOutput,
+  type CombatRuntimeTarget
+} from './CombatAbilityRuntime';
 
 const FIXED_FRAME_MS = 1_000 / 60;
 const MAX_FRAME_MS = 50;
 const AMBER = 0xf5c96a;
 const CREAM = 0xf0e3c0;
-const CORAL = 0xee765f;
 const MINT = 0x9ee7d7;
 
 type SlashSpec = {
@@ -32,6 +42,7 @@ type SlashSpec = {
 type ImpactSpec = {
   readonly position: PointDefinition;
   readonly flashAlpha: number;
+  readonly particleCount: number;
 };
 
 type DamageLabelSpec = {
@@ -59,14 +70,6 @@ type TimedLabel = {
   remainingFrames: number;
 };
 
-type ProjectileAttackDefinition = AttackDefinition & {
-  readonly projectile: {
-    readonly speedPerFrame: number;
-    readonly lifetimeFrames: number;
-    readonly pierces: boolean;
-  };
-};
-
 export type CombatSceneSnapshot = {
   readonly targetHealth: number;
   readonly targetState: 'sleep' | 'dead';
@@ -74,6 +77,12 @@ export type CombatSceneSnapshot = {
   readonly activeProjectileCount: number;
   readonly lastAttackId: string | undefined;
   readonly lastAbilityId: string | undefined;
+  readonly targetStatusIds: readonly string[];
+  readonly lastMechanismRequestId: string | undefined;
+};
+
+export type CombatPlayerRuntimePort = {
+  readonly interceptProjectile: (projectile: ProjectileSnapshot) => PlayerProjectileIntercept;
 };
 
 const drawSlashRibbon = (graphics: Phaser.GameObjects.Graphics): void => {
@@ -95,15 +104,11 @@ const drawSlashRibbon = (graphics: Phaser.GameObjects.Graphics): void => {
     .lineBetween(-42, 3, 50, -11);
 };
 
-const drawImpactLeaves = (graphics: Phaser.GameObjects.Graphics): void => {
-  graphics
-    .clear()
-    .fillStyle(CREAM, 0.9)
-    .fillTriangle(-5, 2, -26, -15, -13, 8)
-    .fillStyle(AMBER, 0.85)
-    .fillTriangle(2, -4, 15, -27, 11, 3)
-    .fillStyle(CORAL, 0.8)
-    .fillTriangle(7, 5, 31, -4, 13, 15);
+const drawImpactLeaves = (graphics: Phaser.GameObjects.Graphics, particleCount: number): void => {
+  graphics.clear();
+  for (const shape of impactLeafShapes(particleCount)) {
+    graphics.fillStyle(shape.colour, shape.alpha).fillPoints([...shape.points], true);
+  }
 };
 
 const drawLumenLeaf = (graphics: Phaser.GameObjects.Graphics): void => {
@@ -164,6 +169,8 @@ const drawBotanicalGlyph = (graphics: Phaser.GameObjects.Graphics): void => {
 
 export class CombatSceneAdapter {
   private readonly hitboxes: HitboxSystem;
+  private readonly timeline: CombatTimeline;
+  private readonly abilityRuntime: CombatAbilityRuntime;
   private readonly targetImage: Phaser.GameObjects.Image;
   private readonly targetFlashImage: Phaser.GameObjects.Image;
   private readonly slashPool: EffectPool<SlashSpec, Phaser.GameObjects.Graphics>;
@@ -172,7 +179,6 @@ export class CombatSceneAdapter {
   private readonly abilityPool: EffectPool<AbilityVisualSpec, Phaser.GameObjects.Graphics>;
   private readonly labelPool: EffectPool<DamageLabelSpec, Phaser.GameObjects.Text>;
   private readonly ownedObjects: Phaser.GameObjects.GameObject[] = [];
-  private readonly activeAttacks: AttackInstance[] = [];
   private readonly activeProjectiles = new Map<string, Phaser.GameObjects.Graphics>();
   private readonly timedGraphics: TimedGraphics[] = [];
   private readonly timedLabels: TimedLabel[] = [];
@@ -185,6 +191,7 @@ export class CombatSceneAdapter {
   private shakeFrames = 0;
   private lastAttackId: string | undefined;
   private lastAbilityId: string | undefined;
+  private lastMechanismRequestId: string | undefined;
   private readonly targetPosition: PointDefinition;
   private readonly targetArmor: number;
 
@@ -194,6 +201,8 @@ export class CombatSceneAdapter {
     playerPosition: PointDefinition,
     target: ActorDefinition,
     targetSpawn: ActorSpawnDefinition,
+    runtimeTargets: readonly CombatRuntimeTarget[],
+    private readonly playerRuntime: CombatPlayerRuntimePort,
     private readonly settings: AccessibilitySettingsState,
     private readonly events: GameEvents
   ) {
@@ -216,6 +225,8 @@ export class CombatSceneAdapter {
         renderMetrics: target.render.size
       }
     ]);
+    this.timeline = new CombatTimeline(this.hitboxes);
+    this.abilityRuntime = new CombatAbilityRuntime(runtimeTargets);
     const texture = scene.textures.get(target.render.assetKey);
     const frameName = `${target.id}-sleep`;
     if (!texture.has(frameName)) {
@@ -267,11 +278,11 @@ export class CombatSceneAdapter {
       capacity: 10,
       create: () => {
         const graphics = scene.add.graphics().setDepth(16).setVisible(false);
-        drawImpactLeaves(graphics);
         this.ownedObjects.push(graphics);
         return graphics;
       },
       activate: (graphics, spec) => {
+        drawImpactLeaves(graphics, spec.particleCount);
         graphics
           .setPosition(spec.position.x, spec.position.y)
           .setAlpha(Math.max(0.35, spec.flashAlpha))
@@ -343,8 +354,24 @@ export class CombatSceneAdapter {
       targetPosition: this.targetPosition,
       activeProjectileCount: this.activeProjectiles.size,
       lastAttackId: this.lastAttackId,
-      lastAbilityId: this.lastAbilityId
+      lastAbilityId: this.lastAbilityId,
+      targetStatusIds: this.abilityRuntime
+        .statusState('arch-briar-scrapper')
+        .effects.map(({ definition }) => definition.id),
+      lastMechanismRequestId: this.lastMechanismRequestId
     };
+  }
+
+  public interceptProjectile(projectile: ProjectileSnapshot): PlayerProjectileIntercept {
+    const result = this.playerRuntime.interceptProjectile(projectile);
+    if (result.converted) {
+      this.events.emit('combat:projectile-converted', {
+        actorId: 'mara-vey',
+        projectileId: result.projectileId,
+        manaRestored: result.manaRestored
+      });
+    }
+    return result;
   }
 
   public consumeHitStop(deltaMs: number): boolean {
@@ -365,7 +392,7 @@ export class CombatSceneAdapter {
       if (directive.kind === 'activate-attack') {
         const attack = attackDefinitions.find(({ id }) => id === directive.attackId);
         if (attack === undefined) continue;
-        this.activeAttacks.push(this.hitboxes.activate('mara-vey', attack, facing));
+        this.timeline.activate('mara-vey', attack, facing, directive.activationDelayFrames ?? 0);
         this.lastAttackId = attack.id;
         const stage = attack.id.endsWith('-2') ? 2 : attack.id.endsWith('-3') ? 3 : 1;
         const member = this.slashPool.spawn({ position: playerPosition, facing, stage });
@@ -383,7 +410,12 @@ export class CombatSceneAdapter {
         continue;
       }
       if (directive.effect.kind === 'projectile') {
-        this.spawnProjectile(directive.effect.attackId, playerPosition, facing);
+        this.spawnProjectile(
+          directive.effect.attackId,
+          playerPosition,
+          facing,
+          directive.activationDelayFrames ?? 0
+        );
         this.lastAbilityId = 'lumen-bolt';
         usedAbilities.add('lumen-bolt');
       } else if (directive.effect.kind === 'dash') {
@@ -396,6 +428,9 @@ export class CombatSceneAdapter {
       } else if (directive.effect.kind === 'area-status') {
         this.lastAbilityId = 'resonant-pulse';
         usedAbilities.add('resonant-pulse');
+        this.handleRuntimeOutputs(
+          this.abilityRuntime.applyAreaStatus(directive.effect, playerPosition, 'mara-vey')
+        );
         this.spawnAbilityGlyph(playerPosition, 'pulse', directive.effect.statusDurationFrames);
       }
     }
@@ -429,7 +464,6 @@ export class CombatSceneAdapter {
   }
 
   public dispose(): void {
-    this.activeAttacks.length = 0;
     this.activeProjectiles.clear();
     this.timedGraphics.length = 0;
     this.timedLabels.length = 0;
@@ -442,33 +476,29 @@ export class CombatSceneAdapter {
     this.ownedObjects.length = 0;
   }
 
-  private spawnProjectile(attackId: string, playerPosition: PointDefinition, facing: Facing): void {
+  private spawnProjectile(
+    attackId: string,
+    playerPosition: PointDefinition,
+    facing: Facing,
+    activationDelayFrames: number
+  ): void {
     const definition = attackDefinitions.find(({ id }) => id === attackId);
     if (definition === undefined) return;
-    const projectile: ProjectileAttackDefinition = {
-      ...definition,
-      anticipationFrames: 0,
-      activeFrames: 48,
-      recoveryFrames: 0,
-      hitboxes: definition.hitboxes.map(({ bounds }) => ({
-        startFrame: 1,
-        endFrame: 48,
-        bounds
-      })),
-      projectile: {
-        speedPerFrame: 12,
-        lifetimeFrames: 48,
-        pierces: false
-      }
-    };
+    const projectile = createProjectileAttackDefinition(definition, {
+      speedPerFrame: 12,
+      lifetimeFrames: 48,
+      pierces: false
+    });
     this.hitboxes.updatePosition('mara-vey', playerPosition);
-    const instance = this.hitboxes.activate('mara-vey', projectile, facing);
-    this.activeAttacks.push(instance);
+    const instance = this.timeline.activate('mara-vey', projectile, facing, activationDelayFrames);
     const visual = this.projectilePool.spawn({
       x: playerPosition.x,
       y: playerPosition.y - 58
     });
-    if (visual !== undefined) this.activeProjectiles.set(instance.id, visual);
+    if (visual !== undefined) {
+      visual.setVisible(false);
+      this.activeProjectiles.set(instance.id, visual);
+    }
   }
 
   private spawnAbilityGlyph(
@@ -487,29 +517,37 @@ export class CombatSceneAdapter {
   }
 
   private advanceFrame(): void {
-    for (let index = this.activeAttacks.length - 1; index >= 0; index -= 1) {
-      const current = this.activeAttacks[index];
-      if (current === undefined) continue;
-      const advanced = this.hitboxes.advance(current);
-      this.activeAttacks[index] = advanced.instance;
-      const projectile = this.activeProjectiles.get(current.id);
+    const timeline = this.timeline.advance();
+    for (const advanced of timeline.advances) {
+      const projectile = this.activeProjectiles.get(advanced.instance.id);
       if (projectile !== undefined) {
-        const direction = current.facing === 'right' ? 1 : -1;
+        const attack = advanced.instance.attack as ProjectileAttackDefinition;
+        const direction = advanced.instance.facing === 'right' ? 1 : -1;
+        const travelFrame = Math.max(0, advanced.instance.frame - attack.anticipationFrames);
         projectile.setPosition(
-          current.origin.x + direction * (30 + advanced.instance.frame * 12),
-          current.origin.y - 58
+          advanced.instance.origin.x +
+            direction * (30 + travelFrame * attack.projectile.speedPerFrame),
+          advanced.instance.origin.y - 58
         );
+        projectile.setVisible(advanced.instance.phase === 'active');
       }
       for (const hit of advanced.hits) {
-        if (hit.targetId === 'arch-briar-scrapper') this.damageTarget(hit.damage, current.facing);
-      }
-      if (advanced.instance.phase !== 'complete') continue;
-      this.activeAttacks.splice(index, 1);
-      if (projectile !== undefined) {
-        this.activeProjectiles.delete(current.id);
-        this.projectilePool.release(projectile);
+        if (hit.targetId === 'arch-briar-scrapper') {
+          this.damageTarget(
+            hit.damage,
+            advanced.instance.facing,
+            projectile === undefined ? 'melee' : 'projectile'
+          );
+        }
       }
     }
+    for (const instanceId of timeline.completedInstanceIds) {
+      const projectile = this.activeProjectiles.get(instanceId);
+      if (projectile === undefined) continue;
+      this.activeProjectiles.delete(instanceId);
+      this.projectilePool.release(projectile);
+    }
+    this.handleRuntimeOutputs(this.abilityRuntime.advance());
     this.advanceTimedEffects();
     if (this.targetFlashFrames > 0) {
       this.targetFlashFrames -= 1;
@@ -517,15 +555,23 @@ export class CombatSceneAdapter {
     }
   }
 
-  private damageTarget(damage: AttackDefinition['damage'], facing: Facing): void {
+  private damageTarget(
+    damage: AttackDefinition['damage'],
+    facing: Facing,
+    sourceKind: 'melee' | 'projectile' | 'hazard'
+  ): void {
     if (this.targetState === 'dead') return;
-    const result = resolveDamage(
+    const result = this.abilityRuntime.resolveDamage(
+      'arch-briar-scrapper',
       {
-        amount: damage.amount,
-        damageType: damageTypeId(damage.type),
-        criticalMultiplier: 1,
-        poiseDamage: damage.poise,
-        knockback: Math.abs(damage.knockback.x)
+        kind: sourceKind,
+        packet: {
+          amount: damage.amount,
+          damageType: damageTypeId(damage.type),
+          criticalMultiplier: 1,
+          poiseDamage: damage.poise,
+          knockback: Math.abs(damage.knockback.x)
+        }
       },
       {
         armor: this.targetArmor,
@@ -557,7 +603,8 @@ export class CombatSceneAdapter {
     };
     const impact = this.impactPool.spawn({
       position: impactPosition,
-      flashAlpha: feedback.flashAlpha
+      flashAlpha: feedback.flashAlpha,
+      particleCount: feedback.particleCount
     });
     if (impact !== undefined) {
       this.timedGraphics.push({
@@ -584,6 +631,26 @@ export class CombatSceneAdapter {
       this.events.emit('combat:actor-defeated', {
         actorId: 'arch-briar-scrapper',
         actorKind: 'enemy'
+      });
+    }
+  }
+
+  private handleRuntimeOutputs(outputs: readonly CombatRuntimeOutput[]): void {
+    for (const output of outputs) {
+      if (output.kind === 'mechanism-requested') {
+        this.lastMechanismRequestId = output.targetId;
+        this.events.emit('combat:mechanism-requested', {
+          mechanismId: output.targetId,
+          hookId: output.mechanismHookId,
+          sourceId: output.sourceId
+        });
+        continue;
+      }
+      this.events.emit('combat:status-changed', {
+        targetId: output.targetId,
+        statusId: output.statusId,
+        state: output.kind === 'status-applied' ? 'applied' : 'expired',
+        ...(output.kind === 'status-applied' ? { expiresAtFrame: output.expiresAtFrame } : {})
       });
     }
   }

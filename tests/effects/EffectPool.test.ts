@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { EffectPool } from '../../src/game/effects/EffectPool';
-import { combatFeedbackFor } from '../../src/game/effects/ParticleProfiles';
+import { combatFeedbackFor, impactLeafShapes } from '../../src/game/effects/ParticleProfiles';
 import { DEFAULT_ACCESSIBILITY_SETTINGS } from '../../src/game/config/accessibility';
 
 type Member = {
@@ -110,5 +110,28 @@ describe('combatFeedbackFor', () => {
       showDamageLabel: true,
       highContrastHoldFrames: 6
     });
+  });
+});
+
+describe('impactLeafShapes', () => {
+  it('returns exactly the requested deterministic leaf count for full and reduced density', () => {
+    const full = impactLeafShapes(6);
+    const reduced = impactLeafShapes(2);
+
+    expect(full).toHaveLength(6);
+    expect(reduced).toHaveLength(2);
+    expect(reduced).toEqual(full.slice(0, 2));
+    for (const shape of full) {
+      expect(shape.points).toHaveLength(3);
+      expect(shape.alpha).toBeGreaterThan(0);
+      expect(shape.alpha).toBeLessThanOrEqual(1);
+    }
+  });
+
+  it('clamps out-of-range counts instead of over- or under-drawing', () => {
+    expect(impactLeafShapes(0)).toHaveLength(0);
+    expect(impactLeafShapes(-3)).toHaveLength(0);
+    expect(impactLeafShapes(99)).toHaveLength(6);
+    expect(impactLeafShapes(2.9)).toHaveLength(2);
   });
 });

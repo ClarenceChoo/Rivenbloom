@@ -50,6 +50,22 @@ type BaseGameEventMap = {
     readonly mana: number;
     readonly cooldownReadyAt: number;
   };
+  readonly 'combat:projectile-converted': {
+    readonly actorId: string;
+    readonly projectileId: string;
+    readonly manaRestored: number;
+  };
+  readonly 'combat:status-changed': {
+    readonly targetId: string;
+    readonly statusId: string;
+    readonly state: 'applied' | 'expired';
+    readonly expiresAtFrame?: number;
+  };
+  readonly 'combat:mechanism-requested': {
+    readonly mechanismId: string;
+    readonly hookId: string;
+    readonly sourceId: string;
+  };
   readonly 'quest:transition-applied': {
     readonly questId: string;
     readonly fromStage?: string;

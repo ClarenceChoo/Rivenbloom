@@ -7,6 +7,7 @@ import { SceneKeys } from './SceneKeys';
 export type TransitionPayload = {
   readonly destinationId: string;
   readonly destinationName: string;
+  readonly unlockedAbilityIds?: readonly string[];
   readonly reducedMotion?: boolean;
 };
 
@@ -42,7 +43,10 @@ export class TransitionScene extends Phaser.Scene {
       (this.payload.destinationId === 'wrens-rest' ? INITIAL_WORLD_AREA_ID : undefined);
     if (destinationAreaId === undefined) return;
     const handoff = this.time.delayedCall(TRANSITION_HOLD_MS, () => {
-      this.scene.start(SceneKeys.World, { areaId: destinationAreaId });
+      this.scene.start(SceneKeys.World, {
+        areaId: destinationAreaId,
+        unlockedAbilityIds: this.payload.unlockedAbilityIds ?? ['lumen-bolt']
+      });
     });
     this.scope.add(() => handoff.remove(false));
   }

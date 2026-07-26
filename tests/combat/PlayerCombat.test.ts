@@ -3,8 +3,11 @@ import {
   advancePlayerCombatFrame,
   applyCombatMovementLocks,
   createPlayerCombatState,
+  interceptPlayerProjectile,
+  unlockPlayerAbility,
   type PlayerCombatContext,
-  type PlayerCombatInput
+  type PlayerCombatInput,
+  type PlayerCombatState
 } from '../../src/game/combat/PlayerCombat';
 import {
   createPlayerStateMachine,
@@ -48,6 +51,13 @@ const context = (
 });
 
 describe('advancePlayerCombatFrame', () => {
+  it('starts a new combat state with Lumen as the only unlocked ability', () => {
+    const state = createPlayerCombatState();
+
+    expect(state.unlockedAbilityIds).toEqual(['lumen-bolt']);
+    expect(state.selectedAbilityId).toBe('lumen-bolt');
+  });
+
   it('buffers three explicit light stages only inside cancel windows and resets after stage three', () => {
     let state = createPlayerCombatState();
     let machine = createPlayerStateMachine();
@@ -181,7 +191,7 @@ describe('advancePlayerCombatFrame', () => {
   });
 
   it('keeps Wayfinder Dash invulnerable for exactly its twelve movement-locked frames', () => {
-    let state = createPlayerCombatState();
+    let state = createPlayerCombatState(['lumen-bolt', 'wayfinder-dash']);
     let machine = createPlayerStateMachine();
     const observations: { readonly invulnerable: boolean; readonly locked: boolean }[] = [];
     for (let frame = 0; frame < 13; frame += 1) {
@@ -244,6 +254,33 @@ describe('advancePlayerCombatFrame', () => {
     expect(applyCombatMovementLocks(movement, idle)).toBe(movement);
   });
 
+  it('delays a later 30 Hz combo transition through both consumed fixed substeps', () => {
+    const state = {
+      ...createPlayerCombatState(),
+      activeAttackId: 'mara-light-combo-1',
+      comboStage: 1 as const,
+      comboBuffered: true,
+      actionFrame: 17
+    };
+    const result = advancePlayerCombatFrame(
+      state,
+      neutral,
+      context(createPlayerStateMachine('attackLight')),
+      1 / 30
+    );
+
+    expect(result.state).toMatchObject({
+      activeAttackId: 'mara-light-combo-2',
+      comboStage: 2,
+      actionFrame: 0
+    });
+    expect(result.directives).toContainEqual({
+      kind: 'activate-attack',
+      attackId: 'mara-light-combo-2',
+      activationDelayFrames: 2
+    });
+  });
+
   it('emits one Lumen Bolt directive and applies its exact mana/cooldown state', () => {
     const result = advancePlayerCombatFrame(
       createPlayerCombatState(),
@@ -270,7 +307,12 @@ describe('advancePlayerCombatFrame', () => {
   });
 
   it('cycles semantic cast selection through Aegis Veil and Resonant Pulse', () => {
-    const start = createPlayerCombatState();
+    const start = createPlayerCombatState([
+      'lumen-bolt',
+      'wayfinder-dash',
+      'aegis-veil',
+      'resonant-pulse'
+    ]);
     const selectedAegis = advancePlayerCombatFrame(
       start,
       { ...neutral, cycleRightPressed: true },
@@ -318,5 +360,116 @@ describe('advancePlayerCombatFrame', () => {
         mechanismHookId: 'awaken-resonant'
       }
     });
+  });
+
+  it('cycles only through cast abilities unlocked by progression and rejects locked dash', () => {
+    const start = createPlayerCombatState(['lumen-bolt', 'resonant-pulse']);
+    const selected = advancePlayerCombatFrame(
+      start,
+      { ...neutral, cycleRightPressed: true },
+      context(createPlayerStateMachine()),
+      1 / 60
+    );
+    const lockedDash = advancePlayerCombatFrame(
+      start,
+      { ...neutral, dashPressed: true },
+      context(createPlayerStateMachine()),
+      1 / 60
+    );
+
+    expect(selected.state.selectedAbilityId).toBe('resonant-pulse');
+    expect(lockedDash.machine.value).toBe('idle');
+    expect(lockedDash.directives).toEqual([]);
+  });
+
+  it('converts only one hostile projectile through Aegis and restores bounded mana', () => {
+    const start = {
+      ...createPlayerCombatState(),
+      selectedAbilityId: 'aegis-veil',
+      unlockedAbilityIds: ['lumen-bolt', 'aegis-veil']
+    };
+    const cast = advancePlayerCombatFrame(
+      start,
+      { ...neutral, castPressed: true },
+      context(createPlayerStateMachine()),
+      1 / 60
+    );
+
+    const first = interceptPlayerProjectile(cast.state, {
+      id: 'hostile-pollen-one',
+      ownerId: 'spore-scribe'
+    });
+    const second = interceptPlayerProjectile(first.state, {
+      id: 'hostile-pollen-two',
+      ownerId: 'spore-scribe'
+    });
+
+    expect(first).toMatchObject({
+      converted: true,
+      manaRestored: 8,
+      state: {
+        mana: 50,
+        barrier: { conversionAvailable: false }
+      }
+    });
+    expect(second).toMatchObject({
+      converted: false,
+      manaRestored: 0,
+      state: {
+        mana: 50,
+        barrier: { conversionAvailable: false }
+      }
+    });
+  });
+
+  it('clears Aegis after exactly ninety fixed combat frames', () => {
+    let state: PlayerCombatState = {
+      ...createPlayerCombatState(),
+      selectedAbilityId: 'aegis-veil',
+      unlockedAbilityIds: ['lumen-bolt', 'aegis-veil']
+    };
+    let machine = createPlayerStateMachine();
+    let result = advancePlayerCombatFrame(
+      state,
+      { ...neutral, castPressed: true },
+      context(machine),
+      1 / 60
+    );
+    state = result.state;
+    machine = result.machine;
+    expect(state.barrier).toMatchObject({ durationFrames: 90 });
+
+    for (let frame = 0; frame < 89; frame += 1) {
+      result = advancePlayerCombatFrame(state, neutral, context(machine), 1 / 60);
+      state = result.state;
+      machine = result.machine;
+    }
+    expect(state.barrier).toMatchObject({ durationFrames: 1 });
+
+    result = advancePlayerCombatFrame(state, neutral, context(machine), 1 / 60);
+    expect(result.state.barrier).toBeUndefined();
+  });
+
+  it('unlocks known combat abilities idempotently and rejects unknown ids', () => {
+    const state = createPlayerCombatState();
+
+    const unlocked = unlockPlayerAbility(state, 'wayfinder-dash');
+    expect(unlocked.unlockedAbilityIds).toEqual(['lumen-bolt', 'wayfinder-dash']);
+    expect(unlockPlayerAbility(unlocked, 'wayfinder-dash')).toBe(unlocked);
+    expect(unlockPlayerAbility(state, 'not-a-real-ability')).toBe(state);
+  });
+
+  it('emits the authored effect and sound cues when a melee attack starts', () => {
+    const result = advancePlayerCombatFrame(
+      createPlayerCombatState(),
+      { ...neutral, lightPressed: true },
+      context(createPlayerStateMachine()),
+      1 / 60
+    );
+
+    const cueIds = result.directives
+      .filter((directive) => directive.kind === 'cue')
+      .map((directive) => directive.cueId);
+    expect(cueIds).toEqual(['mara-light-combo-1-effect', 'mara-light-combo-1-sound']);
   });
 });

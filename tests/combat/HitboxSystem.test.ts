@@ -107,6 +107,20 @@ describe('HitboxSystem', () => {
     expect(result.hits).toEqual([]);
   });
 
+  it('resolves moving melee hitboxes from the owner position after activation', () => {
+    const system = new HitboxSystem([
+      owner('mara', 'player', 100),
+      owner('moving-target', 'enemy', 225)
+    ]);
+    const attack = system.activate('mara', slash, 'right');
+
+    system.updatePosition('mara', { x: 200, y: 100 });
+    const result = system.advance(attack, 2);
+
+    expect(result.hits.map(({ targetId }) => targetId)).toEqual(['moving-target']);
+    expect(result.instance.origin).toEqual({ x: 100, y: 100 });
+  });
+
   it('excludes the attacking owner and friendly hurtboxes', () => {
     const system = new HitboxSystem([
       owner('mara', 'player', 100),
@@ -164,5 +178,45 @@ describe('HitboxSystem', () => {
     expect(third.instance.phase).toBe('complete');
     expect(expired.hits).toEqual([]);
     expect(expired.instance).toEqual(third.instance);
+  });
+
+  it('completes a non-piercing projectile on first contact before later targets', () => {
+    const projectileAttack: AttackDefinition & {
+      readonly projectile: {
+        readonly speedPerFrame: number;
+        readonly lifetimeFrames: number;
+        readonly pierces: boolean;
+      };
+    } = {
+      ...slash,
+      id: 'test-non-piercing-projectile',
+      anticipationFrames: 0,
+      activeFrames: 5,
+      recoveryFrames: 0,
+      hitboxes: [
+        {
+          startFrame: 1,
+          endFrame: 5,
+          bounds: {
+            offset: { x: 0, y: -20 },
+            size: { width: 8, height: 8 }
+          }
+        }
+      ],
+      projectile: { speedPerFrame: 10, lifetimeFrames: 5, pierces: false }
+    };
+    const system = new HitboxSystem([
+      owner('mara', 'player', 100),
+      owner('near', 'enemy', 112),
+      owner('far', 'enemy', 136)
+    ]);
+
+    const contact = system.advance(system.activate('mara', projectileAttack, 'right'));
+    const afterContact = system.advance(contact.instance, 4);
+
+    expect(contact.hits.map(({ targetId }) => targetId)).toEqual(['near']);
+    expect(contact.instance.phase).toBe('complete');
+    expect(afterContact.hits).toEqual([]);
+    expect(afterContact.instance.frame).toBe(1);
   });
 });

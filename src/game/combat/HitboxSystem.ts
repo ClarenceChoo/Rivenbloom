@@ -136,6 +136,7 @@ export class HitboxSystem {
       const frame = current.frame + 1;
       const hitTargetIds = new Set(current.hitTargetIds);
       const worldHitboxes = this.worldHitboxes(current, frame);
+      const hitsBeforeFrame = hits.length;
       for (const target of this.owners.values()) {
         if (
           target.id === current.ownerId ||
@@ -161,9 +162,14 @@ export class HitboxSystem {
       }
       const timedPhase = phaseAt(current.attack, frame);
       const phase =
-        isProjectile(current.attack) && frame >= current.attack.projectile.lifetimeFrames
+        isProjectile(current.attack) &&
+        !current.attack.projectile.pierces &&
+        hits.length > hitsBeforeFrame
           ? 'complete'
-          : timedPhase;
+          : isProjectile(current.attack) &&
+              frame >= current.attack.anticipationFrames + current.attack.projectile.lifetimeFrames
+            ? 'complete'
+            : timedPhase;
       current = {
         ...current,
         frame,
@@ -177,16 +183,20 @@ export class HitboxSystem {
 
   private worldHitboxes(instance: AttackInstance, frame: number): readonly RectDefinition[] {
     const projectileDistance = isProjectile(instance.attack)
-      ? instance.attack.projectile.speedPerFrame * frame
+      ? instance.attack.projectile.speedPerFrame *
+        Math.max(0, frame - instance.attack.anticipationFrames)
       : 0;
+    const origin = isProjectile(instance.attack)
+      ? instance.origin
+      : (this.owners.get(instance.ownerId)?.position ?? instance.origin);
     return instance.attack.hitboxes
       .filter(({ startFrame, endFrame }) => frame >= startFrame && frame <= endFrame)
       .map(({ bounds }) => ({
         x:
           instance.facing === 'right'
-            ? instance.origin.x + bounds.offset.x + projectileDistance
-            : instance.origin.x - bounds.offset.x - bounds.size.width - projectileDistance,
-        y: instance.origin.y + bounds.offset.y,
+            ? origin.x + bounds.offset.x + projectileDistance
+            : origin.x - bounds.offset.x - bounds.size.width - projectileDistance,
+        y: origin.y + bounds.offset.y,
         width: bounds.size.width,
         height: bounds.size.height
       }));

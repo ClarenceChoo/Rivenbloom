@@ -1,7 +1,9 @@
 import {
   AbilitySystem,
+  resolveAegisProjectile,
   type AbilityEffectDirective,
-  type BarrierDirective
+  type BarrierDirective,
+  type ProjectileSnapshot
 } from '../abilities/AbilitySystem';
 import { attackDefinitions } from '../data/attacks';
 import type { AttackDefinition } from '../data/types';
@@ -18,6 +20,12 @@ const HEAVY_CHARGE_THRESHOLD = 18;
 const PARRY_WINDOW_FRAMES = 5;
 const CAST_DURATION_FRAMES = 18;
 const CAST_ABILITY_IDS = ['lumen-bolt', 'aegis-veil', 'resonant-pulse'] as const;
+const COMBAT_ABILITY_IDS = [
+  'lumen-bolt',
+  'wayfinder-dash',
+  'aegis-veil',
+  'resonant-pulse'
+] as const;
 const COMBO_ATTACK_IDS = [
   'mara-light-combo-1',
   'mara-light-combo-2',
@@ -71,8 +79,16 @@ export type PlayerCombatState = {
 };
 
 export type PlayerCombatDirective =
-  | { readonly kind: 'activate-attack'; readonly attackId: string }
-  | { readonly kind: 'ability-effect'; readonly effect: AbilityEffectDirective }
+  | {
+      readonly kind: 'activate-attack';
+      readonly attackId: string;
+      readonly activationDelayFrames?: number;
+    }
+  | {
+      readonly kind: 'ability-effect';
+      readonly effect: AbilityEffectDirective;
+      readonly activationDelayFrames?: number;
+    }
   | { readonly kind: 'cue'; readonly cueId: string };
 
 export type PlayerCombatStep = {
@@ -93,32 +109,60 @@ export type PlayerCombatStep = {
   readonly directives: readonly PlayerCombatDirective[];
 };
 
+export type PlayerProjectileIntercept = {
+  readonly converted: boolean;
+  readonly manaRestored: number;
+  readonly projectileId: string;
+  readonly state: PlayerCombatState;
+};
+
 type Substep = {
   readonly state: PlayerCombatState;
   readonly machine: PlayerStateMachine;
   readonly directives: readonly PlayerCombatDirective[];
 };
 
-export const createPlayerCombatState = (): PlayerCombatState => ({
-  activeAttackId: undefined,
-  comboStage: 0,
-  comboBuffered: false,
-  actionFrame: 0,
-  chargingHeavy: false,
-  heavyChargeFrames: 0,
-  blockFrames: 0,
-  dashFramesRemaining: 0,
-  dashVelocityX: 0,
-  castFramesRemaining: 0,
-  invulnerableFrames: 0,
-  mana: 60,
-  maximumMana: 60,
-  unlockedAbilityIds: ['lumen-bolt', 'wayfinder-dash', 'aegis-veil', 'resonant-pulse'],
-  cooldownReadyAt: {},
-  selectedAbilityId: 'lumen-bolt',
-  barrier: undefined,
-  frameRemainder: 0
-});
+export const createPlayerCombatState = (
+  unlockedAbilityIds: readonly string[] = ['lumen-bolt']
+): PlayerCombatState => {
+  const unlocked = [
+    ...new Set(
+      unlockedAbilityIds.filter((abilityId) =>
+        (COMBAT_ABILITY_IDS as readonly string[]).includes(abilityId)
+      )
+    )
+  ];
+  return {
+    activeAttackId: undefined,
+    comboStage: 0,
+    comboBuffered: false,
+    actionFrame: 0,
+    chargingHeavy: false,
+    heavyChargeFrames: 0,
+    blockFrames: 0,
+    dashFramesRemaining: 0,
+    dashVelocityX: 0,
+    castFramesRemaining: 0,
+    invulnerableFrames: 0,
+    mana: 60,
+    maximumMana: 60,
+    unlockedAbilityIds: unlocked,
+    cooldownReadyAt: {},
+    selectedAbilityId:
+      CAST_ABILITY_IDS.find((abilityId) => unlocked.includes(abilityId)) ?? 'lumen-bolt',
+    barrier: undefined,
+    frameRemainder: 0
+  };
+};
+
+export const unlockPlayerAbility = (
+  state: PlayerCombatState,
+  abilityId: string
+): PlayerCombatState => {
+  if (!(COMBAT_ABILITY_IDS as readonly string[]).includes(abilityId)) return state;
+  if (state.unlockedAbilityIds.includes(abilityId)) return state;
+  return { ...state, unlockedAbilityIds: [...state.unlockedAbilityIds, abilityId] };
+};
 
 const emptyEdges = (input: PlayerCombatInput): PlayerCombatInput => ({
   ...input,
@@ -133,6 +177,18 @@ const emptyEdges = (input: PlayerCombatInput): PlayerCombatInput => ({
   cycleRightPressed: false
 });
 
+const ageExistingBarrier = (
+  previous: PlayerCombatState,
+  next: PlayerCombatState
+): PlayerCombatState => {
+  if (previous.barrier === undefined || next.barrier !== previous.barrier) return next;
+  const durationFrames = previous.barrier.durationFrames - 1;
+  return {
+    ...next,
+    barrier: durationFrames > 0 ? { ...previous.barrier, durationFrames } : undefined
+  };
+};
+
 const totalFrames = (attack: AttackDefinition): number =>
   attack.anticipationFrames + attack.activeFrames + attack.recoveryFrames;
 
@@ -146,23 +202,32 @@ const startAttack = (
   machine: PlayerStateMachine,
   attackId: string,
   comboStage: PlayerCombatState['comboStage'],
-  playerState: Extract<PlayerStateName, 'attackLight' | 'attackHeavy' | 'airAttack'>
-): Substep => ({
-  state: {
-    ...state,
-    activeAttackId: attackId,
-    comboStage,
-    comboBuffered: false,
-    actionFrame: 0,
-    chargingHeavy: false,
-    heavyChargeFrames: 0
-  },
-  machine: requestPlayerState(machine, playerState),
-  directives: [
-    { kind: 'activate-attack', attackId },
-    { kind: 'cue', cueId: `${attackId}-effect` }
-  ]
-});
+  playerState: Extract<PlayerStateName, 'attackLight' | 'attackHeavy' | 'airAttack'>,
+  activationDelayFrames = 0
+): Substep => {
+  const attack = attacks.get(attackId);
+  return {
+    state: {
+      ...state,
+      activeAttackId: attackId,
+      comboStage,
+      comboBuffered: false,
+      actionFrame: 0,
+      chargingHeavy: false,
+      heavyChargeFrames: 0
+    },
+    machine: requestPlayerState(machine, playerState),
+    directives: [
+      {
+        kind: 'activate-attack',
+        attackId,
+        ...(activationDelayFrames === 0 ? {} : { activationDelayFrames })
+      },
+      { kind: 'cue', cueId: attack?.effectCueId ?? `${attackId}-effect` },
+      { kind: 'cue', cueId: attack?.soundCueId ?? `${attackId}-sound` }
+    ]
+  };
+};
 
 const advanceAttack = (
   state: PlayerCombatState,
@@ -188,7 +253,14 @@ const advanceAttack = (
   }
   if (comboBuffered && state.comboStage > 0 && state.comboStage < 3) {
     const nextStage = (state.comboStage + 1) as 2 | 3;
-    return startAttack(state, machine, COMBO_ATTACK_IDS[nextStage - 1], nextStage, 'attackLight');
+    return startAttack(
+      state,
+      machine,
+      COMBO_ATTACK_IDS[nextStage - 1],
+      nextStage,
+      'attackLight',
+      1
+    );
   }
   return {
     state: {
@@ -340,14 +412,18 @@ const advanceSubstep = (
     };
   }
   if (input.cycleLeftPressed || input.cycleRightPressed) {
-    const currentIndex = CAST_ABILITY_IDS.indexOf(
+    const castAbilityIds = CAST_ABILITY_IDS.filter((abilityId) =>
+      state.unlockedAbilityIds.includes(abilityId)
+    );
+    if (castAbilityIds.length === 0) return { state, machine, directives: [] };
+    const currentIndex = castAbilityIds.indexOf(
       state.selectedAbilityId as (typeof CAST_ABILITY_IDS)[number]
     );
     const direction = input.cycleRightPressed ? 1 : -1;
     const selectedIndex =
-      (Math.max(0, currentIndex) + direction + CAST_ABILITY_IDS.length) % CAST_ABILITY_IDS.length;
+      (Math.max(0, currentIndex) + direction + castAbilityIds.length) % castAbilityIds.length;
     return {
-      state: { ...state, selectedAbilityId: CAST_ABILITY_IDS[selectedIndex] ?? 'lumen-bolt' },
+      state: { ...state, selectedAbilityId: castAbilityIds[selectedIndex] ?? 'lumen-bolt' },
       machine,
       directives: [{ kind: 'cue', cueId: 'ability-selection-changed' }]
     };
@@ -420,14 +496,22 @@ export const advancePlayerCombatFrame = (
   let current = state;
   let machine = context.machine;
   let firstStep = true;
+  let substepIndex = 0;
   const directives: PlayerCombatDirective[] = [];
   while (remaining + Number.EPSILON >= FIXED_STEP) {
     const step = advanceSubstep(current, machine, firstStep ? input : emptyEdges(input), context);
-    current = step.state;
+    current = ageExistingBarrier(current, step.state);
     machine = step.machine;
-    directives.push(...step.directives);
+    directives.push(
+      ...step.directives.map((directive): PlayerCombatDirective => {
+        if (directive.kind === 'cue') return directive;
+        const activationDelayFrames = (directive.activationDelayFrames ?? 0) + substepIndex;
+        return activationDelayFrames === 0 ? directive : { ...directive, activationDelayFrames };
+      })
+    );
     remaining -= FIXED_STEP;
     firstStep = false;
+    substepIndex += 1;
   }
   current = { ...current, frameRemainder: Math.max(0, remaining) };
   const movementLocked = locksMovement(machine);
@@ -439,6 +523,41 @@ export const advancePlayerCombatFrame = (
     guard: guardFor(current, machine),
     dashVelocityX: machine.value === 'dash' ? current.dashVelocityX : 0,
     directives
+  };
+};
+
+export const interceptPlayerProjectile = (
+  state: PlayerCombatState,
+  projectile: ProjectileSnapshot
+): PlayerProjectileIntercept => {
+  if (state.barrier === undefined) {
+    return {
+      converted: false,
+      manaRestored: 0,
+      projectileId: projectile.id,
+      state
+    };
+  }
+  const result = resolveAegisProjectile(state.barrier, projectile, {
+    actorId: 'mara-vey',
+    mana: state.mana,
+    maximumMana: state.maximumMana,
+    state: 'block',
+    grounded: true,
+    facing: 'right',
+    nowMs: 0,
+    unlockedAbilityIds: state.unlockedAbilityIds,
+    cooldownReadyAt: state.cooldownReadyAt
+  });
+  return {
+    converted: result.converted,
+    manaRestored: result.actor.mana - state.mana,
+    projectileId: result.projectileId,
+    state: {
+      ...state,
+      mana: result.actor.mana,
+      barrier: result.barrier
+    }
   };
 };
 

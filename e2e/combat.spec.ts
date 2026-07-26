@@ -125,6 +125,10 @@ test('observes parry, block, and bounded invulnerable dash displacement', async 
   await page.keyboard.up('f');
   await expect(canvas).toHaveAttribute('data-player-guard', 'none');
 
+  const unlocked = await page.evaluate(
+    () => window.__RIVENBLOOM_TEST__?.unlockAbility('wayfinder-dash') ?? false
+  );
+  expect(unlocked).toBe(true);
   const startX = await numericAttribute(canvas, 'data-player-x');
   await page.keyboard.press('ShiftLeft');
   await expect(canvas).toHaveAttribute('data-player-state', 'dash');

@@ -227,7 +227,7 @@ export function createDefaultSave(slotId: SaveSlotId, now = Date.now()): SaveV1 
     },
     inventory: {},
     equippedCharms: [],
-    unlockedAbilities: [],
+    unlockedAbilities: ['lumen-bolt'],
     bindings: {},
     settings: { ...DEFAULT_SETTINGS, audio: { ...DEFAULT_SETTINGS.audio } },
     questStages: {},

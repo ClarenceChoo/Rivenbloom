@@ -24,6 +24,7 @@ describe('SaveSchema', () => {
       },
       player: { health: 100, mana: 50, currency: 0, weaponLevel: 1 },
       inventory: {},
+      unlockedAbilities: ['lumen-bolt'],
       openedChestIds: [],
       settings: { reducedMotion: false, textScale: 1, audio: { master: 1 } }
     });
@@ -87,7 +88,7 @@ describe('SaveSchema', () => {
   it('generates the same envelope checksum for equivalent object key orderings', () => {
     const save = createDefaultSave(slot, 100);
     const reorderedSave = JSON.parse(
-      '{"settings":{"audio":{"master":1,"music":1,"effects":1},"textScale":1,"subtitles":true,"reducedMotion":false,"screenShake":1,"screenFlash":1,"damageNumbers":true,"holdToToggle":false,"highContrastPrompts":false},"slotId":"slot-1","schemaVersion":1,"metadata":{"safePosition":{"y":0,"x":0},"areaId":"wrens-rest","playtimeSeconds":0,"updatedAt":100,"createdAt":100},"player":{"spellLevels":{},"weaponLevel":1,"currency":0,"xp":0,"manaUpgrades":0,"healthUpgrades":0,"mana":50,"health":100},"inventory":{},"equippedCharms":[],"unlockedAbilities":[],"bindings":{},"questStages":{},"questFlags":[],"defeatedBossIds":[],"openedChestIds":[],"activatedShortcutIds":[],"solvedPuzzleIds":[],"claimedDiscoveryIds":[],"discoveredRoomIds":[]}'
+      '{"settings":{"audio":{"master":1,"music":1,"effects":1},"textScale":1,"subtitles":true,"reducedMotion":false,"screenShake":1,"screenFlash":1,"damageNumbers":true,"holdToToggle":false,"highContrastPrompts":false},"slotId":"slot-1","schemaVersion":1,"metadata":{"safePosition":{"y":0,"x":0},"areaId":"wrens-rest","playtimeSeconds":0,"updatedAt":100,"createdAt":100},"player":{"spellLevels":{},"weaponLevel":1,"currency":0,"xp":0,"manaUpgrades":0,"healthUpgrades":0,"mana":50,"health":100},"inventory":{},"equippedCharms":[],"unlockedAbilities":["lumen-bolt"],"bindings":{},"questStages":{},"questFlags":[],"defeatedBossIds":[],"openedChestIds":[],"activatedShortcutIds":[],"solvedPuzzleIds":[],"claimedDiscoveryIds":[],"discoveredRoomIds":[]}'
     );
 
     expect(createSaveEnvelope(save, 200).checksum).toBe(

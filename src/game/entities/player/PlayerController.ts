@@ -4,10 +4,14 @@ import {
   advancePlayerCombatFrame,
   applyCombatMovementLocks,
   createPlayerCombatState,
+  interceptPlayerProjectile,
+  unlockPlayerAbility,
   type PlayerCombatDirective,
   type PlayerCombatState,
-  type PlayerCombatStep
+  type PlayerCombatStep,
+  type PlayerProjectileIntercept
 } from '../../combat/PlayerCombat';
+import type { ProjectileSnapshot } from '../../abilities/AbilitySystem';
 import { advanceMovementFrame } from '../../physics/MovementFrame';
 import {
   createMovementState,
@@ -25,11 +29,12 @@ export type PlayerControllerOptions = {
   readonly view: PlayerView;
   readonly tuning: MovementTuning;
   readonly spawn: PlayerSpawnDefinition;
+  readonly unlockedAbilityIds: readonly string[];
 };
 
 export class PlayerController {
   private state: MovementState;
-  private combatState: PlayerCombatState = createPlayerCombatState();
+  private combatState: PlayerCombatState;
   private combatStep: PlayerCombatStep | undefined;
   private readonly combatDirectives: PlayerCombatDirective[] = [];
   private pendingRespawn = false;
@@ -38,6 +43,7 @@ export class PlayerController {
 
   public constructor(private readonly options: PlayerControllerOptions) {
     this.state = createMovementState(options.spawn.position, options.spawn.facing);
+    this.combatState = createPlayerCombatState(options.unlockedAbilityIds);
   }
 
   public get snapshot(): MovementState {
@@ -131,6 +137,17 @@ export class PlayerController {
   public drainCombatDirectives(): readonly PlayerCombatDirective[] {
     const directives = this.combatDirectives.splice(0);
     return directives;
+  }
+
+  public unlockAbility(abilityId: string): boolean {
+    this.combatState = unlockPlayerAbility(this.combatState, abilityId);
+    return this.combatState.unlockedAbilityIds.includes(abilityId);
+  }
+
+  public interceptProjectile(projectile: ProjectileSnapshot): PlayerProjectileIntercept {
+    const result = interceptPlayerProjectile(this.combatState, projectile);
+    this.combatState = result.state;
+    return result;
   }
 
   public dispose(): void {

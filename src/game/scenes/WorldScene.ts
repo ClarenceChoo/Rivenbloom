@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { CameraDirector } from '../camera/CameraDirector';
 import { CombatSceneAdapter } from '../combat/CombatSceneAdapter';
+import type { CombatRuntimeTarget } from '../combat/CombatAbilityRuntime';
 import { PLAYER_CAMERA_TUNING, PLAYER_MOVEMENT_TUNING } from '../config/traversal';
 import type { AccessibilitySettingsState } from '../config/accessibility';
 import {
@@ -24,12 +25,14 @@ import { PlayerController } from '../entities/player/PlayerController';
 import type { PlayerStateName } from '../entities/player/PlayerState';
 import { PlayerView } from '../entities/player/PlayerView';
 import { PlatformRules } from '../physics/PlatformRules';
+import { installTestBridge } from '../testing/TestBridge';
 import { AreaLoader } from '../world/AreaLoader';
 import { horizontalLayerTiles } from '../world/LayerTiling';
 import { SceneKeys } from './SceneKeys';
 
 type WorldPayload = {
   readonly areaId?: string;
+  readonly unlockedAbilityIds?: readonly string[];
 };
 
 export class WorldScene extends Phaser.Scene {
@@ -93,9 +96,15 @@ export class WorldScene extends Phaser.Scene {
       platforms: new PlatformRules(definition.surfaces, definition.bounds, mara.collisionBody),
       view,
       tuning: PLAYER_MOVEMENT_TUNING,
-      spawn: loaded.initialSpawn
+      spawn: loaded.initialSpawn,
+      unlockedAbilityIds: this.payload.unlockedAbilityIds ?? ['lumen-bolt']
     });
     this.scope.add(() => this.player?.dispose());
+    this.scope.add(
+      installTestBridge({
+        unlockAbility: (abilityId) => this.player?.unlockAbility(abilityId) ?? false
+      })
+    );
     const targetSpawn = definition.actorSpawns.find(({ id }) => id === 'arch-briar-scrapper');
     const target = actorDefinitions.find(({ id }) => id === 'briar-scrapper');
     if (targetSpawn === undefined || target === undefined) {
@@ -107,6 +116,30 @@ export class WorldScene extends Phaser.Scene {
       loaded.initialSpawn.position,
       target,
       targetSpawn,
+      [
+        {
+          id: targetSpawn.id,
+          kind: 'enemy',
+          tags: ['rootglass'],
+          position: targetSpawn.position
+        },
+        ...definition.mechanisms.map(
+          (mechanism): CombatRuntimeTarget => ({
+            id: mechanism.id,
+            kind: 'mechanism',
+            tags: ['resonant'],
+            position: mechanism.position
+          })
+        )
+      ],
+      {
+        interceptProjectile: (projectile) => {
+          if (this.player === undefined) {
+            throw new Error('Player combat runtime is unavailable.');
+          }
+          return this.player.interceptProjectile(projectile);
+        }
+      },
       this.settings,
       events
     );

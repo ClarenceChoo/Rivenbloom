@@ -109,6 +109,7 @@ export class TitleScene extends Phaser.Scene {
         this.scene.start(SceneKeys.Transition, {
           destinationId: loaded.save.metadata.areaId,
           destinationName: formatAreaName(loaded.save.metadata.areaId),
+          unlockedAbilityIds: loaded.save.unlockedAbilities,
           reducedMotion:
             this.settingsState?.current.reducedMotion ?? loaded.save.settings.reducedMotion
         });
@@ -126,6 +127,7 @@ export class TitleScene extends Phaser.Scene {
         this.scene.start(SceneKeys.Transition, {
           destinationId: 'wrens-rest',
           destinationName: "WREN'S REST",
+          unlockedAbilityIds: withSettings.unlockedAbilities,
           reducedMotion: withSettings.settings.reducedMotion
         });
       }

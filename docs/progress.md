@@ -51,11 +51,12 @@ Last updated: 2026-07-26
 ## Phase 3 — Playable Core
 
 - [x] Boot, preload, title, save-slot, and transition scenes.
-- [ ] Data-driven area runner and content validation.
-- [ ] Responsive player movement and camera.
-- [ ] Sword combo, air/heavy attacks, block/parry, dash, and spells.
-- [ ] Hitboxes/hurtboxes, stagger, knockback, invulnerability, and hazards.
-- [ ] Feedback pools, particles, trails, hit-stop, shake, and flashes.
+- [x] Data-driven area runner and content validation.
+- [x] Responsive player movement and camera.
+- [x] Sword combo, air/heavy attacks, block/parry, dash, and spells.
+- [x] Hitboxes/hurtboxes, stagger, knockback, invulnerability, and status
+  hooks; world hazard placement continues in Phase 4.
+- [x] Feedback pools, particles, trails, hit-stop, shake, and flashes.
 
 ## Phase 4 — World and Content
 
