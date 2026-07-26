@@ -14,7 +14,10 @@ import { SceneScope } from '../core/SceneScope';
 import type { ServiceRegistry } from '../core/ServiceRegistry';
 import { actorDefinitions } from '../data/actors';
 import { getAreaDefinition, INITIAL_WORLD_AREA_ID } from '../data/areas';
+import type { GameEvents } from '../core/GameEvents';
 import type {
+  ActorDefinition,
+  ActorSpawnDefinition,
   AreaDefinition,
   LayerDefinition,
   LoadedArea,
@@ -107,9 +110,35 @@ export class WorldScene extends Phaser.Scene {
     );
     const targetSpawn = definition.actorSpawns.find(({ id }) => id === 'arch-briar-scrapper');
     const target = actorDefinitions.find(({ id }) => id === 'briar-scrapper');
-    if (targetSpawn === undefined || target === undefined) {
-      throw new Error('Dormant Briar Scrapper combat target is not registered.');
+    if (targetSpawn !== undefined && target !== undefined) {
+      this.createCombatHarness(
+        mara,
+        loaded,
+        target,
+        targetSpawn,
+        definition,
+        this.settings,
+        events
+      );
     }
+    this.cameraDirector = new CameraDirector(this.cameras.main, PLAYER_CAMERA_TUNING);
+    this.scope.add(() => this.cameraDirector?.dispose());
+    this.exposeSemanticState(loaded);
+    this.updateSemanticState();
+    if (import.meta.env.DEV && new URLSearchParams(window.location.search).has('world-debug')) {
+      this.renderDebugOverlay(definition);
+    }
+  }
+
+  private createCombatHarness(
+    mara: ActorDefinition,
+    loaded: LoadedArea,
+    target: ActorDefinition,
+    targetSpawn: ActorSpawnDefinition,
+    definition: AreaDefinition,
+    settings: AccessibilitySettingsState,
+    events: GameEvents
+  ): void {
     this.combat = new CombatSceneAdapter(
       this,
       mara,
@@ -140,17 +169,10 @@ export class WorldScene extends Phaser.Scene {
           return this.player.interceptProjectile(projectile);
         }
       },
-      this.settings,
+      settings,
       events
     );
     this.scope.add(() => this.combat?.dispose());
-    this.cameraDirector = new CameraDirector(this.cameras.main, PLAYER_CAMERA_TUNING);
-    this.scope.add(() => this.cameraDirector?.dispose());
-    this.exposeSemanticState(loaded);
-    this.updateSemanticState();
-    if (import.meta.env.DEV && new URLSearchParams(window.location.search).has('world-debug')) {
-      this.renderDebugOverlay(definition);
-    }
   }
 
   public update(time: number, delta: number): void {

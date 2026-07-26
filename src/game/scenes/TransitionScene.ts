@@ -38,9 +38,11 @@ export class TransitionScene extends Phaser.Scene {
       this.payload.reducedMotion === true
     );
     this.scope.add(() => shell.dispose());
+    // New games still open on the trail until village runtime wiring lands.
     const destinationAreaId =
-      getAreaDefinition(this.payload.destinationId)?.id ??
-      (this.payload.destinationId === 'wrens-rest' ? INITIAL_WORLD_AREA_ID : undefined);
+      this.payload.destinationId === 'wrens-rest'
+        ? INITIAL_WORLD_AREA_ID
+        : getAreaDefinition(this.payload.destinationId)?.id;
     if (destinationAreaId === undefined) return;
     const handoff = this.time.delayedCall(TRANSITION_HOLD_MS, () => {
       this.scene.start(SceneKeys.World, {

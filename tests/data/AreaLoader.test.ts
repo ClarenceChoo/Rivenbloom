@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { areaDefinitions } from '../../src/game/data/areas';
+import { getAreaDefinition } from '../../src/game/data/areas';
 import type { AreaDefinition } from '../../src/game/data/types';
 import { AreaLoader } from '../../src/game/world/AreaLoader';
 
 describe('AreaLoader', () => {
   it('selects the default spawn, orders layers, and groups authored room content', () => {
-    const definition = areaDefinitions[0];
+    const definition = getAreaDefinition('brackenreach-trail');
     if (definition === undefined) throw new Error('Expected shipped Brackenreach area.');
     const sourceLayerIds = definition.layers.map(({ id }) => id);
 
@@ -41,7 +41,7 @@ describe('AreaLoader', () => {
   });
 
   it('rejects an area whose default player spawn does not exist', () => {
-    const definition = areaDefinitions[0];
+    const definition = getAreaDefinition('brackenreach-trail');
     if (definition === undefined) throw new Error('Expected shipped Brackenreach area.');
     const invalid: AreaDefinition = {
       ...definition,
