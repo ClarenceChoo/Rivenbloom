@@ -21,6 +21,24 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
       validateStableId(definition.id, `${path}[${index}].id`);
     });
   };
+  const validateDuplicateIdGroup = (
+    definitions: readonly { readonly id: string }[],
+    path: string,
+    registryName: string
+  ): void => {
+    const seenIds = new Set<string>();
+    definitions.forEach((definition, index) => {
+      if (seenIds.has(definition.id)) {
+        issues.push({
+          code: 'duplicate-id',
+          path: `${path}[${index}].id`,
+          id: definition.id,
+          message: `Duplicate ${registryName} ID "${definition.id}".`
+        });
+      }
+      seenIds.add(definition.id);
+    });
+  };
   const collections = [
     ['areas', registry.areas],
     ['actors', registry.actors],
@@ -71,7 +89,9 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
     });
   });
   registry.quests.forEach((quest, questIndex) => {
-    validateStableIdGroup(quest.stages, `quests[${questIndex}].stages`);
+    const stagesPath = `quests[${questIndex}].stages`;
+    validateStableIdGroup(quest.stages, stagesPath);
+    validateDuplicateIdGroup(quest.stages, stagesPath, 'quest stages');
   });
   registry.dialogues.forEach((dialogue, dialogueIndex) => {
     validateStableIdGroup(dialogue.nodes, `dialogues[${dialogueIndex}].nodes`);
@@ -179,6 +199,12 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
             actor.id
           );
         }
+        actor.boss.requiredMechanismIds.forEach((mechanismId, mechanismIndex) => {
+          validateStableId(
+            mechanismId,
+            `actors[${actorIndex}].boss.requiredMechanismIds[${mechanismIndex}]`
+          );
+        });
         actor.boss.phaseOneAttackIds.forEach((attackId, attackIndex) => {
           addUnresolved(
             attackId,
@@ -423,12 +449,11 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
       addUnresolved(spawn.actorId, ids.actors, `${spawnPath}.actorId`, 'actors');
     });
     area.triggers.forEach((trigger, triggerIndex) => {
-      addUnresolved(
-        trigger.roomId,
-        roomIds,
-        `${areaPath}.triggers[${triggerIndex}].roomId`,
-        'area rooms'
-      );
+      const triggerPath = `${areaPath}.triggers[${triggerIndex}]`;
+      addUnresolved(trigger.roomId, roomIds, `${triggerPath}.roomId`, 'area rooms');
+      if (trigger.kind === 'interaction') {
+        addUnresolved(trigger.targetId, mechanismIds, `${triggerPath}.targetId`, 'area mechanisms');
+      }
     });
     area.mechanisms.forEach((mechanism, mechanismIndex) => {
       const mechanismPath = `${areaPath}.mechanisms[${mechanismIndex}]`;
