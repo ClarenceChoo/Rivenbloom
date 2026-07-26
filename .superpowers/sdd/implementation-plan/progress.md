@@ -61,3 +61,8 @@ unlocks Wayfinder Dash through the development-only window.__RIVENBLOOM_TEST__
 bridge because a fresh save correctly starts with lumen-bolt only).
 Task 9: complete (commits 0ed3eb4..f337b76, full check + all e2e + browser
 save spec green).
+Task 10: minor (deferred to Tasks 11-12): EnemyController fleets are fully
+unit-tested but WorldScene does not yet spawn live enemies; runtime wiring
+lands with world interaction and area content.
+Task 10: complete (commits f337b76..9634833, full check green including a
+mixed-encounter fairness simulation).
