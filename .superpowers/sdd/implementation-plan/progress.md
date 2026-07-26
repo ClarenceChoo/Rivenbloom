@@ -66,3 +66,9 @@ unit-tested but WorldScene does not yet spawn live enemies; runtime wiring
 lands with world interaction and area content.
 Task 10: complete (commits f337b76..9634833, full check green including a
 mixed-encounter fairness simulation).
+Task 11: minor (deferred to Task 12): WorldScene does not yet route trigger,
+checkpoint, NPC, and quest-signal traffic; runtime wiring lands with the full
+region content pass alongside live enemies.
+Task 11: minor (deferred to Task 12): XP awards are defined in balance data but
+no system consumes combat:actor-defeated yet.
+Task 11: complete (commits 9634833..34ac171, full check + all e2e green).
