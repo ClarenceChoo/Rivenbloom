@@ -224,6 +224,13 @@ export const areaDefinitions: readonly AreaDefinition[] = [
         kind: 'one-way',
         collision: { x: 1510, y: 410, width: 310, height: 24 },
         materialId: 'moss-root'
+      },
+      {
+        id: 'arch-root-climb',
+        roomId: 'listening-arch',
+        kind: 'climb',
+        collision: { x: 1640, y: 410, width: 48, height: 156 },
+        materialId: 'woven-root'
       }
     ],
     playerSpawns: [

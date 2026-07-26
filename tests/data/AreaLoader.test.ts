@@ -33,7 +33,7 @@ describe('AreaLoader', () => {
     });
     expect(loaded.rooms[1]).toMatchObject({
       id: 'listening-arch',
-      surfaceIds: ['listening-arch-floor', 'arch-upper-platform'],
+      surfaceIds: ['listening-arch-floor', 'arch-upper-platform', 'arch-root-climb'],
       playerSpawnIds: ['listening-arch-east'],
       actorSpawnIds: ['arch-briar-scrapper', 'arch-duskwing'],
       mechanismIds: ['brackenreach-listening-arch']

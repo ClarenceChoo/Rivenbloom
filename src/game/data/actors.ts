@@ -1,4 +1,5 @@
 import type { ActorDefinition, BossDefinition, StableId } from './types';
+import { PLAYER_MOVEMENT_TUNING } from '../config/traversal';
 
 type ActorInput = {
   readonly id: StableId;
@@ -32,9 +33,17 @@ function actor(input: ActorInput): ActorDefinition {
       poise: isBoss ? 140 : isNpc ? 0 : input.kind === 'elite' ? 70 : 24
     },
     movement: {
-      speed: isNpc ? 0 : isBoss ? 110 : 180,
-      acceleration: isNpc ? 0 : 1000,
-      jumpVelocity: input.kind === 'player' ? 540 : 0
+      speed:
+        input.kind === 'player'
+          ? PLAYER_MOVEMENT_TUNING.maxRunSpeed
+          : isNpc
+            ? 0
+            : isBoss
+              ? 110
+              : 180,
+      acceleration:
+        input.kind === 'player' ? PLAYER_MOVEMENT_TUNING.groundAcceleration : isNpc ? 0 : 1000,
+      jumpVelocity: input.kind === 'player' ? PLAYER_MOVEMENT_TUNING.jumpSpeed : 0
     },
     perception: {
       range: isNpc || input.kind === 'player' ? 0 : isBoss ? 760 : 520,
