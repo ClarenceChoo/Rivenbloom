@@ -11,9 +11,98 @@ export type MotionResolution = {
 };
 
 const CONTACT_EPSILON = 0.5;
+const TIME_EPSILON = 1e-9;
+const MAX_SWEEP_COLLISIONS = 2;
 
 const overlaps = (startA: number, endA: number, startB: number, endB: number): boolean =>
   startA < endB && endA > startB;
+
+type AxisSweep = {
+  readonly entry: number;
+  readonly exit: number;
+};
+
+type SweepHit = {
+  readonly time: number;
+  readonly blocksX: boolean;
+  readonly blocksY: boolean;
+};
+
+const axisSweep = (
+  movingStart: number,
+  movingEnd: number,
+  delta: number,
+  obstacleStart: number,
+  obstacleEnd: number
+): AxisSweep | undefined => {
+  if (delta > 0) {
+    return {
+      entry: (obstacleStart - movingEnd) / delta,
+      exit: (obstacleEnd - movingStart) / delta
+    };
+  }
+  if (delta < 0) {
+    return {
+      entry: (obstacleEnd - movingStart) / delta,
+      exit: (obstacleStart - movingEnd) / delta
+    };
+  }
+  if (movingEnd <= obstacleStart || movingStart >= obstacleEnd) return undefined;
+  return { entry: Number.NEGATIVE_INFINITY, exit: Number.POSITIVE_INFINITY };
+};
+
+const sweepSolid = (
+  position: Vector2,
+  delta: Vector2,
+  body: CollisionBodyDefinition,
+  obstacle: RectDefinition
+): SweepHit | undefined => {
+  const left = position.x + body.offset.x;
+  const right = left + body.size.width;
+  const top = position.y + body.offset.y;
+  const bottom = top + body.size.height;
+  const xSweep = axisSweep(left, right, delta.x, obstacle.x, obstacle.x + obstacle.width);
+  const ySweep = axisSweep(top, bottom, delta.y, obstacle.y, obstacle.y + obstacle.height);
+  if (xSweep === undefined || ySweep === undefined) return undefined;
+  const entry = Math.max(xSweep.entry, ySweep.entry);
+  const exit = Math.min(xSweep.exit, ySweep.exit);
+  if (
+    entry >= exit - TIME_EPSILON ||
+    exit < -TIME_EPSILON ||
+    entry < -TIME_EPSILON ||
+    entry > 1 + TIME_EPSILON
+  ) {
+    return undefined;
+  }
+  const simultaneousAxes = Math.abs(xSweep.entry - ySweep.entry) <= TIME_EPSILON;
+  return {
+    time: Math.max(0, Math.min(1, entry)),
+    blocksX: simultaneousAxes || xSweep.entry > ySweep.entry,
+    blocksY: simultaneousAxes || ySweep.entry > xSweep.entry
+  };
+};
+
+const sweepOneWay = (
+  position: Vector2,
+  delta: Vector2,
+  body: CollisionBodyDefinition,
+  obstacle: RectDefinition
+): SweepHit | undefined => {
+  if (delta.y <= 0) return undefined;
+  const left = position.x + body.offset.x;
+  const right = left + body.size.width;
+  const bottom = position.y + body.offset.y + body.size.height;
+  if (bottom > obstacle.y + CONTACT_EPSILON) return undefined;
+  const rawTime = (obstacle.y - bottom) / delta.y;
+  if (rawTime < -TIME_EPSILON || rawTime > 1 + TIME_EPSILON) return undefined;
+  const time = Math.max(0, Math.min(1, rawTime));
+  const leftAtImpact = left + delta.x * time;
+  const rightAtImpact = right + delta.x * time;
+  if (!overlaps(leftAtImpact, rightAtImpact, obstacle.x, obstacle.x + obstacle.width)) {
+    return undefined;
+  }
+  return { time, blocksX: false, blocksY: true };
+};
 
 export class PlatformRules {
   public constructor(
@@ -60,100 +149,63 @@ export class PlatformRules {
   ): MotionResolution {
     const minimumX = this.bounds.x - this.body.offset.x;
     const maximumX = this.bounds.x + this.bounds.width - this.body.offset.x - this.body.size.width;
-    let resolvedX = Math.max(minimumX, Math.min(maximumX, proposedPosition.x));
-    let resolvedVelocityX = resolvedX === proposedPosition.x ? velocity.x : 0;
-    const previousLeft = previousPosition.x + this.body.offset.x;
-    const previousRight = previousLeft + this.body.size.width;
-    const previousTop = previousPosition.y + this.body.offset.y;
-    const previousBottom = previousTop + this.body.size.height;
+    const boundedTargetX = Math.max(minimumX, Math.min(maximumX, proposedPosition.x));
+    let position = previousPosition;
+    let remainingDelta = {
+      x: boundedTargetX - previousPosition.x,
+      y: proposedPosition.y - previousPosition.y
+    };
+    let resolvedVelocity = {
+      x: boundedTargetX === proposedPosition.x ? velocity.x : 0,
+      y: velocity.y
+    };
     const solidSurfaces = this.surfaces.filter((surface) => surface.kind === 'solid');
 
-    if (resolvedX > previousPosition.x) {
-      const proposedRight = resolvedX + this.body.offset.x + this.body.size.width;
-      const wall = solidSurfaces
-        .filter(({ collision }) => {
-          return (
-            overlaps(previousTop, previousBottom, collision.y, collision.y + collision.height) &&
-            previousRight <= collision.x + CONTACT_EPSILON &&
-            proposedRight >= collision.x
-          );
-        })
-        .sort((leftSurface, rightSurface) => leftSurface.collision.x - rightSurface.collision.x)[0];
-      if (wall !== undefined) {
-        resolvedX = wall.collision.x - this.body.offset.x - this.body.size.width;
-        resolvedVelocityX = 0;
+    for (let collisionCount = 0; collisionCount < MAX_SWEEP_COLLISIONS; collisionCount += 1) {
+      const hits = solidSurfaces
+        .map(({ collision }) => sweepSolid(position, remainingDelta, this.body, collision))
+        .filter((hit): hit is SweepHit => hit !== undefined);
+      if (!options.ignoreOneWay) {
+        for (const surface of this.surfaces) {
+          if (surface.kind !== 'one-way') continue;
+          const hit = sweepOneWay(position, remainingDelta, this.body, surface.collision);
+          if (hit !== undefined) hits.push(hit);
+        }
       }
-    } else if (resolvedX < previousPosition.x) {
-      const proposedLeft = resolvedX + this.body.offset.x;
-      const wall = solidSurfaces
-        .filter(({ collision }) => {
-          const collisionRight = collision.x + collision.width;
-          return (
-            overlaps(previousTop, previousBottom, collision.y, collision.y + collision.height) &&
-            previousLeft >= collisionRight - CONTACT_EPSILON &&
-            proposedLeft <= collisionRight
-          );
-        })
-        .sort(
-          (leftSurface, rightSurface) =>
-            rightSurface.collision.x +
-            rightSurface.collision.width -
-            (leftSurface.collision.x + leftSurface.collision.width)
-        )[0];
-      if (wall !== undefined) {
-        resolvedX = wall.collision.x + wall.collision.width - this.body.offset.x;
-        resolvedVelocityX = 0;
+      const earliestTime = hits.reduce(
+        (earliest, hit) => Math.min(earliest, hit.time),
+        Number.POSITIVE_INFINITY
+      );
+      if (!Number.isFinite(earliestTime)) {
+        position = {
+          x: position.x + remainingDelta.x,
+          y: position.y + remainingDelta.y
+        };
+        remainingDelta = { x: 0, y: 0 };
+        break;
       }
-    }
-
-    const left = resolvedX + this.body.offset.x;
-    const right = left + this.body.size.width;
-    let resolvedY = proposedPosition.y;
-    let resolvedVelocityY = velocity.y;
-    if (proposedPosition.y > previousPosition.y) {
-      const proposedBottom = proposedPosition.y + this.body.offset.y + this.body.size.height;
-      const landing = this.surfaces
-        .filter((surface) => {
-          if (surface.kind !== 'solid' && surface.kind !== 'one-way') return false;
-          if (surface.kind === 'one-way' && options.ignoreOneWay) return false;
-          const collision = surface.collision;
-          return (
-            overlaps(left, right, collision.x, collision.x + collision.width) &&
-            previousBottom <= collision.y + CONTACT_EPSILON &&
-            proposedBottom >= collision.y
-          );
-        })
-        .sort((leftSurface, rightSurface) => leftSurface.collision.y - rightSurface.collision.y)[0];
-      if (landing !== undefined) {
-        resolvedY = landing.collision.y - this.body.offset.y - this.body.size.height;
-        resolvedVelocityY = 0;
-      }
-    } else if (proposedPosition.y < previousPosition.y) {
-      const proposedTop = proposedPosition.y + this.body.offset.y;
-      const ceiling = solidSurfaces
-        .filter(({ collision }) => {
-          const collisionBottom = collision.y + collision.height;
-          return (
-            overlaps(left, right, collision.x, collision.x + collision.width) &&
-            previousTop >= collisionBottom - CONTACT_EPSILON &&
-            proposedTop <= collisionBottom
-          );
-        })
-        .sort(
-          (leftSurface, rightSurface) =>
-            rightSurface.collision.y +
-            rightSurface.collision.height -
-            (leftSurface.collision.y + leftSurface.collision.height)
-        )[0];
-      if (ceiling !== undefined) {
-        resolvedY = ceiling.collision.y + ceiling.collision.height - this.body.offset.y;
-        resolvedVelocityY = 0;
-      }
+      const earliestHits = hits.filter(({ time }) => Math.abs(time - earliestTime) <= TIME_EPSILON);
+      const blocksX = earliestHits.some(({ blocksX: blocked }) => blocked);
+      const blocksY = earliestHits.some(({ blocksY: blocked }) => blocked);
+      position = {
+        x: position.x + remainingDelta.x * earliestTime,
+        y: position.y + remainingDelta.y * earliestTime
+      };
+      const remainingTime = 1 - earliestTime;
+      remainingDelta = {
+        x: blocksX ? 0 : remainingDelta.x * remainingTime,
+        y: blocksY ? 0 : remainingDelta.y * remainingTime
+      };
+      resolvedVelocity = {
+        x: blocksX ? 0 : resolvedVelocity.x,
+        y: blocksY ? 0 : resolvedVelocity.y
+      };
+      if (remainingDelta.x === 0 && remainingDelta.y === 0) break;
     }
 
     return {
-      position: { x: resolvedX, y: resolvedY },
-      velocity: { x: resolvedVelocityX, y: resolvedVelocityY }
+      position,
+      velocity: resolvedVelocity
     };
   }
 }

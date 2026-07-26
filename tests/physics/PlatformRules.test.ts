@@ -36,6 +36,24 @@ const oneWay: SurfaceDefinition = {
   materialId: 'moss-root'
 };
 
+const bodyOverlaps = (
+  position: { readonly x: number; readonly y: number },
+  surface: SurfaceDefinition
+): boolean => {
+  const bodyLeft = position.x + playerBody.offset.x;
+  const bodyRight = bodyLeft + playerBody.size.width;
+  const bodyTop = position.y + playerBody.offset.y;
+  const bodyBottom = bodyTop + playerBody.size.height;
+  const surfaceRight = surface.collision.x + surface.collision.width;
+  const surfaceBottom = surface.collision.y + surface.collision.height;
+  return (
+    bodyLeft < surfaceRight &&
+    bodyRight > surface.collision.x &&
+    bodyTop < surfaceBottom &&
+    bodyBottom > surface.collision.y
+  );
+};
+
 describe('PlatformRules', () => {
   it('queries authored solid support from the collision body rather than render bounds', () => {
     const rules = new PlatformRules([floor], roomBounds, playerBody);
@@ -211,4 +229,142 @@ describe('PlatformRules', () => {
       velocity: { x: 9000, y: 0 }
     });
   });
+
+  it.each([
+    {
+      direction: 'right',
+      previous: { x: 280, y: 414 },
+      proposed: { x: 284, y: 404 },
+      velocity: { x: 240, y: -600 },
+      expectedPosition: { x: 282, y: 404 },
+      expectedVelocity: { x: 0, y: -600 }
+    },
+    {
+      direction: 'left',
+      previous: { x: 360, y: 414 },
+      proposed: { x: 356, y: 404 },
+      velocity: { x: -240, y: -600 },
+      expectedPosition: { x: 358, y: 404 },
+      expectedVelocity: { x: 0, y: -600 }
+    }
+  ])(
+    'uses the earliest wall normal when moving upward into an underside corner from the $direction',
+    ({ previous, proposed, velocity, expectedPosition, expectedVelocity }) => {
+      const solid: SurfaceDefinition = {
+        id: 'test-underside-corner',
+        roomId: 'test-room',
+        kind: 'solid',
+        collision: { x: 300, y: 300, width: 40, height: 30 },
+        materialId: 'stone'
+      };
+      const rules = new PlatformRules([solid], roomBounds, playerBody);
+
+      const resolution = rules.resolve(previous, proposed, velocity, { ignoreOneWay: false });
+
+      expect(resolution.position).toEqual(expectedPosition);
+      expect(resolution.velocity).toEqual(expectedVelocity);
+      expect(bodyOverlaps(resolution.position, solid)).toBe(false);
+    }
+  );
+
+  it.each([
+    {
+      direction: 'right',
+      previous: { x: 280, y: 398 },
+      proposed: { x: 284, y: 413 },
+      velocity: { x: 240, y: 900 },
+      expectedPosition: { x: 282, y: 413 },
+      expectedVelocity: { x: 0, y: 900 }
+    },
+    {
+      direction: 'left',
+      previous: { x: 360, y: 398 },
+      proposed: { x: 356, y: 413 },
+      velocity: { x: -240, y: 900 },
+      expectedPosition: { x: 358, y: 413 },
+      expectedVelocity: { x: 0, y: 900 }
+    }
+  ])(
+    'uses the earliest wall normal when moving downward into a floor corner from the $direction',
+    ({ previous, proposed, velocity, expectedPosition, expectedVelocity }) => {
+      const solid: SurfaceDefinition = {
+        id: 'test-floor-corner-wall-first',
+        roomId: 'test-room',
+        kind: 'solid',
+        collision: { x: 300, y: 400, width: 40, height: 30 },
+        materialId: 'stone'
+      };
+      const rules = new PlatformRules([solid], roomBounds, playerBody);
+
+      const resolution = rules.resolve(previous, proposed, velocity, { ignoreOneWay: false });
+
+      expect(resolution.position).toEqual(expectedPosition);
+      expect(resolution.velocity).toEqual(expectedVelocity);
+      expect(bodyOverlaps(resolution.position, solid)).toBe(false);
+    }
+  );
+
+  it.each([
+    {
+      direction: 'right',
+      previous: { x: 280, y: 388 },
+      proposed: { x: 284, y: 403 },
+      velocity: { x: 240, y: 900 },
+      expectedPosition: { x: 284, y: 400 },
+      expectedVelocity: { x: 240, y: 0 }
+    },
+    {
+      direction: 'left',
+      previous: { x: 360, y: 388 },
+      proposed: { x: 356, y: 403 },
+      velocity: { x: -240, y: 900 },
+      expectedPosition: { x: 356, y: 400 },
+      expectedVelocity: { x: -240, y: 0 }
+    }
+  ])(
+    'uses the earliest floor normal at a downward corner approached from the $direction',
+    ({ previous, proposed, velocity, expectedPosition, expectedVelocity }) => {
+      const solid: SurfaceDefinition = {
+        id: 'test-floor-corner-floor-first',
+        roomId: 'test-room',
+        kind: 'solid',
+        collision: { x: 300, y: 400, width: 40, height: 30 },
+        materialId: 'stone'
+      };
+      const rules = new PlatformRules([solid], roomBounds, playerBody);
+
+      const resolution = rules.resolve(previous, proposed, velocity, { ignoreOneWay: false });
+
+      expect(resolution.position).toEqual(expectedPosition);
+      expect(resolution.velocity).toEqual(expectedVelocity);
+      expect(bodyOverlaps(resolution.position, solid)).toBe(false);
+    }
+  );
+
+  it.each([
+    {
+      direction: 'right',
+      previous: { x: 80, y: 414 },
+      proposed: { x: 84, y: 404 },
+      velocity: { x: 240, y: -600 }
+    },
+    {
+      direction: 'left',
+      previous: { x: 430, y: 414 },
+      proposed: { x: 426, y: 404 },
+      velocity: { x: -240, y: -600 }
+    }
+  ])(
+    'permits diagonal upward and lateral passage through a one-way surface from the $direction',
+    ({ previous, proposed, velocity }) => {
+      const rules = new PlatformRules([oneWay], roomBounds, playerBody);
+
+      const resolution = rules.resolve(previous, proposed, velocity, { ignoreOneWay: false });
+
+      expect(resolution).toEqual({
+        position: proposed,
+        velocity
+      });
+    }
+  );
 });
