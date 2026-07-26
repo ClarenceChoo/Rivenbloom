@@ -199,7 +199,7 @@ export const areaDefinitions: readonly AreaDefinition[] = [
         assetKey: BrackenreachAssetKeys.foreground,
         position: { x: 0, y: 0 },
         size: { width: 1280, height: 720 },
-        depth: 30,
+        depth: 8,
         scrollFactor: 1.08
       }
     ],

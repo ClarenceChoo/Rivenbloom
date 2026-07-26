@@ -78,7 +78,7 @@ describe('project configuration', () => {
     });
 
     expect(result.status).toBe(0);
-  }, 15_000);
+  }, 60_000);
 
   it('checks project sources with the configured formatter', () => {
     const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';

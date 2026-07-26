@@ -40,6 +40,8 @@ export type MovementInput = {
   readonly dropPressed: boolean;
   readonly respawn: boolean;
   readonly knockback?: Vector2;
+  readonly locomotionLocked?: boolean;
+  readonly forcedVelocityX?: number;
 };
 
 export type MovementContacts = {
@@ -152,21 +154,23 @@ export const stepMovement = (
     state.velocity.x !== 0 && Math.sign(state.velocity.x) !== Math.sign(controlMoveX);
   const velocityX = knockbackStarted
     ? input.knockback.x
-    : knockbackLocked
-      ? state.velocity.x
-      : controlMoveX === 0
-        ? effectivelyGrounded || state.machine.value === 'climb'
-          ? moveToward(state.velocity.x, 0, tuning.groundFriction * dt)
-          : state.velocity.x
-        : moveToward(
-            state.velocity.x,
-            controlMoveX * tuning.maxRunSpeed,
-            (effectivelyGrounded
-              ? reversing
-                ? tuning.groundBraking
-                : tuning.groundAcceleration
-              : tuning.airAcceleration) * dt
-          );
+    : input.forcedVelocityX !== undefined
+      ? input.forcedVelocityX
+      : knockbackLocked
+        ? state.velocity.x
+        : controlMoveX === 0
+          ? effectivelyGrounded || state.machine.value === 'climb'
+            ? moveToward(state.velocity.x, 0, tuning.groundFriction * dt)
+            : state.velocity.x
+          : moveToward(
+              state.velocity.x,
+              controlMoveX * tuning.maxRunSpeed,
+              (effectivelyGrounded
+                ? reversing
+                  ? tuning.groundBraking
+                  : tuning.groundAcceleration
+                : tuning.airAcceleration) * dt
+            );
   const coyoteRemaining = effectivelyGrounded
     ? tuning.coyoteTime
     : Math.max(0, state.coyoteRemaining - dt);
@@ -198,7 +202,7 @@ export const stepMovement = (
             : Math.min(tuning.maxFallSpeed, verticalStart + tuning.gravity * dt);
   let machine = state.machine;
   if (knockbackStarted) machine = requestPlayerState(machine, 'hurt');
-  else if (!knockbackLocked) {
+  else if (!knockbackLocked && input.locomotionLocked !== true) {
     if (dropThroughStarted) machine = requestPlayerState(machine, 'fall');
     else if (jumped) machine = requestPlayerState(machine, 'jump');
     else if (climbing) machine = requestPlayerState(machine, 'climb');

@@ -27,36 +27,69 @@ export const createPlayerStateMachine = (value: PlayerStateName = 'idle'): Playe
   value
 });
 
+const transitions: Readonly<Record<PlayerStateName, readonly PlayerStateName[]>> = {
+  idle: [
+    'run',
+    'jump',
+    'fall',
+    'climb',
+    'attackLight',
+    'attackHeavy',
+    'block',
+    'parry',
+    'dash',
+    'cast',
+    'interact',
+    'hurt',
+    'dead'
+  ],
+  run: [
+    'idle',
+    'jump',
+    'fall',
+    'climb',
+    'attackLight',
+    'attackHeavy',
+    'block',
+    'parry',
+    'dash',
+    'cast',
+    'interact',
+    'hurt',
+    'dead'
+  ],
+  jump: ['fall', 'climb', 'airAttack', 'dash', 'cast', 'hurt', 'dead'],
+  fall: ['jump', 'land', 'climb', 'airAttack', 'dash', 'cast', 'hurt', 'dead'],
+  land: [
+    'idle',
+    'run',
+    'jump',
+    'fall',
+    'attackLight',
+    'attackHeavy',
+    'block',
+    'parry',
+    'dash',
+    'cast',
+    'hurt',
+    'dead'
+  ],
+  attackLight: ['idle', 'run', 'jump', 'fall', 'attackHeavy', 'dash', 'cast', 'hurt', 'dead'],
+  attackHeavy: ['idle', 'run', 'jump', 'fall', 'dash', 'cast', 'hurt', 'dead'],
+  airAttack: ['jump', 'fall', 'land', 'dash', 'cast', 'hurt', 'dead'],
+  block: ['idle', 'run', 'fall', 'parry', 'cast', 'hurt', 'dead'],
+  parry: ['idle', 'run', 'fall', 'block', 'hurt', 'dead'],
+  dash: ['idle', 'run', 'jump', 'fall', 'hurt', 'dead'],
+  cast: ['idle', 'run', 'jump', 'fall', 'hurt', 'dead'],
+  climb: ['idle', 'fall', 'jump', 'hurt', 'dead'],
+  interact: ['idle', 'run', 'fall', 'hurt', 'dead'],
+  hurt: ['idle', 'run', 'fall', 'dead'],
+  dead: []
+};
+
 export const requestPlayerState = (
   machine: PlayerStateMachine,
   next: PlayerStateName
 ): PlayerStateMachine => {
-  if (machine.value === 'idle' && next === 'run') return { value: next };
-  if (machine.value === 'idle' && next === 'jump') return { value: next };
-  if (machine.value === 'idle' && next === 'fall') return { value: next };
-  if (machine.value === 'idle' && next === 'climb') return { value: next };
-  if (machine.value === 'run' && next === 'jump') return { value: next };
-  if (machine.value === 'run' && next === 'idle') return { value: next };
-  if (machine.value === 'run' && next === 'fall') return { value: next };
-  if (machine.value === 'run' && next === 'climb') return { value: next };
-  if (machine.value === 'fall' && next === 'jump') return { value: next };
-  if (machine.value === 'jump' && next === 'fall') return { value: next };
-  if (machine.value === 'jump' && next === 'climb') return { value: next };
-  if (machine.value === 'fall' && next === 'land') return { value: next };
-  if (machine.value === 'fall' && next === 'climb') return { value: next };
-  if (machine.value === 'land' && next === 'jump') return { value: next };
-  if (machine.value === 'land' && next === 'fall') return { value: next };
-  if (machine.value === 'land' && next === 'run') return { value: next };
-  if (machine.value === 'land' && next === 'idle') return { value: next };
-  if (machine.value === 'idle' && next === 'hurt') return { value: next };
-  if (machine.value === 'run' && next === 'hurt') return { value: next };
-  if (machine.value === 'jump' && next === 'hurt') return { value: next };
-  if (machine.value === 'fall' && next === 'hurt') return { value: next };
-  if (machine.value === 'land' && next === 'hurt') return { value: next };
-  if (machine.value === 'climb' && next === 'hurt') return { value: next };
-  if (machine.value === 'climb' && next === 'fall') return { value: next };
-  if (machine.value === 'hurt' && next === 'idle') return { value: next };
-  if (machine.value === 'hurt' && next === 'run') return { value: next };
-  if (machine.value === 'hurt' && next === 'fall') return { value: next };
-  return machine;
+  return transitions[machine.value].includes(next) ? { value: next } : machine;
 };

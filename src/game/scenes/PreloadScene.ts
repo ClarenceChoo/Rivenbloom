@@ -26,6 +26,10 @@ const WORLD_ASSETS = [
   {
     key: BrackenreachAssetKeys.mara,
     url: '/assets/atlases/source/mara-sheet.png'
+  },
+  {
+    key: 'briar-scrapper-sheet',
+    url: '/assets/atlases/source/briar-scrapper-sheet.png'
   }
 ] as const;
 

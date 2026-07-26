@@ -1,14 +1,31 @@
 import type Phaser from 'phaser';
 import type { ActorDefinition } from '../../data/types';
+import type { PlayerCombatState } from '../../combat/PlayerCombat';
 import type { MovementStep, Vector2 } from '../../physics/MovementModel';
 
-type LocomotionFrame = 'idle' | 'run-a' | 'run-b' | 'jump' | 'fall' | 'land' | 'climb' | 'hurt';
+type PlayerVisualFrame =
+  | 'idle'
+  | 'run-a'
+  | 'run-b'
+  | 'jump'
+  | 'fall'
+  | 'land'
+  | 'climb'
+  | 'attack-light-1'
+  | 'attack-light-2'
+  | 'attack-light-3'
+  | 'air-attack'
+  | 'charged-attack'
+  | 'block'
+  | 'cast'
+  | 'dash'
+  | 'hurt';
 
 const FRAME_SIZE = 300;
 const DISPLAY_SIZE = 120;
 const RUN_FRAME_MS = 120;
 const FRAME_CELLS: Readonly<
-  Record<LocomotionFrame, { readonly column: number; readonly row: number }>
+  Record<PlayerVisualFrame, { readonly column: number; readonly row: number }>
 > = {
   idle: { column: 0, row: 0 },
   'run-a': { column: 1, row: 0 },
@@ -17,6 +34,14 @@ const FRAME_CELLS: Readonly<
   fall: { column: 0, row: 1 },
   land: { column: 2, row: 1 },
   climb: { column: 1, row: 1 },
+  'attack-light-1': { column: 0, row: 2 },
+  'attack-light-2': { column: 1, row: 2 },
+  'attack-light-3': { column: 2, row: 2 },
+  'air-attack': { column: 3, row: 1 },
+  'charged-attack': { column: 3, row: 2 },
+  block: { column: 0, row: 3 },
+  cast: { column: 1, row: 3 },
+  dash: { column: 2, row: 3 },
   hurt: { column: 3, row: 3 }
 };
 
@@ -26,7 +51,7 @@ export class PlayerView {
   public constructor(scene: Phaser.Scene, actor: ActorDefinition, position: Vector2) {
     const texture = scene.textures.get(actor.render.assetKey);
     for (const [name, cell] of Object.entries(FRAME_CELLS)) {
-      const frameName = this.frameName(name as LocomotionFrame);
+      const frameName = this.frameName(name as PlayerVisualFrame);
       if (texture.has(frameName)) continue;
       texture.add(
         frameName,
@@ -45,17 +70,21 @@ export class PlayerView {
       .setData('actorId', actor.id);
   }
 
-  public apply(step: MovementStep, timeMs: number): void {
+  public apply(step: MovementStep, timeMs: number, combat?: PlayerCombatState): void {
     this.image.setPosition(step.state.position.x, step.state.position.y);
     this.image.setFlipX(step.animation.facing === 'left');
-    this.image.setFrame(this.frameName(this.selectFrame(step, timeMs)));
+    this.image.setFrame(this.frameName(this.selectFrame(step, timeMs, combat)));
   }
 
   public dispose(): void {
     this.image.destroy();
   }
 
-  private selectFrame(step: MovementStep, timeMs: number): LocomotionFrame {
+  private selectFrame(
+    step: MovementStep,
+    timeMs: number,
+    combat?: PlayerCombatState
+  ): PlayerVisualFrame {
     switch (step.animation.state) {
       case 'run':
         return Math.floor(timeMs / RUN_FRAME_MS) % 2 === 0 ? 'run-a' : 'run-b';
@@ -67,14 +96,32 @@ export class PlayerView {
         return 'land';
       case 'climb':
         return 'climb';
+      case 'attackLight':
+        return combat?.comboStage === 2
+          ? 'attack-light-2'
+          : combat?.comboStage === 3
+            ? 'attack-light-3'
+            : 'attack-light-1';
+      case 'airAttack':
+        return 'air-attack';
+      case 'attackHeavy':
+        return 'charged-attack';
+      case 'block':
+      case 'parry':
+        return 'block';
+      case 'cast':
+        return 'cast';
+      case 'dash':
+        return 'dash';
       case 'hurt':
+      case 'dead':
         return 'hurt';
       default:
         return 'idle';
     }
   }
 
-  private frameName(frame: LocomotionFrame): string {
+  private frameName(frame: PlayerVisualFrame): string {
     return `mara-locomotion-${frame}`;
   }
 }

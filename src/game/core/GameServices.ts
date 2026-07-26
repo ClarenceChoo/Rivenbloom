@@ -3,6 +3,7 @@ import type { InputService } from '../input/InputService';
 import type { SaveRepository } from '../saves/SaveRepository';
 import type { SaveService } from '../saves/SaveService';
 import type { AccessibilitySettingsState } from '../config/accessibility';
+import type { GameEvents } from './GameEvents';
 
 export const GAME_SERVICES_REGISTRY_KEY = 'rivenbloom-services';
 export const SAVE_WARNING_REGISTRY_KEY = 'rivenbloom-save-warning';
@@ -12,3 +13,4 @@ export const SaveRepositoryToken = createServiceToken<SaveRepository>('save-repo
 export const SaveServiceToken = createServiceToken<SaveService>('save-service');
 export const AccessibilitySettingsToken =
   createServiceToken<AccessibilitySettingsState>('accessibility-settings');
+export const GameEventsToken = createServiceToken<GameEvents>('game-events');

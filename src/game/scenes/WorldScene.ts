@@ -1,10 +1,12 @@
 import Phaser from 'phaser';
 import { CameraDirector } from '../camera/CameraDirector';
+import { CombatSceneAdapter } from '../combat/CombatSceneAdapter';
 import { PLAYER_CAMERA_TUNING, PLAYER_MOVEMENT_TUNING } from '../config/traversal';
 import type { AccessibilitySettingsState } from '../config/accessibility';
 import {
   AccessibilitySettingsToken,
   GAME_SERVICES_REGISTRY_KEY,
+  GameEventsToken,
   InputServiceToken
 } from '../core/GameServices';
 import { SceneScope } from '../core/SceneScope';
@@ -37,8 +39,10 @@ export class WorldScene extends Phaser.Scene {
   private cameraDirector: CameraDirector | undefined;
   private definition: AreaDefinition | undefined;
   private settings: AccessibilitySettingsState | undefined;
+  private combat: CombatSceneAdapter | undefined;
   private previousPlayerState: PlayerStateName | undefined;
   private landingCount = 0;
+  private comboMaxStage = 0;
 
   public constructor() {
     super(SceneKeys.World);
@@ -51,8 +55,10 @@ export class WorldScene extends Phaser.Scene {
     this.cameraDirector = undefined;
     this.definition = undefined;
     this.settings = undefined;
+    this.combat = undefined;
     this.previousPlayerState = undefined;
     this.landingCount = 0;
+    this.comboMaxStage = 0;
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, this.shutdown, this);
     this.scope.add(() => this.events.off(Phaser.Scenes.Events.SHUTDOWN, this.shutdown, this));
   }
@@ -64,6 +70,7 @@ export class WorldScene extends Phaser.Scene {
     const loaded = new AreaLoader().load(definition);
     const services = this.registry.get(GAME_SERVICES_REGISTRY_KEY) as ServiceRegistry;
     const input = services.get(InputServiceToken);
+    const events = services.get(GameEventsToken);
     this.settings = services.get(AccessibilitySettingsToken);
     this.definition = definition;
 
@@ -89,6 +96,21 @@ export class WorldScene extends Phaser.Scene {
       spawn: loaded.initialSpawn
     });
     this.scope.add(() => this.player?.dispose());
+    const targetSpawn = definition.actorSpawns.find(({ id }) => id === 'arch-briar-scrapper');
+    const target = actorDefinitions.find(({ id }) => id === 'briar-scrapper');
+    if (targetSpawn === undefined || target === undefined) {
+      throw new Error('Dormant Briar Scrapper combat target is not registered.');
+    }
+    this.combat = new CombatSceneAdapter(
+      this,
+      mara,
+      loaded.initialSpawn.position,
+      target,
+      targetSpawn,
+      this.settings,
+      events
+    );
+    this.scope.add(() => this.combat?.dispose());
     this.cameraDirector = new CameraDirector(this.cameras.main, PLAYER_CAMERA_TUNING);
     this.scope.add(() => this.cameraDirector?.dispose());
     this.exposeSemanticState(loaded);
@@ -107,13 +129,25 @@ export class WorldScene extends Phaser.Scene {
     ) {
       return;
     }
+    if (this.combat?.consumeHitStop(delta) === true) {
+      this.updateSemanticState();
+      return;
+    }
     this.player.update(time, delta);
     const snapshot = this.player.snapshot;
+    this.combat?.accept(
+      this.player.drainCombatDirectives(),
+      snapshot.position,
+      snapshot.facing,
+      this.player.combatSnapshot
+    );
+    this.combat?.update(delta, snapshot.position);
     this.cameraDirector.follow(snapshot.position, this.definition.bounds, {
       facing: snapshot.facing,
       reducedMotion: this.settings.current.reducedMotion,
       deltaSeconds: delta / 1000
     });
+    this.combat?.applyCameraFeedback(this.cameras.main);
     this.updateSemanticState();
   }
 
@@ -188,6 +222,20 @@ export class WorldScene extends Phaser.Scene {
       delete canvas.dataset.cameraY;
       delete canvas.dataset.cameraMinX;
       delete canvas.dataset.cameraMaxX;
+      delete canvas.dataset.playerMana;
+      delete canvas.dataset.playerGuard;
+      delete canvas.dataset.playerInvulnerable;
+      delete canvas.dataset.playerComboStage;
+      delete canvas.dataset.playerComboMaxStage;
+      delete canvas.dataset.playerActionFrame;
+      delete canvas.dataset.playerLastAttack;
+      delete canvas.dataset.playerLastAbility;
+      delete canvas.dataset.playerSelectedAbility;
+      delete canvas.dataset.lumenProjectileCount;
+      delete canvas.dataset.lumenCooldownReadyAt;
+      delete canvas.dataset.combatTargetHealth;
+      delete canvas.dataset.combatTargetState;
+      delete canvas.dataset.combatTargetX;
       canvas.removeAttribute('aria-label');
     });
   }
@@ -195,6 +243,9 @@ export class WorldScene extends Phaser.Scene {
   private updateSemanticState(): void {
     if (this.player === undefined || this.definition === undefined) return;
     const snapshot = this.player.snapshot;
+    const combatState = this.player.combatSnapshot;
+    const combatStep = this.player.latestCombatStep;
+    const combatScene = this.combat?.snapshot;
     const room = this.definition.rooms.find(
       ({ bounds }) =>
         snapshot.position.x >= bounds.x &&
@@ -207,6 +258,7 @@ export class WorldScene extends Phaser.Scene {
       this.landingCount += 1;
     }
     this.previousPlayerState = snapshot.machine.value;
+    this.comboMaxStage = Math.max(this.comboMaxStage, combatState.comboStage);
     if (room !== undefined) canvas.dataset.roomId = room.id;
     canvas.dataset.playerX = snapshot.position.x.toFixed(2);
     canvas.dataset.playerY = snapshot.position.y.toFixed(2);
@@ -222,6 +274,24 @@ export class WorldScene extends Phaser.Scene {
       this.definition.bounds.width -
       this.cameras.main.width
     ).toFixed(2);
+    canvas.dataset.playerMana = String(combatState.mana);
+    canvas.dataset.playerSelectedAbility = combatState.selectedAbilityId;
+    canvas.dataset.playerGuard = combatStep?.guard.kind ?? 'none';
+    canvas.dataset.playerInvulnerable = String(combatStep?.invulnerable ?? false);
+    canvas.dataset.playerComboStage = String(combatState.comboStage);
+    canvas.dataset.playerComboMaxStage = String(this.comboMaxStage);
+    canvas.dataset.playerActionFrame = String(combatState.actionFrame);
+    canvas.dataset.lumenCooldownReadyAt = String(combatState.cooldownReadyAt['lumen-bolt'] ?? 0);
+    canvas.dataset.lumenProjectileCount = String(combatScene?.activeProjectileCount ?? 0);
+    canvas.dataset.combatTargetHealth = String(combatScene?.targetHealth ?? 0);
+    canvas.dataset.combatTargetState = combatScene?.targetState ?? 'sleep';
+    canvas.dataset.combatTargetX = String(combatScene?.targetPosition.x ?? 0);
+    if (combatScene?.lastAttackId !== undefined) {
+      canvas.dataset.playerLastAttack = combatScene.lastAttackId;
+    }
+    if (combatScene?.lastAbilityId !== undefined) {
+      canvas.dataset.playerLastAbility = combatScene.lastAbilityId;
+    }
   }
 
   private renderDebugOverlay(definition: AreaDefinition): void {

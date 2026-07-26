@@ -97,7 +97,14 @@ export const actorDefinitions: readonly ActorDefinition[] = [
     displayName: 'Mara Vey',
     kind: 'player',
     assetKey: 'mara-sheet',
-    attackIds: ['mara-light-slash', 'mara-heavy-slash'],
+    attackIds: [
+      'mara-light-combo-1',
+      'mara-light-combo-2',
+      'mara-light-combo-3',
+      'mara-air-slash',
+      'mara-heavy-slash',
+      'mara-charged-strike'
+    ],
     abilityIds: ['lumen-bolt', 'wayfinder-dash', 'aegis-veil', 'resonant-pulse'],
     maxHealth: 100,
     maxMana: 60

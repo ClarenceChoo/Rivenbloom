@@ -6,11 +6,13 @@ import {
 import {
   AccessibilitySettingsToken,
   GAME_SERVICES_REGISTRY_KEY,
+  GameEventsToken,
   InputServiceToken,
   SAVE_WARNING_REGISTRY_KEY,
   SaveRepositoryToken,
   SaveServiceToken
 } from '../core/GameServices';
+import { GameEvents } from '../core/GameEvents';
 import { ServiceRegistry } from '../core/ServiceRegistry';
 import { InputService } from '../input/InputService';
 import { IndexedDbSaveRepository } from '../saves/IndexedDbSaveRepository';
@@ -50,14 +52,17 @@ export class BootScene extends Phaser.Scene {
       preferenceSave?.settings ?? DEFAULT_ACCESSIBILITY_SETTINGS,
       preferenceSave?.slotId
     );
+    const events = new GameEvents();
     const input = new InputService({
       settings: settings.current,
+      events,
       ...(preferenceSave === undefined ? {} : { serializedBindings: preferenceSave.bindings })
     });
     services.register(InputServiceToken, input);
     services.register(SaveRepositoryToken, repository);
     services.register(SaveServiceToken, saves);
     services.register(AccessibilitySettingsToken, settings);
+    services.register(GameEventsToken, events);
     this.registry.set(GAME_SERVICES_REGISTRY_KEY, services);
     if (warning !== undefined) this.registry.set(SAVE_WARNING_REGISTRY_KEY, warning);
     this.game.events.once(Phaser.Core.Events.DESTROY, () => {

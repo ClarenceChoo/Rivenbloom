@@ -15,6 +15,8 @@ type AttackInput = {
     readonly height: number;
   };
   readonly cooldownMs?: number;
+  readonly cancelAfterFrame?: number;
+  readonly movementImpulse?: PointDefinition;
 };
 
 function attack(input: AttackInput): AttackDefinition {
@@ -45,8 +47,8 @@ function attack(input: AttackInput): AttackDefinition {
       type: input.type ?? 'physical',
       tags: []
     },
-    movementImpulse: { x: 0, y: 0 },
-    cancelAfterFrame: input.anticipationFrames + input.activeFrames,
+    movementImpulse: input.movementImpulse ?? { x: 0, y: 0 },
+    cancelAfterFrame: input.cancelAfterFrame ?? input.anticipationFrames + input.activeFrames,
     cooldownMs: input.cooldownMs ?? 0,
     soundCueId: `${input.id}-sound`,
     effectCueId: `${input.id}-effect`
@@ -54,6 +56,64 @@ function attack(input: AttackInput): AttackDefinition {
 }
 
 export const attackDefinitions: readonly AttackDefinition[] = [
+  attack({
+    id: 'mara-light-combo-1',
+    displayName: 'Leaf-Crescent Opening',
+    anticipationFrames: 3,
+    activeFrames: 4,
+    recoveryFrames: 12,
+    damage: 10,
+    poise: 7,
+    hitbox: { offset: { x: 20, y: -78 }, width: 72, height: 58 },
+    cancelAfterFrame: 3,
+    movementImpulse: { x: 36, y: 0 }
+  }),
+  attack({
+    id: 'mara-light-combo-2',
+    displayName: 'Leaf-Crescent Return',
+    anticipationFrames: 4,
+    activeFrames: 4,
+    recoveryFrames: 12,
+    damage: 12,
+    poise: 9,
+    hitbox: { offset: { x: 18, y: -84 }, width: 82, height: 66 },
+    cancelAfterFrame: 4,
+    movementImpulse: { x: 42, y: 0 }
+  }),
+  attack({
+    id: 'mara-light-combo-3',
+    displayName: 'Leaf-Crescent Crown',
+    anticipationFrames: 5,
+    activeFrames: 5,
+    recoveryFrames: 10,
+    damage: 18,
+    poise: 18,
+    hitbox: { offset: { x: 12, y: -92 }, width: 104, height: 82 },
+    cancelAfterFrame: 10,
+    movementImpulse: { x: 54, y: 0 }
+  }),
+  attack({
+    id: 'mara-air-slash',
+    displayName: 'Falling Leaf Arc',
+    anticipationFrames: 3,
+    activeFrames: 5,
+    recoveryFrames: 8,
+    damage: 14,
+    poise: 11,
+    hitbox: { offset: { x: 12, y: -82 }, width: 96, height: 92 }
+  }),
+  attack({
+    id: 'mara-charged-strike',
+    displayName: 'Surveyor Edge Crescendo',
+    anticipationFrames: 6,
+    activeFrames: 6,
+    recoveryFrames: 15,
+    damage: 36,
+    poise: 38,
+    type: 'rootglass',
+    hitbox: { offset: { x: 8, y: -104 }, width: 126, height: 96 },
+    movementImpulse: { x: 70, y: 0 }
+  }),
   attack({
     id: 'mara-light-slash',
     displayName: 'Leaf-Crescent Cut',

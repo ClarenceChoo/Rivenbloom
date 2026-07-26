@@ -39,6 +39,17 @@ type BaseGameEventMap = {
     readonly actorId: string;
     readonly actorKind: 'player' | 'enemy' | 'boss';
   };
+  readonly 'combat:cue-requested': {
+    readonly cueId: string;
+    readonly kind: 'effect' | 'sound';
+    readonly sourceId: string;
+  };
+  readonly 'combat:ability-used': {
+    readonly actorId: string;
+    readonly abilityId: string;
+    readonly mana: number;
+    readonly cooldownReadyAt: number;
+  };
   readonly 'quest:transition-applied': {
     readonly questId: string;
     readonly fromStage?: string;
