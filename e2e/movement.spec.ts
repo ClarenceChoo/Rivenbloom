@@ -10,8 +10,16 @@ async function startNewGame(page: Page): Promise<Locator> {
     .getByRole('button', { name: 'NEW GAME' })
     .click();
   await expect(page.locator('[data-destination="wrens-rest"]')).toBeVisible();
-  const canvas = page.locator('canvas[data-area-id="brackenreach-trail"]');
+  const canvas = page.locator('canvas[data-area-id="wrens-rest"]');
   await expect(canvas).toBeVisible();
+  return canvas;
+}
+
+async function walkEastToTrail(page: Page): Promise<Locator> {
+  await page.keyboard.down('d');
+  const canvas = page.locator('canvas[data-area-id="brackenreach-trail"]');
+  await expect(canvas).toBeVisible({ timeout: 25_000 });
+  await page.keyboard.up('d');
   return canvas;
 }
 
@@ -23,12 +31,13 @@ async function numericAttribute(canvas: Locator, name: string): Promise<number> 
   return parsed;
 }
 
-test('moves through Brackenreach with real keyboard input inside room and camera bounds', async ({
+test('walks out of Wren’s Rest and through Brackenreach inside room and camera bounds', async ({
   page
 }) => {
   const pageErrors: string[] = [];
   page.on('pageerror', (error) => pageErrors.push(error.message));
-  const canvas = await startNewGame(page);
+  await startNewGame(page);
+  const canvas = await walkEastToTrail(page);
   const startX = await numericAttribute(canvas, 'data-player-x');
 
   await page.keyboard.down('d');

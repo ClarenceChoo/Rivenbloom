@@ -109,7 +109,8 @@ export class TitleScene extends Phaser.Scene {
         this.scene.start(SceneKeys.Transition, {
           destinationId: loaded.save.metadata.areaId,
           destinationName: formatAreaName(loaded.save.metadata.areaId),
-          unlockedAbilityIds: loaded.save.unlockedAbilities,
+          slotId: command.slotId,
+          save: loaded.save,
           reducedMotion:
             this.settingsState?.current.reducedMotion ?? loaded.save.settings.reducedMotion
         });
@@ -125,9 +126,10 @@ export class TitleScene extends Phaser.Scene {
         await this.saves.flushAutosaves();
         this.settingsState?.replace(withSettings.settings, command.slotId);
         this.scene.start(SceneKeys.Transition, {
-          destinationId: 'wrens-rest',
-          destinationName: "WREN'S REST",
-          unlockedAbilityIds: withSettings.unlockedAbilities,
+          destinationId: withSettings.metadata.areaId,
+          destinationName: formatAreaName(withSettings.metadata.areaId),
+          slotId: command.slotId,
+          save: withSettings,
           reducedMotion: withSettings.settings.reducedMotion
         });
       }

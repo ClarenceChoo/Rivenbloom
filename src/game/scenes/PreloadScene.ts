@@ -30,6 +30,34 @@ const WORLD_ASSETS = [
   {
     key: 'briar-scrapper-sheet',
     url: '/assets/atlases/source/briar-scrapper-sheet.png'
+  },
+  {
+    key: 'duskwing-sheet',
+    url: '/assets/atlases/source/duskwing-sheet.png'
+  },
+  {
+    key: 'spore-scribe-sheet',
+    url: '/assets/atlases/source/spore-scribe-sheet.png'
+  },
+  {
+    key: 'barkbound-sheet',
+    url: '/assets/atlases/source/barkbound-sheet.png'
+  },
+  {
+    key: 'rootlurker-sheet',
+    url: '/assets/atlases/source/rootlurker-sheet.png'
+  },
+  {
+    key: 'thorn-sentinel-sheet',
+    url: '/assets/atlases/source/thorn-sentinel-sheet.png'
+  },
+  {
+    key: 'pallid-cantor-sheet',
+    url: '/assets/atlases/source/pallid-cantor-sheet.png'
+  },
+  {
+    key: 'dialogue-portraits',
+    url: '/assets/portraits/dialogue-portraits.png'
   }
 ] as const;
 

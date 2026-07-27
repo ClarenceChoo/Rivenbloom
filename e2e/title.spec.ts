@@ -36,7 +36,7 @@ test('renders the accessible title and starts a new game in Wren’s Rest', asyn
   const destination = page.getByRole('heading', { name: "WREN'S REST", level: 1 });
   await expect(destination).toBeVisible();
   await expect(page.locator('[data-destination="wrens-rest"]')).toBeVisible();
-  await expect(page.locator('canvas[data-area-id="brackenreach-trail"]')).toBeVisible();
+  await expect(page.locator('canvas[data-area-id="wrens-rest"]')).toBeVisible();
   expect(pageErrors).toEqual([]);
 });
 

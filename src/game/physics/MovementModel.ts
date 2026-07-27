@@ -201,8 +201,12 @@ export const stepMovement = (
             ? 0
             : Math.min(tuning.maxFallSpeed, verticalStart + tuning.gravity * dt);
   let machine = state.machine;
+  // Hurt recovery must run even while combat reports a movement lock: the
+  // hurt state itself is what locks movement, so gating its exit on the lock
+  // would trap the machine in hurt forever.
+  const recoveringFromHurt = machine.value === 'hurt' && !knockbackLocked;
   if (knockbackStarted) machine = requestPlayerState(machine, 'hurt');
-  else if (!knockbackLocked && input.locomotionLocked !== true) {
+  else if (!knockbackLocked && (input.locomotionLocked !== true || recoveringFromHurt)) {
     if (dropThroughStarted) machine = requestPlayerState(machine, 'fall');
     else if (jumped) machine = requestPlayerState(machine, 'jump');
     else if (climbing) machine = requestPlayerState(machine, 'climb');

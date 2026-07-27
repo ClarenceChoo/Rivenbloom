@@ -1,5 +1,7 @@
 import { expect, type Locator, type Page, test } from '@playwright/test';
 
+const AWAKE_ENEMY_STATES = ['suspect', 'chase', 'telegraph', 'attack', 'recover', 'retreat'];
+
 async function startNewGame(page: Page): Promise<Locator> {
   await page.goto('/');
   await page.getByRole('button', { name: 'NEW GAME' }).click();
@@ -10,8 +12,16 @@ async function startNewGame(page: Page): Promise<Locator> {
     .getByRole('button', { name: 'NEW GAME' })
     .click();
   await expect(page.locator('[data-destination="wrens-rest"]')).toBeVisible();
-  const canvas = page.locator('canvas[data-area-id="brackenreach-trail"]');
+  const canvas = page.locator('canvas[data-area-id="wrens-rest"]');
   await expect(canvas).toBeVisible();
+  return canvas;
+}
+
+async function walkEastToTrail(page: Page): Promise<Locator> {
+  await page.keyboard.down('d');
+  const canvas = page.locator('canvas[data-area-id="brackenreach-trail"]');
+  await expect(canvas).toBeVisible({ timeout: 25_000 });
+  await page.keyboard.up('d');
   return canvas;
 }
 
@@ -23,94 +33,99 @@ async function numericAttribute(canvas: Locator, name: string): Promise<number> 
   return parsed;
 }
 
-async function holdKeyUntilAttribute(
-  page: Page,
-  canvas: Locator,
-  key: string,
-  name: string,
-  value: string
-): Promise<void> {
-  await page.keyboard.down(key);
-  try {
-    await expect(canvas).toHaveAttribute(name, value);
-  } finally {
-    await page.keyboard.up(key);
-  }
-}
+test('wakes the live Briar Scrapper, lands authored attacks, and banks the XP award', async ({
+  page
+}) => {
+  test.setTimeout(120_000);
+  const pageErrors: string[] = [];
+  page.on('pageerror', (error) => pageErrors.push(error.message));
+  await startNewGame(page);
+  const canvas = await walkEastToTrail(page);
 
-async function approachDormantTarget(page: Page, canvas: Locator): Promise<void> {
   await page.keyboard.down('d');
   await expect
     .poll(() => numericAttribute(canvas, 'data-player-x'), { timeout: 12_000 })
-    .toBeGreaterThan(1_550);
+    .toBeGreaterThan(1_350);
   await page.keyboard.up('d');
-  await page.waitForTimeout(180);
-  const targetX = await numericAttribute(canvas, 'data-combat-target-x');
-  for (let correction = 0; correction < 8; correction += 1) {
+
+  await expect
+    .poll(
+      async () =>
+        AWAKE_ENEMY_STATES.includes(String(await canvas.getAttribute('data-combat-target-state'))),
+      { timeout: 10_000 }
+    )
+    .toBe(true);
+
+  let sawAirSlash = false;
+  let sawChargedStrike = false;
+  for (let round = 0; round < 150; round += 1) {
+    const targetState = await canvas.getAttribute('data-combat-target-state');
+    if (targetState === 'dead') break;
+    const areaId = await canvas.getAttribute('data-area-id');
+    if (areaId !== 'brackenreach-trail') {
+      throw new Error('Player was knocked out of the encounter area.');
+    }
+    const targetX = await numericAttribute(canvas, 'data-combat-target-x');
     const playerX = await numericAttribute(canvas, 'data-player-x');
-    const distance = targetX - 80 - playerX;
-    if (Math.abs(distance) <= 16) break;
-    const key = distance > 0 ? 'd' : 'a';
-    const duration = Math.min(250, Math.max(55, (Math.abs(distance) / 240) * 700));
-    await page.keyboard.down(key);
-    await page.waitForTimeout(duration);
-    await page.keyboard.up(key);
-    await page.waitForTimeout(150);
+    const gap = targetX - playerX;
+    if (Math.abs(gap) > 130) {
+      const approach = gap > 0 ? 'd' : 'a';
+      await page.keyboard.down(approach);
+      await page.waitForTimeout(130);
+      await page.keyboard.up(approach);
+      continue;
+    }
+    if ((await canvas.getAttribute('data-player-state')) === 'hurt') {
+      await page.waitForTimeout(140);
+      continue;
+    }
+    const facing = await canvas.getAttribute('data-player-facing');
+    const wanted = gap >= 0 ? 'right' : 'left';
+    if (facing !== wanted) {
+      await page.keyboard.down(wanted === 'right' ? 'd' : 'a');
+      await page.waitForTimeout(50);
+      await page.keyboard.up(wanted === 'right' ? 'd' : 'a');
+    }
+    if (targetState === 'telegraph' || targetState === 'attack') {
+      // Soak the incoming swing behind the guard: blocked hits do not
+      // hurt-lock the player, so the counterattack window stays open.
+      await page.keyboard.down('f');
+      await page.waitForTimeout(240);
+      await page.keyboard.up('f');
+      continue;
+    }
+    if (!sawChargedStrike) {
+      await page.keyboard.down('c');
+      await page.waitForTimeout(360);
+      await page.keyboard.up('c');
+      await page.waitForTimeout(120);
+      sawChargedStrike =
+        (await canvas.getAttribute('data-player-last-attack')) === 'mara-charged-strike';
+      continue;
+    }
+    if (!sawAirSlash) {
+      await page.keyboard.down('Space');
+      await page.waitForTimeout(90);
+      await page.keyboard.press('x');
+      await page.keyboard.up('Space');
+      await page.waitForTimeout(160);
+      sawAirSlash = (await canvas.getAttribute('data-player-last-attack')) === 'mara-air-slash';
+      continue;
+    }
+    await page.keyboard.press('x');
+    await page.waitForTimeout(80);
+    await page.keyboard.press('x');
+    await page.waitForTimeout(80);
+    await page.keyboard.press('x');
+    await page.waitForTimeout(80);
+    await page.keyboard.press('x');
   }
-  const settledX = await numericAttribute(canvas, 'data-player-x');
-  expect(Math.abs(targetX - 80 - settledX)).toBeLessThanOrEqual(24);
-  if ((await canvas.getAttribute('data-player-facing')) !== 'right') {
-    await page.keyboard.down('d');
-    await page.waitForTimeout(55);
-    await page.keyboard.up('d');
-    await page.waitForTimeout(100);
-  }
-  await expect(canvas).toHaveAttribute('data-combat-target-state', 'sleep');
-}
 
-test('runs the light combo against the dormant authored Briar Scrapper', async ({ page }) => {
-  const pageErrors: string[] = [];
-  page.on('pageerror', (error) => pageErrors.push(error.message));
-  const canvas = await startNewGame(page);
-  await approachDormantTarget(page, canvas);
-
-  await holdKeyUntilAttribute(page, canvas, 'x', 'data-player-state', 'attackLight');
-  await expect
-    .poll(() => numericAttribute(canvas, 'data-player-action-frame'))
-    .toBeGreaterThanOrEqual(3);
-  await holdKeyUntilAttribute(page, canvas, 'x', 'data-player-combo-stage', '2');
-  await expect
-    .poll(() => numericAttribute(canvas, 'data-player-action-frame'))
-    .toBeGreaterThanOrEqual(4);
-  await holdKeyUntilAttribute(page, canvas, 'x', 'data-player-combo-stage', '3');
-
-  await expect.poll(() => numericAttribute(canvas, 'data-combat-target-health')).toBeLessThan(100);
-  await expect.poll(() => numericAttribute(canvas, 'data-player-combo-max-stage')).toBe(3);
-  expect(pageErrors).toEqual([]);
-});
-
-test('exposes charged and airborne authored attacks through real semantic input', async ({
-  page
-}) => {
-  const pageErrors: string[] = [];
-  page.on('pageerror', (error) => pageErrors.push(error.message));
-  const canvas = await startNewGame(page);
-  await approachDormantTarget(page, canvas);
-
-  await page.keyboard.down('c');
-  await page.waitForTimeout(320);
-  await page.keyboard.up('c');
-  await expect(canvas).toHaveAttribute('data-player-last-attack', 'mara-charged-strike');
-  await expect
-    .poll(() => numericAttribute(canvas, 'data-combat-target-health'))
-    .toBeLessThanOrEqual(69);
-  await expect(canvas).toHaveAttribute('data-player-state', 'idle');
-
-  await page.keyboard.down('Space');
-  await expect(canvas).toHaveAttribute('data-player-grounded', 'false');
-  await page.keyboard.press('x');
-  await page.keyboard.up('Space');
-  await expect(canvas).toHaveAttribute('data-player-last-attack', 'mara-air-slash');
+  await expect(canvas).toHaveAttribute('data-combat-target-state', 'dead');
+  expect(await numericAttribute(canvas, 'data-combat-target-health')).toBe(0);
+  expect(sawChargedStrike).toBe(true);
+  expect(sawAirSlash).toBe(true);
+  await expect.poll(() => numericAttribute(canvas, 'data-player-xp')).toBeGreaterThanOrEqual(14);
   expect(pageErrors).toEqual([]);
 });
 

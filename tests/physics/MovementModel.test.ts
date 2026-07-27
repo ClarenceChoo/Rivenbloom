@@ -283,6 +283,31 @@ describe('stepMovement', () => {
     expect(result.state.machine.value).toBe('fall');
   });
 
+  it('recovers from hurt even while combat reports a movement lock', () => {
+    let state = createMovementState({ x: 400, y: 566 }, 'right');
+    state = stepMovement(
+      state,
+      { ...neutralInput, knockback: { x: -180, y: -90 } },
+      grounded,
+      tuning,
+      1 / 60
+    ).state;
+    expect(state.machine.value).toBe('hurt');
+
+    // The hurt state keeps combat's movementLocked flag raised, which the
+    // controller forwards as locomotionLocked. Recovery must still complete.
+    for (let frame = 0; frame < 90 && state.machine.value === 'hurt'; frame += 1) {
+      state = stepMovement(
+        state,
+        { ...neutralInput, locomotionLocked: true },
+        state.velocity.y >= 0 && state.position.y >= 566 ? grounded : airborne,
+        tuning,
+        1 / 60
+      ).state;
+    }
+    expect(state.machine.value).not.toBe('hurt');
+  });
+
   it('applies knockback as a locked hurt-state impulse', () => {
     const running = {
       ...createMovementState({ x: 100, y: 566 }, 'right'),

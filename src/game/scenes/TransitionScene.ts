@@ -1,13 +1,16 @@
 import Phaser from 'phaser';
 import { SceneScope } from '../core/SceneScope';
-import { getAreaDefinition, INITIAL_WORLD_AREA_ID } from '../data/areas';
+import { getAreaDefinition } from '../data/areas';
+import type { SaveSlotId, SaveV1 } from '../saves/SaveSchema';
 import { createTransitionShell } from '../ui/dom/menuShell';
 import { SceneKeys } from './SceneKeys';
 
 export type TransitionPayload = {
   readonly destinationId: string;
   readonly destinationName: string;
-  readonly unlockedAbilityIds?: readonly string[];
+  readonly slotId?: SaveSlotId;
+  readonly save?: SaveV1;
+  readonly spawnId?: string;
   readonly reducedMotion?: boolean;
 };
 
@@ -38,16 +41,14 @@ export class TransitionScene extends Phaser.Scene {
       this.payload.reducedMotion === true
     );
     this.scope.add(() => shell.dispose());
-    // New games still open on the trail until village runtime wiring lands.
-    const destinationAreaId =
-      this.payload.destinationId === 'wrens-rest'
-        ? INITIAL_WORLD_AREA_ID
-        : getAreaDefinition(this.payload.destinationId)?.id;
+    const destinationAreaId = getAreaDefinition(this.payload.destinationId)?.id;
     if (destinationAreaId === undefined) return;
     const handoff = this.time.delayedCall(TRANSITION_HOLD_MS, () => {
       this.scene.start(SceneKeys.World, {
         areaId: destinationAreaId,
-        unlockedAbilityIds: this.payload.unlockedAbilityIds ?? ['lumen-bolt']
+        ...(this.payload.spawnId === undefined ? {} : { spawnId: this.payload.spawnId }),
+        ...(this.payload.slotId === undefined ? {} : { slotId: this.payload.slotId }),
+        ...(this.payload.save === undefined ? {} : { save: this.payload.save })
       });
     });
     this.scope.add(() => handoff.remove(false));

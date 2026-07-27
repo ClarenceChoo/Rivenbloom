@@ -80,3 +80,16 @@ enemies via EnemyFactory, TriggerSystem/CheckpointSystem/PuzzleSystem/NPC
 routing, area transitions in play, XP awards), the timed critical-path
 traversal, breakable-wall placement, and per-area art keys (deferred to
 Task 15 — new areas reuse the Brackenreach kit meanwhile).
+Task 12: WorldScene runtime wiring landed — live enemies via
+EnemyFactory/EncounterDirector inside the generalized CombatSceneAdapter,
+player damage intake with mercy invulnerability, deaths -> drops + XP awards,
+TriggerSystem routing (room discovery, discoveries, quests, checkpoints, area
+transitions in play), PuzzleSystem interact/lens routing, NPC dialogue through
+DialogueScene, death -> checkpoint respawn, and autosave persistence threaded
+Title -> Transition -> World via slotId+SaveV1 payloads. New game genuinely
+opens in Wren's Rest. Fixed a latent hurt-state deadlock: MovementModel now
+recovers from hurt while combat holds its movement lock (regression test
+added). e2e reworked for the live world (village start, walked transition,
+live Briar Scrapper fight with XP assertion, new world.spec covering Sela
+dialogue -> quest stage -> reload restore). Full check green: lint, strict
+types, 304 unit tests, production build, 8/8 Playwright.

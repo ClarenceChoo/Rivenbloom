@@ -1,4 +1,5 @@
 import type { PlayerSpawnDefinition } from '../../data/types';
+import type { InputFrame } from '../../input/InputActions';
 import type { InputService } from '../../input/InputService';
 import {
   advancePlayerCombatFrame,
@@ -40,10 +41,12 @@ export class PlayerController {
   private pendingRespawn = false;
   private pendingKnockback: Vector2 | undefined;
   private disposed = false;
+  private platforms: PlatformRules;
 
   public constructor(private readonly options: PlayerControllerOptions) {
     this.state = createMovementState(options.spawn.position, options.spawn.facing);
     this.combatState = createPlayerCombatState(options.unlockedAbilityIds);
+    this.platforms = options.platforms;
   }
 
   public get snapshot(): MovementState {
@@ -58,9 +61,9 @@ export class PlayerController {
     return this.combatStep;
   }
 
-  public update(timeMs: number, deltaMs: number): void {
+  public update(timeMs: number, deltaMs: number, sampledFrame?: InputFrame): void {
     if (this.disposed) return;
-    const frame = this.options.input.sample(timeMs);
+    const frame = sampledFrame ?? this.options.input.sample(timeMs);
     const jumpPressed = frame.pressed.includes('jump');
     const rawMovementInput: MovementInput = {
       moveX: frame.movement.x,
@@ -113,7 +116,7 @@ export class PlayerController {
     const step = advanceMovementFrame(
       { ...this.state, machine: combat.machine },
       composedMovementInput,
-      this.options.platforms,
+      this.platforms,
       this.options.tuning,
       deltaMs / 1000
     );
@@ -128,6 +131,11 @@ export class PlayerController {
 
   public respawn(): void {
     this.pendingRespawn = true;
+  }
+
+  /** Swaps collision rules when persistent world state (a broken wall) changes. */
+  public replacePlatforms(platforms: PlatformRules): void {
+    this.platforms = platforms;
   }
 
   public applyKnockback(impulse: Vector2): void {
