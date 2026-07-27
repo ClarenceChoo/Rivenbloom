@@ -131,6 +131,17 @@ export type RoomDefinition = {
   readonly ambienceProfileId?: StableId;
 };
 
+export type BreakableDefinition = {
+  readonly id: StableId;
+  readonly roomId: StableId;
+  readonly bounds: RectDefinition;
+  readonly health: number;
+  readonly requiredDamageType?: DamageType;
+  readonly persistentFlagId: StableId;
+  readonly surfaceId?: StableId;
+  readonly propId?: StableId;
+};
+
 export type AreaDefinition = {
   readonly id: StableId;
   readonly displayName: string;
@@ -148,6 +159,7 @@ export type AreaDefinition = {
   readonly checkpoints: readonly CheckpointDefinition[];
   readonly transitions: readonly TransitionDefinition[];
   readonly props: readonly PropDefinition[];
+  readonly breakables?: readonly BreakableDefinition[];
 };
 
 export type DamageType = 'physical' | 'resonance' | 'spore' | 'rootglass';

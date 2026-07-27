@@ -77,7 +77,15 @@ const brackenreachProps: readonly PropDefinition[] = [
       depth: 2
     },
     mechanismId: 'brackenreach-listening-arch'
-  }
+  },
+  terrainProp('cache-shelf', 'ivy-cache', 1348, 394, SHELF_SOURCES.upper, {
+    width: 166,
+    height: 120
+  }),
+  terrainProp('cache-seal-prop', 'ivy-cache', 1482, 260, SHELF_SOURCES.upper, {
+    width: 32,
+    height: 152
+  })
 ];
 
 /** Brackenreach Trail — the opening route: trailhead and the Listening Arch. */
@@ -89,6 +97,12 @@ export const brackenreachTrailArea: AreaDefinition = {
   defaultSpawnId: 'trail-west',
   ambienceProfileId: 'brackenreach-rain',
   rooms: [
+    {
+      id: 'ivy-cache',
+      displayName: 'Ivy Cache',
+      bounds: { x: 1350, y: 254, width: 160, height: 180 },
+      discoveryId: 'brackenreach-ivy-cache'
+    },
     {
       id: 'trailhead',
       displayName: 'Trailhead',
@@ -160,6 +174,20 @@ export const brackenreachTrailArea: AreaDefinition = {
       kind: 'climb',
       collision: { x: 1640, y: 410, width: 48, height: 156 },
       materialId: 'woven-root'
+    },
+    {
+      id: 'cache-floor',
+      roomId: 'ivy-cache',
+      kind: 'solid',
+      collision: { x: 1350, y: 410, width: 160, height: 22 },
+      materialId: 'wet-slate'
+    },
+    {
+      id: 'cache-seal-surface',
+      roomId: 'ivy-cache',
+      kind: 'solid',
+      collision: { x: 1486, y: 264, width: 24, height: 146 },
+      materialId: 'cracked-rootglass'
     }
   ],
   playerSpawns: [
@@ -209,6 +237,14 @@ export const brackenreachTrailArea: AreaDefinition = {
       kind: 'room-entry',
       bounds: { x: 1320, y: 120, width: 1160, height: 446 },
       targetId: 'brackenreach-listening-arch',
+      once: true
+    },
+    {
+      id: 'ivy-cache-entry',
+      roomId: 'ivy-cache',
+      kind: 'room-entry',
+      bounds: { x: 1360, y: 264, width: 110, height: 146 },
+      targetId: 'brackenreach-ivy-cache',
       once: true
     },
     {
@@ -280,5 +316,16 @@ export const brackenreachTrailArea: AreaDefinition = {
       destinationSpawnId: 'hollow-mouth-west'
     }
   ],
-  props: brackenreachProps
+  props: brackenreachProps,
+  breakables: [
+    {
+      id: 'trail-ivy-seal',
+      roomId: 'ivy-cache',
+      bounds: { x: 1486, y: 264, width: 24, height: 146 },
+      health: 30,
+      persistentFlagId: 'trail-ivy-seal-broken',
+      surfaceId: 'cache-seal-surface',
+      propId: 'cache-seal-prop'
+    }
+  ]
 };

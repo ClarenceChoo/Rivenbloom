@@ -1,13 +1,6 @@
-import type { DamageType, RectDefinition } from '../data/types';
+import type { BreakableDefinition, DamageType } from '../data/types';
 
-export type BreakableDefinition = {
-  readonly id: string;
-  readonly roomId: string;
-  readonly bounds: RectDefinition;
-  readonly health: number;
-  readonly requiredDamageType?: DamageType;
-  readonly persistentFlagId: string;
-};
+export type { BreakableDefinition };
 
 export type BreakableHit = {
   readonly amount: number;

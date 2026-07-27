@@ -125,7 +125,11 @@ export class PlatformRules {
       );
     });
     const support = this.surfaces.find((surface) => {
-      if (surface.kind !== 'solid' && surface.kind !== 'one-way') return false;
+      // Water is wadeable until a swim system lands: it supports from above
+      // like a one-way platform but cannot be dropped through.
+      if (surface.kind !== 'solid' && surface.kind !== 'one-way' && surface.kind !== 'water') {
+        return false;
+      }
       if (surface.kind === 'one-way' && options.ignoreOneWay) return false;
       const collision = surface.collision;
       return (
@@ -165,12 +169,11 @@ export class PlatformRules {
       const hits = solidSurfaces
         .map(({ collision }) => sweepSolid(position, remainingDelta, this.body, collision))
         .filter((hit): hit is SweepHit => hit !== undefined);
-      if (!options.ignoreOneWay) {
-        for (const surface of this.surfaces) {
-          if (surface.kind !== 'one-way') continue;
-          const hit = sweepOneWay(position, remainingDelta, this.body, surface.collision);
-          if (hit !== undefined) hits.push(hit);
-        }
+      for (const surface of this.surfaces) {
+        if (surface.kind === 'one-way' && options.ignoreOneWay) continue;
+        if (surface.kind !== 'one-way' && surface.kind !== 'water') continue;
+        const hit = sweepOneWay(position, remainingDelta, this.body, surface.collision);
+        if (hit !== undefined) hits.push(hit);
       }
       const earliestTime = hits.reduce(
         (earliest, hit) => Math.min(earliest, hit.time),

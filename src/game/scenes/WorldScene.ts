@@ -53,6 +53,7 @@ import type { QuestStore } from '../quests/QuestStore';
 import { installTestBridge } from '../testing/TestBridge';
 import { formatAreaName } from '../ui/title/TitleMenuModel';
 import { AreaLoader } from '../world/AreaLoader';
+import { BreakableSystem } from '../world/BreakableSystem';
 import { CheckpointSystem } from '../world/CheckpointSystem';
 import { horizontalLayerTiles } from '../world/LayerTiling';
 import { PuzzleSystem, type PuzzleActivation } from '../world/PuzzleSystem';
@@ -63,6 +64,7 @@ import {
   awardEnemyDefeat,
   claimDiscovery,
   discoverRoom,
+  recordBrokenBreakable,
   seedQuestStore,
   type QuestSignal
 } from '../world/WorldProgress';
@@ -110,6 +112,9 @@ export class WorldScene extends Phaser.Scene {
   private checkpoints: CheckpointSystem | undefined;
   private puzzles: PuzzleSystem | undefined;
   private npcs: readonly NpcController[] = [];
+  private breakables: BreakableSystem | undefined;
+  private activeSurfaces: readonly AreaDefinition['surfaces'][number][] = [];
+  private readonly propImages = new Map<string, Phaser.GameObjects.Image>();
   private solidSurfaces: readonly RectDefinition[] = [];
   private dialogueOpen = false;
   private dying = false;
@@ -141,6 +146,9 @@ export class WorldScene extends Phaser.Scene {
     this.checkpoints = undefined;
     this.puzzles = undefined;
     this.npcs = [];
+    this.breakables = undefined;
+    this.activeSurfaces = [];
+    this.propImages.clear();
     this.solidSurfaces = [];
     this.dialogueOpen = false;
     this.dying = false;
@@ -177,9 +185,15 @@ export class WorldScene extends Phaser.Scene {
     this.checkpoints = new CheckpointSystem(definition);
     this.puzzles = new PuzzleSystem(definition.mechanisms);
     this.npcs = createVillageNpcs();
-    this.solidSurfaces = definition.surfaces
-      .filter(({ kind }) => kind === 'solid')
-      .map(({ collision }) => collision);
+    this.breakables = new BreakableSystem(definition.breakables ?? [], this.save.solvedPuzzleIds);
+    const brokenSurfaceIds = new Set(
+      (definition.breakables ?? [])
+        .filter(({ id }) => this.breakables?.isBroken(id) === true)
+        .map(({ surfaceId }) => surfaceId)
+        .filter((id): id is string => id !== undefined)
+    );
+    this.activeSurfaces = definition.surfaces.filter(({ id }) => !brokenSurfaceIds.has(id));
+    this.refreshSolidSurfaces();
 
     const spawn = this.resolveSpawn(definition);
     this.sessionHealth = Math.max(
@@ -204,7 +218,7 @@ export class WorldScene extends Phaser.Scene {
     const view = new PlayerView(this, mara, spawn.position);
     this.player = new PlayerController({
       input: this.inputService,
-      platforms: new PlatformRules(definition.surfaces, definition.bounds, mara.collisionBody),
+      platforms: new PlatformRules(this.activeSurfaces, definition.bounds, mara.collisionBody),
       view,
       tuning: PLAYER_MOVEMENT_TUNING,
       spawn,
@@ -277,7 +291,7 @@ export class WorldScene extends Phaser.Scene {
       )
     ];
     const world: CombatWorldPort = {
-      obstacles: this.solidSurfaces,
+      obstacles: () => this.solidSurfaces,
       cameraBounds: () => ({
         x: this.cameras.main.worldView.x,
         y: this.cameras.main.worldView.y,
@@ -287,13 +301,18 @@ export class WorldScene extends Phaser.Scene {
       floorAhead: (position) => this.probeFloor(position),
       receivePlayerHit: (damage, travelDirection) => this.receivePlayerHit(damage, travelDirection),
       onEnemyDefeated: (entry, drops) => this.handleEnemyDefeated(entry, drops),
+      onBreakableHit: (breakableId, damage) => this.handleBreakableHit(breakableId, damage),
       rollDrops: (count) => Array.from({ length: count }, () => Math.random())
     };
+    const breakableTargets = (definition.breakables ?? [])
+      .filter(({ id }) => this.breakables?.isBroken(id) !== true)
+      .map(({ id, bounds }) => ({ id, bounds }));
     this.combat = new CombatSceneAdapter(
       this,
       mara,
       this.player?.snapshot.position ?? { x: 0, y: 0 },
       entries,
+      breakableTargets,
       runtimeTargets,
       {
         interceptProjectile: (projectile) => {
@@ -396,6 +415,43 @@ export class WorldScene extends Phaser.Scene {
     }
     if (this.sessionHealth === 0) this.beginDeath();
     return outcome;
+  }
+
+  private handleBreakableHit(
+    breakableId: string,
+    damage: AttackDefinition['damage']
+  ): { removed: boolean } {
+    if (this.breakables === undefined || this.definition === undefined) {
+      return { removed: false };
+    }
+    const result = this.breakables.applyHit(breakableId, {
+      amount: damage.amount,
+      damageType: damage.type
+    });
+    if (result.kind !== 'broken') return { removed: false };
+    const change = recordBrokenBreakable(this.save, result.persistentFlagId);
+    this.save = change.save;
+    const breakable = (this.definition.breakables ?? []).find(({ id }) => id === breakableId);
+    if (breakable?.surfaceId !== undefined) {
+      this.activeSurfaces = this.activeSurfaces.filter(({ id }) => id !== breakable.surfaceId);
+      this.refreshSolidSurfaces();
+      const mara = actorDefinitions.find(({ id }) => id === 'mara-vey');
+      if (mara !== undefined) {
+        this.player?.replacePlatforms(
+          new PlatformRules(this.activeSurfaces, this.definition.bounds, mara.collisionBody)
+        );
+      }
+    }
+    if (breakable?.propId !== undefined) {
+      this.propImages.get(breakable.propId)?.destroy();
+      this.propImages.delete(breakable.propId);
+    }
+    this.gameEvents?.emit('ui:notification-requested', {
+      message: 'The cracked seal gives way.',
+      tone: 'success'
+    });
+    if (change.first) this.persist(true);
+    return { removed: true };
   }
 
   private handleEnemyDefeated(
@@ -719,9 +775,28 @@ export class WorldScene extends Phaser.Scene {
   }
 
   private renderProps(definition: AreaDefinition): void {
+    const brokenPropIds = new Set(
+      (definition.breakables ?? [])
+        .filter(({ id }) => this.breakables?.isBroken(id) === true)
+        .map(({ propId }) => propId)
+        .filter((id): id is string => id !== undefined)
+    );
     for (const prop of definition.props) {
-      this.createImage(prop.render.assetKey, prop.position.x, prop.position.y, prop.render);
+      if (brokenPropIds.has(prop.id)) continue;
+      const image = this.createImage(
+        prop.render.assetKey,
+        prop.position.x,
+        prop.position.y,
+        prop.render
+      );
+      this.propImages.set(prop.id, image);
     }
+  }
+
+  private refreshSolidSurfaces(): void {
+    this.solidSurfaces = this.activeSurfaces
+      .filter(({ kind }) => kind === 'solid')
+      .map(({ collision }) => collision);
   }
 
   private renderNpcs(definition: AreaDefinition): void {

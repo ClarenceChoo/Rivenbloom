@@ -93,3 +93,22 @@ added). e2e reworked for the live world (village start, walked transition,
 live Briar Scrapper fight with XP assertion, new world.spec covering Sela
 dialogue -> quest stage -> reload restore). Full check green: lint, strict
 types, 304 unit tests, production build, 8/8 Playwright.
+Task 12: breakable walls and the timed traversal landed — three authored
+seals (Brackenreach Ivy Cache, Singing Hollows Hushed Alcove, and the
+design-mandated Flooded Stacks Folio Vault with a lost-folio quest trigger),
+attack hits routed through BreakableSystem with persistent flags, platform
+and prop removal on break, and validation coverage for the new area field.
+Traversal exposed two real gaps now fixed with regression tests: water
+surfaces were bottomless voids (now wadeable one-way-style support until a
+swim system lands) and the Hollows upper ledge had no climb route (root
+added). tests/world/criticalPathTraversal.test.ts drives the real movement
+model across every critical-path segment, times the route, walks each
+backward link, and asserts breakable pockets stay off the ground route.
+Task 12: complete (commits 7e09d37..HEAD, full check + 8/8 e2e green).
+Deferred honestly: hazard-surface damage intake is unwired (brambles and
+shard beds are visual-only, so the dash trial does not yet enforce dash);
+water swim/depth behaviour replaced by wading; lanterns-for-the-absent
+completes on the first lantern rather than all three; combat mana runs on
+its own 60-point scale versus the 50-point balance constants; NPC and enemy
+renders reuse portrait/sheet crops until Task 15 atlas work; resonant-pulse
+mechanism targets are sampled at cast time.

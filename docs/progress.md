@@ -60,16 +60,21 @@ Last updated: 2026-07-26
 
 ## Phase 4 — World and Content
 
-- [ ] Wren's Rest settlement and three NPCs.
-- [ ] Brackenreach outdoor route and hidden room.
-- [ ] Singing Hollows cave and dash trial.
-- [ ] Rootglass Reliquary dungeon and puzzles.
-- [ ] Five standard enemy archetypes.
-- [ ] Thorn Sentinel elite.
-- [ ] The Silent Bloom main quest.
-- [ ] Lost Folio and Lanterns for the Absent optional objectives.
+- [x] Wren's Rest settlement and three NPCs with live dialogue.
+- [x] Brackenreach outdoor route and hidden Ivy Cache behind a breakable seal.
+- [~] Singing Hollows cave with the Hushed Alcove; the bramble dash trial is
+  placed but hazard damage is not yet wired, so dash is not yet enforced.
+- [~] Rootglass Reliquary dungeon: wadeable Flooded Stacks, sealed Folio
+  Vault, gallery lenses answering Resonant Pulse; door-gating polish remains.
+- [x] Five standard enemy archetypes live in the world runtime.
+- [x] Thorn Sentinel elite profile and placement.
+- [~] The Silent Bloom: Sela through the Listening Arch playable; the final
+  stage lands with the Pallid Cantor.
+- [~] Lost Folio vault wired; Lanterns for the Absent currently completes on
+  the first memorial lantern instead of all three.
 - [ ] Shop, two blade upgrades, spells, charms, health/mana upgrades.
-- [ ] Checkpoint, death, respawn, shortcuts, discoveries, and map persistence.
+- [x] Checkpoint, death, respawn, shortcuts, discoveries, and room-discovery
+  persistence (map screen arrives with the menu milestone).
 
 ## Phase 5 — Boss and Completion
 

@@ -99,6 +99,7 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
     validateStableIdGroup(area.checkpoints, `${areaPath}.checkpoints`);
     validateStableIdGroup(area.transitions, `${areaPath}.transitions`);
     validateStableIdGroup(area.props, `${areaPath}.props`);
+    validateStableIdGroup(area.breakables ?? [], `${areaPath}.breakables`);
     validateDuplicateIdGroup(area.rooms, `${areaPath}.rooms`, 'area rooms');
     validateDuplicateIdGroup(area.layers, `${areaPath}.layers`, 'area layers');
     validateDuplicateIdGroup(area.surfaces, `${areaPath}.surfaces`, 'area surfaces');
@@ -109,6 +110,7 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
     validateDuplicateIdGroup(area.checkpoints, `${areaPath}.checkpoints`, 'area checkpoints');
     validateDuplicateIdGroup(area.transitions, `${areaPath}.transitions`, 'area transitions');
     validateDuplicateIdGroup(area.props, `${areaPath}.props`, 'area props');
+    validateDuplicateIdGroup(area.breakables ?? [], `${areaPath}.breakables`, 'area breakables');
     area.rooms.forEach((room, roomIndex) => {
       validateStableId(room.discoveryId, `${areaPath}.rooms[${roomIndex}].discoveryId`);
     });
@@ -116,6 +118,12 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
       validateStableId(
         mechanism.persistentFlagId,
         `${areaPath}.mechanisms[${mechanismIndex}].persistentFlagId`
+      );
+    });
+    (area.breakables ?? []).forEach((breakable, breakableIndex) => {
+      validateStableId(
+        breakable.persistentFlagId,
+        `${areaPath}.breakables[${breakableIndex}].persistentFlagId`
       );
     });
   });
@@ -657,6 +665,16 @@ export function validateContent(registry: ContentRegistry): readonly ContentIssu
       addUnresolved(prop.roomId, roomIds, `${propPath}.roomId`, 'area rooms');
       addUnresolved(prop.surfaceId, surfaceIds, `${propPath}.surfaceId`, 'area surfaces');
       addUnresolved(prop.mechanismId, mechanismIds, `${propPath}.mechanismId`, 'area mechanisms');
+    });
+    const propIds = new Set(area.props.map(({ id }) => id));
+    (area.breakables ?? []).forEach((breakable, breakableIndex) => {
+      const breakablePath = `${areaPath}.breakables[${breakableIndex}]`;
+      addUnresolved(breakable.roomId, roomIds, `${breakablePath}.roomId`, 'area rooms');
+      addUnresolved(breakable.surfaceId, surfaceIds, `${breakablePath}.surfaceId`, 'area surfaces');
+      addUnresolved(breakable.propId, propIds, `${breakablePath}.propId`, 'area props');
+      if (!(breakable.health > 0)) {
+        addMissing(`${breakablePath}.health`, 'Breakables require positive health.');
+      }
     });
   });
 

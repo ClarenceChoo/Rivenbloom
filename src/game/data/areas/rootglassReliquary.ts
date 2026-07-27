@@ -87,6 +87,13 @@ export const rootglassReliquaryArea: AreaDefinition = {
       materialId: 'woven-root'
     },
     {
+      id: 'vault-seal-surface',
+      roomId: 'folio-vault',
+      kind: 'solid',
+      collision: { x: 1820, y: 114, width: 24, height: 146 },
+      materialId: 'cracked-rootglass'
+    },
+    {
       id: 'gallery-floor',
       roomId: 'resonance-gallery',
       kind: 'solid',
@@ -186,8 +193,16 @@ export const rootglassReliquaryArea: AreaDefinition = {
       id: 'folio-vault-entry',
       roomId: 'folio-vault',
       kind: 'discovery',
-      bounds: { x: 1600, y: 140, width: 300, height: 120 },
+      bounds: { x: 1600, y: 140, width: 200, height: 120 },
       targetId: 'reliquary-folio-vault',
+      once: true
+    },
+    {
+      id: 'lost-folio-recovery',
+      roomId: 'folio-vault',
+      kind: 'quest',
+      bounds: { x: 1620, y: 150, width: 150, height: 110 },
+      targetId: 'lost-folio-quest',
       once: true
     },
     {
@@ -345,6 +360,21 @@ export const rootglassReliquaryArea: AreaDefinition = {
     terrainProp('gallery-ledge-shelf', 'resonance-gallery', 2975, 376, SHELF_SOURCES.upper, {
       width: 310,
       height: 210
+    }),
+    terrainProp('vault-seal-prop', 'folio-vault', 1816, 110, SHELF_SOURCES.upper, {
+      width: 32,
+      height: 152
     })
+  ],
+  breakables: [
+    {
+      id: 'stacks-vault-seal',
+      roomId: 'folio-vault',
+      bounds: { x: 1820, y: 114, width: 24, height: 146 },
+      health: 30,
+      persistentFlagId: 'stacks-vault-seal-broken',
+      surfaceId: 'vault-seal-surface',
+      propId: 'vault-seal-prop'
+    }
   ]
 };

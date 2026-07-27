@@ -141,6 +141,32 @@ describe('PlatformRules', () => {
     });
   });
 
+  it('wades on water surfaces: supported from above, never dropped through', () => {
+    const water: SurfaceDefinition = {
+      id: 'test-water',
+      roomId: 'test-room',
+      kind: 'water',
+      collision: { x: 400, y: 566, width: 560, height: 154 },
+      materialId: 'still-water'
+    };
+    const rules = new PlatformRules([floor, water], roomBounds, playerBody);
+
+    const standing = rules.query({ x: 600, y: 566 }, { ignoreOneWay: false });
+    expect(standing.grounded).toBe(true);
+    expect(standing.supportKind).toBe('solid');
+
+    const dropAttempt = rules.query({ x: 600, y: 566 }, { ignoreOneWay: true });
+    expect(dropAttempt.grounded).toBe(true);
+
+    const falling = rules.resolve(
+      { x: 600, y: 480 },
+      { x: 600, y: 620 },
+      { x: 0, y: 300 },
+      { ignoreOneWay: false }
+    );
+    expect(falling.position.y).toBeCloseTo(566, 5);
+  });
+
   it('contains the authored collision body within horizontal room bounds', () => {
     const rules = new PlatformRules([], roomBounds, playerBody);
 

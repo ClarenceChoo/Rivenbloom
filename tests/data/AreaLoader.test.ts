@@ -24,19 +24,25 @@ describe('AreaLoader', () => {
       'foreground-foliage'
     ]);
     expect(definition.layers.map(({ id }) => id)).toEqual(sourceLayerIds);
-    expect(loaded.rooms[0]).toMatchObject({
+    const roomById = (id: string) => loaded.rooms.find((room) => room.id === id);
+    expect(roomById('trailhead')).toMatchObject({
       id: 'trailhead',
       surfaceIds: ['trailhead-floor'],
       playerSpawnIds: ['trail-west'],
       actorSpawnIds: [],
       checkpointIds: ['trail-seed-lantern']
     });
-    expect(loaded.rooms[1]).toMatchObject({
+    expect(roomById('listening-arch')).toMatchObject({
       id: 'listening-arch',
       surfaceIds: ['listening-arch-floor', 'arch-upper-platform', 'arch-root-climb'],
       playerSpawnIds: ['listening-arch-east'],
       actorSpawnIds: ['arch-briar-scrapper', 'arch-duskwing'],
       mechanismIds: ['brackenreach-listening-arch']
+    });
+    expect(roomById('ivy-cache')).toMatchObject({
+      id: 'ivy-cache',
+      surfaceIds: ['cache-floor', 'cache-seal-surface'],
+      triggerIds: ['ivy-cache-entry']
     });
   });
 

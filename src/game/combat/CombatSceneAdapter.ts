@@ -87,9 +87,14 @@ export type PlayerHitOutcome = {
   readonly knockback: number;
 };
 
+export type BreakableTarget = {
+  readonly id: string;
+  readonly bounds: RectDefinition;
+};
+
 /** Scene-owned hooks the combat runtime needs from the world. */
 export type CombatWorldPort = {
-  readonly obstacles: readonly RectDefinition[];
+  readonly obstacles: () => readonly RectDefinition[];
   readonly cameraBounds: () => RectDefinition;
   readonly floorAhead: (position: PointDefinition) => { left: boolean; right: boolean };
   readonly receivePlayerHit: (
@@ -100,6 +105,10 @@ export type CombatWorldPort = {
     entry: EnemyRuntimeEntry,
     drops: readonly { readonly itemId: string; readonly quantity: number }[]
   ) => void;
+  readonly onBreakableHit: (
+    breakableId: string,
+    damage: AttackDefinition['damage']
+  ) => { readonly removed: boolean };
   readonly rollDrops: (count: number) => readonly number[];
 };
 
@@ -215,6 +224,7 @@ export class CombatSceneAdapter {
   private readonly timeline: CombatTimeline;
   private readonly abilityRuntime: CombatAbilityRuntime;
   private readonly enemies = new Map<string, EnemyVisual>();
+  private readonly breakableIds = new Set<string>();
   private readonly primaryTargetId: string | undefined;
   private readonly slashPool: EffectPool<SlashSpec, Phaser.GameObjects.Graphics>;
   private readonly impactPool: EffectPool<ImpactSpec, Phaser.GameObjects.Graphics>;
@@ -241,6 +251,7 @@ export class CombatSceneAdapter {
     private readonly player: ActorDefinition,
     playerPosition: PointDefinition,
     entries: readonly EnemyRuntimeEntry[],
+    breakables: readonly BreakableTarget[],
     runtimeTargets: readonly CombatRuntimeTarget[],
     private readonly playerRuntime: CombatPlayerRuntimePort,
     private readonly settings: AccessibilitySettingsState,
@@ -263,8 +274,24 @@ export class CombatSceneAdapter {
         position: entry.spawn.position,
         hurtboxes: entry.actor.hurtboxes,
         renderMetrics: entry.actor.render.size
+      })),
+      ...breakables.map((breakable) => ({
+        id: breakable.id,
+        team: 'enemy' as const,
+        position: {
+          x: breakable.bounds.x + breakable.bounds.width / 2,
+          y: breakable.bounds.y + breakable.bounds.height
+        },
+        hurtboxes: [
+          {
+            offset: { x: -breakable.bounds.width / 2, y: -breakable.bounds.height },
+            size: { width: breakable.bounds.width, height: breakable.bounds.height }
+          }
+        ],
+        renderMetrics: { width: breakable.bounds.width, height: breakable.bounds.height }
       }))
     ]);
+    for (const breakable of breakables) this.breakableIds.add(breakable.id);
     this.timeline = new CombatTimeline(this.hitboxes);
     this.abilityRuntime = new CombatAbilityRuntime(runtimeTargets);
     for (const entry of entries) {
@@ -610,6 +637,10 @@ export class CombatSceneAdapter {
           this.damagePlayer(hit.damage, advanced.instance.facing);
           continue;
         }
+        if (this.breakableIds.has(hit.targetId)) {
+          this.hitBreakable(hit.targetId, hit.damage);
+          continue;
+        }
         const enemy = this.enemies.get(hit.targetId);
         if (enemy !== undefined && !enemy.defeated) {
           this.damageEnemy(
@@ -636,8 +667,25 @@ export class CombatSceneAdapter {
     }
   }
 
+  private hitBreakable(breakableId: string, damage: AttackDefinition['damage']): void {
+    const outcome = this.world.onBreakableHit(breakableId, damage);
+    const impact = this.impactPool.spawn({
+      position: { x: this.lastPlayerPosition.x, y: this.lastPlayerPosition.y - 60 },
+      flashAlpha: 0.4,
+      particleCount: outcome.removed ? 10 : 5
+    });
+    if (impact !== undefined) {
+      this.timedGraphics.push({ member: impact, remainingFrames: 9, pool: this.impactPool });
+    }
+    if (outcome.removed) {
+      this.breakableIds.delete(breakableId);
+      this.hitboxes.unregister(breakableId);
+    }
+  }
+
   private advanceEnemies(): void {
     const cameraBounds = this.world.cameraBounds();
+    const obstacles = this.world.obstacles();
     for (const enemy of this.enemies.values()) {
       if (enemy.defeated) continue;
       const output = enemy.entry.controller.update({
@@ -645,7 +693,7 @@ export class CombatSceneAdapter {
           position: this.lastPlayerPosition,
           noiseLevel: this.playerNoiseLevel
         },
-        obstacles: this.world.obstacles,
+        obstacles,
         cameraBounds,
         floorAhead: this.world.floorAhead(enemy.entry.controller.currentPosition)
       });

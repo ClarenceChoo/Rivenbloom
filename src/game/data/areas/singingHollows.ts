@@ -11,6 +11,12 @@ export const singingHollowsArea: AreaDefinition = {
   ambienceProfileId: 'singing-hollows-echo',
   rooms: [
     {
+      id: 'hushed-alcove',
+      displayName: 'Hushed Alcove',
+      bounds: { x: 1540, y: 240, width: 180, height: 176 },
+      discoveryId: 'singing-hollows-hushed-alcove'
+    },
+    {
       id: 'hollow-mouth',
       displayName: 'Hollow Mouth',
       bounds: { x: 0, y: 0, width: 880, height: 720 },
@@ -81,6 +87,27 @@ export const singingHollowsArea: AreaDefinition = {
       kind: 'one-way',
       collision: { x: 1240, y: 396, width: 300, height: 22 },
       materialId: 'moss-root'
+    },
+    {
+      id: 'trial-ledge-root',
+      roomId: 'dash-trial',
+      kind: 'climb',
+      collision: { x: 1452, y: 396, width: 48, height: 170 },
+      materialId: 'woven-root'
+    },
+    {
+      id: 'alcove-floor',
+      roomId: 'hushed-alcove',
+      kind: 'solid',
+      collision: { x: 1540, y: 396, width: 180, height: 20 },
+      materialId: 'cave-slate'
+    },
+    {
+      id: 'alcove-seal-surface',
+      roomId: 'hushed-alcove',
+      kind: 'solid',
+      collision: { x: 1540, y: 250, width: 24, height: 146 },
+      materialId: 'cracked-rootglass'
     },
     {
       id: 'basin-floor',
@@ -160,6 +187,14 @@ export const singingHollowsArea: AreaDefinition = {
       kind: 'room-entry',
       bounds: { x: 1840, y: 120, width: 680, height: 446 },
       targetId: 'singing-hollows-resonant-basin',
+      once: true
+    },
+    {
+      id: 'hushed-alcove-entry',
+      roomId: 'hushed-alcove',
+      kind: 'room-entry',
+      bounds: { x: 1572, y: 250, width: 140, height: 146 },
+      targetId: 'singing-hollows-hushed-alcove',
       once: true
     },
     {
@@ -271,6 +306,25 @@ export const singingHollowsArea: AreaDefinition = {
       SHELF_SOURCES.west,
       { width: 470, height: 212 },
       'basin-floor'
-    )
+    ),
+    terrainProp('alcove-shelf', 'hushed-alcove', 1538, 380, SHELF_SOURCES.upper, {
+      width: 186,
+      height: 118
+    }),
+    terrainProp('alcove-seal-prop', 'hushed-alcove', 1536, 246, SHELF_SOURCES.upper, {
+      width: 32,
+      height: 152
+    })
+  ],
+  breakables: [
+    {
+      id: 'hollows-hushed-seal',
+      roomId: 'hushed-alcove',
+      bounds: { x: 1540, y: 250, width: 24, height: 146 },
+      health: 30,
+      persistentFlagId: 'hollows-hushed-seal-broken',
+      surfaceId: 'alcove-seal-surface',
+      propId: 'alcove-seal-prop'
+    }
   ]
 };
