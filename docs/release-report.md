@@ -1,9 +1,23 @@
 # Rivenbloom Browser/PWA Candidate Report
 
-Date: 2026-09-23
+Date: 2026-10-05
 
 **Status: implementation candidate; release qualification remains open. No public deployment.**
 The reviewed gameplay and presentation gaps now have implementations and focused regressions. This is not a claim that Gates A–D of the [share-ready plan](superpowers/plans/2026-09-23-share-ready-release.md) have passed. Human playtesting, physical controls, listening, performance, and hosted delivery remain separate evidence.
+
+## October 5 browser playability pass
+
+A journey created from an empty browser profile reached the ending through ordinary keyboard input and UI interactions. It defeated the Thorn Sentinel and claimed its briar core, reforged the blade, solved the Dash Trial and dungeon puzzles, collected the health/mana discoveries, completed both optional quests, bought five Sunmoss Draughts with earned Resin, opened the Choir seal, defeated both Cantor phases, and returned to Sela. Continuing after the ending retained all three completed quests and exactly one Cantor Sigil. Endgame upgrades were earned: 120 maximum health, 56 maximum mana and weapon level 2. Four draughts remained after the boss and return journey.
+
+This was a development-browser journey using the bridge only for read-only observations. No save imports, semantic enemy defeats, debug routes or stat mutations were used. It included death recovery and resumed sessions while the automation's movement, encounter-loading and shop helpers were corrected. It establishes progression through the existing browser game; it is not a continuous production run, a deathless run, first-time-player balance evidence or a measurement of the intended 20–40 minutes. The separate production route still ends at Sentinel contact.
+
+Two application fixes have failing-then-passing regressions. A quick Escape tap could be sampled on a render frame without a physics step and disappear before the pause observer ran. Pause now uses the same short input buffer as other discrete actions and is consumed exactly once. The menu scenarios passed three repeats (6/6). Ending screenshot review found that focusing Continue exploring scrolled the panel and clipped its heading. Ending focus now preserves scroll position, and the panel uses the available height with smaller padding. The desktop heading and buttons fit together; keyboard Tab reaches Return to title in a short landscape window. The desktop regression passed three repeats, and the extended short-window check passed.
+
+The final source passed formatting, ESLint, strict TypeScript and **104 files / 682 unit tests**. The complete development-browser matrix passed **67/67** in one run (13.3 minutes), including the canonical traversal, both boss scenarios and the extended ending regression. Browser IndexedDB passed **7/7**. The production build passed with the existing chunk-size advisory (main JavaScript 1,690.68 KB / 446.65 KB gzip). Screenshots of the normal-input boss defeat and ending were inspected, followed by desktop and short-window captures of the corrected ending layout.
+
+Both built-production scenarios passed (**2/2**, 3.2 minutes): the fresh no-hook route through Dash Trial and live Sentinel contact, and offline reload, unrelated-cache preservation, update acceptance and durable saves. These production scenarios retain their existing scope; the complete normal-input ending journey above used the development build.
+
+Cloud checks use system Chromium 151 and Phaser's Canvas renderer on Node.js 24. Software WebGL on this CPU-only host was substantially slower; these results do not qualify hardware WebGL performance. Linux Tauri diagnostics confirmed that Rust/Cargo/rustup, WebKitGTK 4.1 and librsvg are absent, so native compilation was not run. macOS packaging requires a Mac and its separate toolchain prerequisites.
 
 ## September 23–24 follow-up QA
 
@@ -80,7 +94,7 @@ Generated music score exports under `music/score-v1/` are excluded from Prettier
 - Authorized dedicated HTTPS destination, host cache headers, installation and update verification on the actual public origin. The artifact is local `dist/`.
 - Optional native distribution requires toolchain installation and independent signed/tester packaging decisions.
 
-Internal QA readiness is **6/10 — Not Ready**. The most important remaining work is a fresh normal-stat Sentinel win, the dungeon and boss continuation through ending/reload, first-time player testing, target-hardware performance and physical controls, and hosted PWA qualification. This rating does not certify public distribution. See [known issues](known-issues.md) and [remaining checklist](remaining-work-checklist.md).
+Browser gameplay is verified through the ending and durable reload on a fresh-origin development journey. Public release qualification still needs the full no-hook production journey, first-time player testing, target-hardware performance, physical controls and hosted PWA qualification. See [known issues](known-issues.md) and [remaining checklist](remaining-work-checklist.md).
 
 ## Historical evidence — superseded September 19 assessment
 

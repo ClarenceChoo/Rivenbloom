@@ -1,8 +1,10 @@
 # Known Issues and Verification Limits
 
-Last checked: 2026-09-24
+Last checked: 2026-10-05
 
 The reviewed implementation gaps have been addressed in the current candidate. The current Chromium development matrix passed 67/67 scenarios, and the current production build passed its fresh route through live Sentinel contact and offline/update checks. Release qualification is still open; see [release report](release-report.md). Automated fixtures are integration evidence, not first-time-player or hardware evidence.
+
+The October 5 fresh-origin development journey completed the Sentinel, dungeon, both boss phases, ending and durable reload using ordinary input, earned upgrades and shop items. The bridge only observed state; no prepared save or developer mutation was used. This journey included checkpoint recovery and resumed sessions. It closes the development progression gap, while a continuous no-hook production journey and first-time-player balance remain unverified. Lost pause taps and the clipped ending heading found during cloud playability checks are fixed with regressions.
 
 ## Qualification still required
 
@@ -13,9 +15,9 @@ The reviewed implementation gaps have been addressed in the current candidate. T
 - Final normal-scale gameplay presentation and exact terrain edges. All eight boss families have inspected warning/active fixtures; the all-room overview demonstrates loaded assets and general alignment, not a measured 2-pixel tolerance across every edge/pose.
 - Actual HTTPS deployment, installability and update flow. No host or public URL has been selected or deployed.
 
-## Native macOS prerequisites
+## Native prerequisites
 
-`npm run tauri -- info` ran on September 23. Command Line Tools are installed; full Xcode, `rustc`, Cargo and rustup are missing. Native development, compilation, clean installation, native save I/O and packaging were not run. The existing Tauri source and adapter unit tests remain available. Install the missing tools before `npm run tauri dev` / `npm run tauri build`; signing and public distribution need a separate decision.
+`npm run tauri -- info` ran on the Linux cloud host on October 5. Rust/Cargo/rustup, WebKitGTK 4.1 and librsvg are missing. Native development, compilation, clean installation, native save I/O and packaging were not run. macOS execution requires a Mac with full Xcode and the Rust toolchain; the earlier September 23 Mac probe found Command Line Tools but no full Xcode or Rust toolchain. The existing Tauri source and adapter unit tests remain available. Install the appropriate platform prerequisites before `npm run tauri dev` / `npm run tauri build`; signing and public distribution need a separate decision.
 
 ## Browser distribution constraints
 

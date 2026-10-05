@@ -427,7 +427,8 @@ export class WorldScene extends Phaser.Scene {
         if (activeRuntime === null) return { halt: true };
         const roomStep = activeRuntime.advance(frame, saveCoordinator.snapshot);
         this.pendingWorldCombatEvents.push(...roomStep.journal);
-        if (frame.input.pausePressed === true) {
+        const pausePressId = frame.input.pauseBufferId;
+        if (pausePressId != null && input.consume('pause', pausePressId)) {
           this.pendingPause = true;
           return { halt: true };
         }

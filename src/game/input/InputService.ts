@@ -89,6 +89,7 @@ const BUFFERED_ACTIONS: ReadonlySet<InputAction> = new Set([
   'dash',
   'cast',
   'interact',
+  'pause',
 ]);
 
 export class InputService {

@@ -66,6 +66,36 @@ test('the composed real-input path closes at durable credits and does not replay
   await expect(page.getByRole('heading', { name: 'The song returns' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Credits' })).toBeVisible();
   await expect(page.getByText('Journey complete')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Continue exploring' })).toBeFocused();
+  const endingBounds = await page.locator('.ending-panel').evaluate((panel) => {
+    const bounds = panel.getBoundingClientRect();
+    const heading = panel.querySelector('h1')!.getBoundingClientRect();
+    const actions = panel.querySelector('.transition-actions')!.getBoundingClientRect();
+    return {
+      top: bounds.top,
+      bottom: bounds.bottom,
+      headingTop: heading.top,
+      actionsBottom: actions.bottom,
+    };
+  });
+  expect(endingBounds.headingTop).toBeGreaterThanOrEqual(endingBounds.top);
+  expect(endingBounds.actionsBottom).toBeLessThanOrEqual(endingBounds.bottom);
+  await page.setViewportSize({ width: 844, height: 390 });
+  await page.keyboard.press('Tab');
+  const returnToTitle = page.getByRole('button', { name: 'Return to title' });
+  await expect(returnToTitle).toBeFocused();
+  const shortScreenBounds = await returnToTitle.evaluate((button) => {
+    const panel = button.closest('.ending-panel')!.getBoundingClientRect();
+    const bounds = button.getBoundingClientRect();
+    return {
+      top: panel.top,
+      bottom: panel.bottom,
+      buttonTop: bounds.top,
+      buttonBottom: bounds.bottom,
+    };
+  });
+  expect(shortScreenBounds.buttonTop).toBeGreaterThanOrEqual(shortScreenBounds.top);
+  expect(shortScreenBounds.buttonBottom).toBeLessThanOrEqual(shortScreenBounds.bottom);
   await page.getByRole('button', { name: 'Return to title' }).click();
   await page.waitForFunction(() => window.__RIVENBLOOM_TEST__?.read().titleReady === true);
 
