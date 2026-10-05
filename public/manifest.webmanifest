@@ -1,0 +1,19 @@
+{
+  "name": "Rivenbloom",
+  "short_name": "Rivenbloom",
+  "description": "An original side-view fantasy action-adventure through Brackenreach.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#171325",
+  "theme_color": "#171325",
+  "icons": [
+    {
+      "src": "/icons/rivenbloom-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

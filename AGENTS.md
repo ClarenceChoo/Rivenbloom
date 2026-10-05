@@ -122,7 +122,9 @@ npm run tauri build
 - Every bug fix begins with a failing regression test where practical.
 - Do not claim a command or platform works unless it was run in the current
   environment.
-- Before completion run format check, lint, type check, unit tests, Playwright,
+- Use the progressive verification policy below during implementation. For a
+  completed slice, release milestone, or materially changed shared
+  infrastructure, run format check, lint, type check, unit tests, Playwright,
   production build, browser playthrough checks, PWA checks, and available Tauri
   checks.
 
@@ -136,14 +138,97 @@ npm run tauri build
   toggle, hold/toggle settings, and separate audio channels.
 - Important motion and flashes must respect accessibility settings.
 
-## Workflow
+# Agent Operating Policy
 
-1. Update `docs/progress.md` when a milestone changes.
-2. Write or update the focused test first for pure gameplay rules.
-3. Make the smallest complete implementation for that milestone.
-4. Run the focused test, then relevant broader checks.
-5. Keep docs, controls, save schema, and content data synchronised.
-6. Record environmental blockers honestly in `docs/known-issues.md`.
+Follow project contracts first, then the requested outcome, then speed. Stop
+when the requested outcome is verified; do not keep improving adjacent code.
+
+## Scope and Autonomy
+
+- Execute clear, reversible work without asking for confirmation. Ask only when
+  a missing choice would materially change the result or expand authority.
+- Make the smallest complete change. No speculative features, abstractions,
+  refactors, dependencies, or docs.
+- Preserve unrelated user changes. Never reset or discard them.
+- Diagnose and report without mutating unless the user also requests a fix.
+- Do not use subagents unless the user explicitly requests delegation.
+
+## Lean Task Loop
+
+1. Inspect once: check the current diff, then use one shallow, targeted search
+   for the relevant symbols and files.
+2. Read only the files needed to choose and implement the change. Reuse that
+   context; do not reread unchanged files.
+3. Edit related files in one coherent batch, following existing patterns.
+4. Run the smallest check that can disprove the change.
+5. Expand verification only when the risk table below requires it or focused
+   evidence reveals broader risk.
+6. Review the final diff for touched paths, report results, and stop.
+
+For a small, clear task, skip a written plan. For multi-step work, use one short
+actionable plan and update it only when scope changes. Do not create design or
+planning documents unless requested. Update `docs/progress.md` only when a real
+milestone changes.
+
+## Command and Context Budget
+
+- Every command must answer a specific unresolved question. Batch independent
+  read-only checks and filter output to relevant lines.
+- Prefer `rg`/`rg --files` with focused paths. Avoid broad scans and ignored or
+  generated paths: `node_modules`, `dist`, `build`, `.git`, `.vite`, `coverage`,
+  `src-tauri/target`, caches, lockfiles, asset binaries, and generated assets.
+- Do not inspect git history, reread `package.json` or configs, or enumerate the
+  whole repository unless the task requires it.
+- Do not run equivalent checks or repeat a successful command after no relevant
+  change. On failure, form one hypothesis, make one focused fix, and rerun only
+  the proving check before broadening.
+- Do not run `npm install` unless dependencies are missing or changed. Reuse an
+  existing dev server and browser session; do not start either for non-visual
+  work.
+- Summarise large files and command output internally. Never paste routine logs
+  or full files to the user.
+
+## Editing Rules
+
+- Prefer targeted patches and existing utilities. Keep modules focused, but do
+  not split files merely to reduce line count.
+- Add comments only for non-obvious invariants, decisions, or workarounds.
+- Add a dependency only when required and no existing capability suffices. Do
+  not upgrade unrelated packages or regenerate a lockfile without a dependency
+  change.
+- Update user-facing docs only when behaviour, setup, controls, architecture, or
+  save/content contracts change. Record genuine environment blockers in
+  `docs/known-issues.md`.
+- Do not create branches, commits, pushes, or pull requests unless requested.
+
+## Proportional Verification
+
+Use the minimum row that fully covers the change:
+
+| Change | Required evidence |
+| --- | --- |
+| Docs only | Review rendered/relevant text and final diff; no app suite. |
+| Pure rule or bug fix | Failing regression test where practical, then nearest focused test. |
+| TypeScript implementation | Focused test plus targeted typecheck/lint when applicable. |
+| UI or scene | Focused automated check plus affected-flow visual/browser check; reuse the session. |
+| Asset only | Load/render check, art-direction review, and provenance entry. |
+| Save schema | Migration, migration tests, recovery/serialization tests, and relevant broader checks. |
+| Shared infrastructure, dependencies, or config | Format check, lint, typecheck, unit tests, build, relevant Playwright/browser/PWA checks, and available Tauri checks. |
+| Completed slice or release milestone | Full release matrix: format, lint, typecheck, unit, Playwright, production build, browser playthrough, PWA, and available Tauri checks. |
+
+Never claim a command, browser flow, or platform works unless verified in the
+current environment. After code changes, confirm no temporary logs, debug code,
+screenshots, generated test files, or placeholders remain.
+
+## Communication Budget
+
+- Give progress updates only for meaningful findings, blockers, milestones, or
+  long-running verification. Do not narrate routine reads and edits.
+- Do not restate the request or repeat completed work. Discuss alternatives only
+  when a real trade-off needs user input.
+- Final response: concise outcome, changed files, checks actually run, and any
+  remaining blocker or limitation. Do not suggest optional follow-up work unless
+  it is required to finish the request.
 
 ## Definition of Done
 

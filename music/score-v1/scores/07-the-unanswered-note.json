@@ -1,0 +1,497 @@
+{
+  "id": "07-the-unanswered-note",
+  "title": "The Unanswered Note",
+  "area": "Hollow Choir approach",
+  "style": "threshold",
+  "bars": 16,
+  "bpm": 58,
+  "barBeats": 4,
+  "meter": [
+    4,
+    4
+  ],
+  "lead": 71,
+  "description": "The familiar song slows and fractures among distant bells and wordless resonance.",
+  "beats": 64,
+  "loop": true,
+  "sections": [
+    {
+      "bar": 0,
+      "label": "Opening"
+    },
+    {
+      "bar": 8,
+      "label": "Seed-song"
+    }
+  ],
+  "tracks": [
+    {
+      "name": "Seed melody",
+      "program": 71,
+      "gain": 0.84,
+      "pan": -0.12,
+      "reverb": 25,
+      "percussion": false,
+      "notes": [
+        {
+          "beat": 0.00632,
+          "pitch": 62,
+          "duration": 3.36,
+          "velocity": 41
+        },
+        {
+          "beat": 7.98811,
+          "pitch": 58,
+          "duration": 2.24,
+          "velocity": 43
+        },
+        {
+          "beat": 13.32768,
+          "pitch": 62,
+          "duration": 2.24,
+          "velocity": 42
+        },
+        {
+          "beat": 15.99747,
+          "pitch": 67,
+          "duration": 2.24,
+          "velocity": 41
+        },
+        {
+          "beat": 23.99622,
+          "pitch": 58,
+          "duration": 1.12,
+          "velocity": 47
+        },
+        {
+          "beat": 29.33722,
+          "pitch": 56,
+          "duration": 2.24,
+          "velocity": 36
+        }
+      ]
+    },
+    {
+      "name": "Woven plucks",
+      "program": 46,
+      "gain": 0.72,
+      "pan": -0.36,
+      "reverb": 20,
+      "percussion": false,
+      "notes": [
+        {
+          "beat": 0,
+          "pitch": 65,
+          "duration": 1.6,
+          "velocity": 22
+        },
+        {
+          "beat": 0.74496,
+          "pitch": 72,
+          "duration": 1.6,
+          "velocity": 23
+        },
+        {
+          "beat": 1.48814,
+          "pitch": 76,
+          "duration": 1.6,
+          "velocity": 19
+        },
+        {
+          "beat": 8.00078,
+          "pitch": 67,
+          "duration": 1.6,
+          "velocity": 24
+        },
+        {
+          "beat": 8.74873,
+          "pitch": 74,
+          "duration": 1.6,
+          "velocity": 22
+        },
+        {
+          "beat": 9.50173,
+          "pitch": 77,
+          "duration": 1.6,
+          "velocity": 18
+        },
+        {
+          "beat": 15.98984,
+          "pitch": 65,
+          "duration": 1.6,
+          "velocity": 25
+        },
+        {
+          "beat": 16.75791,
+          "pitch": 72,
+          "duration": 1.6,
+          "velocity": 19
+        },
+        {
+          "beat": 17.49879,
+          "pitch": 76,
+          "duration": 1.6,
+          "velocity": 20
+        },
+        {
+          "beat": 23.99744,
+          "pitch": 65,
+          "duration": 1.6,
+          "velocity": 23
+        },
+        {
+          "beat": 24.74261,
+          "pitch": 74,
+          "duration": 1.6,
+          "velocity": 21
+        },
+        {
+          "beat": 25.49041,
+          "pitch": 77,
+          "duration": 1.6,
+          "velocity": 25
+        },
+        {
+          "beat": 31.98902,
+          "pitch": 65,
+          "duration": 1.6,
+          "velocity": 26
+        },
+        {
+          "beat": 32.75513,
+          "pitch": 72,
+          "duration": 1.6,
+          "velocity": 28
+        },
+        {
+          "beat": 33.49525,
+          "pitch": 76,
+          "duration": 1.6,
+          "velocity": 27
+        },
+        {
+          "beat": 39.99912,
+          "pitch": 67,
+          "duration": 1.6,
+          "velocity": 31
+        },
+        {
+          "beat": 40.74011,
+          "pitch": 74,
+          "duration": 1.6,
+          "velocity": 31
+        },
+        {
+          "beat": 41.50863,
+          "pitch": 77,
+          "duration": 1.6,
+          "velocity": 24
+        },
+        {
+          "beat": 48.00747,
+          "pitch": 65,
+          "duration": 1.6,
+          "velocity": 30
+        },
+        {
+          "beat": 48.74706,
+          "pitch": 72,
+          "duration": 1.6,
+          "velocity": 28
+        },
+        {
+          "beat": 49.50394,
+          "pitch": 76,
+          "duration": 1.6,
+          "velocity": 25
+        },
+        {
+          "beat": 55.99039,
+          "pitch": 65,
+          "duration": 1.6,
+          "velocity": 31
+        },
+        {
+          "beat": 56.74352,
+          "pitch": 72,
+          "duration": 1.6,
+          "velocity": 24
+        },
+        {
+          "beat": 57.50284,
+          "pitch": 76,
+          "duration": 1.6,
+          "velocity": 28
+        }
+      ]
+    },
+    {
+      "name": "Inner strings",
+      "program": 44,
+      "gain": 0.38,
+      "pan": 0.25,
+      "reverb": 28,
+      "percussion": false,
+      "notes": [
+        {
+          "beat": 0.01117,
+          "pitch": 53,
+          "duration": 6.4,
+          "velocity": 19
+        },
+        {
+          "beat": 0.05986,
+          "pitch": 60,
+          "duration": 6.4,
+          "velocity": 18
+        },
+        {
+          "beat": 15.99913,
+          "pitch": 53,
+          "duration": 6.4,
+          "velocity": 17
+        },
+        {
+          "beat": 16.06673,
+          "pitch": 60,
+          "duration": 6.4,
+          "velocity": 20
+        },
+        {
+          "beat": 31.99349,
+          "pitch": 53,
+          "duration": 6.4,
+          "velocity": 23
+        },
+        {
+          "beat": 32.01941,
+          "pitch": 57,
+          "duration": 6.4,
+          "velocity": 30
+        },
+        {
+          "beat": 32.06347,
+          "pitch": 60,
+          "duration": 6.4,
+          "velocity": 24
+        },
+        {
+          "beat": 47.99519,
+          "pitch": 53,
+          "duration": 6.4,
+          "velocity": 27
+        },
+        {
+          "beat": 48.03167,
+          "pitch": 57,
+          "duration": 6.4,
+          "velocity": 29
+        },
+        {
+          "beat": 48.05008,
+          "pitch": 60,
+          "duration": 6.4,
+          "velocity": 25
+        }
+      ]
+    },
+    {
+      "name": "Root cello",
+      "program": 42,
+      "gain": 0.68,
+      "pan": -0.06,
+      "reverb": 16,
+      "percussion": false,
+      "notes": [
+        {
+          "beat": 0.00668,
+          "pitch": 50,
+          "duration": 6.6,
+          "velocity": 29
+        },
+        {
+          "beat": 8.00827,
+          "pitch": 55,
+          "duration": 6.6,
+          "velocity": 32
+        },
+        {
+          "beat": 15.99287,
+          "pitch": 50,
+          "duration": 6.6,
+          "velocity": 30
+        },
+        {
+          "beat": 23.99724,
+          "pitch": 46,
+          "duration": 6.6,
+          "velocity": 28
+        },
+        {
+          "beat": 32.00218,
+          "pitch": 50,
+          "duration": 6.6,
+          "velocity": 37
+        },
+        {
+          "beat": 39.98843,
+          "pitch": 55,
+          "duration": 6.6,
+          "velocity": 39
+        },
+        {
+          "beat": 47.99244,
+          "pitch": 50,
+          "duration": 6.6,
+          "velocity": 35
+        },
+        {
+          "beat": 56.00184,
+          "pitch": 50,
+          "duration": 6.6,
+          "velocity": 35
+        }
+      ]
+    },
+    {
+      "name": "Copper and glass",
+      "program": 8,
+      "gain": 0.43,
+      "pan": 0.38,
+      "reverb": 32,
+      "percussion": false,
+      "notes": [
+        {
+          "beat": 1.99962,
+          "pitch": 84,
+          "duration": 2.8,
+          "velocity": 24
+        },
+        {
+          "beat": 18.00882,
+          "pitch": 84,
+          "duration": 2.8,
+          "velocity": 18
+        },
+        {
+          "beat": 33.98947,
+          "pitch": 84,
+          "duration": 2.8,
+          "velocity": 23
+        },
+        {
+          "beat": 50.00844,
+          "pitch": 84,
+          "duration": 2.8,
+          "velocity": 25
+        }
+      ]
+    },
+    {
+      "name": "Wordless resonance",
+      "program": 52,
+      "gain": 0.25,
+      "pan": 0,
+      "reverb": 34,
+      "percussion": false,
+      "notes": [
+        {
+          "beat": 0.07293,
+          "pitch": 65,
+          "duration": 7.0,
+          "velocity": 21
+        },
+        {
+          "beat": 0.08867,
+          "pitch": 72,
+          "duration": 7.0,
+          "velocity": 21
+        },
+        {
+          "beat": 8.07435,
+          "pitch": 67,
+          "duration": 7.0,
+          "velocity": 25
+        },
+        {
+          "beat": 8.07812,
+          "pitch": 74,
+          "duration": 7.0,
+          "velocity": 23
+        },
+        {
+          "beat": 16.08448,
+          "pitch": 65,
+          "duration": 7.0,
+          "velocity": 21
+        },
+        {
+          "beat": 16.08581,
+          "pitch": 72,
+          "duration": 7.0,
+          "velocity": 19
+        },
+        {
+          "beat": 24.07994,
+          "pitch": 65,
+          "duration": 7.0,
+          "velocity": 23
+        },
+        {
+          "beat": 24.08957,
+          "pitch": 74,
+          "duration": 7.0,
+          "velocity": 22
+        },
+        {
+          "beat": 32.07203,
+          "pitch": 65,
+          "duration": 7.0,
+          "velocity": 29
+        },
+        {
+          "beat": 32.07615,
+          "pitch": 72,
+          "duration": 7.0,
+          "velocity": 30
+        },
+        {
+          "beat": 40.08108,
+          "pitch": 74,
+          "duration": 7.0,
+          "velocity": 27
+        },
+        {
+          "beat": 40.08645,
+          "pitch": 67,
+          "duration": 7.0,
+          "velocity": 25
+        },
+        {
+          "beat": 48.06854,
+          "pitch": 72,
+          "duration": 7.0,
+          "velocity": 25
+        },
+        {
+          "beat": 48.08794,
+          "pitch": 65,
+          "duration": 7.0,
+          "velocity": 30
+        },
+        {
+          "beat": 56.07924,
+          "pitch": 65,
+          "duration": 7.0,
+          "velocity": 24
+        },
+        {
+          "beat": 56.08677,
+          "pitch": 72,
+          "duration": 7.0,
+          "velocity": 23
+        }
+      ]
+    }
+  ]
+}

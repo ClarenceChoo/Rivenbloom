@@ -1,0 +1,38 @@
+{
+  "name": "rivenbloom",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:saves:browser": "vitest run --config vitest.browser.config.ts",
+    "test:pwa:production": "RIVENBLOOM_PRODUCTION=1 playwright test",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run test",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.62.1",
+    "@tauri-apps/cli": "2.10.0",
+    "@types/node": "26.2.0",
+    "@vitest/browser-playwright": "4.1.10",
+    "eslint": "10.8.1",
+    "prettier": "3.9.6",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.66.0",
+    "vite": "8.2.1",
+    "vitest": "4.1.10"
+  }
+}

@@ -215,7 +215,7 @@ e2e/
 
 - [ ] Define branded stable IDs and deterministic data types.
 - [ ] Write tests for armour, resistance, block, parry, critical exclusion,
-  poise, cooldown time, inventory caps, and quest idempotency.
+      poise, cooldown time, inventory caps, and quest idempotency.
 - [ ] Implement the smallest pure stores that satisfy those tests.
 - [ ] Run all pure-rule tests.
 
@@ -243,9 +243,9 @@ e2e/
 - `SaveService.import(candidateJson): Promise<ImportPreview>`
 
 - [ ] Define schema version 1, defaults, validation errors, envelope checksum,
-  and migration result types.
+      and migration result types.
 - [ ] Test round-trip, missing optionals, prior-version migration, invalid
-  current/valid backup, invalid both, and three-slot isolation.
+      current/valid backup, invalid both, and three-slot isolation.
 - [ ] Implement memory and IndexedDB transactional adapters.
 - [ ] Implement debounced autosave, import preview, export, and recovery notices.
 - [ ] Run save tests in Chromium as well as Vitest where IndexedDB is required.
@@ -268,7 +268,7 @@ e2e/
 - `InputService.clearTransient(): void`
 
 - [ ] Test keyboard aliases, gamepad axes/deadzones, buffering, rebind conflict,
-  focus loss, hold/toggle, and serialisation.
+      focus loss, hold/toggle, and serialisation.
 - [ ] Implement device adapters behind semantic actions.
 - [ ] Persist bindings and accessibility/audio settings through `SaveService`.
 - [ ] Add haptic calls as optional progressive enhancement.
@@ -318,7 +318,7 @@ e2e/
 - `AreaLoader.load(definition: AreaDefinition): LoadedArea`
 
 - [ ] Define stable schemas for surfaces, layers, actors, attacks, triggers,
-  mechanisms, checkpoints, transitions, props, ambience, and rooms.
+      mechanisms, checkpoints, transitions, props, ambience, and rooms.
 - [ ] Validate all cross-referenced IDs and required boss/content fields.
 - [ ] Build a typed Brackenreach room using final scale and collision metrics.
 - [ ] Add development-only collision/spawn/trigger/room debug overlay.
@@ -343,10 +343,10 @@ e2e/
 - `CameraDirector.follow(target, roomBounds, options): void`
 
 - [ ] Test acceleration, friction, coyote time, input buffer, variable jump,
-  fall cap, landing, drop-through, ladder, knockback, and respawn reset.
+      fall cap, landing, drop-through, ladder, knockback, and respawn reset.
 - [ ] Implement player FSM and animation intent output.
 - [ ] Implement camera dead zone, look-ahead, vertical smoothing, boundaries,
-  reduced motion, and cinematic framing.
+      reduced motion, and cinematic framing.
 - [ ] Tune at 60 Hz and simulated moderate frame drops.
 
 ## Task 9: Combat, Abilities, and Feedback
@@ -369,11 +369,11 @@ e2e/
 - `AbilitySystem.tryCast(abilityId, actorSnapshot): AbilityResult`
 
 - [ ] Implement light combo, air slash, charged strike, block/parry, dash,
-  Lumen Bolt, Aegis Veil, and Resonant Pulse.
+      Lumen Bolt, Aegis Veil, and Resonant Pulse.
 - [ ] Implement anticipation/active/recovery, cooldowns, mana, stagger,
-  invulnerability, projectiles, hazards, and status hooks.
+      invulnerability, projectiles, hazards, and status hooks.
 - [ ] Add hit-stop, shake, slash trails, flashes, optional damage labels, audio
-  cues, and accessibility scaling.
+      cues, and accessibility scaling.
 - [ ] Verify no render-bound hit detection remains.
 
 ## Task 10: Enemy AI and Encounters
@@ -395,11 +395,11 @@ e2e/
 - `EncounterDirector.requestAttack(enemyId, profile): AttackGrant`
 
 - [ ] Implement sleep, idle, patrol, suspect, chase, telegraph, attack, recover,
-  retreat, hurt, stagger, and death states.
+      retreat, hurt, stagger, and death states.
 - [ ] Add line of sight, edges, leash, camera-safe ranged attacks, configurable
-  drops/resistances, and attacker slots.
+      drops/resistances, and attacker slots.
 - [ ] Implement Briar Scrapper, Duskwing, Spore Scribe, Barkbound, Rootlurker,
-  and elite Thorn Sentinel profiles.
+      and elite Thorn Sentinel profiles.
 - [ ] Tune mixed encounters and verify fair offscreen behaviour.
 
 ## Task 11: World Interaction, NPCs, Quest, Shop, and Checkpoints
@@ -423,7 +423,7 @@ e2e/
 
 - [ ] Add Sela, Orin, and Piri with conditional original dialogue.
 - [ ] Implement The Silent Bloom quest, two optional discoveries, shop,
-  currency, XP, health/mana upgrades, two blade upgrades, and charms.
+      currency, XP, health/mana upgrades, two blade upgrades, and charms.
 - [ ] Implement seed-lantern checkpoint, death, respawn, and autosave.
 - [ ] Ensure chests, shortcuts, discoveries, and quest events are idempotent.
 
@@ -443,10 +443,10 @@ e2e/
 - `PuzzleSystem.apply(mechanismId, activation, worldState): PuzzleResult`
 
 - [ ] Author Wren's Rest, Brackenreach Trail, Listening Arch, Singing Hollows,
-  Reliquary Verge, Vestibule, Flooded Stacks, Resonance Gallery, and Hollow Choir.
+      Reliquary Verge, Vestibule, Flooded Stacks, Resonance Gallery, and Hollow Choir.
 - [ ] Place main routes, branches, shortcuts, ladders, one-way platforms,
-  hazards, bramble dash gates, breakable walls, suspicious clues, keys, lenses,
-  checkpoints, safe zones, encounter rests, and landmarks.
+      hazards, bramble dash gates, breakable walls, suspicious clues, keys, lenses,
+      checkpoints, safe zones, encounter rests, and landmarks.
 - [ ] Make every room discoverable on the map and persist solved state.
 - [ ] Run a timed critical-path traversal and optional-route pass.
 
@@ -467,9 +467,9 @@ e2e/
 - Boss events: `boss-intro`, `boss-phase`, `boss-health`, `boss-defeated`.
 
 - [ ] Implement intro, arena lock, health bar, phase one attacks, crack
-  transition, lens-exposure phase two, stagger openings, defeat, and reward.
+      transition, lens-exposure phase two, stagger openings, defeat, and reward.
 - [ ] Add camera framing, telegraphs, music layers, sound cues, and reduced-motion
-  variants.
+      variants.
 - [ ] Persist defeat before the ending dialogue and protect checkpoint progress.
 - [ ] Tune for learned mechanics rather than excessive health.
 
@@ -490,11 +490,11 @@ e2e/
 - Menu tabs: `map`, `inventory`, `equipment`, `journal`, `settings`.
 
 - [ ] Implement health, mana, spell, currency, prompts, boss health,
-  notifications, autosave indicator, and dialogue presentation.
+      notifications, autosave indicator, and dialogue presentation.
 - [ ] Implement discovered-room map, inventory/equipment, quest journal, pause,
-  settings, death/respawn, save slots, and credits.
+      settings, death/respawn, save slots, and credits.
 - [ ] Implement all specified accessibility settings and full keyboard/gamepad
-  navigation with visible focus.
+      navigation with visible focus.
 - [ ] Verify settings survive reload.
 
 ## Task 15: Original Production Art and Animation
@@ -513,9 +513,9 @@ e2e/
 - Asset keys are declared once in `src/game/data/assets.ts`.
 
 - [ ] Generate or author the Mara animation set, six enemy sets, boss states,
-  terrain/ruin/cave/building/dungeon kits, props, pickups, chests, doors,
-  checkpoints, portraits, HUD/inventory/spell icons, three-plus background
-  layers, logo, menu art, and icons.
+      terrain/ruin/cave/building/dungeon kits, props, pickups, chests, doors,
+      checkpoints, portraits, HUD/inventory/spell icons, three-plus background
+      layers, logo, menu art, and icons.
 - [ ] Trim, atlas, and annotate every gameplay asset at consistent scale.
 - [ ] Replace all development art and audit scenes for debug primitives.
 - [ ] Record tool, prompt summary, authorship, licence, and modifications.
@@ -537,9 +537,9 @@ e2e/
 - Channels: `master`, `music`, `sfx`, `ambience`.
 
 - [ ] Produce main menu, outdoor, dungeon, and boss loops plus required
-  ambience/SFX using original synthesis or properly licensed sources.
+      ambience/SFX using original synthesis or properly licensed sources.
 - [ ] Add clean loop points, variations, pitch jitter, concurrency limits,
-  focus mute, and channel settings.
+      focus mute, and channel settings.
 - [ ] Add subtitles/captions for semantically important non-speech cues.
 - [ ] Verify unlock-on-input and Safari/WebView-safe playback.
 
@@ -560,13 +560,13 @@ e2e/
   code in the browser path.
 
 - [ ] Configure installable manifest, icons, cached application shell, update
-  prompt, and offline reload.
+      prompt, and offline reload.
 - [ ] Configure Tauri 2 with persistent application-data storage and no
-  development-directory dependency.
+      development-directory dependency.
 - [ ] Add native save adapter parity tests.
 - [ ] Run browser PWA checks.
 - [ ] Install/use Rust if available, then run `npm run tauri dev` and
-  `npm run tauri build`; otherwise record the precise external blocker.
+      `npm run tauri build`; otherwise record the precise external blocker.
 
 ## Task 18: Full Verification, Polish, and Handoff
 
@@ -584,18 +584,18 @@ e2e/
   in development/test builds.
 
 - [ ] Run Prettier, ESLint, strict type checking, all unit tests, production
-  build, and Playwright smoke tests.
+      build, and Playwright smoke tests.
 - [ ] Launch the built game and test keyboard, detected gamepad, save/reload,
-  import/export, desktop resolution, 1024-pixel viewport, high DPI, fullscreen,
-  focus loss, reduced motion, and audio.
+      import/export, desktop resolution, 1024-pixel viewport, high DPI, fullscreen,
+      focus loss, reduced motion, and audio.
 - [ ] Complete a manual start-to-credits playthrough and boss rematch
-  persistence check.
+      persistence check.
 - [ ] Inspect console, network, memory across scene transitions, object counts,
-  collision/debug overlay, and service-worker offline behaviour.
+      collision/debug overlay, and service-worker offline behaviour.
 - [ ] Fix all severe and obvious issues; document only verified residual
-  limitations.
+      limitations.
 - [ ] Finalise README setup, prerequisites, controls, development, web/PWA,
-  save behaviour, testing, and macOS packaging instructions.
+      save behaviour, testing, and macOS packaging instructions.
 
 ## Plan Self-Review
 

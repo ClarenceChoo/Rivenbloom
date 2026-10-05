@@ -40,19 +40,19 @@ colour scheme, interface composition, enemy design, or iconography.
 
 ## Palette
 
-| Role | Colour | Hex |
-| --- | --- | --- |
-| Deepest shadow | Midnight plum | `#171325` |
-| Cave shadow | Ink violet | `#27213A` |
-| Distant forest | Storm teal | `#244C50` |
-| Moss body | Fern green | `#47705C` |
-| Living foliage | Sage | `#79A06B` |
-| Parchment light | Warm cream | `#F0E3C0` |
-| Metal | Aged copper | `#B96F45` |
-| Resonance | Lantern amber | `#F5C96A` |
-| Magic highlight | Moon mint | `#9EE7D7` |
-| Danger telegraph | Coral ember | `#EE765F` |
-| Rare secret | Orchid | `#BC8AE8` |
+| Role             | Colour        | Hex       |
+| ---------------- | ------------- | --------- |
+| Deepest shadow   | Midnight plum | `#171325` |
+| Cave shadow      | Ink violet    | `#27213A` |
+| Distant forest   | Storm teal    | `#244C50` |
+| Moss body        | Fern green    | `#47705C` |
+| Living foliage   | Sage          | `#79A06B` |
+| Parchment light  | Warm cream    | `#F0E3C0` |
+| Metal            | Aged copper   | `#B96F45` |
+| Resonance        | Lantern amber | `#F5C96A` |
+| Magic highlight  | Moon mint     | `#9EE7D7` |
+| Danger telegraph | Coral ember   | `#EE765F` |
+| Rare secret      | Orchid        | `#BC8AE8` |
 
 Area grading changes value and saturation but keeps resonance amber and danger
 coral stable for gameplay readability.

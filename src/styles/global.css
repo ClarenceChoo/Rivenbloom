@@ -1,0 +1,67 @@
+:root {
+  color-scheme: dark;
+  font-family: Charter, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  font-synthesis: none;
+  background: #171325;
+  color: #f0e3c0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+input[type='file'],
+select {
+  font-family: Inter, Avenir, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #171325;
+}
+
+button,
+input,
+select,
+summary {
+  outline: 0 solid transparent;
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+.file-action:focus-within {
+  outline: 3px solid #9ee7d7;
+  box-shadow: 0 0 0 1px #f0e3c0;
+}
+
+button:disabled,
+input:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.46;
+}
+
+::selection {
+  color: #171325;
+  background: #f5c96a;
+}

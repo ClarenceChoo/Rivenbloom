@@ -1,0 +1,410 @@
+[
+  {
+    "id": "01-a-thread-of-amber",
+    "title": "A Thread of Amber",
+    "area": "Title screen",
+    "style": "title",
+    "bars": 32,
+    "bpm": 72,
+    "barBeats": 4,
+    "meter": [
+      4,
+      4
+    ],
+    "lead": 73,
+    "description": "Harp opens the seed-song; woodwind and strings answer with quiet curiosity.",
+    "beats": 128,
+    "loop": true,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      },
+      {
+        "bar": 16,
+        "label": "Answer"
+      },
+      {
+        "bar": 24,
+        "label": "Changed light"
+      }
+    ],
+    "seconds": 106.667,
+    "integratedLufs": -19.0,
+    "peakDbfs": -7.9
+  },
+  {
+    "id": "02-lanterns-above-the-rain",
+    "title": "Lanterns Above the Rain",
+    "area": "Wren’s Rest",
+    "style": "village",
+    "bars": 48,
+    "bpm": 84,
+    "barBeats": 3,
+    "meter": [
+      3,
+      4
+    ],
+    "lead": 73,
+    "description": "A gentle village waltz: warm harp, flute, cello, and small pools of light.",
+    "beats": 144,
+    "loop": true,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      },
+      {
+        "bar": 16,
+        "label": "Answer"
+      },
+      {
+        "bar": 24,
+        "label": "Changed light"
+      },
+      {
+        "bar": 32,
+        "label": "Return"
+      },
+      {
+        "bar": 40,
+        "label": "Last turn"
+      }
+    ],
+    "seconds": 102.857,
+    "integratedLufs": -19.0,
+    "peakDbfs": -7.7
+  },
+  {
+    "id": "03-the-listening-wood",
+    "title": "The Listening Wood",
+    "area": "Brackenreach",
+    "style": "wood",
+    "bars": 64,
+    "bpm": 104,
+    "barBeats": 3,
+    "meter": [
+      6,
+      8
+    ],
+    "lead": 73,
+    "description": "A swaying exploration theme with plucked strings and restrained hand percussion.",
+    "beats": 192,
+    "loop": true,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      },
+      {
+        "bar": 16,
+        "label": "Answer"
+      },
+      {
+        "bar": 24,
+        "label": "Changed light"
+      },
+      {
+        "bar": 32,
+        "label": "Return"
+      },
+      {
+        "bar": 40,
+        "label": "Last turn"
+      },
+      {
+        "bar": 48,
+        "label": "Afterimage"
+      },
+      {
+        "bar": 56,
+        "label": "Homeward"
+      }
+    ],
+    "seconds": 110.769,
+    "integratedLufs": -19.0,
+    "peakDbfs": -7.6
+  },
+  {
+    "id": "04-what-the-roots-remember",
+    "title": "What the Roots Remember",
+    "area": "Singing Hollows",
+    "style": "cave",
+    "bars": 32,
+    "bpm": 64,
+    "barBeats": 4,
+    "meter": [
+      4,
+      4
+    ],
+    "lead": 11,
+    "description": "Spacious mallet phrases, glass-like celesta, bowed textures, and long silences.",
+    "beats": 128,
+    "loop": true,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      },
+      {
+        "bar": 16,
+        "label": "Answer"
+      },
+      {
+        "bar": 24,
+        "label": "Changed light"
+      }
+    ],
+    "seconds": 120.0,
+    "integratedLufs": -22.0,
+    "peakDbfs": -7.1
+  },
+  {
+    "id": "05-an-archive-under-water",
+    "title": "An Archive Under Water",
+    "area": "Rootglass Reliquary",
+    "style": "archive",
+    "bars": 32,
+    "bpm": 88,
+    "barBeats": 5,
+    "meter": [
+      5,
+      4
+    ],
+    "lead": 71,
+    "description": "A five-beat mechanical pattern beneath low clarinet and suspended strings.",
+    "beats": 160,
+    "loop": true,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      },
+      {
+        "bar": 16,
+        "label": "Answer"
+      },
+      {
+        "bar": 24,
+        "label": "Changed light"
+      }
+    ],
+    "seconds": 109.091,
+    "integratedLufs": -19.0,
+    "peakDbfs": -7.0
+  },
+  {
+    "id": "06-copper-and-briar",
+    "title": "Copper and Briar",
+    "area": "Thorn Sentinel",
+    "style": "sentinel",
+    "bars": 32,
+    "bpm": 132,
+    "barBeats": 4,
+    "meter": [
+      4,
+      4
+    ],
+    "lead": 60,
+    "description": "A compact guardian battle with horn, plucked strings, and dry low percussion.",
+    "beats": 128,
+    "loop": true,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      },
+      {
+        "bar": 16,
+        "label": "Answer"
+      },
+      {
+        "bar": 24,
+        "label": "Changed light"
+      }
+    ],
+    "seconds": 58.182,
+    "integratedLufs": -17.0,
+    "peakDbfs": -6.5
+  },
+  {
+    "id": "07-the-unanswered-note",
+    "title": "The Unanswered Note",
+    "area": "Hollow Choir approach",
+    "style": "threshold",
+    "bars": 16,
+    "bpm": 58,
+    "barBeats": 4,
+    "meter": [
+      4,
+      4
+    ],
+    "lead": 71,
+    "description": "The familiar song slows and fractures among distant bells and wordless resonance.",
+    "beats": 64,
+    "loop": true,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      }
+    ],
+    "seconds": 66.207,
+    "integratedLufs": -22.0,
+    "peakDbfs": -9.6
+  },
+  {
+    "id": "08-first-verse-of-the-hollow",
+    "title": "First Verse of the Hollow",
+    "area": "Pallid Cantor · phase one",
+    "style": "verse",
+    "bars": 48,
+    "bpm": 100,
+    "barBeats": 3,
+    "meter": [
+      3,
+      4
+    ],
+    "lead": 60,
+    "description": "A stately, threatening three-beat ritual: low horn, strings, chimes, and choir patch.",
+    "beats": 144,
+    "loop": true,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      },
+      {
+        "bar": 16,
+        "label": "Answer"
+      },
+      {
+        "bar": 24,
+        "label": "Changed light"
+      },
+      {
+        "bar": 32,
+        "label": "Return"
+      },
+      {
+        "bar": 40,
+        "label": "Last turn"
+      }
+    ],
+    "seconds": 86.4,
+    "integratedLufs": -17.0,
+    "peakDbfs": -5.6
+  },
+  {
+    "id": "09-the-throat-of-glass",
+    "title": "The Throat of Glass",
+    "area": "Pallid Cantor · phase two",
+    "style": "refrain",
+    "bars": 48,
+    "bpm": 144,
+    "barBeats": 4,
+    "meter": [
+      4,
+      4
+    ],
+    "lead": 48,
+    "description": "The broken seed-song rises over accelerating string figures and earth percussion.",
+    "beats": 192,
+    "loop": true,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      },
+      {
+        "bar": 16,
+        "label": "Answer"
+      },
+      {
+        "bar": 24,
+        "label": "Changed light"
+      },
+      {
+        "bar": 32,
+        "label": "Return"
+      },
+      {
+        "bar": 40,
+        "label": "Last turn"
+      }
+    ],
+    "seconds": 80.0,
+    "integratedLufs": -17.0,
+    "peakDbfs": -4.9
+  },
+  {
+    "id": "10-the-song-released",
+    "title": "The Song Released",
+    "area": "Victory / return",
+    "style": "release",
+    "bars": 24,
+    "bpm": 72,
+    "barBeats": 4,
+    "meter": [
+      4,
+      4
+    ],
+    "lead": 73,
+    "description": "Solo cello restores the theme; a warm major-colour cadence closes the journey.",
+    "beats": 96,
+    "loop": false,
+    "sections": [
+      {
+        "bar": 0,
+        "label": "Opening"
+      },
+      {
+        "bar": 8,
+        "label": "Seed-song"
+      },
+      {
+        "bar": 16,
+        "label": "Answer"
+      }
+    ],
+    "seconds": 85.0,
+    "integratedLufs": -19.0,
+    "peakDbfs": -7.1
+  }
+]
