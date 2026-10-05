@@ -87,3 +87,17 @@ with silhouettes readable from 32–96 pixels and no baked text.
 | `public/assets/art/distant-roots.svg`, `hanging-vines.svg`, `foreground-boughs.svg` | Original SVG paths authored by Codex for this project; no external source.                                                                          | Curved botanical silhouettes, material gradients, and foreground framing. Runtime depth planes use restrained opacity and different scroll factors; reduced motion stops decorative parallax.                                                                                                                                                                      |
 
 World-atlas crops now use measured per-object bounds rather than uniform grid guesses. The original PNG remains unchanged. Mara uses per-pose foot anchors and elapsed-time animation. The activated checkpoint seal represents the current saved respawn checkpoint; no new persistent checkpoint collection was added. The unused atlas-edit generation was not incorporated into runtime assets.
+
+## 2026-10-05 player guide screenshots
+
+These documentation images are unedited 1280×720 PNG screenshots captured from
+Rivenbloom in Chromium with Playwright. They show this project's original runtime
+art and HTML interface. No external game images, image-generation references,
+compositing, or developer overlays were used. They are used in the README only.
+
+| Image                                 | Source and scene                                                                                                                                                              |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `docs/images/wrens-rest.png`          | Fresh development journey at Wren's Rest after accepting Sela's quest through ordinary controls.                                                                              |
+| `docs/images/brackenreach-combat.png` | Fresh production playthrough artifact `production-briar-combat.png`; ordinary movement, melee, and Lumen Bolt input with live enemies. Copied unchanged.                      |
+| `docs/images/singing-hollows.png`     | Fresh production playthrough artifact `production-root-memory-chamber.png`; arrival in the Root-Memory Chamber through ordinary controls. Copied unchanged.                   |
+| `docs/images/wayfinder-ledger.png`    | Map opened through the pause menu on the saved October 5 normal-stat development journey. Rooms were discovered during ordinary play; no imported save or developer mutation. |
