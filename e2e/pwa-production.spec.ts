@@ -1,6 +1,183 @@
 import { expect, test } from '@playwright/test';
-import { readFile, writeFile } from 'node:fs/promises';
+import type { Page } from '@playwright/test';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { computedContrastRatio } from './contrast';
+
+async function beginProductionJourney(page: Page): Promise<void> {
+  await page.goto('/');
+  expect(await page.evaluate(() => '__RIVENBLOOM_TEST__' in window)).toBe(false);
+  await page.getByRole('button', { name: 'Begin journey for Journey 1' }).click();
+  await page
+    .getByRole('dialog')
+    .getByRole('button', { name: 'Begin journey', exact: true })
+    .click();
+  await page.getByRole('button', { name: "Enter Wren's Rest" }).click();
+  await expect(page.getByLabel('Gameplay status')).toBeVisible();
+  await waitForNeutralFrames(page);
+}
+
+async function waitForNeutralFrames(page: Page): Promise<void> {
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve) => {
+        requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+      }),
+  );
+}
+
+async function cycleProductionJourney(page: Page): Promise<void> {
+  await page.bringToFront();
+  expect(await page.evaluate(() => document.hasFocus())).toBe(true);
+  await waitForNeutralFrames(page);
+  await page.keyboard.press('Escape');
+  const menu = page.getByRole('dialog', { name: 'Wayfinder Ledger' });
+  await expect(menu).toBeVisible();
+  for (const tab of ['Inventory', 'Equipment', 'Journal', 'Settings', 'Map']) {
+    await menu.getByRole('button', { name: tab, exact: true }).click();
+  }
+  await menu.getByRole('button', { name: 'Return to title' }).click();
+  await page.getByRole('button', { name: 'Continue Journey 1' }).click();
+  await page.getByRole('button', { name: "Enter Wren's Rest" }).click();
+  await expect(page.getByText("Wren's Rest · Wren's Rest Square")).toBeVisible();
+  await expect(page.getByText('Save: Saved', { exact: true })).toBeVisible();
+  await waitForNeutralFrames(page);
+}
+
+test.describe('Production lifecycle', () => {
+  test('production soundtrack assets decode and village playback advances', async ({
+    page,
+    browserName,
+  }, testInfo) => {
+    test.skip(browserName !== 'chromium', 'Playback inspection requires Chromium CDP.');
+    test.setTimeout(60_000);
+    await beginProductionJourney(page);
+    const files = (await readdir('public/assets/audio/rivenbloom'))
+      .filter((file) => file.endsWith('.mp3'))
+      .sort();
+    expect(files.length).toBeGreaterThan(0);
+    const decoded = await page.evaluate(async (files) => {
+      const context = new AudioContext();
+      try {
+        return await Promise.all(
+          files.map(async (file) => {
+            const response = await fetch(`/assets/audio/rivenbloom/${file}`);
+            if (!response.ok) throw new Error(`${file}: HTTP ${response.status}`);
+            const buffer = await context.decodeAudioData(await response.arrayBuffer());
+            return { file, seconds: buffer.duration, channels: buffer.numberOfChannels };
+          }),
+        );
+      } finally {
+        await context.close();
+      }
+    }, files);
+    expect(decoded.every(({ seconds, channels }) => seconds > 0 && channels > 0)).toBe(true);
+    const cdp = await page.context().newCDPSession(page);
+    const prototype = (await cdp.send('Runtime.evaluate', {
+      expression: 'HTMLAudioElement.prototype',
+    })) as { result: { objectId: string } };
+    const elements = (await cdp.send('Runtime.queryObjects', {
+      prototypeObjectId: prototype.result.objectId,
+    })) as { objects: { objectId: string } };
+    const playback = async () => {
+      const result = (await cdp.send('Runtime.callFunctionOn', {
+        objectId: elements.objects.objectId,
+        functionDeclaration: `function() {
+          return Array.from(this).filter(audio => !audio.paused)
+            .map(audio => ({ file: audio.currentSrc, seconds: audio.currentTime,
+              error: audio.error?.code ?? null }));
+        }`,
+        returnByValue: true,
+      })) as { result: { value: { file: string; seconds: number; error: number | null }[] } };
+      return result.result.value.find(({ file }) =>
+        file.endsWith('02-lanterns-above-the-rain.mp3'),
+      );
+    };
+    await expect.poll(playback).toBeDefined();
+    const before = (await playback())!;
+    await expect.poll(async () => (await playback())?.seconds).toBeGreaterThan(before.seconds);
+    expect((await playback())?.error).toBeNull();
+    await cdp.send('Runtime.releaseObject', { objectId: elements.objects.objectId });
+    await cdp.send('Runtime.releaseObject', { objectId: prototype.result.objectId });
+    await writeFile(testInfo.outputPath('audio-decode.json'), JSON.stringify(decoded, null, 2));
+  });
+
+  test('production music teardown releases DOM resources across title returns', async ({
+    page,
+    browserName,
+  }, testInfo) => {
+    test.skip(browserName !== 'chromium', 'Collected DOM counters require Chromium CDP.');
+    test.setTimeout(120_000);
+    await beginProductionJourney(page);
+    for (let warmup = 0; warmup < 3; warmup += 1) await cycleProductionJourney(page);
+    const cdp = await page.context().newCDPSession(page);
+    const nodes = async () => {
+      await page.waitForTimeout(1500);
+      await cdp.send('HeapProfiler.collectGarbage');
+      return ((await cdp.send('Memory.getDOMCounters')) as { nodes: number }).nodes;
+    };
+    const before = await nodes();
+    for (let cycle = 0; cycle < 20; cycle += 1) await cycleProductionJourney(page);
+    const after = await nodes();
+    await writeFile(
+      testInfo.outputPath('music-lifecycle.json'),
+      JSON.stringify({ before, after, cycles: 20 }, null, 2),
+    );
+    expect(after - before).toBeLessThanOrEqual(8);
+  });
+
+  test('production 30-minute lifecycle keeps saves, DOM and collected heap stable', async ({
+    page,
+    browserName,
+  }, testInfo) => {
+    test.skip(
+      process.env.RIVENBLOOM_SOAK !== '1' || browserName !== 'chromium',
+      'Run npm run test:soak:production explicitly.',
+    );
+    test.setTimeout(33 * 60_000);
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    await beginProductionJourney(page);
+    for (let warmup = 0; warmup < 3; warmup += 1) await cycleProductionJourney(page);
+    await page.waitForTimeout(1500);
+    const cdp = await page.context().newCDPSession(page);
+    const startedAt = Date.now();
+    const samples: {
+      elapsedMs: number;
+      cycles: number;
+      usedHeapBytes: number;
+      nodes: number;
+      documents: number;
+    }[] = [];
+    const sample = async (cycles: number) => {
+      await cdp.send('HeapProfiler.collectGarbage');
+      const heap = (await cdp.send('Runtime.getHeapUsage')) as { usedSize: number };
+      const dom = (await cdp.send('Memory.getDOMCounters')) as { nodes: number; documents: number };
+      samples.push({
+        elapsedMs: Date.now() - startedAt,
+        cycles,
+        usedHeapBytes: heap.usedSize,
+        nodes: dom.nodes,
+        documents: dom.documents,
+      });
+      await writeFile(testInfo.outputPath('soak-metrics.json'), JSON.stringify(samples, null, 2));
+    };
+    await sample(0);
+    for (let cycles = 1; cycles <= 60; cycles += 1) {
+      const remainingMs = startedAt + cycles * 30_000 - Date.now();
+      if (remainingMs > 0) await page.waitForTimeout(Math.min(remainingMs, 30_000));
+      await cycleProductionJourney(page);
+      if (cycles % 5 === 0) await sample(cycles);
+    }
+    const baseline = samples[0]!;
+    const final = samples.at(-1)!;
+    expect(final.elapsedMs).toBeGreaterThanOrEqual(30 * 60_000);
+    expect(final.usedHeapBytes - baseline.usedHeapBytes).toBeLessThan(16 * 1024 * 1024);
+    expect(final.nodes - baseline.nodes).toBeLessThanOrEqual(16);
+    expect(final.documents).toBeLessThanOrEqual(baseline.documents + 1);
+    expect(errors).toEqual([]);
+    await page.screenshot({ path: testInfo.outputPath('soak-final.png') });
+  });
+});
 
 test('fresh production route reaches the Sentinel after the Dash Trial', async ({
   page,
@@ -15,6 +192,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
     .getByRole('button', { name: 'Begin journey', exact: true })
     .click();
   await page.getByRole('button', { name: "Enter Wren's Rest" }).click();
+  await waitForNeutralFrames(page);
   const restPrompt = page.getByText('E · Rest at Village Seed-Lantern');
   await expect(restPrompt).toBeVisible();
   await page.keyboard.down('ArrowRight');
@@ -39,6 +217,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await page.reload();
   await page.getByRole('button', { name: 'Continue Journey 1' }).click();
   await page.getByRole('button', { name: "Enter Wren's Rest" }).click();
+  await waitForNeutralFrames(page);
   await expect(page.getByText('Trace the root-song beneath Brackenreach.')).toBeVisible();
   await page.keyboard.press('Escape');
   const menu = page.getByRole('dialog', { name: 'Wayfinder Ledger' });
@@ -54,6 +233,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   ).toBeGreaterThanOrEqual(12);
   expect(await page.evaluate(() => '__RIVENBLOOM_TEST__' in window)).toBe(false);
   await menu.getByRole('button', { name: 'Resume' }).click();
+  await waitForNeutralFrames(page);
   await page.keyboard.down('ArrowRight');
   try {
     await expect(page.getByText('Brackenreach · Brackenreach Trail')).toBeVisible({
@@ -83,6 +263,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await page.reload();
   await page.getByRole('button', { name: 'Continue Journey 1' }).click();
   await page.getByRole('button', { name: /^Enter / }).click();
+  await waitForNeutralFrames(page);
   await expect(page.getByText('Resin: 20', { exact: true })).toBeVisible();
   const trailheadPrompt = page.getByText('E · Rest at Trailhead Seed-Lantern');
   await expect(trailheadPrompt).toBeVisible();
@@ -168,6 +349,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await page.reload();
   await page.getByRole('button', { name: 'Continue Journey 1' }).click();
   await page.getByRole('button', { name: /^Enter / }).click();
+  await waitForNeutralFrames(page);
   await expect(listeningArchLabel).toBeVisible();
   await expect(memoryObjective).toBeVisible();
   await page.keyboard.press('Escape');
@@ -178,6 +360,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await expect(villageMapNode).toHaveCount(1);
   await expect(villageMapNode).not.toContainText('Quest');
   await restoredMenu.getByRole('button', { name: 'Resume' }).click();
+  await waitForNeutralFrames(page);
   const hollowsLabel = page.getByText('Singing Hollows · Hollows Mouth');
   await page.keyboard.down('ArrowRight');
   try {
@@ -206,6 +389,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await page.reload();
   await page.getByRole('button', { name: 'Continue Journey 1' }).click();
   await page.getByRole('button', { name: /^Enter / }).click();
+  await waitForNeutralFrames(page);
   await expect(hollowsLabel).toBeVisible();
   await expect(memoryObjective).toBeVisible();
   const echoPoolLabel = page.getByText('Singing Hollows · Echo Pool');
@@ -262,6 +446,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await page.reload();
   await page.getByRole('button', { name: 'Continue Journey 1' }).click();
   await page.getByRole('button', { name: /^Enter / }).click();
+  await waitForNeutralFrames(page);
   await expect(memoryChamberLabel).toBeVisible();
   await expect(deliveryObjective).toBeVisible();
   await page.keyboard.press('Escape');
@@ -270,7 +455,9 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
     memoryMenu.locator('.room-map .map-node', { hasText: "Wren's Rest Square" }),
   ).toContainText('Quest');
   await memoryMenu.getByRole('button', { name: 'Resume' }).click();
+  await waitForNeutralFrames(page);
   for (const roomLabel of [echoPoolLabel, hollowsLabel, listeningArchLabel]) {
+    await waitForNeutralFrames(page);
     await page.keyboard.down('ArrowLeft');
     try {
       for (let leap = 0; leap < 25 && !(await roomLabel.isVisible()); leap += 1) {
@@ -309,10 +496,12 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   );
   await expect(dashObjective).toBeVisible();
   await piriDialogue.getByRole('button', { name: 'Leave shop' }).click();
+  await waitForNeutralFrames(page);
   await expect(page.getByText('Save: Saved', { exact: true })).toBeVisible();
   await page.reload();
   await page.getByRole('button', { name: 'Continue Journey 1' }).click();
   await page.getByRole('button', { name: /^Enter / }).click();
+  await waitForNeutralFrames(page);
   await expect(villageLabel).toBeVisible();
   await expect(dashObjective).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath('production-root-memory-delivered.png') });
@@ -331,6 +520,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await page.keyboard.press('KeyE');
   await expect(listeningArchLabel).toBeVisible();
   for (const roomLabel of [hollowsLabel, echoPoolLabel, memoryChamberLabel]) {
+    await waitForNeutralFrames(page);
     await page.keyboard.down('ArrowRight');
     try {
       for (let leap = 0; leap < 25 && !(await roomLabel.isVisible()); leap += 1) {
@@ -349,12 +539,14 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await expect(dashTrialPrompt).toBeVisible();
   await page.keyboard.press('KeyE');
   await expect(page.getByText('Singing Hollows · Wayfinder Dash Trial')).toBeVisible();
+  await waitForNeutralFrames(page);
   await page.keyboard.press('Escape');
   const trialMenu = page.getByRole('dialog', { name: 'Wayfinder Ledger' });
   await expect(
     trialMenu.locator('.room-map .map-node', { hasText: 'Wayfinder Dash Trial' }),
   ).toContainText('Quest');
   await trialMenu.getByRole('button', { name: 'Resume' }).click();
+  await waitForNeutralFrames(page);
   await page.screenshot({ path: testInfo.outputPath('production-dash-trial.png') });
   const climbPrompt = page.getByText('Up · Climb');
   for (let step = 0; step < 20 && !(await climbPrompt.isVisible()); step += 1) {
@@ -365,10 +557,14 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await page.waitForTimeout(1_800);
   await page.keyboard.up('ArrowUp');
   await page.keyboard.down('ArrowLeft');
-  await page.waitForTimeout(500);
+  await expect(page.locator('[data-hud="guidance"]')).toContainText('1/3 plates', {
+    timeout: 4_000,
+  });
   await page.keyboard.up('ArrowLeft');
   await page.keyboard.down('ArrowLeft');
-  await page.waitForTimeout(2_200);
+  await expect(page.locator('[data-hud="guidance"]')).toContainText('2/3 plates', {
+    timeout: 4_000,
+  });
   await page.keyboard.up('ArrowLeft');
   const sentinelObjective = page.getByText(
     'Claim a briar core from the Thorn Sentinel east of the Root-Memory Chamber.',
@@ -387,6 +583,7 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await expect(trialExitPrompt).toBeVisible();
   await page.keyboard.press('KeyE');
   await expect(memoryChamberLabel).toBeVisible();
+  await waitForNeutralFrames(page);
   for (let step = 0; step < 55 && !(await memoryLantern.isVisible()); step += 1) {
     await page.keyboard.press('ArrowLeft', { delay: 100 });
   }
@@ -422,9 +619,11 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
     vergeMenu.locator('.room-map .map-node', { hasText: 'Reliquary Verge' }),
   ).toContainText('Quest');
   await vergeMenu.getByRole('button', { name: 'Resume' }).click();
+  await waitForNeutralFrames(page);
   await page.reload();
   await page.getByRole('button', { name: 'Continue Journey 1' }).click();
   await page.getByRole('button', { name: /^Enter / }).click();
+  await waitForNeutralFrames(page);
   await expect(vergeLabel).toBeVisible();
   await expect(sentinelObjective).toBeVisible();
   await page.screenshot({ path: testInfo.outputPath('production-reliquary-verge.png') });
@@ -461,6 +660,7 @@ test('production shell stays offline, preserves unrelated caches, and safely acc
     .getByRole('button', { name: 'Begin journey', exact: true })
     .click();
   await page.getByRole('button', { name: "Enter Wren's Rest" }).click();
+  await waitForNeutralFrames(page);
   await expect(page.getByText('Save: Saved', { exact: true })).toBeVisible();
   expect(await page.evaluate(() => '__RIVENBLOOM_TEST__' in window)).toBe(false);
   await page.evaluate(async () => {
@@ -473,6 +673,7 @@ test('production shell stays offline, preserves unrelated caches, and safely acc
   await page.reload();
   await page.getByRole('button', { name: 'Continue Journey 1' }).click();
   await page.getByRole('button', { name: "Enter Wren's Rest" }).click();
+  await waitForNeutralFrames(page);
   await expect(page.getByLabel('Gameplay status')).toBeVisible();
   await context.setOffline(false);
   const workerPath = 'dist/sw.js';
@@ -493,9 +694,11 @@ test('production shell stays offline, preserves unrelated caches, and safely acc
     await menu.getByLabel('Difficulty').selectOption('story');
     await menu.getByRole('button', { name: 'Apply settings' }).click();
     await menu.getByRole('button', { name: 'Resume', exact: true }).click();
+    await waitForNeutralFrames(page);
     await update.click();
     await page.getByRole('button', { name: 'Continue Journey 1' }).click();
     await page.getByRole('button', { name: "Enter Wren's Rest" }).click();
+    await waitForNeutralFrames(page);
     await expect(page.getByLabel('Gameplay status')).toBeVisible();
     await page.keyboard.press('Escape');
     await menu.getByRole('button', { name: 'Settings', exact: true }).click();

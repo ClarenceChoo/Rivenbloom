@@ -113,7 +113,7 @@ async function moveUntil(
   areaId: string,
   roomId: string,
 ): Promise<void> {
-  await page.waitForTimeout(100);
+  await waitForNeutralSteps(page);
   for (let segment = 0; segment < 16; segment += 1) {
     const current = await snapshot(page);
     if (current.world?.areaId === areaId && current.world.roomId === roomId) return;
@@ -171,42 +171,36 @@ async function moveUntil(
 }
 
 async function moveToPrompt(page: Page, centerX: number, prompt: string): Promise<void> {
+  const ready = (state: TraversalSnapshot) =>
+    state.player !== null &&
+    Math.abs(state.player.velocity.x) < 0.01 &&
+    state.worldUi?.prompt === prompt;
   await page.waitForTimeout(100);
   for (let attempt = 0; attempt < 30; attempt += 1) {
     const current = await snapshot(page);
     const x = current.player?.position.x;
-    if (
-      x !== undefined &&
-      Math.abs(current.player?.velocity.x ?? 1) < 0.01 &&
-      current.worldUi?.prompt === prompt
-    ) {
-      return;
-    }
+    if (ready(current)) return;
     if (x === undefined) throw new Error(`Player disappeared while seeking ${prompt}.`);
     const movingRight = x < centerX;
     const key = movingRight ? 'ArrowRight' : 'ArrowLeft';
     await page.keyboard.down(key);
     try {
-      if (Math.abs(centerX - x) > 220) {
-        const target = centerX + (movingRight ? -160 : 160);
-        await page.waitForFunction(
-          ({ targetX, right, expectedPrompt }) => {
-            const state = (
-              window as Window & { __RIVENBLOOM_TEST__: { read(): TraversalSnapshot } }
-            ).__RIVENBLOOM_TEST__.read();
-            const player = state.player;
-            return (
-              state.worldUi?.prompt === expectedPrompt ||
-              (player !== null &&
-                (right ? player.position.x >= targetX : player.position.x <= targetX))
-            );
-          },
-          { targetX: target, right: movingRight, expectedPrompt: prompt },
-          { polling: 'raf', timeout: 8_000 },
-        );
-      } else {
-        await page.waitForTimeout(50);
-      }
+      const target = centerX + (movingRight ? -16 : 16);
+      await page.waitForFunction(
+        ({ targetX, right, expectedPrompt }) => {
+          const state = (
+            window as Window & { __RIVENBLOOM_TEST__: { read(): TraversalSnapshot } }
+          ).__RIVENBLOOM_TEST__.read();
+          const player = state.player;
+          return (
+            state.worldUi?.prompt === expectedPrompt ||
+            (player !== null &&
+              (right ? player.position.x >= targetX : player.position.x <= targetX))
+          );
+        },
+        { targetX: target, right: movingRight, expectedPrompt: prompt },
+        { polling: 'raf', timeout: 8_000 },
+      );
     } finally {
       await page.keyboard.up(key);
     }
@@ -217,6 +211,7 @@ async function moveToPrompt(page: Page, centerX: number, prompt: string): Promis
     );
   }
   const stalled = await snapshot(page);
+  if (ready(stalled)) return;
   throw new Error(
     `Prompt ${prompt} was not reachable at x=${centerX}: ${JSON.stringify({
       player: stalled.player,
@@ -725,7 +720,7 @@ async function reforgeSurveyorEdge(page: Page): Promise<void> {
   await expect
     .poll(async () => (await snapshot(page)).worldUi?.player)
     .toMatchObject({
-      currency: 25,
+      currency: 75,
       weaponLevel: 1,
     });
   await expect

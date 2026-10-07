@@ -12,3 +12,6 @@ test-results/
 .env.*
 !.env.example
 src-tauri/target/
+brag-output/composition/.hyperframes/
+brag-output/composition/.thumbnails/
+brag-output/composition/.waveform-cache/

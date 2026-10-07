@@ -33,6 +33,31 @@ const GROUND: SurfaceDefinition = {
 };
 
 describe('PlayerController fixed-step observer', () => {
+  test('retains a short Pause press across a render frame with no simulation step', () => {
+    const port = new CountingPort();
+    const input = new InputService(port);
+    let pauses = 0;
+    const controller = new PlayerController({
+      input,
+      position: { x: 256, y: 608 },
+      surfaces: [GROUND],
+      zones: [],
+      fixedStepObserver: ({ input: frame }) => {
+        if (frame.pauseBufferId != null && input.consume('pause', frame.pauseBufferId)) {
+          pauses += 1;
+        }
+      },
+    });
+    port.heldCodes = ['Escape'];
+    controller.update(8, 0.008);
+    expect(pauses).toBe(0);
+    port.heldCodes = [];
+    controller.update(17, 0.009);
+    expect(pauses).toBe(1);
+    controller.update(50, 0.033);
+    expect(pauses).toBe(1);
+  });
+
   test('publishes every advanced substep from one sampled input frame', () => {
     const port = new CountingPort();
     const frames: unknown[] = [];

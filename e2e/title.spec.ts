@@ -677,10 +677,15 @@ test.describe('responsive reduced-motion title', () => {
     await expect(highContrast).toBeFocused();
     const highContrastFocus = await highContrast.evaluate((element) => {
       const style = getComputedStyle(element);
-      return { outlineColor: style.outlineColor, boxShadow: style.boxShadow };
+      return {
+        outlineColor: style.outlineColor,
+        outlineStyle: style.outlineStyle,
+        outlineWidth: style.outlineWidth,
+      };
     });
     expect(highContrastFocus.outlineColor).toBe('rgb(240, 227, 192)');
-    expect(highContrastFocus.boxShadow).not.toBe('none');
+    expect(highContrastFocus.outlineStyle).toBe('solid');
+    expect(Number.parseFloat(highContrastFocus.outlineWidth)).toBeGreaterThanOrEqual(3);
 
     await settings.getByRole('combobox', { name: /Text Scale/ }).selectOption('2');
     await expect(page.locator('.title-screen')).toHaveCSS('--user-text-scale', '2');

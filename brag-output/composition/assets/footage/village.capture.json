@@ -1,0 +1,2232 @@
+{
+  "recordedAt": "2026-10-07T07:47:20.334Z",
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+  "captureFps": 30,
+  "shot": {
+    "name": "village",
+    "area": "wren-rest",
+    "checkpoint": "village-well",
+    "mode": "travel",
+    "seconds": 8
+  },
+  "errors": [],
+  "samples": [
+    {
+      "t": 0,
+      "player": {
+        "position": {
+          "x": 256,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 4,
+        "simulationTimeMs": 67,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.281,
+      "player": {
+        "position": {
+          "x": 292.50000000000006,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 16,
+        "simulationTimeMs": 267,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.554,
+      "player": {
+        "position": {
+          "x": 367.166666666667,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 32,
+        "simulationTimeMs": 533,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.827,
+      "player": {
+        "position": {
+          "x": 446.5000000000007,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 49,
+        "simulationTimeMs": 817,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.098,
+      "player": {
+        "position": {
+          "x": 521.1666666666675,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 65,
+        "simulationTimeMs": 1083,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.371,
+      "player": {
+        "position": {
+          "x": 595.8333333333336,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 81,
+        "simulationTimeMs": 1350,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.645,
+      "player": {
+        "position": {
+          "x": 675.1666666666663,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 98,
+        "simulationTimeMs": 1633,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.919,
+      "player": {
+        "position": {
+          "x": 749.8333333333323,
+          "y": 582.9499999999999
+        },
+        "velocity": {
+          "x": 280,
+          "y": -242.66666666666666
+        },
+        "state": "jump",
+        "grounded": false,
+        "animationIntent": "jump"
+      },
+      "camera": {
+        "scrollX": 69.83333333333235,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 114,
+        "simulationTimeMs": 1900,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.194,
+      "player": {
+        "position": {
+          "x": 829.166666666665,
+          "y": 594.9444444444445
+        },
+        "velocity": {
+          "x": 280,
+          "y": 295.6666666666667
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "camera": {
+        "scrollX": 149.16666666666504,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 131,
+        "simulationTimeMs": 2183,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.466,
+      "player": {
+        "position": {
+          "x": 903.8333333333311,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 223.8333333333311,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 147,
+        "simulationTimeMs": 2450,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.738,
+      "player": {
+        "position": {
+          "x": 978.4999999999972,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 298.49999999999716,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 163,
+        "simulationTimeMs": 2717,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.01,
+      "player": {
+        "position": {
+          "x": 1057.8333333333308,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 377.83333333333076,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 180,
+        "simulationTimeMs": 3000,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.285,
+      "player": {
+        "position": {
+          "x": 1132.4999999999986,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 452.49999999999864,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 196,
+        "simulationTimeMs": 3267,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.558,
+      "player": {
+        "position": {
+          "x": 1211.8333333333333,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 531.8333333333333,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 213,
+        "simulationTimeMs": 3550,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.832,
+      "player": {
+        "position": {
+          "x": 1337.5333333333333,
+          "y": 576.4444444444443
+        },
+        "velocity": {
+          "x": 180,
+          "y": -179.33333333333334
+        },
+        "state": "jump",
+        "grounded": false,
+        "animationIntent": "jump"
+      },
+      "camera": {
+        "scrollX": 657.5333333333333,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 229,
+        "simulationTimeMs": 3817,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 1,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 4.102,
+      "player": {
+        "position": {
+          "x": 1410.200000000001,
+          "y": 600.4
+        },
+        "velocity": {
+          "x": 280,
+          "y": 327.33333333333337
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "camera": {
+        "scrollX": 730.200000000001,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 245,
+        "simulationTimeMs": 4083,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 1,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 4.372,
+      "player": {
+        "position": {
+          "x": 1484.8666666666688,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 804.8666666666688,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 261,
+        "simulationTimeMs": 4350,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 1,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 4.646,
+      "player": {
+        "position": {
+          "x": 1564.2000000000035,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 884.2000000000035,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 278,
+        "simulationTimeMs": 4633,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 1,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 4.92,
+      "player": {
+        "position": {
+          "x": 1638.8666666666713,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 958.8666666666713,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 294,
+        "simulationTimeMs": 4900,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 1,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 5.194,
+      "player": {
+        "position": {
+          "x": 1717.4777777777838,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1037.4777777777838,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [
+          {
+            "instanceId": 1,
+            "projectileId": "lumen-bolt-projectile",
+            "position": {
+              "x": 1772.6800000000053,
+              "y": 608
+            }
+          }
+        ],
+        "projectileCount": 1,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 311,
+        "simulationTimeMs": 5183,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 5.466,
+      "player": {
+        "position": {
+          "x": 1792.1444444444517,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1112.1444444444517,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [
+          {
+            "instanceId": 1,
+            "projectileId": "lumen-bolt-projectile",
+            "position": {
+              "x": 1964.2000000000053,
+              "y": 608
+            }
+          }
+        ],
+        "projectileCount": 1,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 327,
+        "simulationTimeMs": 5450,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 5.74,
+      "player": {
+        "position": {
+          "x": 1866.8111111111195,
+          "y": 569.5944444444444
+        },
+        "velocity": {
+          "x": 280,
+          "y": 10.666666666666664
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "camera": {
+        "scrollX": 1186.8111111111195,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [
+          {
+            "instanceId": 1,
+            "projectileId": "lumen-bolt-projectile",
+            "position": {
+              "x": 2156.440000000005,
+              "y": 608
+            }
+          }
+        ],
+        "projectileCount": 1,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 343,
+        "simulationTimeMs": 5717,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 6.014,
+      "player": {
+        "position": {
+          "x": 1946.1444444444542,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1266.1444444444542,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 360,
+        "simulationTimeMs": 6000,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 6.286,
+      "player": {
+        "position": {
+          "x": 2020.811111111122,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 376,
+        "simulationTimeMs": 6267,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 6.557,
+      "player": {
+        "position": {
+          "x": 2095.4777777777877,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 392,
+        "simulationTimeMs": 6533,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 6.83,
+      "player": {
+        "position": {
+          "x": 2174.8111111111184,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 409,
+        "simulationTimeMs": 6817,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 7.103,
+      "player": {
+        "position": {
+          "x": 2249.4777777777826,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 425,
+        "simulationTimeMs": 7083,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 7.377,
+      "player": {
+        "position": {
+          "x": 2378.677777777781,
+          "y": 608
+        },
+        "velocity": {
+          "x": 210,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 442,
+        "simulationTimeMs": 7367,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 4,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 7.651,
+      "player": {
+        "position": {
+          "x": 2452.5111111111123,
+          "y": 575.5833333333333
+        },
+        "velocity": {
+          "x": 280,
+          "y": 137.33333333333334
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 458,
+        "simulationTimeMs": 7633,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 4,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 7.922,
+      "player": {
+        "position": {
+          "x": 2527.1777777777766,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 474,
+        "simulationTimeMs": 7900,
+        "enemies": [],
+        "directors": [],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 4,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    }
+  ]
+}

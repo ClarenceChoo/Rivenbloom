@@ -76,8 +76,12 @@ test('real combat input attacks once, casts atomically, autosaves mana, and relo
   });
 
   await page.keyboard.down('j');
-  await expect.poll(async () => (await snapshot(page)).combat?.actionSequence).toBe(1);
-  expect((await snapshot(page)).combat?.activeAttackId).toBe('mara-light-one');
+  await expect
+    .poll(async () => (await snapshot(page)).combat)
+    .toMatchObject({
+      actionSequence: 1,
+      activeAttackId: 'mara-light-one',
+    });
   await expect.poll(async () => (await snapshot(page)).combat?.activeAttackId).toBeNull();
   await page.waitForTimeout(200);
   expect((await snapshot(page)).combat?.actionSequence).toBe(1);

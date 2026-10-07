@@ -1,0 +1,4023 @@
+{
+  "shot": {
+    "name": "hollows",
+    "area": "singing-hollows",
+    "checkpoint": "hollows-mouth-lantern",
+    "mode": "travel",
+    "seconds": 10
+  },
+  "errors": [],
+  "samples": [
+    {
+      "t": 0,
+      "player": {
+        "position": {
+          "x": 256,
+          "y": 788
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 11,
+        "simulationTimeMs": 183,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.331,
+      "player": {
+        "position": {
+          "x": 278.5,
+          "y": 788
+        },
+        "velocity": {
+          "x": 270,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 21,
+        "simulationTimeMs": 350,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.619,
+      "player": {
+        "position": {
+          "x": 320.50000000000017,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 30,
+        "simulationTimeMs": 500,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.896,
+      "player": {
+        "position": {
+          "x": 362.50000000000034,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 39,
+        "simulationTimeMs": 650,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.172,
+      "player": {
+        "position": {
+          "x": 404.5000000000005,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 48,
+        "simulationTimeMs": 800,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.464,
+      "player": {
+        "position": {
+          "x": 446.5000000000007,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 57,
+        "simulationTimeMs": 950,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.744,
+      "player": {
+        "position": {
+          "x": 488.50000000000085,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 66,
+        "simulationTimeMs": 1100,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.088,
+      "player": {
+        "position": {
+          "x": 539.833333333334,
+          "y": 753.9833333333332
+        },
+        "velocity": {
+          "x": 280,
+          "y": -147.66666666666669
+        },
+        "state": "jump",
+        "grounded": false,
+        "animationIntent": "jump"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 77,
+        "simulationTimeMs": 1283,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.369,
+      "player": {
+        "position": {
+          "x": 581.8333333333337,
+          "y": 755.5833333333333
+        },
+        "velocity": {
+          "x": 280,
+          "y": 137.33333333333334
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 86,
+        "simulationTimeMs": 1433,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.621,
+      "player": {
+        "position": {
+          "x": 642.4999999999999,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 99,
+        "simulationTimeMs": 1650,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "chase",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 2,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 2,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.901,
+      "player": {
+        "position": {
+          "x": 721.8333333333326,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 116,
+        "simulationTimeMs": 1933,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "telegraph",
+            "position": {
+              "x": 871.2153376301451,
+              "y": 549.3195813214363
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": "duskwing-hook-dive",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 3,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.184,
+      "player": {
+        "position": {
+          "x": 801.1666666666653,
+          "y": 788
+        },
+        "velocity": {
+          "x": -170,
+          "y": 80
+        },
+        "state": "hurt",
+        "grounded": false,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 39
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 133,
+        "simulationTimeMs": 2217,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "attack",
+            "position": {
+              "x": 838.5316361262605,
+              "y": 691.0977278589336
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": "duskwing-hook-dive",
+            "attackPhase": "active",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 10,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 0,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 4,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 114,
+          "maxHealth": 120,
+          "currentPoise": 32,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 3.463,
+      "player": {
+        "position": {
+          "x": 767.1666666666648,
+          "y": 788
+        },
+        "velocity": {
+          "x": -170,
+          "y": 0
+        },
+        "state": "hurt",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 145,
+        "simulationTimeMs": 2417,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "recover",
+            "position": {
+              "x": 777.8333333333321,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": "duskwing-hook-dive",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 11,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 0,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 5,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 114,
+          "maxHealth": 120,
+          "currentPoise": 32,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 3.866,
+      "player": {
+        "position": {
+          "x": 891.6999999999979,
+          "y": 744.6027777777778
+        },
+        "velocity": {
+          "x": 240,
+          "y": -133.41666666666669
+        },
+        "state": "jump",
+        "grounded": false,
+        "animationIntent": "jump"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 171,
+        "simulationTimeMs": 2850,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "chase",
+            "position": {
+              "x": 863.6253376301452,
+              "y": 549.3195813214363
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 13,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 0,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 6,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 114,
+          "maxHealth": 120,
+          "currentPoise": 32,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.16,
+      "player": {
+        "position": {
+          "x": 970.866666666664,
+          "y": 787.5513888888888
+        },
+        "velocity": {
+          "x": 280,
+          "y": 404.91666666666674
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 188,
+        "simulationTimeMs": 3133,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "telegraph",
+            "position": {
+              "x": 844.5353376301454,
+              "y": 549.3195813214363
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": "duskwing-hook-dive",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 14,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 0,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 7,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 114,
+          "maxHealth": 120,
+          "currentPoise": 32,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.45,
+      "player": {
+        "position": {
+          "x": 1050.1999999999973,
+          "y": 788
+        },
+        "velocity": {
+          "x": 170,
+          "y": 80
+        },
+        "state": "hurt",
+        "grounded": false,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 55
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 205,
+        "simulationTimeMs": 3417,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "attack",
+            "position": {
+              "x": 955.1714429736115,
+              "y": 769.5835948741591
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": "duskwing-hook-dive",
+            "attackPhase": "active",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 21,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 0,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 8,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 108,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.728,
+      "player": {
+        "position": {
+          "x": 1087.0333333333297,
+          "y": 788
+        },
+        "velocity": {
+          "x": 170,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 218,
+        "simulationTimeMs": 3633,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "recover",
+            "position": {
+              "x": 1003.5333333333303,
+              "y": 788
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": "duskwing-hook-dive",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 22,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 0,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 9,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 108,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.007,
+      "player": {
+        "position": {
+          "x": 1163.8666666666638,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 235,
+        "simulationTimeMs": 3917,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "chase",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "recover",
+            "position": {
+              "x": 846.3019820268474,
+              "y": 551.9715859734204
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": "duskwing-hook-dive",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 24,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 0,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 11,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 108,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.264,
+      "player": {
+        "position": {
+          "x": 1219.1444444444426,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 7
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 247,
+        "simulationTimeMs": 4117,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "hurt",
+            "position": {
+              "x": 1352.5250000000008,
+              "y": 787.59455
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "chase",
+            "position": {
+              "x": 879.5485692794498,
+              "y": 573.0747749911411
+            },
+            "facing": "right",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 32,
+        "counters": {
+          "contacts": 3,
+          "playerContacts": 1,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 3,
+          "feedback": 3,
+          "attackerCommands": 0,
+          "stateChanges": 13,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 108,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "hollows-rib-briar",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 15,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.551,
+      "player": {
+        "position": {
+          "x": 1293.8111111111104,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 263,
+        "simulationTimeMs": 4383,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "telegraph",
+            "position": {
+              "x": 1374.615000000001,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 899.4980303857196,
+              "y": 556.345045841352
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 35,
+        "counters": {
+          "contacts": 3,
+          "playerContacts": 1,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 3,
+          "feedback": 3,
+          "attackerCommands": 0,
+          "stateChanges": 16,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 108,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "hollows-rib-briar",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 15,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.816,
+      "player": {
+        "position": {
+          "x": 1333.1444444444444,
+          "y": 743.8527777777778
+        },
+        "velocity": {
+          "x": -220,
+          "y": -6.666666666666661
+        },
+        "state": "hurt",
+        "grounded": false,
+        "animationIntent": "jump"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 275,
+        "simulationTimeMs": 4583,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "attack",
+            "position": {
+              "x": 1366.035000000001,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "active",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 42,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 17,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 101,
+          "maxHealth": 120,
+          "currentPoise": 14,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 7,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.099,
+      "player": {
+        "position": {
+          "x": 1281.3111111111098,
+          "y": 788
+        },
+        "velocity": {
+          "x": -40,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 292,
+        "simulationTimeMs": 4867,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "recover",
+            "position": {
+              "x": 1414.655000000002,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 43,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 18,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 101,
+          "maxHealth": 120,
+          "currentPoise": 14,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 7,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.39,
+      "player": {
+        "position": {
+          "x": 1334.8111111111095,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 309,
+        "simulationTimeMs": 5150,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "telegraph",
+            "position": {
+              "x": 1416.950000000003,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 45,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 20,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 101,
+          "maxHealth": 120,
+          "currentPoise": 14,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 7,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.675,
+      "player": {
+        "position": {
+          "x": 1414.1444444444442,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 326,
+        "simulationTimeMs": 5433,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "recover",
+            "position": {
+              "x": 1404.7300000000032,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 50,
+        "counters": {
+          "contacts": 5,
+          "playerContacts": 1,
+          "enemyContacts": 4,
+          "ordnanceContacts": 0,
+          "resolutions": 5,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 22,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 101,
+          "maxHealth": 120,
+          "currentPoise": 14,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "ignored",
+          "guard": null,
+          "healthDamage": 0,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.95,
+      "player": {
+        "position": {
+          "x": 1493.4777777777788,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 343,
+        "simulationTimeMs": 5717,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "recover",
+            "position": {
+              "x": 1478.5700000000045,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 50,
+        "counters": {
+          "contacts": 5,
+          "playerContacts": 1,
+          "enemyContacts": 4,
+          "ordnanceContacts": 0,
+          "resolutions": 5,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 22,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 101,
+          "maxHealth": 120,
+          "currentPoise": 14,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "ignored",
+          "guard": null,
+          "healthDamage": 0,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.304,
+      "player": {
+        "position": {
+          "x": 1573.4777777777801,
+          "y": 788
+        },
+        "velocity": {
+          "x": 220,
+          "y": 0
+        },
+        "state": "hurt",
+        "grounded": true,
+        "animationIntent": "land"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 361,
+        "simulationTimeMs": 6017,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "attack",
+            "position": {
+              "x": 1495.9900000000046,
+              "y": 788
+            },
+            "facing": "right",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "active",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 59,
+        "counters": {
+          "contacts": 6,
+          "playerContacts": 1,
+          "enemyContacts": 5,
+          "ordnanceContacts": 0,
+          "resolutions": 6,
+          "feedback": 5,
+          "attackerCommands": 0,
+          "stateChanges": 25,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 7,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.558,
+      "player": {
+        "position": {
+          "x": 1633.9777777777813,
+          "y": 756.4444444444443
+        },
+        "velocity": {
+          "x": 280,
+          "y": -179.33333333333334
+        },
+        "state": "jump",
+        "grounded": false,
+        "animationIntent": "jump"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 376,
+        "simulationTimeMs": 6267,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "recover",
+            "position": {
+              "x": 1438.5300000000034,
+              "y": 788
+            },
+            "facing": "right",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 60,
+        "counters": {
+          "contacts": 6,
+          "playerContacts": 1,
+          "enemyContacts": 5,
+          "ordnanceContacts": 0,
+          "resolutions": 6,
+          "feedback": 5,
+          "attackerCommands": 0,
+          "stateChanges": 26,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 7,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.841,
+      "player": {
+        "position": {
+          "x": 1713.311111111116,
+          "y": 786.3833333333333
+        },
+        "velocity": {
+          "x": 280,
+          "y": 359.00000000000006
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 393,
+        "simulationTimeMs": 6550,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "retreat",
+            "position": {
+              "x": 1407.2350000000033,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 62,
+        "counters": {
+          "contacts": 6,
+          "playerContacts": 1,
+          "enemyContacts": 5,
+          "ordnanceContacts": 0,
+          "resolutions": 6,
+          "feedback": 5,
+          "attackerCommands": 0,
+          "stateChanges": 28,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 7,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.12,
+      "player": {
+        "position": {
+          "x": 1792.6444444444505,
+          "y": 788
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 410,
+        "simulationTimeMs": 6833,
+        "enemies": [
+          {
+            "combatantId": "hollows-rib-briar",
+            "actorId": "briar-scrapper",
+            "state": "retreat",
+            "position": {
+              "x": 1376,
+              "y": 788
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "hollows-rib-duskwing",
+            "actorId": "duskwing",
+            "state": "retreat",
+            "position": {
+              "x": 896,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "hollows-rib-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 62,
+        "counters": {
+          "contacts": 6,
+          "playerContacts": 1,
+          "enemyContacts": 5,
+          "ordnanceContacts": 0,
+          "resolutions": 6,
+          "feedback": 5,
+          "attackerCommands": 0,
+          "stateChanges": 28,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 7,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.407,
+      "player": {
+        "position": {
+          "x": 1984,
+          "y": 788
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 426,
+        "simulationTimeMs": 7100,
+        "enemies": [
+          {
+            "combatantId": "echo-pool-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 3104,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "echo-pool-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 2512,
+              "y": 788
+            },
+            "facing": "right",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "echo-pool-ambush",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 8.678,
+      "player": {
+        "position": {
+          "x": 1984,
+          "y": 788
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 442,
+        "simulationTimeMs": 7367,
+        "enemies": [
+          {
+            "combatantId": "echo-pool-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 3104,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "echo-pool-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 2512,
+              "y": 788
+            },
+            "facing": "right",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "echo-pool-ambush",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 9.002,
+      "player": {
+        "position": {
+          "x": 1984,
+          "y": 788
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 459,
+        "simulationTimeMs": 7650,
+        "enemies": [
+          {
+            "combatantId": "echo-pool-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 3104,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "echo-pool-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 2512,
+              "y": 788
+            },
+            "facing": "right",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "echo-pool-ambush",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 9.367,
+      "player": {
+        "position": {
+          "x": 1984,
+          "y": 788
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 481,
+        "simulationTimeMs": 8017,
+        "enemies": [
+          {
+            "combatantId": "echo-pool-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 3104,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "echo-pool-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 2512,
+              "y": 788
+            },
+            "facing": "right",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "echo-pool-ambush",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 9.635,
+      "player": {
+        "position": {
+          "x": 1984,
+          "y": 788
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 499,
+        "simulationTimeMs": 8317,
+        "enemies": [
+          {
+            "combatantId": "echo-pool-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 3104,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "echo-pool-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 2512,
+              "y": 788
+            },
+            "facing": "right",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "echo-pool-ambush",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 9.928,
+      "player": {
+        "position": {
+          "x": 1984,
+          "y": 788
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 517,
+        "simulationTimeMs": 8617,
+        "enemies": [
+          {
+            "combatantId": "echo-pool-duskwing",
+            "actorId": "duskwing",
+            "state": "sleep",
+            "position": {
+              "x": 3104,
+              "y": 520
+            },
+            "facing": "left",
+            "health": 30,
+            "maxHealth": 30,
+            "poise": 14,
+            "maxPoise": 14,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "echo-pool-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 2512,
+              "y": 788
+            },
+            "facing": "right",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "echo-pool-ambush",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 94,
+          "maxHealth": 120,
+          "currentPoise": 4,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    }
+  ]
+}

@@ -1,12 +1,93 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import {
   captionForCue,
+  AudioDirector,
   musicLayerForRoom,
   musicTrackFor,
 } from '../../src/game/audio/AudioDirector';
 
 describe('AudioDirector policy', () => {
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+  });
+
+  it('reuses music media across returns and releases the bounded cache on disposal', async () => {
+    vi.useFakeTimers();
+    const listeners = new Map<string, () => void>();
+    vi.stubGlobal('addEventListener', (event: string, listener: () => void) =>
+      listeners.set(event, listener),
+    );
+    vi.stubGlobal('removeEventListener', vi.fn());
+    const audio: { paused: boolean; load: ReturnType<typeof vi.fn> }[] = [];
+    vi.stubGlobal(
+      'Audio',
+      class {
+        public paused = true;
+        public loop = false;
+        public preload = '';
+        public load = vi.fn();
+        public constructor() {
+          audio.push(this);
+        }
+        public play() {
+          this.paused = false;
+          return Promise.resolve();
+        }
+        public pause() {
+          this.paused = true;
+        }
+        public removeAttribute() {}
+      },
+    );
+    const gain = {
+      gain: {
+        value: 0,
+        setValueAtTime: vi.fn(),
+        linearRampToValueAtTime: vi.fn(),
+        cancelScheduledValues: vi.fn(),
+      },
+      connect: vi.fn().mockReturnThis(),
+      disconnect: vi.fn(),
+    };
+    const context = {
+      state: 'running',
+      currentTime: 0,
+      destination: {},
+      createGain: () => gain,
+      createMediaElementSource: () => ({ connect: () => gain, disconnect: vi.fn() }),
+      close: () => Promise.resolve(),
+    };
+    const director = new AudioDirector({
+      contextFactory: () => context as unknown as AudioContext,
+    });
+    listeners.get('keydown')!();
+    await Promise.resolve();
+    director.setMusicLayer('wren-rest');
+    await Promise.resolve();
+    await vi.advanceTimersByTimeAsync(1250);
+    expect(audio[0]!.paused).toBe(true);
+    expect(audio[0]!.load).not.toHaveBeenCalled();
+    director.setMusicLayer('menu');
+    await Promise.resolve();
+    await vi.advanceTimersByTimeAsync(1250);
+    expect(audio).toHaveLength(2);
+    expect(audio[0]!.paused).toBe(false);
+    director.setMusicLayer('wren-rest');
+    await Promise.resolve();
+    await vi.advanceTimersByTimeAsync(250);
+    director.setMusicLayer('menu');
+    await Promise.resolve();
+    await vi.advanceTimersByTimeAsync(1500);
+    expect(audio).toHaveLength(2);
+    expect(audio[0]!.paused).toBe(false);
+    expect(audio[1]!.paused).toBe(true);
+    director.dispose();
+    expect(audio[1]!.paused).toBe(true);
+    expect(audio[1]!.load).toHaveBeenCalledOnce();
+  });
+
   it('maps semantic boss cues to useful selectable captions', () => {
     expect(captionForCue('cantor-spearfall-tell')).toMatch(/spears/i);
     expect(captionForCue('cantor-lens-awaken')).toMatch(/lens/i);

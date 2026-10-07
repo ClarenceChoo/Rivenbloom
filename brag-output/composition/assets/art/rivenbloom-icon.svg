@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Rivenbloom seed lantern">
+  <defs>
+    <radialGradient id="night" cx="45%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#244c50"/>
+      <stop offset="1" stop-color="#171325"/>
+    </radialGradient>
+    <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f0e3c0"/>
+      <stop offset="1" stop-color="#b96f45"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#night)"/>
+  <path d="M256 84C174 132 132 214 150 306c13 67 51 104 106 124 55-20 93-57 106-124 18-92-24-174-106-222Z" fill="none" stroke="#b96f45" stroke-width="20"/>
+  <path d="M256 118c-42 64-54 126-36 187 10 33 22 55 36 69 14-14 26-36 36-69 18-61 6-123-36-187Z" fill="url(#petal)" opacity=".92"/>
+  <path d="M163 270c49-16 80-4 93 37-48 17-79 4-93-37Zm186 0c-49-16-80-4-93 37 48 17 79 4 93-37Z" fill="#79a06b"/>
+  <circle cx="256" cy="284" r="34" fill="#f5c96a" stroke="#9ee7d7" stroke-width="10"/>
+  <path d="M256 84V42" stroke="#f5c96a" stroke-width="16" stroke-linecap="round"/>
+</svg>

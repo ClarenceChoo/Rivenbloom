@@ -4,7 +4,7 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 
 export default defineConfig({
-  server: { host: '127.0.0.1' },
+  server: { host: '127.0.0.1', hmr: process.env.RIVENBLOOM_TEST === '1' ? false : undefined },
   plugins: [
     {
       name: 'rivenbloom-offline-build',

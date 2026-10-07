@@ -15,7 +15,7 @@ const authoredDialogue = [
     'orin-village',
     'orin-fen',
     'orin-before-cantor',
-    'Bring me a briar core and fifty Resin. I can teach that Surveyor Edge to bite roots.',
+    'Bring me a briar core. I can teach that Surveyor Edge to bite roots.',
     'orin-after-cantor',
     'That edge carries a cleaner note now. You brought it home without letting it rule your hand.',
     [],

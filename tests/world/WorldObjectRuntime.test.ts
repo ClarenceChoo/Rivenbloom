@@ -37,6 +37,34 @@ function room(areaId: string, roomId: string, current = save()) {
 }
 
 describe('WorldObjectRuntime', () => {
+  test('shows timed plate progress until the inclusive deadline and clears expired lights', () => {
+    const current = save();
+    const runtime = room('singing-hollows', 'dash-trial', current);
+    const input = {
+      playerPosition: { x: 3904, y: 1688 },
+      playerState: 'idle' as const,
+      interactBufferId: null,
+      pulseMechanismIds: [],
+      nowMs: 17,
+      save: current,
+    };
+    const proposal = runtime.step(input).proposal;
+    expect(proposal?.kind).toBe('puzzle-advanced');
+    expect(runtime.commit(proposal!.token)).toBe(true);
+    expect(runtime.snapshot(current).puzzles).toEqual([
+      {
+        puzzleId: 'hollows-dash-circuit',
+        state: 'advanced',
+        activatedMechanismIds: ['dash-circuit-dew-plate'],
+        remainingSeconds: 9,
+      },
+    ]);
+    runtime.step({ ...input, playerPosition: { x: 4200, y: 1688 }, nowMs: 9017 });
+    expect(runtime.snapshot(current).puzzles[0]).toMatchObject({ remainingSeconds: 0 });
+    runtime.step({ ...input, playerPosition: { x: 4200, y: 1688 }, nowMs: 9018 });
+    expect(runtime.snapshot(current).puzzles).toEqual([]);
+  });
+
   test('discovers a room and its room-entry discovery in one idempotent transaction', () => {
     const runtime = room('brackenreach', 'split-cedar-sanctum');
     const current = save();

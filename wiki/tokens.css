@@ -1,0 +1,23 @@
+:root {
+  --walnut: #2c2118;
+  --parchment: #efe1bd;
+  --ink: #382819;
+  --moss: #4d5940;
+  --moss-dark: #35442d;
+  --copper-dark: #80502d;
+  --rule: #93754c66;
+  --pixel-corners: polygon(
+    5px 0,
+    calc(100% - 5px) 0,
+    calc(100% - 5px) 3px,
+    100% 3px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    4px calc(100% - 3px),
+    0 calc(100% - 3px),
+    0 4px,
+    5px 4px
+  );
+}

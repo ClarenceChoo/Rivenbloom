@@ -27,7 +27,7 @@ const authoredOffers = [
     soldOutFactId: questFlagId('surveyor-edge-reforged'),
     displayName: 'Reforge Surveyor Edge',
     description: 'Orin tempers the blade with one briar core.',
-    price: 50,
+    price: 0,
     itemId: null,
     prerequisites: [],
     stockPolicy: 'one-time',

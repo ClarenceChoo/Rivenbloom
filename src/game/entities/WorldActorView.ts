@@ -2,11 +2,19 @@ import type { WorldObjectSnapshot } from '../world/WorldObjectRuntime';
 import { objectPresentation } from '../world/WorldObjectPresentation';
 import Phaser from 'phaser';
 import {
+  coverArtScale,
   anchoredImageTop,
-  surfaceFrame,
+  AREA_BACKGROUND_KEYS,
+  NPC_ART_FRAMES,
+  TERRAIN_ART_FRAMES,
+  TERRAIN_CAP_WIDTH,
+  TERRAIN_SOURCE_WIDTH,
+  TERRAIN_FILL_FRAMES,
+  TERRAIN_FILL_SIZE,
+  terrainSpan,
   ENEMY_POSE_ROWS,
   ENEMY_POSE_Y,
-  ENEMY_POSE_X,
+  ENEMY_ART_FRAMES,
   enemyPose,
   WORLD_ART_FRAMES,
 } from '../data/artFrames';
@@ -23,9 +31,6 @@ type FrameSpec = Readonly<{
 }>;
 
 const FRAMES: Readonly<Record<string, FrameSpec>> = Object.freeze({
-  'sela-quill': { x: 146, y: 151, width: 296, sourceHeight: 721, displayHeight: 112 },
-  'orin-fen': { x: 697, y: 111, width: 337, sourceHeight: 764, displayHeight: 118 },
-  'piri-moss': { x: 1271, y: 311, width: 242, sourceHeight: 560, displayHeight: 92 },
   'briar-scrapper': { x: 585, y: 375, width: 300, sourceHeight: 365, displayHeight: 108 },
   duskwing: { x: 575, y: 30, width: 450, sourceHeight: 390, displayHeight: 120 },
   'spore-scribe': { x: 875, y: 350, width: 235, sourceHeight: 390, displayHeight: 112 },
@@ -39,7 +44,9 @@ export class WorldActorView {
   private readonly layers: Phaser.GameObjects.TileSprite[] = [];
   private readonly backdrop: Phaser.GameObjects.Image;
   private readonly sprites = new Map<string, Phaser.GameObjects.Image>();
-  private readonly environmentSprites: Phaser.GameObjects.Image[] = [];
+  private readonly environmentSprites: Array<
+    Phaser.GameObjects.Image | Phaser.GameObjects.TileSprite
+  > = [];
   private readonly npcSprites: Phaser.GameObjects.Image[] = [];
   private disposed = false;
   private area: AreaDefinition;
@@ -52,38 +59,43 @@ export class WorldActorView {
     room: RoomDefinition,
   ) {
     this.area = area;
-    const backgrounds = scene.textures.get('rivenbloom-area-backgrounds');
-    const source = backgrounds.getSourceImage();
-    for (let index = 0; index < 5; index++) {
-      const top = Math.round((index * source.height) / 5);
-      if (!backgrounds.has(`area-${index}`))
-        backgrounds.add(
-          `area-${index}`,
-          0,
-          0,
-          top,
-          source.width,
-          Math.round(((index + 1) * source.height) / 5) - top,
-        );
-    }
+    const backgroundKey = AREA_BACKGROUND_KEYS[floorFrame(area.areaId)]!;
     if (
-      !scene.textures.exists('rivenbloom-area-backgrounds') ||
+      !scene.textures.exists(backgroundKey) ||
       !scene.textures.exists('rivenbloom-character-lineup') ||
       !scene.textures.exists('rivenbloom-world-atlas')
     ) {
       throw new Error('Required production world art is unavailable.');
     }
-    this.backdrop = scene.add
-      .image(640, 360, 'rivenbloom-area-backgrounds', `area-${floorFrame(area.areaId)}`)
-      .setScrollFactor(0)
-      .setDepth(-100)
-      .setDisplaySize(1280, 720);
+    this.backdrop = scene.add.image(640, 360, backgroundKey).setScrollFactor(0).setDepth(-100);
     const texture = scene.textures.get('rivenbloom-npc-sprites');
     for (const actorId of ['sela-quill', 'orin-fen', 'piri-moss']) {
-      const spec = FRAMES[actorId]!;
+      const spec = NPC_ART_FRAMES[actorId as keyof typeof NPC_ART_FRAMES];
       if (!texture.has(actorId)) {
-        texture.add(actorId, 0, spec.x, spec.y, spec.width, spec.sourceHeight);
+        texture.add(actorId, 0, spec.x, spec.y, spec.width, spec.height);
       }
+    }
+    const terrain = scene.textures.get('rivenbloom-terrain-strips');
+    for (const [index, frame] of TERRAIN_ART_FRAMES.entries()) {
+      for (const [name, x, width, y, height] of [
+        [`terrain-${index}`, 0, TERRAIN_SOURCE_WIDTH, frame.y, frame.height],
+        [`terrain-${index}-left`, 0, TERRAIN_CAP_WIDTH, frame.y, frame.height],
+        [
+          `terrain-${index}-right`,
+          TERRAIN_SOURCE_WIDTH - TERRAIN_CAP_WIDTH,
+          TERRAIN_CAP_WIDTH,
+          frame.y,
+          frame.height,
+        ],
+      ] as const) {
+        if (!terrain.has(name)) terrain.add(name, 0, x, y, width, height);
+      }
+    }
+    const material = scene.textures.get('rivenbloom-terrain-fill');
+    for (const [index, frame] of TERRAIN_FILL_FRAMES.entries()) {
+      const name = `terrain-${index}-body`;
+      if (!material.has(name))
+        material.add(name, 0, frame.x, frame.y, TERRAIN_FILL_SIZE, TERRAIN_FILL_SIZE);
     }
     const worldTexture = scene.textures.get('rivenbloom-world-atlas');
     for (let index = 0; index < 24; index += 1) {
@@ -95,13 +107,10 @@ export class WorldActorView {
     }
     const poses = scene.textures.get('rivenbloom-enemy-poses');
     for (const [row, actorId] of ENEMY_POSE_ROWS.entries()) {
-      const top = ENEMY_POSE_Y[row]!;
-      const height = ENEMY_POSE_Y[row + 1]! - top;
       for (let column = 0; column < 6; column++) {
-        const left = ENEMY_POSE_X[row]![column]!;
+        const frame = ENEMY_ART_FRAMES[row]![column]!;
         const name = `${actorId}-${column}`;
-        if (!poses.has(name))
-          poses.add(name, 0, left, top, ENEMY_POSE_X[row]![column + 1]! - left, height);
+        if (!poses.has(name)) poses.add(name, 0, frame.x, frame.y, frame.width, frame.height);
       }
     }
     for (const [index, key] of ['distant-roots', 'hanging-vines', 'foreground-boughs'].entries()) {
@@ -119,7 +128,8 @@ export class WorldActorView {
     if (this.disposed) return;
     this.clearRoomArt();
     this.area = area;
-    this.backdrop.setFrame(`area-${floorFrame(area.areaId)}`);
+    this.backdrop.setTexture(AREA_BACKGROUND_KEYS[floorFrame(area.areaId)]!);
+    this.backdrop.setScale(coverArtScale(this.backdrop.width, this.backdrop.height, 1280, 720));
     this.renderSurfaces(area, room);
 
     for (const zone of area.zones.filter((candidate) => candidate.roomId === room.roomId)) {
@@ -197,17 +207,14 @@ export class WorldActorView {
     for (const spawn of area.actorSpawns.filter(
       (candidate) => candidate.roomId === room.roomId && candidate.encounterId === null,
     )) {
-      const spec = FRAMES[spawn.actorId];
+      const spec = NPC_ART_FRAMES[spawn.actorId as keyof typeof NPC_ART_FRAMES];
       if (spec === undefined) continue;
       const sprite = this.scene.add
         .image(spawn.position.x, spawn.position.y, 'rivenbloom-npc-sprites', spawn.actorId)
         .setOrigin(0.5, 1)
         .setDepth(40)
         .setFlipX(spawn.facing === 'left');
-      sprite.setDisplaySize(
-        spec.width * (spec.displayHeight / spec.sourceHeight),
-        spec.displayHeight,
-      );
+      sprite.setDisplaySize(spec.width * (spec.displayHeight / spec.height), spec.displayHeight);
       this.npcSprites.push(sprite);
     }
   }
@@ -267,8 +274,10 @@ export class WorldActorView {
     for (const enemy of snapshot.enemies) {
       visibleIds.add(enemy.combatantId);
       const sprite = this.sprite(enemy.combatantId, enemy.actorId);
-      sprite.setFrame(
-        `${enemy.actorId}-${enemyPose(enemy.state, enemy.attackPhase, snapshot.simulationTimeMs)}`,
+      this.setPose(
+        sprite,
+        enemy.actorId,
+        enemyPose(enemy.state, enemy.attackPhase, snapshot.simulationTimeMs),
       );
       sprite.setPosition(enemy.position.x, enemy.position.y);
       sprite.setFlipX(enemy.facing === 'left');
@@ -280,8 +289,10 @@ export class WorldActorView {
     if (boss !== null) {
       visibleIds.add('pallid-cantor');
       const sprite = this.sprite('pallid-cantor', 'pallid-cantor');
-      sprite.setFrame(
-        `pallid-cantor-${enemyPose(boss.state, boss.attackPhase, snapshot.simulationTimeMs)}`,
+      this.setPose(
+        sprite,
+        'pallid-cantor',
+        enemyPose(boss.state, boss.attackPhase, snapshot.simulationTimeMs),
       );
       sprite.setPosition(boss.position.x, boss.position.y);
       // The Cantor's source poses face left; the other actor sheets face right.
@@ -308,28 +319,56 @@ export class WorldActorView {
 
   private renderSurfaces(area: AreaDefinition, room: RoomDefinition): void {
     const frame = floorFrame(area.areaId);
+    const art = TERRAIN_ART_FRAMES[frame]!;
     for (const surface of area.surfaces.filter((candidate) => candidate.roomId === room.roomId)) {
-      const targetWidth = surface.kind === 'one-way' ? 220 : 240;
-      const count = Math.max(1, Math.ceil(surface.bounds.width / targetWidth));
-      const width = surface.bounds.width / count;
-      const height = surface.kind === 'one-way' ? 96 : Math.max(118, surface.bounds.height);
-      for (let index = 0; index < count; index += 1) {
-        const tile = this.scene.add
-          .image(
-            surface.bounds.x + width * (index + 0.5),
-            anchoredImageTop(
-              surface.bounds.y,
-              surfaceFrame(frame).surfaceY,
-              height / WORLD_ART_FRAMES[frame]!.height,
-            ),
-            'rivenbloom-world-atlas',
-            `world-${frame}`,
+      const { x, y, width, height } = surface.bounds;
+      const displayHeight = surface.kind === 'one-way' ? 80 : 118;
+      const scale = displayHeight / art.height;
+      const top = anchoredImageTop(y, art.surfaceY - art.y, scale);
+      const depth = surface.kind === 'one-way' ? -1 : -4;
+      const span = terrainSpan(width, scale);
+      if (surface.kind === 'solid' && height > displayHeight) {
+        const body = this.scene.add
+          .tileSprite(
+            x,
+            y + 20,
+            width / scale,
+            (height - 20) / scale,
+            'rivenbloom-terrain-fill',
+            `terrain-${frame}-body`,
           )
-          .setOrigin(0.5, 0)
-          .setDepth(surface.kind === 'one-way' ? -1 : -4);
-        tile.setDisplaySize(width + 6, height);
-        this.environmentSprites.push(tile);
+          .setOrigin(0, 0)
+          .setScale(scale)
+          .setTint(0xc5c8c5)
+          .setDepth(depth - 1);
+        this.environmentSprites.push(body);
       }
+      for (const [side, left] of [
+        ['left', x],
+        ['right', x + width - span.capWidth],
+      ] as const) {
+        const cap = this.scene.add
+          .image(left, top, 'rivenbloom-terrain-strips', `terrain-${frame}-${side}`)
+          .setOrigin(0, 0)
+          .setDisplaySize(span.capWidth, displayHeight)
+          .setDepth(depth);
+        this.environmentSprites.push(cap);
+      }
+      if (span.middleWidth === 0) continue;
+      const middle = this.scene.add
+        .tileSprite(
+          x + span.capWidth,
+          top,
+          span.middleWidth / scale,
+          art.height,
+          'rivenbloom-terrain-strips',
+          `terrain-${frame}`,
+        )
+        .setOrigin(0, 0)
+        .setScale(scale)
+        .setDepth(depth);
+      middle.tilePositionX = TERRAIN_CAP_WIDTH;
+      this.environmentSprites.push(middle);
     }
   }
 
@@ -358,7 +397,7 @@ export class WorldActorView {
       .image(x, y, 'rivenbloom-world-atlas', `world-${frame}`)
       .setOrigin(0.5, 1)
       .setDepth(depth);
-    sprite.setDisplaySize(displayHeight, displayHeight);
+    sprite.setScale(displayHeight / sprite.height);
     this.environmentSprites.push(sprite);
     return sprite;
   }
@@ -386,6 +425,12 @@ export class WorldActorView {
     sprite.setScale(spec.displayHeight / sourceHeight);
     this.sprites.set(id, sprite);
     return sprite;
+  }
+
+  private setPose(sprite: Phaser.GameObjects.Image, actorId: string, pose: number): void {
+    const row = ENEMY_POSE_ROWS.findIndex((id) => id === actorId);
+    const frame = ENEMY_ART_FRAMES[row]![pose]!;
+    sprite.setFrame(`${actorId}-${pose}`).setOrigin(frame.originX, frame.originY);
   }
 }
 

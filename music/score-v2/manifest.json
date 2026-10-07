@@ -1,0 +1,36 @@
+[
+  {
+    "id": "11-where-the-lanterns-wake",
+    "title": "Where the Lanterns Wake",
+    "bpm": 92,
+    "bars": 32,
+    "seconds": 83.4783,
+    "integratedLufs": -20.0,
+    "truePeakDbfs": -7.1,
+    "seamJump": 0.0006525022909045219,
+    "notes": 238,
+    "expressionPoints": 2048,
+    "nativePartLufs": {
+      "wayfinder-flute": -32.2,
+      "lantern-strings": -40.2,
+      "root-strings": -39.3
+    }
+  },
+  {
+    "id": "12-a-voice-through-glass",
+    "title": "A Voice Through Glass",
+    "bpm": 126,
+    "bars": 32,
+    "seconds": 60.9524,
+    "integratedLufs": -17.5,
+    "truePeakDbfs": -4.6,
+    "seamJump": 0.0005139997228980064,
+    "notes": 386,
+    "expressionPoints": 2048,
+    "nativePartLufs": {
+      "wayfinder-flute": -32.7,
+      "lantern-strings": -39.3,
+      "root-strings": -38.4
+    }
+  }
+]

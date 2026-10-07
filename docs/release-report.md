@@ -1,9 +1,31 @@
 # Rivenbloom Browser/PWA Candidate Report
 
-Date: 2026-09-23
+Date: 2026-10-07
 
 **Status: implementation candidate; release qualification remains open. No public deployment.**
 The reviewed gameplay and presentation gaps now have implementations and focused regressions. This is not a claim that Gates A–D of the [share-ready plan](superpowers/plans/2026-09-23-share-ready-release.md) have passed. Human playtesting, physical controls, listening, performance, and hosted delivery remain separate evidence.
+
+## October 7 release fixes
+
+The Dash Trial now exposes its authored instructions, plate count and simulation-time countdown as selectable HUD text. Expired plate lights reset in the projection; the nine-second puzzle rule and saved fields are unchanged. Captions, interaction prompts, boss health and essential trial help share a bottom stack. Portrait layout uses compact selectable trial help and health/mana meters while retaining both numeric values and save status. Regressions caught vertical guidance overlap and overlapping health/mana glyphs at the actual 200% setting; both pass after the layout changes, with screenshot review at 390×844.
+
+Pause Settings previously clamped the title screen's 200% text preference to 150%. The shared supported maximum is now 200%, and opening and applying Pause Settings preserves it. The title-to-Pause regression failed at 1.5 before the change and passes at 2 afterward. Fifteen settings/maximum-scale menu checks and six portrait guidance/HUD-retention checks passed across Chromium, Firefox and WebKit on the current implementation. Browser zoom and actual Safari qualification remain separate.
+
+Orin’s mandatory Surveyor Edge reforge now consumes the briar core without charging Resin. Previously, spending the finite pre-dungeon cache rewards on optional supplies could leave the main quest permanently blocked. A zero-currency purchase regression failed before the change and passes after it, including core consumption, the weapon upgrade and the one-time ledger after reload.
+
+Repeated title/world transitions retained two Chromium DOM nodes per cycle even after retired audio elements were disconnected and reloaded. Music now reuses a bounded cache keyed by authored file and cancels retirement when a track returns during its crossfade. Disposal releases every cached media source. Rapid-return and disposal regressions pass. The earlier cleanup attempt grew by 40 nodes over 20 title returns; the bounded-cache measurements stayed stable. A strict production soak completed 60 title/world/save/menu cycles over 1,804,457 ms, with 500 DOM nodes and 10 documents at both endpoints, no page errors, and collected heap growth from 9,157,712 to 10,124,068 bytes (0.92 MiB). That soak preceded the final 200% layout changes. The final production artifact then passed 20 cycles with 507 DOM nodes at both endpoints. Neither measurement establishes target MacBook Air frame rate.
+
+Development acceptance uses port 4176 with HMR disabled only under `RIVENBLOOM_TEST=1`. Earlier traversal traces showed Vite reconnecting and booting the game into the title screen during concurrent workspace edits. The task did not stop the pre-existing interactive server on 4173. Boss driving observes accepted combo frames and simulation time; Chromium acceptance uses the full browser renderer. These changes do not alter combat damage, puzzle duration or encounter balance.
+
+A short Pause press could also disappear when a render frame advanced no simulation steps. Pause now uses the existing InputService buffer, consumed at the next gameplay step. The deterministic regression failed before the change and passes after it.
+
+Formatting, ESLint, strict TypeScript and **105 files / 692 unit tests** pass in this environment. The final production build passes with a 1,696.67 KB main JavaScript bundle (448.61 KB gzip) and Vite's chunk-size advisory. The 73-scenario Chromium run passed 72 scenarios; the remaining canonical traversal passed its focused rerun in 5.1 minutes after movement was changed to wait for an observed prompt or position. The related ladder, Sentinel flank, first-pair checkpoint and fresh Briar/Root-Knot route then passed 4/4. With the additional title-to-Pause text-scale regression, all 74 distinct development scenarios have passing evidence across broad and focused runs, not a single clean 74/74 run. Both boss scenarios and durable ending/credits passed in the broad run, and the normal-stat boss passed 3/3 additional repeats after the Pause fix. Those boss runs use imported saves.
+
+All 54 distinct Chromium/Firefox/WebKit smoke scenarios have passing evidence across the initial 50/54 run, 35/36 title checks and a 3/3 focused outline check. WebKit title Tab navigation now uses the existing focus model, and setting changes restore focus to the changed control. Native checkbox shadows differ by engine; screenshot review and assertions verify the visible three-pixel focus outline. The additional 21 current maximum-scale/layout checks described above also pass across the three engines. The final production suite passed all four short scenarios in one run, with the separately completed long soak skipped by default. Every one of the 12 MP3 files decoded, village playback advanced, and offline/update acceptance passed. A final regular-profile Chromium audit reported no manifest or installability errors, no page errors, no exposed developer bridge and no developer-route markers in the main production JavaScript. The initial incognito audit reported only Chromium's incognito installation restriction. This local audit does not qualify a hosted HTTPS origin. The fresh route passed in 2.4 minutes after neutral frames were added at room boundaries; it reaches live Sentinel contact, not an ending. Prior dated results below describe their original candidate.
+
+A separate ordinary-control continuation died in Singing Hollows, respawned with quest progress intact, solved the trial and rested at Reliquary Verge. It did not establish a Sentinel win. Its temporary driver then failed while attempting save export because its Manage-button locator was incorrect and its pending download wait was not handled. That is a driver failure, not evidence of a game export failure. No fresh full-route or balance claim comes from this attempt.
+
+Task-owned browser workers and the production preview were stopped after verification. No listeners remained on 4173, 4174 or 4176 at the final check; the pre-existing 4173 process was not stopped by this task. Temporary drivers, logs and screenshots stayed outside the repository.
 
 ## September 23–24 follow-up QA
 
@@ -75,12 +97,12 @@ Generated music score exports under `music/score-v1/` are excluded from Prettier
 
 - Fresh production journey at normal stats, all mandatory content, ending/reload, with no debug actions; two first-time testers, measured duration/deaths/confusion, and tuning based on their observations.
 - Physical gamepad play/disconnect/reconnect; speakers/headphones listening across all areas and boss phases; Safari/Firefox qualification; browser 200% zoom. Maximum game-text scale and short landscape have automated bounds coverage.
-- Hardware-accelerated Apple-silicon MacBook Air profiling and a 30-minute lifecycle/heap soak. Headless browser timing does not establish the 60 FPS target.
+- Hardware-accelerated Apple-silicon MacBook Air profiling. The October 7 lifecycle/heap soak passed, but headless browser timing does not establish the 60 FPS target.
 - Final normal-scale visual acceptance and strict terrain-edge tolerance; boss warning/active fixtures are captured separately from normal-input gameplay.
 - Authorized dedicated HTTPS destination, host cache headers, installation and update verification on the actual public origin. The artifact is local `dist/`.
 - Optional native distribution requires toolchain installation and independent signed/tester packaging decisions.
 
-Internal QA readiness is **6/10 — Not Ready**. The most important remaining work is a fresh normal-stat Sentinel win, the dungeon and boss continuation through ending/reload, first-time player testing, target-hardware performance and physical controls, and hosted PWA qualification. This rating does not certify public distribution. See [known issues](known-issues.md) and [remaining checklist](remaining-work-checklist.md).
+The September 23–24 candidate was rated **6/10 — Not Ready**. The most important remaining work is a fresh normal-stat Sentinel win, the dungeon and boss continuation through ending/reload, first-time player testing, target-hardware performance and physical controls, and hosted PWA qualification. This rating does not certify public distribution. See [known issues](known-issues.md) and [remaining checklist](remaining-work-checklist.md).
 
 ## Historical evidence — superseded September 19 assessment
 

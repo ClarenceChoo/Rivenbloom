@@ -111,6 +111,12 @@ test('simulated controller adjusts range, select, checkbox and clears toggle gua
   await menu.getByRole('button', { name: 'Apply settings' }).focus();
   await press(0);
   await menu.getByRole('button', { name: 'Resume', exact: true }).click();
+  const step = await page.evaluate(() => window.__RIVENBLOOM_TEST__!.read().encounter!.stepIndex);
+  await page.waitForFunction(
+    (previousStep) => window.__RIVENBLOOM_TEST__!.read().encounter!.stepIndex >= previousStep + 2,
+    step,
+    { polling: 'raf' },
+  );
   await page.keyboard.press('KeyL');
   await expect
     .poll(() => page.evaluate(() => window.__RIVENBLOOM_TEST__?.read().combat?.guarding))

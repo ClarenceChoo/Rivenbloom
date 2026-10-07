@@ -1,0 +1,31 @@
+{
+  "video": "brag.mp4",
+  "poster": "brag.jpg",
+  "date": "2026-10-07",
+  "durationSeconds": 25,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 750,
+  "bytes": 16562154,
+  "hyperframesVersion": "0.8.111",
+  "hyperframesCheckPassed": true,
+  "runtimeErrors": 0,
+  "layoutErrors": 0,
+  "contrastErrors": 0,
+  "nonBlockingWarnings": [
+    "Four nested title structures can be split into sub-compositions for more granular Studio editing."
+  ],
+  "visualReview": "All nine shots and final title reviewed; source gameplay motion and final poster frame inspected.",
+  "mediaDecode": "Full final audio/video decode completed without errors.",
+  "blackSectionsDetected": false,
+  "gameplayPlaneFreezesOverHalfSecond": false,
+  "integratedLufs": -16.02,
+  "truePeakDbtp": -4.66,
+  "posterTimestamp": 23.5,
+  "posterBakedIntoFrameZero": true,
+  "capture": "Native 1280x720 Phaser canvas, isolated checkpoint saves, keyboard actions, real game SFX; HTML HUD omitted.",
+  "sources": "Original Rivenbloom art and score; provenance in docs/asset-provenance.md."
+}

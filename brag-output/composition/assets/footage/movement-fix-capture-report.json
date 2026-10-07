@@ -1,0 +1,71 @@
+[
+  {
+    "shot": "village",
+    "recordedAt": "2026-10-07T07:47:20.334Z",
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "errors": [],
+    "directionReversalsSampled": 0,
+    "frames": 245,
+    "measuredFps": 30.12,
+    "maxFrameGapMs": 51.0,
+    "medianFrameGapMs": 33.0,
+    "bossStates": [],
+    "sourceSha256": "506c4aa5531fb9f1104ca23e84c2c3890e166399edc91af64ab1eae84ee42d36"
+  },
+  {
+    "shot": "forest",
+    "recordedAt": "2026-10-07T07:49:15.963Z",
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "errors": [],
+    "directionReversalsSampled": 0,
+    "frames": 428,
+    "measuredFps": 30.07,
+    "maxFrameGapMs": 50.0,
+    "medianFrameGapMs": 33.0,
+    "bossStates": [],
+    "sourceSha256": "4ccca3fa97e4498bb16738ad3b54a351e4e5cc18267941ec07a689c968c5e0cc"
+  },
+  {
+    "shot": "sentinel",
+    "recordedAt": "2026-10-07T07:49:34.365Z",
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "errors": [],
+    "directionReversalsSampled": 2,
+    "frames": 488,
+    "measuredFps": 30.06,
+    "maxFrameGapMs": 51.0,
+    "medianFrameGapMs": 33.0,
+    "bossStates": [],
+    "sourceSha256": "82f5bf0ac77f0f18ef10666d63fafde29c30841e86e5171d6c9ad82c7583ed1a"
+  },
+  {
+    "shot": "boss",
+    "recordedAt": "2026-10-07T07:50:03.619Z",
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "errors": [],
+    "directionReversalsSampled": 13,
+    "frames": 788,
+    "measuredFps": 29.96,
+    "maxFrameGapMs": 99.0,
+    "medianFrameGapMs": 33.0,
+    "bossStates": [
+      {
+        "t": 0,
+        "state": "intro"
+      },
+      {
+        "t": 1.969,
+        "state": "phaseOne"
+      },
+      {
+        "t": 5.359,
+        "state": "transition"
+      },
+      {
+        "t": 7.04,
+        "state": "phaseTwo"
+      }
+    ],
+    "sourceSha256": "8a61d29e84e97b1d36a26f10873eeaf0143ac31cda334496b65e0e37c0638a01"
+  }
+]

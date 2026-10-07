@@ -427,7 +427,11 @@ export class WorldScene extends Phaser.Scene {
         if (activeRuntime === null) return { halt: true };
         const roomStep = activeRuntime.advance(frame, saveCoordinator.snapshot);
         this.pendingWorldCombatEvents.push(...roomStep.journal);
-        if (frame.input.pausePressed === true) {
+        if (
+          (frame.input.pauseBufferId != null &&
+            services.get('inputService').consume('pause', frame.input.pauseBufferId)) ||
+          frame.input.pausePressed === true
+        ) {
           this.pendingPause = true;
           return { halt: true };
         }

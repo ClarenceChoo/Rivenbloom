@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import { CONTENT_REGISTRY } from '../src/game/data/areas';
+import { PALLID_CANTOR_ENCOUNTER } from '../src/game/data/bosses/pallidCantor';
+import { ATTACKS } from '../src/game/data/attacks';
 import { createNewSave } from '../src/game/saves/SaveSchema';
 import { createSaveEnvelopeJson } from '../src/game/saves/SaveEnvelope';
 import { debugPallidCantorSave } from '../src/game/testing/debugBossEncounter';
@@ -19,9 +21,21 @@ type BossSnapshot = Readonly<{
 type Snapshot = Readonly<{
   titleReady: boolean;
   world: Readonly<{ areaId: string; roomId: string; mode: string }> | null;
-  player: Readonly<{ position: Readonly<{ x: number; y: number }>; state: string }> | null;
-  combat: Readonly<{ selectedAbilityId: string; currentMana: number }> | null;
-  encounter: Readonly<{ boss: BossSnapshot | null }> | null;
+  player: Readonly<{
+    position: Readonly<{ x: number; y: number }>;
+    state: string;
+  }> | null;
+  combat: Readonly<{
+    selectedAbilityId: string;
+    currentMana: number;
+    activeAttackId: string | null;
+    attackFrame: number | null;
+  }> | null;
+  encounter: Readonly<{
+    stepIndex: number;
+    simulationTimeMs: number;
+    boss: BossSnapshot | null;
+  }> | null;
   worldUi: Readonly<{
     player: Readonly<{ currentHealth: number }>;
     quests: readonly Readonly<{ questId: string; stageId: string }>[];
@@ -32,6 +46,63 @@ type Snapshot = Readonly<{
 
 function read(page: Page): Promise<Snapshot> {
   return page.evaluate(() => window.__RIVENBLOOM_TEST__!.read() as unknown as Snapshot);
+}
+
+async function waitForSimulation(page: Page, durationMs: number): Promise<void> {
+  const initial = await read(page);
+  if ((initial.deathReload?.count ?? 0) > 0 || initial.encounter === null) {
+    throw new Error('The player died while the scripted combat action was running.');
+  }
+  const startedAt = initial.encounter.simulationTimeMs;
+  await page.waitForFunction(
+    ({ startedAt, durationMs }) => {
+      const state = window.__RIVENBLOOM_TEST__?.read();
+      return (
+        (state?.deathReload?.count ?? 0) > 0 ||
+        (state?.encounter?.simulationTimeMs ?? 0) >= startedAt + durationMs
+      );
+    },
+    { startedAt, durationMs },
+    { polling: 'raf', timeout: 5_000 },
+  );
+}
+
+async function lightCombo(page: Page): Promise<void> {
+  for (const attackId of ['mara-light-one', 'mara-light-two', 'mara-light-three']) {
+    const before = await read(page);
+    const step = before.encounter!.stepIndex;
+    await page.keyboard.press('KeyJ');
+    await page.waitForFunction(
+      ({ attackId, step }) => {
+        const state = window.__RIVENBLOOM_TEST__!.read();
+        return (
+          state.combat?.activeAttackId === attackId ||
+          (state.deathReload?.count ?? 0) > 0 ||
+          (state.encounter?.stepIndex ?? step) >= step + 8
+        );
+      },
+      { attackId, step },
+      { polling: 'raf' },
+    );
+    if ((await read(page)).combat?.activeAttackId !== attackId) return;
+    const cancelWindow = ATTACKS.find((attack) => attack.attackId === attackId)!.cancelWindows[0];
+    await page.waitForFunction(
+      ({ attackId, bufferFrame }) => {
+        const combat = window.__RIVENBLOOM_TEST__!.read().combat;
+        return (
+          combat?.activeAttackId !== attackId ||
+          (bufferFrame !== null && (combat.attackFrame ?? 0) >= bufferFrame)
+        );
+      },
+      {
+        attackId,
+        bufferFrame: cancelWindow === undefined ? null : Math.max(0, cancelWindow.fromFrame - 2),
+      },
+      { polling: 'raf' },
+    );
+    if (cancelWindow !== undefined && (await read(page)).combat?.activeAttackId !== attackId)
+      return;
+  }
 }
 
 async function beginBossJourney(page: Page): Promise<void> {
@@ -85,6 +156,9 @@ async function beginNormalStatBossJourney(page: Page): Promise<void> {
 }
 
 async function recoverWithSunmoss(page: Page): Promise<void> {
+  await page.bringToFront();
+  expect(await page.evaluate(() => document.hasFocus())).toBe(true);
+  await waitForSimulation(page, 35);
   await page.keyboard.press('Escape');
   const menu = page.getByRole('dialog', { name: 'Wayfinder Ledger' });
   await expect(menu).toBeVisible();
@@ -106,7 +180,7 @@ async function recoverWithSunmoss(page: Page): Promise<void> {
 async function moveTo(page: Page, targetX: number): Promise<void> {
   for (let attempt = 0; attempt < 8; attempt += 1) {
     const x = (await read(page)).player?.position.x ?? targetX;
-    if (Math.abs(x - targetX) < 55) return;
+    if (Math.abs(x - targetX) < 24) return;
     const key = x < targetX ? 'ArrowRight' : 'ArrowLeft';
     await page.keyboard.down(key);
     try {
@@ -114,7 +188,7 @@ async function moveTo(page: Page, targetX: number): Promise<void> {
         .waitForFunction(
           ({ target }) => {
             const x = window.__RIVENBLOOM_TEST__?.read().player?.position.x;
-            return x !== undefined && Math.abs(x - target) < 55;
+            return x !== undefined && Math.abs(x - target) < 24;
           },
           { target: targetX },
           { polling: 'raf', timeout: 5_000 },
@@ -141,7 +215,7 @@ async function awakenLens(page: Page, index: number, targetX: number): Promise<v
       .toBe(true);
     const manaBefore = (await read(page)).combat?.currentMana;
     await page.keyboard.press('KeyQ');
-    await page.waitForTimeout(200);
+    await waitForSimulation(page, 200);
     const state = await read(page);
     if (state.encounter?.boss?.lenses[index]?.state === 'latched') return;
     if ((state.deathReload?.count ?? 0) > 0 || state.encounter?.boss?.state !== 'phaseTwo') {
@@ -150,7 +224,7 @@ async function awakenLens(page: Page, index: number, targetX: number): Promise<v
     if (state.combat?.currentMana !== manaBefore) {
       throw new Error(`Resonant Pulse spent mana without awakening lens ${index + 1}.`);
     }
-    await page.waitForTimeout(600);
+    await waitForSimulation(page, 600);
   }
   throw new Error(`Resonant Pulse was not accepted at lens ${index + 1}.`);
 }
@@ -170,7 +244,8 @@ async function attackUntil(
       throw new Error(
         `The player died after ${attempt} attacks; lowest Cantor health ${lowestBossHealth}; remaining Sunmoss ${state.worldUi?.inventory.find(({ itemId }) => itemId === 'sunmoss-draught')?.quantity ?? 0}.`,
       );
-    if (boss !== null && boss !== undefined && predicate(boss)) return;
+    if (boss === null || boss === undefined) throw new Error('The boss encounter is unavailable.');
+    if (predicate(boss)) return;
     if (
       useRecovery &&
       (state.worldUi?.player.currentHealth ?? 0) < 80 &&
@@ -179,28 +254,23 @@ async function attackUntil(
       )
     )
       await recoverWithSunmoss(page);
-    await moveTo(page, 820);
+    await moveTo(page, boss.position.x - PALLID_CANTOR_ENCOUNTER.body.halfWidth);
     await page.keyboard.down('ArrowRight');
-    await page.waitForTimeout(70);
+    await waitForSimulation(page, 70);
     await page.keyboard.up('ArrowRight');
     if (attack === 'heavy') {
       await page.keyboard.down('KeyK');
-      await page.waitForTimeout(460);
+      await waitForSimulation(page, 460);
       await page.keyboard.up('KeyK');
-      await page.waitForTimeout(260);
+      await waitForSimulation(page, 260);
     } else if (attack === 'combo') {
       await expect
         .poll(async () => ['idle', 'run', 'land'].includes((await read(page)).player?.state ?? ''))
         .toBe(true);
-      await page.keyboard.press('KeyJ');
-      await page.waitForTimeout(100);
-      await page.keyboard.press('KeyJ');
-      await page.waitForTimeout(110);
-      await page.keyboard.press('KeyJ');
-      await page.waitForTimeout(400);
+      await lightCombo(page);
     } else {
       await page.keyboard.press('KeyJ');
-      await page.waitForTimeout(350);
+      await waitForSimulation(page, 350);
     }
   }
   const boss = (await read(page)).encounter?.boss;

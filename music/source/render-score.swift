@@ -16,6 +16,14 @@ struct Part: Decodable {
     let pan: Float
     let reverb: Float
     let notes: [Note]
+    let instrumentFiles: [String]?
+    let sampleGainDb: Float?
+    let expression: [Expression]?
+}
+
+struct Expression: Decodable {
+    let beat: Double
+    let value: UInt8
 }
 
 struct Score: Decodable {
@@ -32,6 +40,7 @@ struct Event {
     let pitch: UInt8
     let velocity: UInt8
     let on: Bool
+    let controller: UInt8?
 }
 
 enum RenderError: Error {
@@ -63,12 +72,25 @@ func render(score: Score, destination: URL, solo: String?) throws {
         engine.connect(sampler, to: room, format: format)
         engine.connect(room, to: position, format: format)
         engine.connect(position, to: engine.mainMixerNode, format: format)
-        room.loadFactoryPreset(.largeHall2)
+        room.loadFactoryPreset(track.instrumentFiles == nil ? .largeHall2 : .mediumHall)
         room.wetDryMix = track.reverb
         position.pan = track.pan
         position.outputVolume = (solo == nil || solo == track.name) ? track.gain : 0
-        try sampler.loadSoundBankInstrument(at: bank, program: track.program,
-            bankMSB: track.percussion ? 120 : 121, bankLSB: 0)
+        if let instrumentFiles = track.instrumentFiles {
+            guard !instrumentFiles.isEmpty else { throw RenderError.invalidScore }
+            let sampleGainDb = track.sampleGainDb ?? 0
+            guard (-90...12).contains(sampleGainDb) else { throw RenderError.invalidScore }
+            let instruments = instrumentFiles.map { URL(fileURLWithPath: $0) }
+            if instruments.count == 1 && instruments[0].pathExtension == "exs" {
+                try sampler.loadInstrument(at: instruments[0])
+            } else {
+                try sampler.loadAudioFiles(at: instruments)
+            }
+            sampler.overallGain = sampleGainDb
+        } else {
+            try sampler.loadSoundBankInstrument(at: bank, program: track.program,
+                bankMSB: track.percussion ? 120 : 121, bankLSB: 0)
+        }
         sampler.sendController(7, withValue: 100, onChannel: 0)
         sampler.sendController(91, withValue: 0, onChannel: 0)
         samplers.append(sampler)
@@ -84,9 +106,15 @@ func render(score: Score, destination: URL, solo: String?) throws {
                       note.pitch < 128, note.velocity > 0, note.velocity < 128
                 else { throw RenderError.invalidScore }
                 events.append(Event(frame: offset + Int64((note.beat * framesPerBeat).rounded()),
-                    part: part, pitch: note.pitch, velocity: note.velocity, on: true))
+                    part: part, pitch: note.pitch, velocity: note.velocity, on: true, controller: nil))
                 events.append(Event(frame: offset + Int64(((note.beat + note.duration) * framesPerBeat).rounded()),
-                    part: part, pitch: note.pitch, velocity: 0, on: false))
+                    part: part, pitch: note.pitch, velocity: 0, on: false, controller: nil))
+            }
+            for point in track.expression ?? [] {
+                guard point.beat >= 0, point.beat < score.beats, point.value < 128
+                else { throw RenderError.invalidScore }
+                events.append(Event(frame: offset + Int64((point.beat * framesPerBeat).rounded()),
+                    part: part, pitch: 0, velocity: point.value, on: false, controller: 11))
             }
         }
     }
@@ -113,7 +141,9 @@ func render(score: Score, destination: URL, solo: String?) throws {
         let frame = engine.manualRenderingSampleTime
         while eventIndex < events.count && events[eventIndex].frame <= frame {
             let event = events[eventIndex]
-            if event.on {
+            if let controller = event.controller {
+                samplers[event.part].sendController(controller, withValue: event.velocity, onChannel: 0)
+            } else if event.on {
                 samplers[event.part].startNote(event.pitch, withVelocity: event.velocity, onChannel: 0)
             } else {
                 samplers[event.part].stopNote(event.pitch, onChannel: 0)

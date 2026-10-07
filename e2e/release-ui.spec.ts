@@ -53,7 +53,36 @@ test('text scale actually enlarges active settings and HUD', async ({ page }) =>
   await menu.getByLabel('Text scale').press('End');
   await menu.getByRole('button', { name: 'Apply settings' }).click();
   const after = await menu.evaluate((el) => parseFloat(getComputedStyle(el).fontSize));
-  expect(after / before).toBeCloseTo(1.5, 2);
+  expect(after / before).toBeCloseTo(2, 2);
+});
+test('Pause preserves the 200% text preference selected on the title', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Settings', exact: true }).click();
+  const titleSettings = page.getByRole('dialog', { name: 'Settings' });
+  await titleSettings.getByRole('combobox', { name: /Text Scale/ }).selectOption('2');
+  await titleSettings.getByRole('button', { name: 'Apply settings', exact: true }).click();
+  await expect(titleSettings).toBeHidden();
+  await page.getByRole('button', { name: 'Begin journey for Journey 1' }).click();
+  await page
+    .getByRole('dialog')
+    .getByRole('button', { name: 'Begin journey', exact: true })
+    .click();
+  await page.getByRole('button', { name: "Enter Wren's Rest" }).click();
+  await expect(page.getByLabel('Gameplay status')).toBeVisible();
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve) =>
+        requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
+      ),
+  );
+  await page.keyboard.press('Escape');
+  const menu = page.getByRole('dialog', { name: 'Wayfinder Ledger' });
+  await menu.getByRole('button', { name: 'Settings', exact: true }).click();
+  await expect(menu.getByLabel('Text scale')).toHaveValue('2');
+  await menu.getByRole('button', { name: 'Apply settings', exact: true }).click();
+  await expect(menu.getByLabel('Text scale')).toHaveValue('2');
+  await menu.getByRole('button', { name: 'Resume', exact: true }).click();
+  await expect(page.locator('.game-hud')).toHaveCSS('--user-text-scale', '2');
 });
 test('portrait Resume remains inside the contained stage', async ({ page }) => {
   await journey(page);
@@ -75,6 +104,9 @@ test('boss meter stays within the stage', async ({ page }, testInfo) => {
   const stage = await page.locator('.game-stage').boundingBox();
   const bounds = await page.locator('.hud-boss').boundingBox();
   expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(stage!.x + stage!.width);
+  expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(stage!.y + stage!.height);
+  const prompt = await page.locator('[data-hud="prompt"]').boundingBox();
+  expect(prompt!.y + prompt!.height).toBeLessThanOrEqual(bounds!.y);
 });
 
 for (const viewport of [
@@ -92,6 +124,7 @@ for (const viewport of [
     await menu.getByRole('button', { name: 'Settings', exact: true }).click();
     await menu.getByLabel('Text scale').press('End');
     await menu.getByRole('button', { name: 'Apply settings' }).click();
+    await expect(menu).toHaveCSS('--user-text-scale', '2');
     const resume = menu.getByRole('button', { name: 'Resume', exact: true });
     await resume.scrollIntoViewIfNeeded();
     const button = await resume.boundingBox();

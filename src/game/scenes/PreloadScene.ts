@@ -13,6 +13,7 @@ import {
 } from '../loading/PreloadState';
 import type { PreloadManifest, PreloadManifestEntry, PreloadState } from '../loading/PreloadState';
 import { updateDevBridge } from '../testing/devBridge';
+import { AREA_BACKGROUND_KEYS } from '../data/artFrames';
 import { SceneKeys } from './SceneKeys';
 
 export const PRELOAD_MANIFEST = Object.freeze([
@@ -20,13 +21,13 @@ export const PRELOAD_MANIFEST = Object.freeze([
     key: 'rivenbloom-npc-sprites',
     group: 'village portraits',
     kind: 'image',
-    url: '/assets/art/rivenbloom-npc-sprites.png',
+    url: '/assets/art/rivenbloom-npc-sprites-v2.png',
   },
   {
     key: 'rivenbloom-enemy-poses',
     group: 'enemy animation',
     kind: 'image',
-    url: '/assets/art/rivenbloom-enemy-poses.png',
+    url: '/assets/art/rivenbloom-enemy-poses-v2.png',
   },
   ...['distant-roots', 'hanging-vines', 'foreground-boughs'].map((key) => ({
     key,
@@ -34,12 +35,12 @@ export const PRELOAD_MANIFEST = Object.freeze([
     kind: 'image' as const,
     url: `/assets/art/${key}.svg`,
   })),
-  {
-    key: 'rivenbloom-area-backgrounds',
+  ...AREA_BACKGROUND_KEYS.map((key) => ({
+    key,
     group: 'area paintings',
-    kind: 'image',
-    url: '/assets/art/rivenbloom-area-backgrounds.png',
-  },
+    kind: 'image' as const,
+    url: `/assets/art/${key}.png`,
+  })),
   ...['bolt', 'sigil', 'slash', 'impact'].map((kind) => ({
     key: `effect-${kind}`,
     group: 'combat illustration',
@@ -63,6 +64,24 @@ export const PRELOAD_MANIFEST = Object.freeze([
     group: 'Mara animation',
     kind: 'image',
     url: '/assets/art/rivenbloom-mara-animation-sheet.png',
+  },
+  {
+    key: 'rivenbloom-mara-locomotion',
+    group: 'Mara animation',
+    kind: 'image',
+    url: '/assets/art/rivenbloom-mara-locomotion.png',
+  },
+  {
+    key: 'rivenbloom-terrain-strips',
+    group: 'world terrain',
+    kind: 'image',
+    url: '/assets/art/rivenbloom-terrain-strips.png',
+  },
+  {
+    key: 'rivenbloom-terrain-fill',
+    group: 'world terrain',
+    kind: 'image',
+    url: '/assets/art/rivenbloom-terrain-fill.png',
   },
   {
     key: 'rivenbloom-world-atlas',

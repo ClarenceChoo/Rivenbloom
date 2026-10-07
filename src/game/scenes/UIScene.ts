@@ -81,7 +81,7 @@ export class UIScene extends Phaser.Scene {
     if (!this.built) {
       const status = document.createElement('div');
       status.className = 'hud-vitals seed-panel';
-      status.append(meter('Health', 0, 1, 'health', 6), meter('Mana', 0, 1, 'mana', 7));
+      status.append(meter('Health', 0, 1, 'health'), meter('Mana', 0, 1, 'mana'));
       const details = document.createElement('div');
       details.className = 'hud-details';
       for (const key of ['art', 'resin', 'save']) {
@@ -93,16 +93,27 @@ export class UIScene extends Phaser.Scene {
       boss.className = 'hud-boss seed-panel';
       const bossCue = document.createElement('p');
       bossCue.className = 'hud-boss-cue';
-      boss.append(meter('The Pallid Cantor', 0, 420, 'boss', 4), bossCue);
+      boss.append(meter('The Pallid Cantor', 0, 420, 'boss'), bossCue);
       root.append(status, details);
-      for (const key of ['location', 'prompt', 'objective', 'caption', 'guidance']) {
+      const bottom = document.createElement('div');
+      bottom.className = 'hud-bottom';
+      for (const key of ['location', 'objective', 'caption', 'prompt', 'guidance']) {
         const text = document.createElement('p');
         text.className = `hud-${key}`;
         text.dataset.hud = key;
         if (key === 'caption') text.setAttribute('role', 'status');
-        root.append(text);
+        if (key === 'guidance') {
+          for (const variant of ['full', 'compact']) {
+            const copy = document.createElement('span');
+            copy.className = `hud-guidance-${variant}`;
+            copy.dataset.hud = `guidance-${variant}`;
+            text.append(copy);
+          }
+        }
+        (['caption', 'prompt', 'guidance'].includes(key) ? bottom : root).append(text);
       }
-      root.append(boss);
+      bottom.insertBefore(boss, bottom.querySelector('[data-hud="guidance"]'));
+      root.append(bottom);
       this.built = true;
     }
     const text = (key: string, copy: string) => {
@@ -137,7 +148,15 @@ export class UIScene extends Phaser.Scene {
         ? ''
         : `${inputLabel(input, projection.prompt === 'Climb' ? 'move-up' : 'interact')} · ${projection.prompt}`,
     );
-    text('guidance', projection.room.roomId === 'wren-rest-square' ? controlsHelp(input) : '');
+    text(
+      'guidance-full',
+      projection.puzzleHint ??
+        (projection.room.roomId === 'wren-rest-square' ? controlsHelp(input) : ''),
+    );
+    text('guidance-compact', projection.puzzleHintCompact ?? '');
+    const guidance = root.querySelector<HTMLElement>('[data-hud="guidance"]')!;
+    guidance.hidden = root.querySelector<HTMLElement>('[data-hud="guidance-full"]')!.hidden;
+    guidance.dataset.essential = String(projection.puzzleHint != null);
     text(
       'objective',
       (
@@ -160,13 +179,7 @@ export class UIScene extends Phaser.Scene {
   }
 }
 
-function meter(
-  label: string,
-  current: number,
-  maximum: number,
-  kind: string,
-  iconIndex: number,
-): HTMLElement {
+function meter(label: string, current: number, maximum: number, kind: string): HTMLElement {
   const row = document.createElement('div');
   row.className = `hud-meter hud-meter--${kind}`;
   const heading = document.createElement('span');
@@ -178,7 +191,7 @@ function meter(
   progress.max = maximum;
   progress.value = current;
   progress.setAttribute('aria-label', `${label}: ${current} of ${maximum}`);
-  row.append(icon(iconIndex), heading, value, progress);
+  row.append(icon(), heading, value, progress);
   return row;
 }
 
@@ -189,13 +202,9 @@ function readable(value: string): string {
     .join(' ');
 }
 
-function icon(index: number): HTMLElement {
+function icon(): HTMLElement {
   const item = document.createElement('span');
-  item.className = 'ui-atlas-icon';
+  item.className = 'hud-icon';
   item.setAttribute('aria-hidden', 'true');
-  const column = index % 6;
-  const row = Math.floor(index / 6);
-  item.style.setProperty('--atlas-x', `${column * 20}%`);
-  item.style.setProperty('--atlas-y', `${row * 50}%`);
   return item;
 }

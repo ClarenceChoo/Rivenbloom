@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { equipmentSlotId, itemId, questFlagId, questStageId } from '../../src/game/core/StableId';
-import { CONTENT_REGISTRY, WRENS_REST_AREA } from '../../src/game/data/areas';
+import { CONTENT_REGISTRY, SINGING_HOLLOWS_AREA, WRENS_REST_AREA } from '../../src/game/data/areas';
 import { createNewSave } from '../../src/game/saves/SaveSchema';
 import type { SaveV1 } from '../../src/game/saves/SaveSchema';
 import { projectWorldUi } from '../../src/game/world/WorldUiProjection';
@@ -29,6 +29,48 @@ function save(): SaveV1 {
 }
 
 describe('WorldUiProjection', () => {
+  it('explains the timed trial, shows live progress, and hides guidance after completion', () => {
+    const area = SINGING_HOLLOWS_AREA;
+    const room = area.rooms.find(({ roomId }) => roomId === 'dash-trial')!;
+    const project = (puzzles: Parameters<typeof projectWorldUi>[0]['objects']['puzzles']) =>
+      projectWorldUi({
+        revision: 1,
+        save: save(),
+        area,
+        room,
+        checkpoint: area.checkpoints[0]!,
+        prompt: null,
+        liveVitals: { currentHealth: 100, currentMana: 40 },
+        autosave: 'idle',
+        objects: {
+          roomId: room.roomId,
+          puzzles,
+          chests: [],
+          discoveries: [],
+          shortcuts: [],
+          breakables: [],
+        },
+      });
+    expect(project([]).puzzleHint).toBe(
+      'Wake all three dew plates before the root-song fades. 0/3 plates · 9 seconds.',
+    );
+    expect(project([]).puzzleHintCompact).toBe('Wake 0/3 plates · 9s.');
+    expect(
+      project([
+        {
+          puzzleId: 'hollows-dash-circuit',
+          state: 'advanced',
+          activatedMechanismIds: ['dash-circuit-dew-plate'],
+          remainingSeconds: 5,
+        },
+      ]).puzzleHint,
+    ).toBe('Wake all three dew plates before the root-song fades. 1/3 plates · 5 seconds.');
+    expect(project([{ puzzleId: 'hollows-dash-circuit', state: 'solved' }]).puzzleHint).toBeNull();
+    expect(
+      project([{ puzzleId: 'hollows-dash-circuit', state: 'solved' }]).puzzleHintCompact,
+    ).toBeNull();
+  });
+
   it('asks the player to recover the root-memory before directing them back to Piri', () => {
     const created = save();
     const seeking: SaveV1 = {

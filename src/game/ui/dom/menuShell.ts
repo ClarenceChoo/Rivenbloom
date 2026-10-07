@@ -163,6 +163,7 @@ export function createMenuShell(
     } else {
       return;
     }
+    target.focus();
     const settings = Object.freeze(next);
     currentState = Object.freeze({
       ...currentState,
@@ -179,10 +180,24 @@ export function createMenuShell(
     onIntent({ type: 'close-dialog' });
   };
 
+  const keyboardFocusListener = (event: KeyboardEvent) => {
+    if (event.key !== 'Tab' || event.altKey || event.ctrlKey || event.metaKey) return;
+    if (openDialog === null) {
+      const controls = [...root.querySelectorAll<HTMLElement>('[data-focus-id]')].filter(
+        (control) => !isUnavailable(control),
+      );
+      const edge = event.shiftKey ? controls[0] : controls.at(-1);
+      if (document.activeElement === edge) return;
+    }
+    event.preventDefault();
+    focus(event.shiftKey ? 'previous' : 'next');
+  };
+
   root.addEventListener('click', clickListener);
   root.addEventListener('focusin', focusListener);
   root.addEventListener('change', changeListener);
   root.addEventListener('cancel', cancelListener, true);
+  root.addEventListener('keydown', keyboardFocusListener);
 
   const render = (state: TitleState) => {
     if (destroyed) return;
@@ -336,6 +351,7 @@ export function createMenuShell(
     root.removeEventListener('focusin', focusListener);
     root.removeEventListener('change', changeListener);
     root.removeEventListener('cancel', cancelListener, true);
+    root.removeEventListener('keydown', keyboardFocusListener);
     if (openDialog?.open) openDialog.close();
     openDialog = null;
     for (const url of [...objectUrls]) revokeUrl(url);

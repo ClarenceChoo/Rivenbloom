@@ -1,0 +1,3602 @@
+{
+  "shot": {
+    "name": "reliquary",
+    "area": "rootglass-reliquary",
+    "checkpoint": "resonance-gallery-lantern",
+    "mode": "travel",
+    "seconds": 9
+  },
+  "errors": [],
+  "samples": [
+    {
+      "t": 0,
+      "player": {
+        "position": {
+          "x": 7296,
+          "y": 900
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 10,
+        "simulationTimeMs": 167,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "sleep",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.305,
+      "player": {
+        "position": {
+          "x": 7314,
+          "y": 900
+        },
+        "velocity": {
+          "x": 240,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 19,
+        "simulationTimeMs": 317,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "sleep",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.595,
+      "player": {
+        "position": {
+          "x": 7355.833333333336,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 28,
+        "simulationTimeMs": 467,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "sleep",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.882,
+      "player": {
+        "position": {
+          "x": 7397.8333333333385,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 37,
+        "simulationTimeMs": 617,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "sleep",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.186,
+      "player": {
+        "position": {
+          "x": 7439.833333333341,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 46,
+        "simulationTimeMs": 767,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "sleep",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.477,
+      "player": {
+        "position": {
+          "x": 7481.833333333344,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 55,
+        "simulationTimeMs": 917,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "sleep",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.769,
+      "player": {
+        "position": {
+          "x": 7523.833333333347,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 64,
+        "simulationTimeMs": 1067,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "sleep",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.109,
+      "player": {
+        "position": {
+          "x": 7575.166666666683,
+          "y": 865.9833333333332
+        },
+        "velocity": {
+          "x": 280,
+          "y": -147.66666666666669
+        },
+        "state": "jump",
+        "grounded": false,
+        "animationIntent": "jump"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 75,
+        "simulationTimeMs": 1250,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "sleep",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.403,
+      "player": {
+        "position": {
+          "x": 7612.500000000019,
+          "y": 865.2944444444444
+        },
+        "velocity": {
+          "x": 280,
+          "y": 105.66666666666667
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 83,
+        "simulationTimeMs": 1383,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "idle",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 1,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 1,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.665,
+      "player": {
+        "position": {
+          "x": 7673.16666666669,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 96,
+        "simulationTimeMs": 1600,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "chase",
+            "position": {
+              "x": 7793.000000000004,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 2,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 2,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.955,
+      "player": {
+        "position": {
+          "x": 7752.500000000028,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 113,
+        "simulationTimeMs": 1883,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "telegraph",
+            "position": {
+              "x": 7791.725000000004,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": "barkbound-shield-bash",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 3,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 3,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.225,
+      "player": {
+        "position": {
+          "x": 7769.833333333364,
+          "y": 899.2777777777778
+        },
+        "velocity": {
+          "x": -300,
+          "y": 36.66666666666667
+        },
+        "state": "hurt",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 125,
+        "simulationTimeMs": 2083,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "attack",
+            "position": {
+              "x": 7791.725000000004,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": "barkbound-shield-bash",
+            "attackPhase": "active",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 10,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 0,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 4,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 110,
+          "maxHealth": 120,
+          "currentPoise": 20,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 10,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 3.525,
+      "player": {
+        "position": {
+          "x": 7702.333333333364,
+          "y": 900
+        },
+        "velocity": {
+          "x": -30,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 143,
+        "simulationTimeMs": 2383,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "recover",
+            "position": {
+              "x": 7791.725000000004,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": "barkbound-shield-bash",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 11,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 0,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 5,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 110,
+          "maxHealth": 120,
+          "currentPoise": 20,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 10,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 3.818,
+      "player": {
+        "position": {
+          "x": 7828.533333333364,
+          "y": 868.4444444444443
+        },
+        "velocity": {
+          "x": 180,
+          "y": -179.33333333333334
+        },
+        "state": "jump",
+        "grounded": false,
+        "animationIntent": "jump"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 161,
+        "simulationTimeMs": 2683,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "telegraph",
+            "position": {
+              "x": 7791.725000000004,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": "barkbound-shield-bash",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 14,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 0,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 7,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 110,
+          "maxHealth": 120,
+          "currentPoise": 20,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 10,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.091,
+      "player": {
+        "position": {
+          "x": 7901.200000000034,
+          "y": 892.4
+        },
+        "velocity": {
+          "x": 280,
+          "y": 327.33333333333337
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 177,
+        "simulationTimeMs": 2950,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "telegraph",
+            "position": {
+              "x": 7791.725000000004,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": "barkbound-shield-bash",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 14,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 0,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 7,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 110,
+          "maxHealth": 120,
+          "currentPoise": 20,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 10,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.389,
+      "player": {
+        "position": {
+          "x": 7959.200000000036,
+          "y": 900
+        },
+        "velocity": {
+          "x": 300,
+          "y": 0
+        },
+        "state": "hurt",
+        "grounded": true,
+        "animationIntent": "land"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 189,
+        "simulationTimeMs": 3150,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "recover",
+            "position": {
+              "x": 7791.725000000004,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": "barkbound-shield-bash",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 22,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 0,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 9,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 100,
+          "maxHealth": 120,
+          "currentPoise": 0,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 10,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.663,
+      "player": {
+        "position": {
+          "x": 8045.533333333373,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 207,
+        "simulationTimeMs": 3450,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "recover",
+            "position": {
+              "x": 7791.725000000004,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": "barkbound-shield-bash",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 23,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 0,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 9,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 100,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 10,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.961,
+      "player": {
+        "position": {
+          "x": 8129.533333333378,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 225,
+        "simulationTimeMs": 3750,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7796.750000000003,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 24,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 0,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 10,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 100,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 10,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.212,
+      "player": {
+        "position": {
+          "x": 8194.144444444493,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [
+          {
+            "instanceId": 1,
+            "projectileId": "lumen-bolt-projectile",
+            "position": {
+              "x": 8227.346666666714,
+              "y": 900
+            }
+          }
+        ],
+        "projectileCount": 1,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 239,
+        "simulationTimeMs": 3983,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "sleep",
+            "position": {
+              "x": 8384,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 50,
+            "maxHealth": 50,
+            "poise": 26,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 26,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 0,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 10,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 100,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 10,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.538,
+      "player": {
+        "position": {
+          "x": 8254.811111111152,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 252,
+        "simulationTimeMs": 4200,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "hurt",
+            "position": {
+              "x": 8396.059999999998,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 32,
+        "counters": {
+          "contacts": 3,
+          "playerContacts": 1,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 3,
+          "feedback": 3,
+          "attackerCommands": 0,
+          "stateChanges": 12,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 100,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "gallery-guard-rootlurker",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 14,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.878,
+      "player": {
+        "position": {
+          "x": 8366.811111111138,
+          "y": 880.8888888888888
+        },
+        "velocity": {
+          "x": 280,
+          "y": 309.9166666666667
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 276,
+        "simulationTimeMs": 4600,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "telegraph",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": "rootlurker-bell-eruption",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 34,
+        "counters": {
+          "contacts": 3,
+          "playerContacts": 1,
+          "enemyContacts": 2,
+          "ordnanceContacts": 0,
+          "resolutions": 3,
+          "feedback": 3,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 100,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "gallery-guard-rootlurker",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 14,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.168,
+      "player": {
+        "position": {
+          "x": 8446.14444444446,
+          "y": 900
+        },
+        "velocity": {
+          "x": -240,
+          "y": -100
+        },
+        "state": "hurt",
+        "grounded": false,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 38
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 293,
+        "simulationTimeMs": 4883,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "attack",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": "rootlurker-bell-eruption",
+            "attackPhase": "active",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 41,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 15,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.469,
+      "player": {
+        "position": {
+          "x": 8387.64444444446,
+          "y": 900
+        },
+        "velocity": {
+          "x": -180,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 308,
+        "simulationTimeMs": 5133,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "recover",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": "rootlurker-bell-eruption",
+            "attackPhase": "recovery",
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 42,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 16,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.764,
+      "player": {
+        "position": {
+          "x": 8416.644444444459,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 326,
+        "simulationTimeMs": 5433,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "recover",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": "rootlurker-bell-eruption",
+            "attackPhase": "recovery",
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 42,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 16,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.062,
+      "player": {
+        "position": {
+          "x": 8495.977777777782,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 343,
+        "simulationTimeMs": 5717,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "chase",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "left",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 43,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 17,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.385,
+      "player": {
+        "position": {
+          "x": 8638.511111111115,
+          "y": 900
+        },
+        "velocity": {
+          "x": 240,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 363,
+        "simulationTimeMs": 6050,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "telegraph",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": "rootlurker-bell-eruption",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 45,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 18,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.644,
+      "player": {
+        "position": {
+          "x": 8708.34444444444,
+          "y": 853.4013888888888
+        },
+        "velocity": {
+          "x": 280,
+          "y": 24.916666666666664
+        },
+        "state": "fall",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 378,
+        "simulationTimeMs": 6300,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "attack",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": "rootlurker-bell-eruption",
+            "attackPhase": "active",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 46,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 19,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.93,
+      "player": {
+        "position": {
+          "x": 8787.677777777762,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 395,
+        "simulationTimeMs": 6583,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "recover",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": "rootlurker-bell-eruption",
+            "attackPhase": "recovery",
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 47,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 20,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.217,
+      "player": {
+        "position": {
+          "x": 8871.677777777752,
+          "y": 900
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 413,
+        "simulationTimeMs": 6883,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "recover",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": "rootlurker-bell-eruption",
+            "attackPhase": "recovery",
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 47,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 20,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.521,
+      "player": {
+        "position": {
+          "x": 8936,
+          "y": 900
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 431,
+        "simulationTimeMs": 7183,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "retreat",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 48,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 21,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.805,
+      "player": {
+        "position": {
+          "x": 8936,
+          "y": 900
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "dash",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 448,
+        "simulationTimeMs": 7467,
+        "enemies": [
+          {
+            "combatantId": "gallery-guard-barkbound",
+            "actorId": "barkbound",
+            "state": "retreat",
+            "position": {
+              "x": 7808,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 72,
+            "maxHealth": 72,
+            "poise": 38,
+            "maxPoise": 38,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "gallery-guard-rootlurker",
+            "actorId": "rootlurker",
+            "state": "retreat",
+            "position": {
+              "x": 8416.399999999994,
+              "y": 900
+            },
+            "facing": "right",
+            "health": 36,
+            "maxHealth": 50,
+            "poise": 18,
+            "maxPoise": 26,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "gallery-resonance-guard",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 48,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 1,
+          "enemyContacts": 3,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 21,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 89,
+          "maxHealth": 120,
+          "currentPoise": 24,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    }
+  ]
+}

@@ -89,11 +89,25 @@ npm run typecheck
 npm run test
 npm run test:saves:browser
 npm run test:e2e
+npm run test:browsers:smoke
 npm run build
 npm run test:pwa:production
+npm run test:soak:production
 ```
 
 The production PWA test requires a fresh build and tests the built artifact on localhost. It is separate from development integration tests. Some route/boss tests use explicit fixtures or semantic enemy resolution; they do not establish normal combat balance.
 
+Development acceptance runs use a separate server on port 4176 with hot reload disabled, leaving the interactive development server on 4173 available. Chromium uses the full browser's hardware renderer when available. Install the pinned browser runtimes with `npx playwright install chromium firefox webkit` before the three-engine smoke suite. The opt-in production soak runs 60 menu/title/save cycles over 30 minutes and measures collected heap and DOM resources in Chromium; it does not certify target-hardware frame rate.
+
+The required Surveyor Edge reforge consumes the earned briar core and costs no Resin, so spending on optional supplies cannot block the main quest.
+
 Asset authorship, generation summaries, derivations, and runtime use are recorded in
 `docs/asset-provenance.md`.
+
+## Illustrated wiki
+
+The Wayfinder’s Companion is a separate storybook wiki with walkthroughs, a world
+atlas, dungeon and boss guides, search, and a discovery checklist. Start it with
+`npm --prefix wiki run dev`, or build its static site with
+`npm --prefix wiki run build`. See [wiki setup and GitHub Pages publishing](wiki/README.md).
+Its Pages workflow publishes only the wiki, not the game.

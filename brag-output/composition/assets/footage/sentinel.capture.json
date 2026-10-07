@@ -1,0 +1,5909 @@
+{
+  "recordedAt": "2026-10-07T07:49:34.365Z",
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+  "captureFps": 30,
+  "shot": {
+    "name": "sentinel",
+    "area": "brackenreach",
+    "checkpoint": "reliquary-verge-lantern",
+    "mode": "fight",
+    "seconds": 16
+  },
+  "errors": [],
+  "samples": [
+    {
+      "t": 0,
+      "player": {
+        "position": {
+          "x": 6656,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 6400,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 25,
+        "simulationTimeMs": 417,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.277,
+      "player": {
+        "position": {
+          "x": 6715.833333333336,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6400,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 42,
+        "simulationTimeMs": 700,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.553,
+      "player": {
+        "position": {
+          "x": 6790.500000000007,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6400,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 58,
+        "simulationTimeMs": 967,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.833,
+      "player": {
+        "position": {
+          "x": 6869.833333333346,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6400,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 75,
+        "simulationTimeMs": 1250,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.128,
+      "player": {
+        "position": {
+          "x": 6953.833333333351,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6400,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 93,
+        "simulationTimeMs": 1550,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.402,
+      "player": {
+        "position": {
+          "x": 7028.500000000023,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6400,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 109,
+        "simulationTimeMs": 1817,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.694,
+      "player": {
+        "position": {
+          "x": 7112.500000000028,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6432.500000000028,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 127,
+        "simulationTimeMs": 2117,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.977,
+      "player": {
+        "position": {
+          "x": 7191.833333333367,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6511.833333333367,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 144,
+        "simulationTimeMs": 2400,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.258,
+      "player": {
+        "position": {
+          "x": 7271.166666666705,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6591.166666666705,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 161,
+        "simulationTimeMs": 2683,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.533,
+      "player": {
+        "position": {
+          "x": 7345.833333333377,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6665.833333333377,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 177,
+        "simulationTimeMs": 2950,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "sleep",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.805,
+      "player": {
+        "position": {
+          "x": 7420.500000000048,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6740.500000000048,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 193,
+        "simulationTimeMs": 3217,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "idle",
+            "position": {
+              "x": 7680,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 1,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 1,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.081,
+      "player": {
+        "position": {
+          "x": 7499.833333333387,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6819.833333333387,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 210,
+        "simulationTimeMs": 3500,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "chase",
+            "position": {
+              "x": 7653.3,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 2,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 2,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.373,
+      "player": {
+        "position": {
+          "x": 7581.33333333339,
+          "y": 608
+        },
+        "velocity": {
+          "x": 176.66666666666666,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6901.33333333339,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 4,
+        "attackPhase": "anticipation",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 228,
+        "simulationTimeMs": 3800,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 7645,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 180,
+            "maxHealth": 180,
+            "poise": 70,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-press",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 4,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 3,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.654,
+      "player": {
+        "position": {
+          "x": 7587.000000000057,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 6907.000000000057,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 16,
+        "attackPhase": "recovery",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 240,
+        "simulationTimeMs": 4000,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 7677.400000000003,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 174,
+            "maxHealth": 180,
+            "poise": 62,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-press",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 11,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 1,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 6,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 3.929,
+      "player": {
+        "position": {
+          "x": 7595.22222222228,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 6915.22222222228,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 8,
+        "attackPhase": "active",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 253,
+        "simulationTimeMs": 4217,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 7689.460000000005,
+              "y": 606.90455
+            },
+            "facing": "left",
+            "health": 168,
+            "maxHealth": 180,
+            "poise": 54,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 17,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 2,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 7,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.202,
+      "player": {
+        "position": {
+          "x": 7609.22222222228,
+          "y": 608
+        },
+        "velocity": {
+          "x": 210,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6929.22222222228,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 269,
+        "simulationTimeMs": 4483,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 7709.800000000007,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 168,
+            "maxHealth": 180,
+            "poise": 54,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-press",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 19,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 2,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 9,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.488,
+      "player": {
+        "position": {
+          "x": 7639.555555555615,
+          "y": 607.1666666666666
+        },
+        "velocity": {
+          "x": -260,
+          "y": 15.000000000000007
+        },
+        "state": "hurt",
+        "grounded": false,
+        "animationIntent": "fall"
+      },
+      "camera": {
+        "scrollX": 6815.214159791998,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 282,
+        "simulationTimeMs": 4700,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "attack",
+            "position": {
+              "x": 7709.800000000007,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 168,
+            "maxHealth": 180,
+            "poise": 54,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-press",
+            "attackPhase": "active",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 27,
+        "counters": {
+          "contacts": 3,
+          "playerContacts": 2,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 3,
+          "feedback": 3,
+          "attackerCommands": 0,
+          "stateChanges": 10,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.77,
+      "player": {
+        "position": {
+          "x": 7579.888888888953,
+          "y": 608
+        },
+        "velocity": {
+          "x": -50,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6741.117770598246,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 299,
+        "simulationTimeMs": 4983,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "recover",
+            "position": {
+              "x": 7709.800000000007,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 168,
+            "maxHealth": 180,
+            "poise": 54,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-press",
+            "attackPhase": "recovery",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 28,
+        "counters": {
+          "contacts": 3,
+          "playerContacts": 2,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 3,
+          "feedback": 3,
+          "attackerCommands": 0,
+          "stateChanges": 11,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.051,
+      "player": {
+        "position": {
+          "x": 7631.722222222292,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6944.991312926471,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 316,
+        "simulationTimeMs": 5267,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 7709.800000000007,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 168,
+            "maxHealth": 180,
+            "poise": 54,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-sweep-one",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 30,
+        "counters": {
+          "contacts": 3,
+          "playerContacts": 2,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 3,
+          "feedback": 3,
+          "attackerCommands": 0,
+          "stateChanges": 13,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "enemy",
+          "targetId": "mara",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 11,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.324,
+      "player": {
+        "position": {
+          "x": 7658.222222222292,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 6975.3667438762495,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 4,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 12,
+        "attackPhase": "recovery",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 3,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 329,
+        "simulationTimeMs": 5483,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 7733.740000000009,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 162,
+            "maxHealth": 180,
+            "poise": 46,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 3,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.6,
+      "player": {
+        "position": {
+          "x": 7666.444444444514,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 6986.106434723715,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 5,
+        "attackPhase": "active",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 23
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 343,
+        "simulationTimeMs": 5717,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 7745.26000000001,
+              "y": 606.91455
+            },
+            "facing": "left",
+            "health": 156,
+            "maxHealth": 180,
+            "poise": 38,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 44,
+        "counters": {
+          "contacts": 5,
+          "playerContacts": 4,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 5,
+          "feedback": 5,
+          "attackerCommands": 0,
+          "stateChanges": 17,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.873,
+      "player": {
+        "position": {
+          "x": 7669.444444444514,
+          "y": 608
+        },
+        "velocity": {
+          "x": 90,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 6989.409369934549,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 358,
+        "simulationTimeMs": 5967,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 7774.600000000013,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 156,
+            "maxHealth": 180,
+            "poise": 38,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-sweep-one",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 46,
+        "counters": {
+          "contacts": 5,
+          "playerContacts": 4,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 5,
+          "feedback": 5,
+          "attackerCommands": 0,
+          "stateChanges": 19,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.15,
+      "player": {
+        "position": {
+          "x": 7721.444444444514,
+          "y": 608
+        },
+        "velocity": {
+          "x": 140,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7041.440291927521,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 6,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 5,
+        "attackPhase": "active",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 5,
+        "hitStopRemainingMs": 21
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 372,
+        "simulationTimeMs": 6200,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 7777.6600000000135,
+              "y": 606.91455
+            },
+            "facing": "left",
+            "health": 150,
+            "maxHealth": 180,
+            "poise": 30,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 52,
+        "counters": {
+          "contacts": 6,
+          "playerContacts": 5,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 6,
+          "feedback": 6,
+          "attackerCommands": 0,
+          "stateChanges": 20,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.437,
+      "player": {
+        "position": {
+          "x": 7727.777777777848,
+          "y": 608
+        },
+        "velocity": {
+          "x": 90,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7047.77734770701,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 6,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 5,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 387,
+        "simulationTimeMs": 6450,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 7807.000000000016,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 150,
+            "maxHealth": 180,
+            "poise": 30,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-sweep-one",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 54,
+        "counters": {
+          "contacts": 6,
+          "playerContacts": 5,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 6,
+          "feedback": 6,
+          "attackerCommands": 0,
+          "stateChanges": 22,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.718,
+      "player": {
+        "position": {
+          "x": 7733.000000000071,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7052.999955415407,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 7,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 12,
+        "attackPhase": "recovery",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 6,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 400,
+        "simulationTimeMs": 6667,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 7831.120000000019,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 144,
+            "maxHealth": 180,
+            "poise": 22,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 60,
+        "counters": {
+          "contacts": 7,
+          "playerContacts": 6,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 7,
+          "feedback": 7,
+          "attackerCommands": 0,
+          "stateChanges": 23,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.993,
+      "player": {
+        "position": {
+          "x": 7769.500000000072,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7089.499995370289,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 7,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 6,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 417,
+        "simulationTimeMs": 6950,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 7839.40000000002,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 144,
+            "maxHealth": 180,
+            "poise": 22,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-sweep-one",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 62,
+        "counters": {
+          "contacts": 7,
+          "playerContacts": 6,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 7,
+          "feedback": 7,
+          "attackerCommands": 0,
+          "stateChanges": 25,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.275,
+      "player": {
+        "position": {
+          "x": 7796.000000000072,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7115.99999952061,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 8,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 12,
+        "attackPhase": "recovery",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 7,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 430,
+        "simulationTimeMs": 7167,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 7863.520000000022,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 138,
+            "maxHealth": 180,
+            "poise": 14,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 68,
+        "counters": {
+          "contacts": 8,
+          "playerContacts": 7,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 8,
+          "feedback": 8,
+          "attackerCommands": 0,
+          "stateChanges": 26,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.564,
+      "player": {
+        "position": {
+          "x": 7808.500000000072,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7128.499999950379,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 9,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 5,
+        "attackPhase": "active",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 8,
+        "hitStopRemainingMs": 23
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 445,
+        "simulationTimeMs": 7417,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 7874.860000000023,
+              "y": 606.91455
+            },
+            "facing": "left",
+            "health": 132,
+            "maxHealth": 180,
+            "poise": 6,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 76,
+        "counters": {
+          "contacts": 9,
+          "playerContacts": 8,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 9,
+          "feedback": 9,
+          "attackerCommands": 0,
+          "stateChanges": 29,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.845,
+      "player": {
+        "position": {
+          "x": 7811.500000000072,
+          "y": 608
+        },
+        "velocity": {
+          "x": 90,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7131.49999999492,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 9,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 8,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 460,
+        "simulationTimeMs": 7667,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 7904.200000000026,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 132,
+            "maxHealth": 180,
+            "poise": 6,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-sweep-one",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 78,
+        "counters": {
+          "contacts": 9,
+          "playerContacts": 8,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 9,
+          "feedback": 9,
+          "attackerCommands": 0,
+          "stateChanges": 31,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.123,
+      "player": {
+        "position": {
+          "x": 7839.2222222222945,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7159.222222221761,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 10,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 8,
+        "attackPhase": "active",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 9,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 473,
+        "simulationTimeMs": 7883,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "stagger",
+            "position": {
+              "x": 7916.080000000027,
+              "y": 606.8582
+            },
+            "facing": "left",
+            "health": 126,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 84,
+        "counters": {
+          "contacts": 10,
+          "playerContacts": 9,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 10,
+          "feedback": 10,
+          "attackerCommands": 0,
+          "stateChanges": 32,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.396,
+      "player": {
+        "position": {
+          "x": 7853.2222222222945,
+          "y": 608
+        },
+        "velocity": {
+          "x": 210,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7173.222222222232,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 10,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 9,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 489,
+        "simulationTimeMs": 8150,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "stagger",
+            "position": {
+              "x": 7936.6000000000295,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 126,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 84,
+        "counters": {
+          "contacts": 10,
+          "playerContacts": 9,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 10,
+          "feedback": 10,
+          "attackerCommands": 0,
+          "stateChanges": 32,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.685,
+      "player": {
+        "position": {
+          "x": 7869.944444444517,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7189.944444444511,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 11,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 12,
+        "attackPhase": "recovery",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 10,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 502,
+        "simulationTimeMs": 8367,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 7960.720000000032,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 120,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 90,
+        "counters": {
+          "contacts": 11,
+          "playerContacts": 10,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 11,
+          "feedback": 11,
+          "attackerCommands": 0,
+          "stateChanges": 33,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.969,
+      "player": {
+        "position": {
+          "x": 7903.16666666674,
+          "y": 608
+        },
+        "velocity": {
+          "x": 173.33333333333334,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7223.166666666739,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 12,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 3,
+        "attackPhase": "anticipation",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 10,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 519,
+        "simulationTimeMs": 8650,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 7969.000000000033,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 120,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-sweep-one",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 93,
+        "counters": {
+          "contacts": 11,
+          "playerContacts": 10,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 11,
+          "feedback": 11,
+          "attackerCommands": 0,
+          "stateChanges": 35,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 9.273,
+      "player": {
+        "position": {
+          "x": 7909.111111111184,
+          "y": 608
+        },
+        "velocity": {
+          "x": 30,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7229.111111111184,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 12,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 11,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 534,
+        "simulationTimeMs": 8900,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 8001.400000000036,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 114,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-sweep-one",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 100,
+        "counters": {
+          "contacts": 12,
+          "playerContacts": 11,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 12,
+          "feedback": 12,
+          "attackerCommands": 0,
+          "stateChanges": 38,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 9.561,
+      "player": {
+        "position": {
+          "x": 7926.277777777851,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7246.277777777851,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 13,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 8,
+        "attackPhase": "active",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 12,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 547,
+        "simulationTimeMs": 9117,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8013.460000000037,
+              "y": 606.90455
+            },
+            "facing": "left",
+            "health": 108,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 106,
+        "counters": {
+          "contacts": 13,
+          "playerContacts": 12,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 13,
+          "feedback": 13,
+          "attackerCommands": 0,
+          "stateChanges": 39,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 9.835,
+      "player": {
+        "position": {
+          "x": 7940.277777777851,
+          "y": 608
+        },
+        "velocity": {
+          "x": 210,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7260.277777777851,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 13,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 12,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 563,
+        "simulationTimeMs": 9383,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "telegraph",
+            "position": {
+              "x": 8033.800000000039,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 108,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": "thorn-sentinel-sweep-one",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 2,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 108,
+        "counters": {
+          "contacts": 13,
+          "playerContacts": 12,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 13,
+          "feedback": 13,
+          "attackerCommands": 0,
+          "stateChanges": 41,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 10.115,
+      "player": {
+        "position": {
+          "x": 7988.777777777852,
+          "y": 608
+        },
+        "velocity": {
+          "x": 66.66666666666669,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7308.777777777852,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 14,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 7,
+        "attackPhase": "active",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 13,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 576,
+        "simulationTimeMs": 9600,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8042.80000000004,
+              "y": 606.375
+            },
+            "facing": "left",
+            "health": 102,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 114,
+        "counters": {
+          "contacts": 14,
+          "playerContacts": 13,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 14,
+          "feedback": 14,
+          "attackerCommands": 0,
+          "stateChanges": 42,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 10.387,
+      "player": {
+        "position": {
+          "x": 7994.111111111186,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7314.111111111186,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 15,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 3,
+        "attackPhase": "anticipation",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 13,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 592,
+        "simulationTimeMs": 9867,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "retreat",
+            "position": {
+              "x": 8052.800000000043,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 102,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 116,
+        "counters": {
+          "contacts": 14,
+          "playerContacts": 13,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 14,
+          "feedback": 14,
+          "attackerCommands": 0,
+          "stateChanges": 43,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 10.673,
+      "player": {
+        "position": {
+          "x": 7994.111111111186,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7314.111111111186,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 15,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 16,
+        "attackPhase": "recovery",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 14,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 605,
+        "simulationTimeMs": 10083,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "retreat",
+            "position": {
+              "x": 8082.0000000000455,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 96,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 122,
+        "counters": {
+          "contacts": 15,
+          "playerContacts": 14,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 15,
+          "feedback": 15,
+          "attackerCommands": 0,
+          "stateChanges": 45,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 10.951,
+      "player": {
+        "position": {
+          "x": 7995.44444444452,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7315.44444444452,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 17,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 5,
+        "attackPhase": "active",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 16,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 614,
+        "simulationTimeMs": 10233,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8099.480000000048,
+              "y": 606.9632
+            },
+            "facing": "left",
+            "health": 87,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 134,
+        "counters": {
+          "contacts": 17,
+          "playerContacts": 16,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 17,
+          "feedback": 17,
+          "attackerCommands": 0,
+          "stateChanges": 46,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 11.227,
+      "player": {
+        "position": {
+          "x": 8002.94444444452,
+          "y": 608
+        },
+        "velocity": {
+          "x": 150,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7322.94444444452,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 17,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 16,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 631,
+        "simulationTimeMs": 10517,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "retreat",
+            "position": {
+              "x": 8117.300000000051,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 87,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 135,
+        "counters": {
+          "contacts": 17,
+          "playerContacts": 16,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 17,
+          "feedback": 17,
+          "attackerCommands": 0,
+          "stateChanges": 47,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 11.511,
+      "player": {
+        "position": {
+          "x": 8064.444444444521,
+          "y": 608
+        },
+        "velocity": {
+          "x": 140,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7384.444444444521,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 18,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 5,
+        "attackPhase": "active",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 17,
+        "hitStopRemainingMs": 23
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 646,
+        "simulationTimeMs": 10767,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8097.060000000051,
+              "y": 606.91455
+            },
+            "facing": "left",
+            "health": 81,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 141,
+        "counters": {
+          "contacts": 18,
+          "playerContacts": 17,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 18,
+          "feedback": 18,
+          "attackerCommands": 0,
+          "stateChanges": 48,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 11.786,
+      "player": {
+        "position": {
+          "x": 8067.777777777855,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7387.777777777855,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 18,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 17,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 660,
+        "simulationTimeMs": 11000,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "retreat",
+            "position": {
+              "x": 8119.700000000054,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 81,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 142,
+        "counters": {
+          "contacts": 18,
+          "playerContacts": 17,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 18,
+          "feedback": 18,
+          "attackerCommands": 0,
+          "stateChanges": 49,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 12.068,
+      "player": {
+        "position": {
+          "x": 8068.611111111189,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7388.611111111189,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 19,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 12,
+        "attackPhase": "recovery",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 18,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 673,
+        "simulationTimeMs": 11217,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8135.520000000057,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 75,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 148,
+        "counters": {
+          "contacts": 19,
+          "playerContacts": 18,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 19,
+          "feedback": 19,
+          "attackerCommands": 0,
+          "stateChanges": 50,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 12.351,
+      "player": {
+        "position": {
+          "x": 8081.111111111189,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7401.111111111189,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 20,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 5,
+        "attackPhase": "active",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 19,
+        "hitStopRemainingMs": 23
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 688,
+        "simulationTimeMs": 11467,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8128.560000000058,
+              "y": 606.91455
+            },
+            "facing": "left",
+            "health": 69,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 155,
+        "counters": {
+          "contacts": 20,
+          "playerContacts": 19,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 20,
+          "feedback": 20,
+          "attackerCommands": 0,
+          "stateChanges": 52,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 12.627,
+      "player": {
+        "position": {
+          "x": 8084.111111111189,
+          "y": 608
+        },
+        "velocity": {
+          "x": 90,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7404.111111111189,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 20,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 19,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 703,
+        "simulationTimeMs": 11717,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "retreat",
+            "position": {
+              "x": 8149.500000000061,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 69,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 156,
+        "counters": {
+          "contacts": 20,
+          "playerContacts": 19,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 20,
+          "feedback": 20,
+          "attackerCommands": 0,
+          "stateChanges": 53,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 12.936,
+      "player": {
+        "position": {
+          "x": 8089.333333333411,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7409.333333333411,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 21,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 14,
+        "attackPhase": "recovery",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 20,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 718,
+        "simulationTimeMs": 11967,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8171.260000000064,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 63,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 162,
+        "counters": {
+          "contacts": 21,
+          "playerContacts": 20,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 21,
+          "feedback": 21,
+          "attackerCommands": 0,
+          "stateChanges": 54,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 13.202,
+      "player": {
+        "position": {
+          "x": 8097.555555555634,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7417.555555555634,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 22,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 5,
+        "attackPhase": "active",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 21,
+        "hitStopRemainingMs": 7
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 730,
+        "simulationTimeMs": 12167,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8159.960000000065,
+              "y": 606.91455
+            },
+            "facing": "left",
+            "health": 57,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 169,
+        "counters": {
+          "contacts": 22,
+          "playerContacts": 21,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 22,
+          "feedback": 22,
+          "attackerCommands": 0,
+          "stateChanges": 56,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 13.499,
+      "player": {
+        "position": {
+          "x": 8105.055555555634,
+          "y": 608
+        },
+        "velocity": {
+          "x": 150,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7425.055555555634,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 22,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 21,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 747,
+        "simulationTimeMs": 12450,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "retreat",
+            "position": {
+              "x": 8177.600000000068,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 57,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 170,
+        "counters": {
+          "contacts": 22,
+          "playerContacts": 21,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 22,
+          "feedback": 22,
+          "attackerCommands": 0,
+          "stateChanges": 57,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 13.82,
+      "player": {
+        "position": {
+          "x": 8115.222222222301,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7435.222222222301,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 23,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 14,
+        "attackPhase": "recovery",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 22,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 762,
+        "simulationTimeMs": 12700,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8199.360000000068,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 51,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 176,
+        "counters": {
+          "contacts": 23,
+          "playerContacts": 22,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 23,
+          "feedback": 23,
+          "attackerCommands": 0,
+          "stateChanges": 58,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 14.073,
+      "player": {
+        "position": {
+          "x": 8127.722222222301,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7447.722222222301,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 24,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 5,
+        "attackPhase": "active",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 23,
+        "hitStopRemainingMs": 23
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 775,
+        "simulationTimeMs": 12917,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8186.4600000000655,
+              "y": 606.91455
+            },
+            "facing": "left",
+            "health": 45,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 183,
+        "counters": {
+          "contacts": 24,
+          "playerContacts": 23,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 24,
+          "feedback": 24,
+          "attackerCommands": 0,
+          "stateChanges": 60,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 14.349,
+      "player": {
+        "position": {
+          "x": 8130.722222222301,
+          "y": 608
+        },
+        "velocity": {
+          "x": 90,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7450.722222222301,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 24,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 23,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 790,
+        "simulationTimeMs": 13167,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "retreat",
+            "position": {
+              "x": 8207.400000000058,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 45,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 184,
+        "counters": {
+          "contacts": 24,
+          "playerContacts": 23,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 24,
+          "feedback": 24,
+          "attackerCommands": 0,
+          "stateChanges": 61,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 14.626,
+      "player": {
+        "position": {
+          "x": 8135.9444444445235,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7455.9444444445235,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 25,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 12,
+        "attackPhase": "recovery",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 24,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 803,
+        "simulationTimeMs": 13383,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8223.04000000005,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 39,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 190,
+        "counters": {
+          "contacts": 25,
+          "playerContacts": 24,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 25,
+          "feedback": 25,
+          "attackerCommands": 0,
+          "stateChanges": 62,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 14.899,
+      "player": {
+        "position": {
+          "x": 8144.166666666746,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7464.166666666746,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 26,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 5,
+        "attackPhase": "active",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 25,
+        "hitStopRemainingMs": 23
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 817,
+        "simulationTimeMs": 13617,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8217.860000000042,
+              "y": 606.91455
+            },
+            "facing": "left",
+            "health": 33,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 197,
+        "counters": {
+          "contacts": 26,
+          "playerContacts": 25,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 26,
+          "feedback": 26,
+          "attackerCommands": 0,
+          "stateChanges": 64,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 15.175,
+      "player": {
+        "position": {
+          "x": 8147.166666666746,
+          "y": 608
+        },
+        "velocity": {
+          "x": 90,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7467.166666666746,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 26,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 25,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 832,
+        "simulationTimeMs": 13867,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "retreat",
+            "position": {
+              "x": 8238.800000000034,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 33,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 198,
+        "counters": {
+          "contacts": 26,
+          "playerContacts": 25,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 26,
+          "feedback": 26,
+          "attackerCommands": 0,
+          "stateChanges": 65,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 15.451,
+      "player": {
+        "position": {
+          "x": 8152.388888888969,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 7472.388888888969,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 27,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 11,
+        "attackPhase": "recovery",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 26,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 844,
+        "simulationTimeMs": 14067,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "hurt",
+            "position": {
+              "x": 8251.560000000027,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 204,
+        "counters": {
+          "contacts": 27,
+          "playerContacts": 26,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 27,
+          "feedback": 27,
+          "attackerCommands": 0,
+          "stateChanges": 66,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 15.734,
+      "player": {
+        "position": {
+          "x": 8175.388888888969,
+          "y": 608
+        },
+        "velocity": {
+          "x": 76.66666666666671,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 7495.388888888969,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 28,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 4,
+        "attackPhase": "anticipation",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 26,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 861,
+        "simulationTimeMs": 14350,
+        "enemies": [
+          {
+            "combatantId": "verge-thorn-sentinel",
+            "actorId": "thorn-sentinel",
+            "state": "retreat",
+            "position": {
+              "x": 8241.200000000017,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 27,
+            "maxHealth": 180,
+            "poise": 0,
+            "maxPoise": 70,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "verge-sentinel-gate",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 206,
+        "counters": {
+          "contacts": 27,
+          "playerContacts": 26,
+          "enemyContacts": 1,
+          "ordnanceContacts": 0,
+          "resolutions": 27,
+          "feedback": 27,
+          "attackerCommands": 0,
+          "stateChanges": 67,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 109,
+          "maxHealth": 120,
+          "currentPoise": 26,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "verge-thorn-sentinel",
+          "kind": "resolved",
+          "guard": "block",
+          "healthDamage": 6,
+          "defeated": false
+        },
+        "boss": null
+      }
+    }
+  ]
+}

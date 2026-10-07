@@ -1,0 +1,6115 @@
+{
+  "recordedAt": "2026-10-07T07:49:15.963Z",
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+  "captureFps": 30,
+  "shot": {
+    "name": "forest",
+    "area": "brackenreach",
+    "checkpoint": "brackenreach-trailhead",
+    "mode": "fight",
+    "seconds": 14
+  },
+  "errors": [],
+  "samples": [
+    {
+      "t": 0,
+      "player": {
+        "position": {
+          "x": 256,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "idle",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 26,
+        "simulationTimeMs": 433,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.286,
+      "player": {
+        "position": {
+          "x": 315.8333333333335,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 43,
+        "simulationTimeMs": 717,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.571,
+      "player": {
+        "position": {
+          "x": 395.16666666666714,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 60,
+        "simulationTimeMs": 1000,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 0.858,
+      "player": {
+        "position": {
+          "x": 479.1666666666675,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 78,
+        "simulationTimeMs": 1300,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.154,
+      "player": {
+        "position": {
+          "x": 558.5000000000006,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 95,
+        "simulationTimeMs": 1583,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.435,
+      "player": {
+        "position": {
+          "x": 637.8333333333333,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 0,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 112,
+        "simulationTimeMs": 1867,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 1.725,
+      "player": {
+        "position": {
+          "x": 721.8333333333326,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 41.833333333332575,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 130,
+        "simulationTimeMs": 2167,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.012,
+      "player": {
+        "position": {
+          "x": 801.1666666666653,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 121.16666666666526,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 147,
+        "simulationTimeMs": 2450,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.3,
+      "player": {
+        "position": {
+          "x": 880.499999999998,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 200.49999999999795,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 164,
+        "simulationTimeMs": 2733,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.58,
+      "player": {
+        "position": {
+          "x": 959.8333333333306,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 279.83333333333064,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 181,
+        "simulationTimeMs": 3017,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1184,
+              "y": 608
+            },
+            "facing": "right",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 0,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 0,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 2.857,
+      "player": {
+        "position": {
+          "x": 1039.1666666666638,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 359.1666666666638,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 0,
+        "lastAcceptedAction": null,
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 0,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 198,
+        "simulationTimeMs": 3300,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "chase",
+            "position": {
+              "x": 1147.7500000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 2,
+        "counters": {
+          "contacts": 0,
+          "playerContacts": 0,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 0,
+          "feedback": 0,
+          "attackerCommands": 0,
+          "stateChanges": 2,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": null,
+        "boss": null
+      }
+    },
+    {
+      "t": 3.132,
+      "player": {
+        "position": {
+          "x": 1083.8333333333308,
+          "y": 608
+        },
+        "velocity": {
+          "x": 66.66666666666669,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 403.83333333333076,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 1,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 7,
+        "attackPhase": "active",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 210,
+        "simulationTimeMs": 3500,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "hurt",
+            "position": {
+              "x": 1151.9650000000013,
+              "y": 606.375
+            },
+            "facing": "left",
+            "health": 3,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 9,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 1,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 4,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-west",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 3.421,
+      "player": {
+        "position": {
+          "x": 1092.555555555553,
+          "y": 608
+        },
+        "velocity": {
+          "x": 23.333333333333357,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 412.5555555555529,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 3,
+        "attackPhase": "anticipation",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 1,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 227,
+        "simulationTimeMs": 3783,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "telegraph",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 3,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 12,
+        "counters": {
+          "contacts": 1,
+          "playerContacts": 1,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 1,
+          "feedback": 1,
+          "attackerCommands": 0,
+          "stateChanges": 6,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 0
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-west",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 3.705,
+      "player": {
+        "position": {
+          "x": 1092.555555555553,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 412.5555555555529,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 16,
+        "attackPhase": "recovery",
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 240,
+        "simulationTimeMs": 4000,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 17,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 2,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 7,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 1
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-west",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 3.983,
+      "player": {
+        "position": {
+          "x": 1147.7222222222201,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 467.7222222222201,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 257,
+        "simulationTimeMs": 4283,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 17,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 2,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 7,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 1
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-west",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.256,
+      "player": {
+        "position": {
+          "x": 1222.388888888888,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 542.388888888888,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 2,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 48,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 273,
+        "simulationTimeMs": 4550,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 17,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 2,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 7,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 1
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-west",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.531,
+      "player": {
+        "position": {
+          "x": 1301.0000000000005,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 621.0000000000005,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [
+          {
+            "instanceId": 1,
+            "projectileId": "lumen-bolt-projectile",
+            "position": {
+              "x": 1378.2022222222217,
+              "y": 608
+            }
+          }
+        ],
+        "projectileCount": 1,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 290,
+        "simulationTimeMs": 4833,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "sleep",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": true,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 19,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 2,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 7,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 1
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-west",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 4.816,
+      "player": {
+        "position": {
+          "x": 1380.333333333335,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 700.3333333333351,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [
+          {
+            "instanceId": 1,
+            "projectileId": "lumen-bolt-projectile",
+            "position": {
+              "x": 1581.9622222222217,
+              "y": 608
+            }
+          }
+        ],
+        "projectileCount": 1,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 307,
+        "simulationTimeMs": 5117,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "idle",
+            "position": {
+              "x": 1600,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 20,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 2,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 8,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 1
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-west",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.087,
+      "player": {
+        "position": {
+          "x": 1455.000000000003,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 775.000000000003,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 3,
+        "lastAcceptedAction": "cast",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [
+          {
+            "instanceId": 1,
+            "projectileId": "lumen-bolt-projectile",
+            "position": {
+              "x": 1774.2022222222217,
+              "y": 608
+            }
+          }
+        ],
+        "projectileCount": 1,
+        "confirmedHitCount": 2,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 323,
+        "simulationTimeMs": 5383,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "chase",
+            "position": {
+              "x": 1563.7500000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 42,
+            "maxHealth": 42,
+            "poise": 20,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 21,
+        "counters": {
+          "contacts": 2,
+          "playerContacts": 2,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 2,
+          "feedback": 2,
+          "attackerCommands": 0,
+          "stateChanges": 9,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 1
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-west",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.369,
+      "player": {
+        "position": {
+          "x": 1500.16666666667,
+          "y": 608
+        },
+        "velocity": {
+          "x": 30.00000000000002,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 820.1666666666699,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 4,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 8,
+        "attackPhase": "active",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 3,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 336,
+        "simulationTimeMs": 5600,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "hurt",
+            "position": {
+              "x": 1570.8800000000012,
+              "y": 606.90455
+            },
+            "facing": "left",
+            "health": 3,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 28,
+        "counters": {
+          "contacts": 3,
+          "playerContacts": 3,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 3,
+          "feedback": 3,
+          "attackerCommands": 0,
+          "stateChanges": 11,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 1
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.662,
+      "player": {
+        "position": {
+          "x": 1512.66666666667,
+          "y": 608
+        },
+        "velocity": {
+          "x": 16.6666666666667,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 832.6666666666699,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 4,
+        "attackPhase": "anticipation",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 3,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 354,
+        "simulationTimeMs": 5900,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "telegraph",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 3,
+            "maxHealth": 42,
+            "poise": 12,
+            "maxPoise": 20,
+            "activeAttackId": "briar-scrapper-lunge",
+            "attackPhase": "telegraph",
+            "hidden": false,
+            "targetable": true
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 1,
+            "leases": 1
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 31,
+        "counters": {
+          "contacts": 3,
+          "playerContacts": 3,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 3,
+          "feedback": 3,
+          "attackerCommands": 0,
+          "stateChanges": 13,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 1
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": false
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 5.935,
+      "player": {
+        "position": {
+          "x": 1512.66666666667,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "attackLight",
+        "grounded": true,
+        "animationIntent": "idle"
+      },
+      "camera": {
+        "scrollX": 832.6666666666699,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": "mara-light-one",
+        "attackFrame": 16,
+        "attackPhase": "recovery",
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 366,
+        "simulationTimeMs": 6100,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.213,
+      "player": {
+        "position": {
+          "x": 1567.8333333333371,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 887.8333333333371,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 383,
+        "simulationTimeMs": 6383,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.492,
+      "player": {
+        "position": {
+          "x": 1647.1666666666717,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 967.1666666666717,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 400,
+        "simulationTimeMs": 6667,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 6.773,
+      "player": {
+        "position": {
+          "x": 1726.5000000000064,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1046.5000000000064,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 417,
+        "simulationTimeMs": 6950,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.086,
+      "player": {
+        "position": {
+          "x": 1810.5000000000077,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1130.5000000000077,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 435,
+        "simulationTimeMs": 7250,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.361,
+      "player": {
+        "position": {
+          "x": 1889.8333333333424,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1209.8333333333424,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 452,
+        "simulationTimeMs": 7533,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.635,
+      "player": {
+        "position": {
+          "x": 1964.5000000000102,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 468,
+        "simulationTimeMs": 7800,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 7.916,
+      "player": {
+        "position": {
+          "x": 2043.8333333333449,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 485,
+        "simulationTimeMs": 8083,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.23,
+      "player": {
+        "position": {
+          "x": 2132.5000000000086,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 504,
+        "simulationTimeMs": 8400,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.517,
+      "player": {
+        "position": {
+          "x": 2211.8333333333394,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 521,
+        "simulationTimeMs": 8683,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 8.79,
+      "player": {
+        "position": {
+          "x": 2291.16666666667,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 538,
+        "simulationTimeMs": 8967,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 9.075,
+      "player": {
+        "position": {
+          "x": 2370.500000000001,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 555,
+        "simulationTimeMs": 9250,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 9.365,
+      "player": {
+        "position": {
+          "x": 2449.8333333333317,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 572,
+        "simulationTimeMs": 9533,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 9.652,
+      "player": {
+        "position": {
+          "x": 2529.1666666666624,
+          "y": 608
+        },
+        "velocity": {
+          "x": 280,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 589,
+        "simulationTimeMs": 9817,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 9.94,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 607,
+        "simulationTimeMs": 10117,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 10.217,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 623,
+        "simulationTimeMs": 10383,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 10.499,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 640,
+        "simulationTimeMs": 10667,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 10.772,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 656,
+        "simulationTimeMs": 10933,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 11.056,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 673,
+        "simulationTimeMs": 11217,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 11.329,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 690,
+        "simulationTimeMs": 11500,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 11.615,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 707,
+        "simulationTimeMs": 11783,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 11.892,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 724,
+        "simulationTimeMs": 12067,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 12.169,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 740,
+        "simulationTimeMs": 12333,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 12.455,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 757,
+        "simulationTimeMs": 12617,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 12.73,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 774,
+        "simulationTimeMs": 12900,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 13.018,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 791,
+        "simulationTimeMs": 13183,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 13.302,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 808,
+        "simulationTimeMs": 13467,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 13.584,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 825,
+        "simulationTimeMs": 13750,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    },
+    {
+      "t": 13.878,
+      "player": {
+        "position": {
+          "x": 2536,
+          "y": 608
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0
+        },
+        "state": "run",
+        "grounded": true,
+        "animationIntent": "run"
+      },
+      "camera": {
+        "scrollX": 1280,
+        "scrollY": 0,
+        "zoom": 1
+      },
+      "combat": {
+        "actionSequence": 5,
+        "lastAcceptedAction": "attack-light",
+        "activeAttackId": null,
+        "attackFrame": null,
+        "attackPhase": null,
+        "currentMana": 40,
+        "selectedAbilityId": "lumen-bolt",
+        "guarding": false,
+        "parryActive": false,
+        "invulnerable": false,
+        "aegisActive": false,
+        "aegisChargeActive": false,
+        "statuses": [],
+        "projectiles": [],
+        "projectileCount": 0,
+        "confirmedHitCount": 4,
+        "hitStopRemainingMs": 0
+      },
+      "encounter": {
+        "disposed": false,
+        "stepIndex": 843,
+        "simulationTimeMs": 14050,
+        "enemies": [
+          {
+            "combatantId": "trail-briar-east",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1591.2200000000012,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          },
+          {
+            "combatantId": "trail-briar-west",
+            "actorId": "briar-scrapper",
+            "state": "dead",
+            "position": {
+              "x": 1175.3650000000011,
+              "y": 608
+            },
+            "facing": "left",
+            "health": 0,
+            "maxHealth": 42,
+            "poise": 4,
+            "maxPoise": 20,
+            "activeAttackId": null,
+            "attackPhase": null,
+            "hidden": false,
+            "targetable": false
+          }
+        ],
+        "directors": [
+          {
+            "encounterKey": "trail-briar-crossing",
+            "pressure": 0,
+            "leases": 0
+          }
+        ],
+        "ordnance": [],
+        "activeOrdnance": 0,
+        "journalSequence": 36,
+        "counters": {
+          "contacts": 4,
+          "playerContacts": 4,
+          "enemyContacts": 0,
+          "ordnanceContacts": 0,
+          "resolutions": 4,
+          "feedback": 4,
+          "attackerCommands": 0,
+          "stateChanges": 14,
+          "drops": 0,
+          "ordnancePlanted": 0,
+          "defeats": 2
+        },
+        "playerVitality": {
+          "currentHealth": 120,
+          "maxHealth": 120,
+          "currentPoise": 40,
+          "maxPoise": 40,
+          "armour": 3,
+          "resistances": {}
+        },
+        "lastResolution": {
+          "source": "player",
+          "targetId": "trail-briar-east",
+          "kind": "resolved",
+          "guard": "none",
+          "healthDamage": 39,
+          "defeated": true
+        },
+        "boss": null
+      }
+    }
+  ]
+}

@@ -59,6 +59,7 @@ export type WorldObjectSnapshot = Readonly<{
     puzzleId: string;
     state: 'advanced' | 'solved';
     activatedMechanismIds?: readonly string[];
+    remainingSeconds?: number;
   }>[];
   chests: readonly Readonly<{ chestId: string; state: 'closed' | 'opened' }>[];
   discoveries: readonly Readonly<{ discoveryId: string; state: 'available' | 'claimed' }>[];
@@ -119,6 +120,7 @@ export class WorldObjectRuntime {
   private pending: PendingObjectProposal | null = null;
   private nextToken = 1;
   private disposed = false;
+  private simulationTimeMs = 0;
 
   public constructor(options: WorldObjectRuntimeOptions) {
     this.roomId = options.roomId;
@@ -186,6 +188,9 @@ export class WorldObjectRuntime {
     }>,
   ): WorldObjectStep {
     if (this.disposed) return EMPTY_STEP;
+    if (Number.isFinite(input.nowMs)) {
+      this.simulationTimeMs = Math.max(this.simulationTimeMs, input.nowMs);
+    }
     if (this.pending !== null) {
       return deepFreeze({ prompt: this.pending.prompt, proposal: this.pending.proposal });
     }
@@ -293,11 +298,16 @@ export class WorldObjectRuntime {
     return deepFreeze({
       roomId: this.roomId,
       puzzles: this.puzzleDefinitions.flatMap<WorldObjectSnapshot['puzzles'][number]>(
-        ({ puzzleId }) => {
+        ({ puzzleId, program }) => {
           if (save.worldProgress.solvedPuzzles.includes(puzzleId)) {
             return [{ puzzleId, state: 'solved' as const }];
           }
           const entry = transientByPuzzle.get(puzzleId);
+          const remainingMs =
+            program.kind === 'timed-set' && entry?.startedAtMs !== null && entry !== undefined
+              ? program.windowMs - (this.simulationTimeMs - entry.startedAtMs)
+              : null;
+          if (remainingMs !== null && remainingMs < 0) return [];
           return entry === undefined
             ? []
             : [
@@ -305,6 +315,9 @@ export class WorldObjectRuntime {
                   puzzleId,
                   state: 'advanced' as const,
                   activatedMechanismIds: entry.activatedMechanismIds,
+                  ...(remainingMs === null
+                    ? {}
+                    : { remainingSeconds: Math.ceil(remainingMs / 1000) }),
                 },
               ];
         },
@@ -339,6 +352,7 @@ export class WorldObjectRuntime {
     if (this.disposed) return false;
     this.pending = null;
     this.transient = EMPTY_PUZZLE_TRANSIENT;
+    this.simulationTimeMs = 0;
     this.insideEdges.clear();
     this.usedInteractBufferIds.clear();
     return true;

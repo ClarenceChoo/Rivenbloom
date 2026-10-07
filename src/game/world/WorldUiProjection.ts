@@ -2,6 +2,7 @@ import { projectRoomMap } from '../ui/RoomMapProjection';
 import type { RoomMap } from '../ui/RoomMapProjection';
 import { deepFreeze } from '../data/immutability';
 import { ITEMS } from '../data/items';
+import { PUZZLES } from '../data/areas';
 import {
   isRecoveringRootMemory,
   isSeekingWayfinderDash,
@@ -24,6 +25,8 @@ export type WorldUiProjection = Readonly<{
   area: Readonly<{ areaId: string; label: string }>;
   room: Readonly<{ roomId: string; label: string }>;
   prompt: string | null;
+  puzzleHint?: string | null;
+  puzzleHintCompact?: string | null;
   player: Readonly<{
     currentHealth: number;
     maxHealth: number;
@@ -113,6 +116,26 @@ export function projectWorldUi(
         .map(({ slot }) => slot),
     };
   });
+  const timedPuzzle = PUZZLES.find(
+    ({ roomId, program, puzzleId }) =>
+      roomId === input.room.roomId &&
+      program.kind === 'timed-set' &&
+      !input.save.worldProgress.solvedPuzzles.includes(puzzleId) &&
+      !input.objects.puzzles.some(
+        (puzzle) => puzzle.puzzleId === puzzleId && puzzle.state === 'solved',
+      ),
+  );
+  let puzzleHint: string | null = null;
+  let puzzleHintCompact: string | null = null;
+  if (timedPuzzle?.program.kind === 'timed-set') {
+    const progress = input.objects.puzzles.find(
+      ({ puzzleId }) => puzzleId === timedPuzzle.puzzleId,
+    );
+    const count = progress?.activatedMechanismIds?.length ?? 0;
+    const seconds = progress?.remainingSeconds ?? Math.ceil(timedPuzzle.program.windowMs / 1000);
+    puzzleHint = `${timedPuzzle.description} ${count}/${timedPuzzle.program.steps.length} plates · ${seconds} ${seconds === 1 ? 'second' : 'seconds'}.`;
+    puzzleHintCompact = `Wake ${count}/${timedPuzzle.program.steps.length} plates · ${seconds}s.`;
+  }
 
   return deepFreeze({
     revision: input.revision,
@@ -123,6 +146,8 @@ export function projectWorldUi(
     area: { areaId: input.area.areaId, label: input.area.displayName },
     room: { roomId: input.room.roomId, label: input.room.displayName },
     prompt: input.prompt,
+    puzzleHint,
+    puzzleHintCompact,
     player: {
       currentHealth: input.liveVitals.currentHealth,
       maxHealth: input.save.player.baseStats.maxHealth,

@@ -231,7 +231,7 @@ export class MenuScene extends Phaser.Scene {
       rangeField('Shake intensity', 'shakeIntensity', settings.shakeIntensity, 0, 1, 0.05),
       rangeField('Flash intensity', 'flashIntensity', settings.flashIntensity, 0, 1, 0.05),
       checkboxField('Subtitles', 'subtitles', settings.subtitles),
-      rangeField('Text scale', 'textScale', settings.textScale, 0.75, 1.5, 0.05),
+      rangeField('Text scale', 'textScale', settings.textScale, 0.75, 2, 0.05),
       checkboxField('High-contrast prompts', 'highContrastPrompts', settings.highContrastPrompts),
       checkboxField('Damage numbers', 'damageNumbers', settings.damageNumbers),
       selectField('Sustained actions', 'sustainedAction', settings.sustainedAction, [

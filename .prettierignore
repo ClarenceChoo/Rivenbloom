@@ -3,6 +3,9 @@ node_modules
 coverage
 playwright-report
 test-results
+brag-output
+wiki/dist
+wiki/test-results
 package-lock.json
 AGENTS.md
 # Generated score exports; music/source/compose.py owns their serialization.

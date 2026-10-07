@@ -1,5 +1,10 @@
 import Phaser from 'phaser';
-import { maraGroundAnchor } from '../../data/artFrames';
+import {
+  maraGroundAnchor,
+  MARA_LOCOMOTION_FRAMES,
+  MARA_LOCOMOTION_REFERENCE_HEIGHT,
+  MARA_RUN_CYCLE,
+} from '../../data/artFrames';
 
 import type { Vec2 } from '../../data/types';
 import type { PlayerControllerSnapshot } from './PlayerController';
@@ -19,10 +24,16 @@ export class PlayerView {
     private readonly visualHeight: number,
   ) {
     const key = 'rivenbloom-mara-animation-sheet';
-    if (!scene.textures.exists(key)) {
+    if (!scene.textures.exists(key) || !scene.textures.exists('rivenbloom-mara-locomotion')) {
       throw new Error('Required Mara production art is unavailable.');
     }
     const texture = scene.textures.get(key);
+    const locomotion = scene.textures.get('rivenbloom-mara-locomotion');
+    for (const [index, frame] of MARA_LOCOMOTION_FRAMES.entries()) {
+      const name = `mara-motion-${index}`;
+      if (!locomotion.has(name))
+        locomotion.add(name, 0, frame.x, frame.y, frame.width, frame.height);
+    }
     for (let row = 0; row < 3; row += 1) {
       const y = row === 0 ? 0 : row === 1 ? 341 : 682;
       const height = row === 2 ? 342 : 341;
@@ -42,8 +53,27 @@ export class PlayerView {
     this.lastTimeMs = now;
     this.frameStep = this.previousState === snapshot.state ? this.frameStep + elapsed * 0.06 : 0;
     this.previousState = snapshot.state;
-    const frame = selectMaraFrame(snapshot, this.frameStep);
-    this.sprite.setFrame(`mara-${frame}`).setOrigin(0.5, maraGroundAnchor(frame));
+    const motion =
+      snapshot.state === 'dead'
+        ? 6
+        : snapshot.state === 'interact'
+          ? 7
+          : snapshot.state === 'run' && snapshot.animationIntent === 'run'
+            ? MARA_RUN_CYCLE[Math.floor(this.frameStep / 5) % MARA_RUN_CYCLE.length]!
+            : null;
+    if (motion !== null) {
+      const frame = MARA_LOCOMOTION_FRAMES[motion]!;
+      this.sprite
+        .setTexture('rivenbloom-mara-locomotion', `mara-motion-${motion}`)
+        .setScale(this.visualHeight / MARA_LOCOMOTION_REFERENCE_HEIGHT)
+        .setOrigin(0.5, (frame.groundY - frame.y) / frame.height);
+    } else {
+      const frame = selectMaraFrame(snapshot, this.frameStep);
+      this.sprite
+        .setTexture('rivenbloom-mara-animation-sheet', `mara-${frame}`)
+        .setScale(this.visualHeight / 341)
+        .setOrigin(0.5, maraGroundAnchor(frame));
+    }
     this.sprite.setPosition(snapshot.position.x, snapshot.position.y);
     if (snapshot.velocity.x < -0.01) this.sprite.setFlipX(true);
     if (snapshot.velocity.x > 0.01) this.sprite.setFlipX(false);
@@ -74,7 +104,6 @@ function selectMaraFrame(snapshot: PlayerControllerSnapshot, step: number): numb
     case 'climb':
       return 16;
     case 'hurt':
-    case 'dead':
       return 17;
     default:
       break;

@@ -114,7 +114,7 @@ describe('WorldProgression', () => {
       healthUpgrades: 1,
       manaUpgrades: 2,
       experience: 180,
-      currency: 75,
+      currency: 125,
       weaponLevel: 1,
     });
     expect(current.player.unlockedAbilities).toContain('aegis-veil');
@@ -126,7 +126,7 @@ describe('WorldProgression', () => {
   it('does not publish a candidate when reward prerequisites are missing', () => {
     expect(claimProgressionReward(save({ currency: 49 }), 'blade-reforge')).toMatchObject({
       kind: 'rejected',
-      reason: 'insufficient-currency',
+      reason: 'insufficient-item',
     });
     expect(claimProgressionReward(save({ currency: 50 }), 'blade-reforge')).toMatchObject({
       kind: 'rejected',

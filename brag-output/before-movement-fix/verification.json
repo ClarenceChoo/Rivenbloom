@@ -1,0 +1,77 @@
+{
+  "video": "brag.mp4",
+  "poster": "brag.jpg",
+  "date": "2026-10-07",
+  "durationSeconds": 36.2,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 1086,
+  "bytes": 19355697,
+  "hyperframesVersion": "0.8.111",
+  "hyperframesCheckPassed": true,
+  "runtimeErrors": 0,
+  "layoutErrors": 0,
+  "contrastErrors": 0,
+  "nonBlockingWarnings": [
+    "Four nested title structures can be split into sub-compositions for more granular Studio editing."
+  ],
+  "gameplayClips": 4,
+  "cutsBetweenGameplayClips": 3,
+  "previousGameplayClips": 9,
+  "sourceTakes": [
+    {
+      "source": "village.mp4",
+      "timelineStart": 0,
+      "sourceStart": 1,
+      "duration": 3.8
+    },
+    {
+      "source": "forest.mp4",
+      "timelineStart": 3.8,
+      "sourceStart": 3.6,
+      "duration": 7.6
+    },
+    {
+      "source": "sentinel.mp4",
+      "timelineStart": 11.4,
+      "sourceStart": 6.5,
+      "duration": 7.6
+    },
+    {
+      "source": "boss.mp4",
+      "timelineStart": 19,
+      "sourceStart": 5.6,
+      "duration": 13.3
+    }
+  ],
+  "internalSourceCuts": 0,
+  "addedGameplayZooms": false,
+  "sourcePlaybackSpeed": 1,
+  "bossSequence": "Phase one, transition and phase two in one continuous take.",
+  "music": {
+    "source": "12-a-voice-through-glass.mp3",
+    "sourceStartSeconds": 24.752375,
+    "fadeInSeconds": 0.35,
+    "fadeOutSeconds": 2.1,
+    "compositionGain": 0.8,
+    "scoreCorrelationInFinalMix": 0.997913
+  },
+  "gameEffectsGain": 0.7,
+  "masterGainDb": 3.82,
+  "visualReview": "All four takes, both boss phases and settled title reviewed in final export. Extracted frame zero visually matches the title poster.",
+  "mediaDecode": "Full final audio/video decode completed without errors.",
+  "blackSectionsDetected": false,
+  "blackMinimumDurationSeconds": 0.1,
+  "gameplayPlaneFreezesOverHalfSecond": false,
+  "freezeNoiseThresholdDb": -60,
+  "integratedLufs": -16.02,
+  "truePeakDbtp": -2.12,
+  "posterTimestamp": 34.9,
+  "posterBakedIntoFrameZero": true,
+  "previousExport": "before-smoothing-brag.mp4",
+  "capture": "Native 1280x720 Phaser canvas, isolated checkpoint saves, keyboard actions, real game SFX; HTML HUD omitted.",
+  "sources": "Original Rivenbloom art and score; provenance in docs/asset-provenance.md."
+}

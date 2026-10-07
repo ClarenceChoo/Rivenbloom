@@ -23,6 +23,21 @@ function save(currency: number) {
 }
 
 describe('ShopController', () => {
+  it('keeps the required briar-core reforge available after all resin is spent', () => {
+    const shop = new ShopController(SHOP_OFFERS);
+    const before = {
+      ...save(0),
+      inventory: [{ itemId: itemId('briar-core'), quantity: 1 }],
+    };
+    expect(shop.quote(before, 'blade-reforge')).toMatchObject({ kind: 'available', price: 0 });
+    const result = shop.purchase(before, 'blade-reforge');
+    expect(result.kind).toBe('accepted');
+    expect(result.save.player).toMatchObject({ currency: 0, weaponLevel: 1 });
+    expect(result.save.inventory).toEqual([]);
+    expect(result.save.quests.flags).toContain('surveyor-edge-reforged');
+    expect(shop.quote(structuredClone(result.save), 'blade-reforge').kind).toBe('sold-out');
+  });
+
   it('uses one validator for quote and purchase and never spends on a rejected full stack', () => {
     const shop = new ShopController(SHOP_OFFERS);
     const before = save(20);

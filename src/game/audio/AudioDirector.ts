@@ -19,16 +19,16 @@ type MusicTrack = Readonly<{
 }>;
 
 const MUSIC_TRACKS: Record<AudioLayer, MusicTrack> = {
-  menu: { file: '01-a-thread-of-amber.mp3', loop: true },
+  menu: { file: '11-where-the-lanterns-wake.mp3', loop: true },
   'wren-rest': { file: '02-lanterns-above-the-rain.mp3', loop: true },
-  brackenreach: { file: '03-the-listening-wood.mp3', loop: true },
+  brackenreach: { file: '11-where-the-lanterns-wake.mp3', loop: true },
   'thorn-sentinel': { file: '06-copper-and-briar.mp3', loop: true },
   'singing-hollows': { file: '04-what-the-roots-remember.mp3', loop: true },
   'rootglass-reliquary': { file: '05-an-archive-under-water.mp3', loop: true },
   'hollow-choir': { file: '07-the-unanswered-note.mp3', loop: true },
   'first-verse': { file: '08-first-verse-of-the-hollow.mp3', loop: true },
-  'broken-refrain': { file: '09-the-throat-of-glass.mp3', loop: true },
-  'heart-opening': { file: '09-the-throat-of-glass.mp3', loop: true },
+  'broken-refrain': { file: '12-a-voice-through-glass.mp3', loop: true },
+  'heart-opening': { file: '12-a-voice-through-glass.mp3', loop: true },
   release: { file: '10-the-song-released.mp3', loop: false },
 };
 
@@ -38,6 +38,8 @@ type PlayingTrack = {
   source: MediaElementAudioSourceNode;
   gain: GainNode;
   starting: boolean;
+  revision: number;
+  retirement: ReturnType<typeof globalThis.setTimeout> | null;
 };
 
 export function musicTrackFor(layer: AudioLayer): MusicTrack {
@@ -62,6 +64,7 @@ export class AudioDirector {
   private settings: SaveSettings | null = null;
   private layer: AudioLayer = 'menu';
   private playing: PlayingTrack[] = [];
+  private readonly tracks = new Map<string, PlayingTrack>();
   private fadeTimers = new Set<ReturnType<typeof globalThis.setTimeout>>();
   private heartTimer: ReturnType<typeof globalThis.setTimeout> | null = null;
   private disposed = false;
@@ -124,7 +127,14 @@ export class AudioDirector {
     this.heartTimer = null;
     for (const timer of this.fadeTimers) globalThis.clearTimeout(timer);
     this.fadeTimers.clear();
-    for (const track of this.playing) this.stopTrack(track);
+    for (const track of this.tracks.values()) {
+      this.stopTrack(track);
+      track.audio.removeAttribute('src');
+      track.source.disconnect();
+      track.gain.disconnect();
+      track.audio.load();
+    }
+    this.tracks.clear();
     this.playing = [];
     void this.context?.close().catch(() => undefined);
     this.context = null;
@@ -167,34 +177,60 @@ export class AudioDirector {
     const destination = this.music;
     if (this.disposed || context === null || destination === null) return;
     const cue = musicTrackFor(this.layer);
+    let incoming = this.tracks.get(cue.file);
     if (
-      this.playing.some(
-        (track) => track.file === cue.file && (track.starting || !track.audio.paused),
-      )
+      incoming !== undefined &&
+      incoming.retirement === null &&
+      (incoming.starting || !incoming.audio.paused)
     )
       return;
-    const audio = new Audio(`/assets/audio/rivenbloom/${cue.file}`);
-    audio.loop = cue.loop;
-    audio.preload = 'auto';
-    const gain = context.createGain();
-    gain.gain.value = 0;
-    const source = context.createMediaElementSource(audio);
-    source.connect(gain).connect(destination);
-    const incoming: PlayingTrack = { file: cue.file, audio, source, gain, starting: true };
-    this.playing.push(incoming);
+    if (incoming === undefined) {
+      const audio = new Audio(`/assets/audio/rivenbloom/${cue.file}`);
+      audio.loop = cue.loop;
+      audio.preload = 'auto';
+      const gain = context.createGain();
+      gain.gain.value = 0;
+      const source = context.createMediaElementSource(audio);
+      source.connect(gain).connect(destination);
+      incoming = {
+        file: cue.file,
+        audio,
+        source,
+        gain,
+        starting: false,
+        revision: 0,
+        retirement: null,
+      };
+      this.tracks.set(cue.file, incoming);
+    }
+    const track = incoming;
+    if (track.retirement !== null) {
+      globalThis.clearTimeout(track.retirement);
+      this.fadeTimers.delete(track.retirement);
+      track.retirement = null;
+    }
+    const revision = ++track.revision;
+    track.starting = true;
+    if (!this.playing.includes(track)) this.playing.push(track);
+    const { audio, gain } = track;
     void audio
       .play()
       .then(() => {
-        if (this.disposed || !this.playing.includes(incoming)) return;
-        incoming.starting = false;
-        if (musicTrackFor(this.layer).file !== incoming.file) {
-          this.stopTrack(incoming);
+        if (this.disposed || track.revision !== revision) return;
+        track.starting = false;
+        if (musicTrackFor(this.layer).file !== track.file) {
+          this.stopTrack(track);
           return;
         }
         const now = context.currentTime;
-        gain.gain.setValueAtTime(0, now);
+        gain.gain.cancelScheduledValues(now);
+        gain.gain.setValueAtTime(gain.gain.value, now);
         gain.gain.linearRampToValueAtTime(1, now + 1.2);
-        for (const old of this.playing.filter((track) => track !== incoming)) {
+        for (const old of this.playing.filter((entry) => entry !== track)) {
+          if (old.retirement !== null) {
+            globalThis.clearTimeout(old.retirement);
+            this.fadeTimers.delete(old.retirement);
+          }
           old.gain.gain.cancelScheduledValues(now);
           old.gain.gain.setValueAtTime(old.gain.gain.value, now);
           old.gain.gain.linearRampToValueAtTime(0, now + 1.2);
@@ -203,16 +239,25 @@ export class AudioDirector {
             this.stopTrack(old);
           }, 1_250);
           this.fadeTimers.add(timer);
+          old.retirement = timer;
         }
       })
-      .catch(() => this.stopTrack(incoming));
+      .catch(() => {
+        if (track.revision === revision) this.stopTrack(track);
+      });
   }
 
   private stopTrack(track: PlayingTrack): void {
+    if (track.retirement !== null) {
+      globalThis.clearTimeout(track.retirement);
+      this.fadeTimers.delete(track.retirement);
+    }
     track.audio.pause();
-    track.audio.removeAttribute('src');
-    track.source.disconnect();
-    track.gain.disconnect();
+    track.revision += 1;
+    track.starting = false;
+    track.retirement = null;
+    track.gain.gain.cancelScheduledValues(this.context?.currentTime ?? 0);
+    track.gain.gain.value = 0;
     this.playing = this.playing.filter((entry) => entry !== track);
   }
 

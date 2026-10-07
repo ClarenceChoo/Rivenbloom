@@ -187,7 +187,6 @@ function rewardTransaction(rewardId: ProgressionRewardId): Readonly<{
       return reward('wellspring-seed-claimed', [{ kind: 'increase-mana', amount: 8 }]);
     case 'blade-reforge':
       return reward('surveyor-edge-reforged', [
-        { kind: 'spend-currency', amount: 50 },
         { kind: 'consume-item', itemId: stableId<'item'>('briar-core'), quantity: 1 },
         { kind: 'upgrade-weapon', fromLevel: 0, toLevel: 1 },
       ]);

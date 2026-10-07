@@ -1,0 +1,10301 @@
+{
+  "id": "11-where-the-lanterns-wake",
+  "title": "Where the Lanterns Wake",
+  "bpm": 92,
+  "beats": 128,
+  "loop": true,
+  "tracks": [
+    {
+      "name": "wayfinder-flute",
+      "program": 0,
+      "percussion": false,
+      "gain": 0.42,
+      "pan": -0.12,
+      "reverb": 16,
+      "notes": [
+        {
+          "beat": 4.6,
+          "pitch": 74,
+          "duration": 2.35,
+          "velocity": 61
+        },
+        {
+          "beat": 12.6,
+          "pitch": 76,
+          "duration": 2.35,
+          "velocity": 61
+        },
+        {
+          "beat": 16.022,
+          "pitch": 74,
+          "duration": 0.76,
+          "velocity": 74
+        },
+        {
+          "beat": 16.872,
+          "pitch": 76,
+          "duration": 0.66,
+          "velocity": 67
+        },
+        {
+          "beat": 17.622,
+          "pitch": 77,
+          "duration": 1.16,
+          "velocity": 78
+        },
+        {
+          "beat": 18.872,
+          "pitch": 81,
+          "duration": 0.96,
+          "velocity": 60
+        },
+        {
+          "beat": 20.022,
+          "pitch": 79,
+          "duration": 1.26,
+          "velocity": 74
+        },
+        {
+          "beat": 21.522,
+          "pitch": 76,
+          "duration": 0.76,
+          "velocity": 67
+        },
+        {
+          "beat": 22.522,
+          "pitch": 72,
+          "duration": 1.26,
+          "velocity": 78
+        },
+        {
+          "beat": 24.022,
+          "pitch": 74,
+          "duration": 1.21,
+          "velocity": 74
+        },
+        {
+          "beat": 25.422,
+          "pitch": 71,
+          "duration": 0.66,
+          "velocity": 67
+        },
+        {
+          "beat": 26.222,
+          "pitch": 69,
+          "duration": 1.16,
+          "velocity": 78
+        },
+        {
+          "beat": 28.022,
+          "pitch": 73,
+          "duration": 0.81,
+          "velocity": 74
+        },
+        {
+          "beat": 29.022,
+          "pitch": 76,
+          "duration": 1.06,
+          "velocity": 67
+        },
+        {
+          "beat": 30.422,
+          "pitch": 81,
+          "duration": 1.16,
+          "velocity": 78
+        },
+        {
+          "beat": 32.022,
+          "pitch": 74,
+          "duration": 0.96,
+          "velocity": 74
+        },
+        {
+          "beat": 33.022,
+          "pitch": 81,
+          "duration": 0.86,
+          "velocity": 67
+        },
+        {
+          "beat": 34.022,
+          "pitch": 84,
+          "duration": 1.31,
+          "velocity": 78
+        },
+        {
+          "beat": 35.422,
+          "pitch": 83,
+          "duration": 0.71,
+          "velocity": 60
+        },
+        {
+          "beat": 36.022,
+          "pitch": 79,
+          "duration": 1.46,
+          "velocity": 74
+        },
+        {
+          "beat": 37.622,
+          "pitch": 76,
+          "duration": 0.86,
+          "velocity": 67
+        },
+        {
+          "beat": 38.622,
+          "pitch": 74,
+          "duration": 1.26,
+          "velocity": 78
+        },
+        {
+          "beat": 40.022,
+          "pitch": 77,
+          "duration": 1.36,
+          "velocity": 74
+        },
+        {
+          "beat": 41.522,
+          "pitch": 81,
+          "duration": 0.86,
+          "velocity": 67
+        },
+        {
+          "beat": 42.522,
+          "pitch": 79,
+          "duration": 1.16,
+          "velocity": 78
+        },
+        {
+          "beat": 44.022,
+          "pitch": 76,
+          "duration": 1.96,
+          "velocity": 74
+        },
+        {
+          "beat": 46.272,
+          "pitch": 74,
+          "duration": 1.36,
+          "velocity": 67
+        },
+        {
+          "beat": 48.025,
+          "pitch": 69,
+          "duration": 1.3,
+          "velocity": 68
+        },
+        {
+          "beat": 49.725,
+          "pitch": 65,
+          "duration": 0.8,
+          "velocity": 74
+        },
+        {
+          "beat": 50.825,
+          "pitch": 64,
+          "duration": 0.8,
+          "velocity": 62
+        },
+        {
+          "beat": 52.025,
+          "pitch": 67,
+          "duration": 1.4,
+          "velocity": 68
+        },
+        {
+          "beat": 53.825,
+          "pitch": 72,
+          "duration": 1.5,
+          "velocity": 74
+        },
+        {
+          "beat": 56.025,
+          "pitch": 71,
+          "duration": 1.1,
+          "velocity": 68
+        },
+        {
+          "beat": 57.425,
+          "pitch": 74,
+          "duration": 0.75,
+          "velocity": 74
+        },
+        {
+          "beat": 58.575,
+          "pitch": 76,
+          "duration": 0.9,
+          "velocity": 62
+        },
+        {
+          "beat": 60.025,
+          "pitch": 73,
+          "duration": 1.2,
+          "velocity": 68
+        },
+        {
+          "beat": 61.725,
+          "pitch": 69,
+          "duration": 1.5,
+          "velocity": 74
+        },
+        {
+          "beat": 64.025,
+          "pitch": 69,
+          "duration": 1.25,
+          "velocity": 68
+        },
+        {
+          "beat": 65.625,
+          "pitch": 74,
+          "duration": 1.8,
+          "velocity": 74
+        },
+        {
+          "beat": 68.025,
+          "pitch": 72,
+          "duration": 1.2,
+          "velocity": 68
+        },
+        {
+          "beat": 69.525,
+          "pitch": 71,
+          "duration": 0.8,
+          "velocity": 74
+        },
+        {
+          "beat": 70.675,
+          "pitch": 67,
+          "duration": 1,
+          "velocity": 62
+        },
+        {
+          "beat": 72.025,
+          "pitch": 69,
+          "duration": 0.7,
+          "velocity": 68
+        },
+        {
+          "beat": 73.025,
+          "pitch": 72,
+          "duration": 0.7,
+          "velocity": 74
+        },
+        {
+          "beat": 74.025,
+          "pitch": 76,
+          "duration": 1.5,
+          "velocity": 62
+        },
+        {
+          "beat": 76.025,
+          "pitch": 74,
+          "duration": 1.4,
+          "velocity": 68
+        },
+        {
+          "beat": 77.775,
+          "pitch": 71,
+          "duration": 1.7,
+          "velocity": 74
+        },
+        {
+          "beat": 80.022,
+          "pitch": 74,
+          "duration": 0.76,
+          "velocity": 78
+        },
+        {
+          "beat": 80.872,
+          "pitch": 76,
+          "duration": 0.66,
+          "velocity": 71
+        },
+        {
+          "beat": 81.622,
+          "pitch": 77,
+          "duration": 1.16,
+          "velocity": 82
+        },
+        {
+          "beat": 82.872,
+          "pitch": 81,
+          "duration": 0.96,
+          "velocity": 64
+        },
+        {
+          "beat": 84.022,
+          "pitch": 79,
+          "duration": 1.26,
+          "velocity": 78
+        },
+        {
+          "beat": 85.522,
+          "pitch": 76,
+          "duration": 0.76,
+          "velocity": 71
+        },
+        {
+          "beat": 86.522,
+          "pitch": 72,
+          "duration": 1.26,
+          "velocity": 82
+        },
+        {
+          "beat": 88.022,
+          "pitch": 74,
+          "duration": 1.21,
+          "velocity": 78
+        },
+        {
+          "beat": 89.422,
+          "pitch": 71,
+          "duration": 0.66,
+          "velocity": 71
+        },
+        {
+          "beat": 90.222,
+          "pitch": 69,
+          "duration": 1.16,
+          "velocity": 82
+        },
+        {
+          "beat": 92.022,
+          "pitch": 73,
+          "duration": 0.81,
+          "velocity": 78
+        },
+        {
+          "beat": 93.022,
+          "pitch": 76,
+          "duration": 1.06,
+          "velocity": 71
+        },
+        {
+          "beat": 94.422,
+          "pitch": 81,
+          "duration": 1.16,
+          "velocity": 82
+        },
+        {
+          "beat": 96.022,
+          "pitch": 74,
+          "duration": 0.96,
+          "velocity": 78
+        },
+        {
+          "beat": 97.022,
+          "pitch": 81,
+          "duration": 0.86,
+          "velocity": 71
+        },
+        {
+          "beat": 98.022,
+          "pitch": 84,
+          "duration": 1.31,
+          "velocity": 82
+        },
+        {
+          "beat": 99.422,
+          "pitch": 83,
+          "duration": 0.71,
+          "velocity": 64
+        },
+        {
+          "beat": 100.022,
+          "pitch": 79,
+          "duration": 1.46,
+          "velocity": 78
+        },
+        {
+          "beat": 101.622,
+          "pitch": 76,
+          "duration": 0.86,
+          "velocity": 71
+        },
+        {
+          "beat": 102.622,
+          "pitch": 74,
+          "duration": 1.26,
+          "velocity": 82
+        },
+        {
+          "beat": 104.022,
+          "pitch": 77,
+          "duration": 1.36,
+          "velocity": 78
+        },
+        {
+          "beat": 105.522,
+          "pitch": 81,
+          "duration": 0.86,
+          "velocity": 71
+        },
+        {
+          "beat": 106.522,
+          "pitch": 79,
+          "duration": 1.16,
+          "velocity": 82
+        },
+        {
+          "beat": 108.022,
+          "pitch": 76,
+          "duration": 1.96,
+          "velocity": 78
+        },
+        {
+          "beat": 110.272,
+          "pitch": 74,
+          "duration": 1.36,
+          "velocity": 71
+        },
+        {
+          "beat": 116.6,
+          "pitch": 74,
+          "duration": 2.35,
+          "velocity": 61
+        },
+        {
+          "beat": 124.6,
+          "pitch": 74,
+          "duration": 2.35,
+          "velocity": 61
+        }
+      ],
+      "expression": [
+        {
+          "beat": 0.0,
+          "value": 70
+        },
+        {
+          "beat": 0.25,
+          "value": 76
+        },
+        {
+          "beat": 0.5,
+          "value": 81
+        },
+        {
+          "beat": 0.75,
+          "value": 87
+        },
+        {
+          "beat": 1.0,
+          "value": 91
+        },
+        {
+          "beat": 1.25,
+          "value": 95
+        },
+        {
+          "beat": 1.5,
+          "value": 98
+        },
+        {
+          "beat": 1.75,
+          "value": 99
+        },
+        {
+          "beat": 2.0,
+          "value": 100
+        },
+        {
+          "beat": 2.25,
+          "value": 99
+        },
+        {
+          "beat": 2.5,
+          "value": 98
+        },
+        {
+          "beat": 2.75,
+          "value": 95
+        },
+        {
+          "beat": 3.0,
+          "value": 91
+        },
+        {
+          "beat": 3.25,
+          "value": 87
+        },
+        {
+          "beat": 3.5,
+          "value": 81
+        },
+        {
+          "beat": 3.75,
+          "value": 76
+        },
+        {
+          "beat": 4.0,
+          "value": 70
+        },
+        {
+          "beat": 4.25,
+          "value": 76
+        },
+        {
+          "beat": 4.5,
+          "value": 81
+        },
+        {
+          "beat": 4.75,
+          "value": 87
+        },
+        {
+          "beat": 5.0,
+          "value": 91
+        },
+        {
+          "beat": 5.25,
+          "value": 95
+        },
+        {
+          "beat": 5.5,
+          "value": 98
+        },
+        {
+          "beat": 5.75,
+          "value": 99
+        },
+        {
+          "beat": 6.0,
+          "value": 100
+        },
+        {
+          "beat": 6.25,
+          "value": 99
+        },
+        {
+          "beat": 6.5,
+          "value": 98
+        },
+        {
+          "beat": 6.75,
+          "value": 95
+        },
+        {
+          "beat": 7.0,
+          "value": 91
+        },
+        {
+          "beat": 7.25,
+          "value": 87
+        },
+        {
+          "beat": 7.5,
+          "value": 81
+        },
+        {
+          "beat": 7.75,
+          "value": 76
+        },
+        {
+          "beat": 8.0,
+          "value": 70
+        },
+        {
+          "beat": 8.25,
+          "value": 76
+        },
+        {
+          "beat": 8.5,
+          "value": 81
+        },
+        {
+          "beat": 8.75,
+          "value": 87
+        },
+        {
+          "beat": 9.0,
+          "value": 91
+        },
+        {
+          "beat": 9.25,
+          "value": 95
+        },
+        {
+          "beat": 9.5,
+          "value": 98
+        },
+        {
+          "beat": 9.75,
+          "value": 99
+        },
+        {
+          "beat": 10.0,
+          "value": 100
+        },
+        {
+          "beat": 10.25,
+          "value": 99
+        },
+        {
+          "beat": 10.5,
+          "value": 98
+        },
+        {
+          "beat": 10.75,
+          "value": 95
+        },
+        {
+          "beat": 11.0,
+          "value": 91
+        },
+        {
+          "beat": 11.25,
+          "value": 87
+        },
+        {
+          "beat": 11.5,
+          "value": 81
+        },
+        {
+          "beat": 11.75,
+          "value": 76
+        },
+        {
+          "beat": 12.0,
+          "value": 70
+        },
+        {
+          "beat": 12.25,
+          "value": 76
+        },
+        {
+          "beat": 12.5,
+          "value": 81
+        },
+        {
+          "beat": 12.75,
+          "value": 87
+        },
+        {
+          "beat": 13.0,
+          "value": 91
+        },
+        {
+          "beat": 13.25,
+          "value": 95
+        },
+        {
+          "beat": 13.5,
+          "value": 98
+        },
+        {
+          "beat": 13.75,
+          "value": 99
+        },
+        {
+          "beat": 14.0,
+          "value": 100
+        },
+        {
+          "beat": 14.25,
+          "value": 99
+        },
+        {
+          "beat": 14.5,
+          "value": 98
+        },
+        {
+          "beat": 14.75,
+          "value": 95
+        },
+        {
+          "beat": 15.0,
+          "value": 91
+        },
+        {
+          "beat": 15.25,
+          "value": 87
+        },
+        {
+          "beat": 15.5,
+          "value": 81
+        },
+        {
+          "beat": 15.75,
+          "value": 76
+        },
+        {
+          "beat": 16.0,
+          "value": 70
+        },
+        {
+          "beat": 16.25,
+          "value": 76
+        },
+        {
+          "beat": 16.5,
+          "value": 81
+        },
+        {
+          "beat": 16.75,
+          "value": 87
+        },
+        {
+          "beat": 17.0,
+          "value": 91
+        },
+        {
+          "beat": 17.25,
+          "value": 95
+        },
+        {
+          "beat": 17.5,
+          "value": 98
+        },
+        {
+          "beat": 17.75,
+          "value": 99
+        },
+        {
+          "beat": 18.0,
+          "value": 100
+        },
+        {
+          "beat": 18.25,
+          "value": 99
+        },
+        {
+          "beat": 18.5,
+          "value": 98
+        },
+        {
+          "beat": 18.75,
+          "value": 95
+        },
+        {
+          "beat": 19.0,
+          "value": 91
+        },
+        {
+          "beat": 19.25,
+          "value": 87
+        },
+        {
+          "beat": 19.5,
+          "value": 81
+        },
+        {
+          "beat": 19.75,
+          "value": 76
+        },
+        {
+          "beat": 20.0,
+          "value": 70
+        },
+        {
+          "beat": 20.25,
+          "value": 76
+        },
+        {
+          "beat": 20.5,
+          "value": 81
+        },
+        {
+          "beat": 20.75,
+          "value": 87
+        },
+        {
+          "beat": 21.0,
+          "value": 91
+        },
+        {
+          "beat": 21.25,
+          "value": 95
+        },
+        {
+          "beat": 21.5,
+          "value": 98
+        },
+        {
+          "beat": 21.75,
+          "value": 99
+        },
+        {
+          "beat": 22.0,
+          "value": 100
+        },
+        {
+          "beat": 22.25,
+          "value": 99
+        },
+        {
+          "beat": 22.5,
+          "value": 98
+        },
+        {
+          "beat": 22.75,
+          "value": 95
+        },
+        {
+          "beat": 23.0,
+          "value": 91
+        },
+        {
+          "beat": 23.25,
+          "value": 87
+        },
+        {
+          "beat": 23.5,
+          "value": 81
+        },
+        {
+          "beat": 23.75,
+          "value": 76
+        },
+        {
+          "beat": 24.0,
+          "value": 70
+        },
+        {
+          "beat": 24.25,
+          "value": 76
+        },
+        {
+          "beat": 24.5,
+          "value": 81
+        },
+        {
+          "beat": 24.75,
+          "value": 87
+        },
+        {
+          "beat": 25.0,
+          "value": 91
+        },
+        {
+          "beat": 25.25,
+          "value": 95
+        },
+        {
+          "beat": 25.5,
+          "value": 98
+        },
+        {
+          "beat": 25.75,
+          "value": 99
+        },
+        {
+          "beat": 26.0,
+          "value": 100
+        },
+        {
+          "beat": 26.25,
+          "value": 99
+        },
+        {
+          "beat": 26.5,
+          "value": 98
+        },
+        {
+          "beat": 26.75,
+          "value": 95
+        },
+        {
+          "beat": 27.0,
+          "value": 91
+        },
+        {
+          "beat": 27.25,
+          "value": 87
+        },
+        {
+          "beat": 27.5,
+          "value": 81
+        },
+        {
+          "beat": 27.75,
+          "value": 76
+        },
+        {
+          "beat": 28.0,
+          "value": 70
+        },
+        {
+          "beat": 28.25,
+          "value": 76
+        },
+        {
+          "beat": 28.5,
+          "value": 81
+        },
+        {
+          "beat": 28.75,
+          "value": 87
+        },
+        {
+          "beat": 29.0,
+          "value": 91
+        },
+        {
+          "beat": 29.25,
+          "value": 95
+        },
+        {
+          "beat": 29.5,
+          "value": 98
+        },
+        {
+          "beat": 29.75,
+          "value": 99
+        },
+        {
+          "beat": 30.0,
+          "value": 100
+        },
+        {
+          "beat": 30.25,
+          "value": 99
+        },
+        {
+          "beat": 30.5,
+          "value": 98
+        },
+        {
+          "beat": 30.75,
+          "value": 95
+        },
+        {
+          "beat": 31.0,
+          "value": 91
+        },
+        {
+          "beat": 31.25,
+          "value": 87
+        },
+        {
+          "beat": 31.5,
+          "value": 81
+        },
+        {
+          "beat": 31.75,
+          "value": 76
+        },
+        {
+          "beat": 32.0,
+          "value": 70
+        },
+        {
+          "beat": 32.25,
+          "value": 76
+        },
+        {
+          "beat": 32.5,
+          "value": 81
+        },
+        {
+          "beat": 32.75,
+          "value": 87
+        },
+        {
+          "beat": 33.0,
+          "value": 91
+        },
+        {
+          "beat": 33.25,
+          "value": 95
+        },
+        {
+          "beat": 33.5,
+          "value": 98
+        },
+        {
+          "beat": 33.75,
+          "value": 99
+        },
+        {
+          "beat": 34.0,
+          "value": 100
+        },
+        {
+          "beat": 34.25,
+          "value": 99
+        },
+        {
+          "beat": 34.5,
+          "value": 98
+        },
+        {
+          "beat": 34.75,
+          "value": 95
+        },
+        {
+          "beat": 35.0,
+          "value": 91
+        },
+        {
+          "beat": 35.25,
+          "value": 87
+        },
+        {
+          "beat": 35.5,
+          "value": 81
+        },
+        {
+          "beat": 35.75,
+          "value": 76
+        },
+        {
+          "beat": 36.0,
+          "value": 70
+        },
+        {
+          "beat": 36.25,
+          "value": 76
+        },
+        {
+          "beat": 36.5,
+          "value": 81
+        },
+        {
+          "beat": 36.75,
+          "value": 87
+        },
+        {
+          "beat": 37.0,
+          "value": 91
+        },
+        {
+          "beat": 37.25,
+          "value": 95
+        },
+        {
+          "beat": 37.5,
+          "value": 98
+        },
+        {
+          "beat": 37.75,
+          "value": 99
+        },
+        {
+          "beat": 38.0,
+          "value": 100
+        },
+        {
+          "beat": 38.25,
+          "value": 99
+        },
+        {
+          "beat": 38.5,
+          "value": 98
+        },
+        {
+          "beat": 38.75,
+          "value": 95
+        },
+        {
+          "beat": 39.0,
+          "value": 91
+        },
+        {
+          "beat": 39.25,
+          "value": 87
+        },
+        {
+          "beat": 39.5,
+          "value": 81
+        },
+        {
+          "beat": 39.75,
+          "value": 76
+        },
+        {
+          "beat": 40.0,
+          "value": 70
+        },
+        {
+          "beat": 40.25,
+          "value": 76
+        },
+        {
+          "beat": 40.5,
+          "value": 81
+        },
+        {
+          "beat": 40.75,
+          "value": 87
+        },
+        {
+          "beat": 41.0,
+          "value": 91
+        },
+        {
+          "beat": 41.25,
+          "value": 95
+        },
+        {
+          "beat": 41.5,
+          "value": 98
+        },
+        {
+          "beat": 41.75,
+          "value": 99
+        },
+        {
+          "beat": 42.0,
+          "value": 100
+        },
+        {
+          "beat": 42.25,
+          "value": 99
+        },
+        {
+          "beat": 42.5,
+          "value": 98
+        },
+        {
+          "beat": 42.75,
+          "value": 95
+        },
+        {
+          "beat": 43.0,
+          "value": 91
+        },
+        {
+          "beat": 43.25,
+          "value": 87
+        },
+        {
+          "beat": 43.5,
+          "value": 81
+        },
+        {
+          "beat": 43.75,
+          "value": 76
+        },
+        {
+          "beat": 44.0,
+          "value": 70
+        },
+        {
+          "beat": 44.25,
+          "value": 76
+        },
+        {
+          "beat": 44.5,
+          "value": 81
+        },
+        {
+          "beat": 44.75,
+          "value": 87
+        },
+        {
+          "beat": 45.0,
+          "value": 91
+        },
+        {
+          "beat": 45.25,
+          "value": 95
+        },
+        {
+          "beat": 45.5,
+          "value": 98
+        },
+        {
+          "beat": 45.75,
+          "value": 99
+        },
+        {
+          "beat": 46.0,
+          "value": 100
+        },
+        {
+          "beat": 46.25,
+          "value": 99
+        },
+        {
+          "beat": 46.5,
+          "value": 98
+        },
+        {
+          "beat": 46.75,
+          "value": 95
+        },
+        {
+          "beat": 47.0,
+          "value": 91
+        },
+        {
+          "beat": 47.25,
+          "value": 87
+        },
+        {
+          "beat": 47.5,
+          "value": 81
+        },
+        {
+          "beat": 47.75,
+          "value": 76
+        },
+        {
+          "beat": 48.0,
+          "value": 70
+        },
+        {
+          "beat": 48.25,
+          "value": 76
+        },
+        {
+          "beat": 48.5,
+          "value": 81
+        },
+        {
+          "beat": 48.75,
+          "value": 87
+        },
+        {
+          "beat": 49.0,
+          "value": 91
+        },
+        {
+          "beat": 49.25,
+          "value": 95
+        },
+        {
+          "beat": 49.5,
+          "value": 98
+        },
+        {
+          "beat": 49.75,
+          "value": 99
+        },
+        {
+          "beat": 50.0,
+          "value": 100
+        },
+        {
+          "beat": 50.25,
+          "value": 99
+        },
+        {
+          "beat": 50.5,
+          "value": 98
+        },
+        {
+          "beat": 50.75,
+          "value": 95
+        },
+        {
+          "beat": 51.0,
+          "value": 91
+        },
+        {
+          "beat": 51.25,
+          "value": 87
+        },
+        {
+          "beat": 51.5,
+          "value": 81
+        },
+        {
+          "beat": 51.75,
+          "value": 76
+        },
+        {
+          "beat": 52.0,
+          "value": 70
+        },
+        {
+          "beat": 52.25,
+          "value": 76
+        },
+        {
+          "beat": 52.5,
+          "value": 81
+        },
+        {
+          "beat": 52.75,
+          "value": 87
+        },
+        {
+          "beat": 53.0,
+          "value": 91
+        },
+        {
+          "beat": 53.25,
+          "value": 95
+        },
+        {
+          "beat": 53.5,
+          "value": 98
+        },
+        {
+          "beat": 53.75,
+          "value": 99
+        },
+        {
+          "beat": 54.0,
+          "value": 100
+        },
+        {
+          "beat": 54.25,
+          "value": 99
+        },
+        {
+          "beat": 54.5,
+          "value": 98
+        },
+        {
+          "beat": 54.75,
+          "value": 95
+        },
+        {
+          "beat": 55.0,
+          "value": 91
+        },
+        {
+          "beat": 55.25,
+          "value": 87
+        },
+        {
+          "beat": 55.5,
+          "value": 81
+        },
+        {
+          "beat": 55.75,
+          "value": 76
+        },
+        {
+          "beat": 56.0,
+          "value": 70
+        },
+        {
+          "beat": 56.25,
+          "value": 76
+        },
+        {
+          "beat": 56.5,
+          "value": 81
+        },
+        {
+          "beat": 56.75,
+          "value": 87
+        },
+        {
+          "beat": 57.0,
+          "value": 91
+        },
+        {
+          "beat": 57.25,
+          "value": 95
+        },
+        {
+          "beat": 57.5,
+          "value": 98
+        },
+        {
+          "beat": 57.75,
+          "value": 99
+        },
+        {
+          "beat": 58.0,
+          "value": 100
+        },
+        {
+          "beat": 58.25,
+          "value": 99
+        },
+        {
+          "beat": 58.5,
+          "value": 98
+        },
+        {
+          "beat": 58.75,
+          "value": 95
+        },
+        {
+          "beat": 59.0,
+          "value": 91
+        },
+        {
+          "beat": 59.25,
+          "value": 87
+        },
+        {
+          "beat": 59.5,
+          "value": 81
+        },
+        {
+          "beat": 59.75,
+          "value": 76
+        },
+        {
+          "beat": 60.0,
+          "value": 70
+        },
+        {
+          "beat": 60.25,
+          "value": 76
+        },
+        {
+          "beat": 60.5,
+          "value": 81
+        },
+        {
+          "beat": 60.75,
+          "value": 87
+        },
+        {
+          "beat": 61.0,
+          "value": 91
+        },
+        {
+          "beat": 61.25,
+          "value": 95
+        },
+        {
+          "beat": 61.5,
+          "value": 98
+        },
+        {
+          "beat": 61.75,
+          "value": 99
+        },
+        {
+          "beat": 62.0,
+          "value": 100
+        },
+        {
+          "beat": 62.25,
+          "value": 99
+        },
+        {
+          "beat": 62.5,
+          "value": 98
+        },
+        {
+          "beat": 62.75,
+          "value": 95
+        },
+        {
+          "beat": 63.0,
+          "value": 91
+        },
+        {
+          "beat": 63.25,
+          "value": 87
+        },
+        {
+          "beat": 63.5,
+          "value": 81
+        },
+        {
+          "beat": 63.75,
+          "value": 76
+        },
+        {
+          "beat": 64.0,
+          "value": 70
+        },
+        {
+          "beat": 64.25,
+          "value": 76
+        },
+        {
+          "beat": 64.5,
+          "value": 81
+        },
+        {
+          "beat": 64.75,
+          "value": 87
+        },
+        {
+          "beat": 65.0,
+          "value": 91
+        },
+        {
+          "beat": 65.25,
+          "value": 95
+        },
+        {
+          "beat": 65.5,
+          "value": 98
+        },
+        {
+          "beat": 65.75,
+          "value": 99
+        },
+        {
+          "beat": 66.0,
+          "value": 100
+        },
+        {
+          "beat": 66.25,
+          "value": 99
+        },
+        {
+          "beat": 66.5,
+          "value": 98
+        },
+        {
+          "beat": 66.75,
+          "value": 95
+        },
+        {
+          "beat": 67.0,
+          "value": 91
+        },
+        {
+          "beat": 67.25,
+          "value": 87
+        },
+        {
+          "beat": 67.5,
+          "value": 81
+        },
+        {
+          "beat": 67.75,
+          "value": 76
+        },
+        {
+          "beat": 68.0,
+          "value": 70
+        },
+        {
+          "beat": 68.25,
+          "value": 76
+        },
+        {
+          "beat": 68.5,
+          "value": 81
+        },
+        {
+          "beat": 68.75,
+          "value": 87
+        },
+        {
+          "beat": 69.0,
+          "value": 91
+        },
+        {
+          "beat": 69.25,
+          "value": 95
+        },
+        {
+          "beat": 69.5,
+          "value": 98
+        },
+        {
+          "beat": 69.75,
+          "value": 99
+        },
+        {
+          "beat": 70.0,
+          "value": 100
+        },
+        {
+          "beat": 70.25,
+          "value": 99
+        },
+        {
+          "beat": 70.5,
+          "value": 98
+        },
+        {
+          "beat": 70.75,
+          "value": 95
+        },
+        {
+          "beat": 71.0,
+          "value": 91
+        },
+        {
+          "beat": 71.25,
+          "value": 87
+        },
+        {
+          "beat": 71.5,
+          "value": 81
+        },
+        {
+          "beat": 71.75,
+          "value": 76
+        },
+        {
+          "beat": 72.0,
+          "value": 70
+        },
+        {
+          "beat": 72.25,
+          "value": 76
+        },
+        {
+          "beat": 72.5,
+          "value": 81
+        },
+        {
+          "beat": 72.75,
+          "value": 87
+        },
+        {
+          "beat": 73.0,
+          "value": 91
+        },
+        {
+          "beat": 73.25,
+          "value": 95
+        },
+        {
+          "beat": 73.5,
+          "value": 98
+        },
+        {
+          "beat": 73.75,
+          "value": 99
+        },
+        {
+          "beat": 74.0,
+          "value": 100
+        },
+        {
+          "beat": 74.25,
+          "value": 99
+        },
+        {
+          "beat": 74.5,
+          "value": 98
+        },
+        {
+          "beat": 74.75,
+          "value": 95
+        },
+        {
+          "beat": 75.0,
+          "value": 91
+        },
+        {
+          "beat": 75.25,
+          "value": 87
+        },
+        {
+          "beat": 75.5,
+          "value": 81
+        },
+        {
+          "beat": 75.75,
+          "value": 76
+        },
+        {
+          "beat": 76.0,
+          "value": 70
+        },
+        {
+          "beat": 76.25,
+          "value": 76
+        },
+        {
+          "beat": 76.5,
+          "value": 81
+        },
+        {
+          "beat": 76.75,
+          "value": 87
+        },
+        {
+          "beat": 77.0,
+          "value": 91
+        },
+        {
+          "beat": 77.25,
+          "value": 95
+        },
+        {
+          "beat": 77.5,
+          "value": 98
+        },
+        {
+          "beat": 77.75,
+          "value": 99
+        },
+        {
+          "beat": 78.0,
+          "value": 100
+        },
+        {
+          "beat": 78.25,
+          "value": 99
+        },
+        {
+          "beat": 78.5,
+          "value": 98
+        },
+        {
+          "beat": 78.75,
+          "value": 95
+        },
+        {
+          "beat": 79.0,
+          "value": 91
+        },
+        {
+          "beat": 79.25,
+          "value": 87
+        },
+        {
+          "beat": 79.5,
+          "value": 81
+        },
+        {
+          "beat": 79.75,
+          "value": 76
+        },
+        {
+          "beat": 80.0,
+          "value": 70
+        },
+        {
+          "beat": 80.25,
+          "value": 76
+        },
+        {
+          "beat": 80.5,
+          "value": 81
+        },
+        {
+          "beat": 80.75,
+          "value": 87
+        },
+        {
+          "beat": 81.0,
+          "value": 91
+        },
+        {
+          "beat": 81.25,
+          "value": 95
+        },
+        {
+          "beat": 81.5,
+          "value": 98
+        },
+        {
+          "beat": 81.75,
+          "value": 99
+        },
+        {
+          "beat": 82.0,
+          "value": 100
+        },
+        {
+          "beat": 82.25,
+          "value": 99
+        },
+        {
+          "beat": 82.5,
+          "value": 98
+        },
+        {
+          "beat": 82.75,
+          "value": 95
+        },
+        {
+          "beat": 83.0,
+          "value": 91
+        },
+        {
+          "beat": 83.25,
+          "value": 87
+        },
+        {
+          "beat": 83.5,
+          "value": 81
+        },
+        {
+          "beat": 83.75,
+          "value": 76
+        },
+        {
+          "beat": 84.0,
+          "value": 70
+        },
+        {
+          "beat": 84.25,
+          "value": 76
+        },
+        {
+          "beat": 84.5,
+          "value": 81
+        },
+        {
+          "beat": 84.75,
+          "value": 87
+        },
+        {
+          "beat": 85.0,
+          "value": 91
+        },
+        {
+          "beat": 85.25,
+          "value": 95
+        },
+        {
+          "beat": 85.5,
+          "value": 98
+        },
+        {
+          "beat": 85.75,
+          "value": 99
+        },
+        {
+          "beat": 86.0,
+          "value": 100
+        },
+        {
+          "beat": 86.25,
+          "value": 99
+        },
+        {
+          "beat": 86.5,
+          "value": 98
+        },
+        {
+          "beat": 86.75,
+          "value": 95
+        },
+        {
+          "beat": 87.0,
+          "value": 91
+        },
+        {
+          "beat": 87.25,
+          "value": 87
+        },
+        {
+          "beat": 87.5,
+          "value": 81
+        },
+        {
+          "beat": 87.75,
+          "value": 76
+        },
+        {
+          "beat": 88.0,
+          "value": 70
+        },
+        {
+          "beat": 88.25,
+          "value": 76
+        },
+        {
+          "beat": 88.5,
+          "value": 81
+        },
+        {
+          "beat": 88.75,
+          "value": 87
+        },
+        {
+          "beat": 89.0,
+          "value": 91
+        },
+        {
+          "beat": 89.25,
+          "value": 95
+        },
+        {
+          "beat": 89.5,
+          "value": 98
+        },
+        {
+          "beat": 89.75,
+          "value": 99
+        },
+        {
+          "beat": 90.0,
+          "value": 100
+        },
+        {
+          "beat": 90.25,
+          "value": 99
+        },
+        {
+          "beat": 90.5,
+          "value": 98
+        },
+        {
+          "beat": 90.75,
+          "value": 95
+        },
+        {
+          "beat": 91.0,
+          "value": 91
+        },
+        {
+          "beat": 91.25,
+          "value": 87
+        },
+        {
+          "beat": 91.5,
+          "value": 81
+        },
+        {
+          "beat": 91.75,
+          "value": 76
+        },
+        {
+          "beat": 92.0,
+          "value": 70
+        },
+        {
+          "beat": 92.25,
+          "value": 76
+        },
+        {
+          "beat": 92.5,
+          "value": 81
+        },
+        {
+          "beat": 92.75,
+          "value": 87
+        },
+        {
+          "beat": 93.0,
+          "value": 91
+        },
+        {
+          "beat": 93.25,
+          "value": 95
+        },
+        {
+          "beat": 93.5,
+          "value": 98
+        },
+        {
+          "beat": 93.75,
+          "value": 99
+        },
+        {
+          "beat": 94.0,
+          "value": 100
+        },
+        {
+          "beat": 94.25,
+          "value": 99
+        },
+        {
+          "beat": 94.5,
+          "value": 98
+        },
+        {
+          "beat": 94.75,
+          "value": 95
+        },
+        {
+          "beat": 95.0,
+          "value": 91
+        },
+        {
+          "beat": 95.25,
+          "value": 87
+        },
+        {
+          "beat": 95.5,
+          "value": 81
+        },
+        {
+          "beat": 95.75,
+          "value": 76
+        },
+        {
+          "beat": 96.0,
+          "value": 70
+        },
+        {
+          "beat": 96.25,
+          "value": 76
+        },
+        {
+          "beat": 96.5,
+          "value": 81
+        },
+        {
+          "beat": 96.75,
+          "value": 87
+        },
+        {
+          "beat": 97.0,
+          "value": 91
+        },
+        {
+          "beat": 97.25,
+          "value": 95
+        },
+        {
+          "beat": 97.5,
+          "value": 98
+        },
+        {
+          "beat": 97.75,
+          "value": 99
+        },
+        {
+          "beat": 98.0,
+          "value": 100
+        },
+        {
+          "beat": 98.25,
+          "value": 99
+        },
+        {
+          "beat": 98.5,
+          "value": 98
+        },
+        {
+          "beat": 98.75,
+          "value": 95
+        },
+        {
+          "beat": 99.0,
+          "value": 91
+        },
+        {
+          "beat": 99.25,
+          "value": 87
+        },
+        {
+          "beat": 99.5,
+          "value": 81
+        },
+        {
+          "beat": 99.75,
+          "value": 76
+        },
+        {
+          "beat": 100.0,
+          "value": 70
+        },
+        {
+          "beat": 100.25,
+          "value": 76
+        },
+        {
+          "beat": 100.5,
+          "value": 81
+        },
+        {
+          "beat": 100.75,
+          "value": 87
+        },
+        {
+          "beat": 101.0,
+          "value": 91
+        },
+        {
+          "beat": 101.25,
+          "value": 95
+        },
+        {
+          "beat": 101.5,
+          "value": 98
+        },
+        {
+          "beat": 101.75,
+          "value": 99
+        },
+        {
+          "beat": 102.0,
+          "value": 100
+        },
+        {
+          "beat": 102.25,
+          "value": 99
+        },
+        {
+          "beat": 102.5,
+          "value": 98
+        },
+        {
+          "beat": 102.75,
+          "value": 95
+        },
+        {
+          "beat": 103.0,
+          "value": 91
+        },
+        {
+          "beat": 103.25,
+          "value": 87
+        },
+        {
+          "beat": 103.5,
+          "value": 81
+        },
+        {
+          "beat": 103.75,
+          "value": 76
+        },
+        {
+          "beat": 104.0,
+          "value": 70
+        },
+        {
+          "beat": 104.25,
+          "value": 76
+        },
+        {
+          "beat": 104.5,
+          "value": 81
+        },
+        {
+          "beat": 104.75,
+          "value": 87
+        },
+        {
+          "beat": 105.0,
+          "value": 91
+        },
+        {
+          "beat": 105.25,
+          "value": 95
+        },
+        {
+          "beat": 105.5,
+          "value": 98
+        },
+        {
+          "beat": 105.75,
+          "value": 99
+        },
+        {
+          "beat": 106.0,
+          "value": 100
+        },
+        {
+          "beat": 106.25,
+          "value": 99
+        },
+        {
+          "beat": 106.5,
+          "value": 98
+        },
+        {
+          "beat": 106.75,
+          "value": 95
+        },
+        {
+          "beat": 107.0,
+          "value": 91
+        },
+        {
+          "beat": 107.25,
+          "value": 87
+        },
+        {
+          "beat": 107.5,
+          "value": 81
+        },
+        {
+          "beat": 107.75,
+          "value": 76
+        },
+        {
+          "beat": 108.0,
+          "value": 70
+        },
+        {
+          "beat": 108.25,
+          "value": 76
+        },
+        {
+          "beat": 108.5,
+          "value": 81
+        },
+        {
+          "beat": 108.75,
+          "value": 87
+        },
+        {
+          "beat": 109.0,
+          "value": 91
+        },
+        {
+          "beat": 109.25,
+          "value": 95
+        },
+        {
+          "beat": 109.5,
+          "value": 98
+        },
+        {
+          "beat": 109.75,
+          "value": 99
+        },
+        {
+          "beat": 110.0,
+          "value": 100
+        },
+        {
+          "beat": 110.25,
+          "value": 99
+        },
+        {
+          "beat": 110.5,
+          "value": 98
+        },
+        {
+          "beat": 110.75,
+          "value": 95
+        },
+        {
+          "beat": 111.0,
+          "value": 91
+        },
+        {
+          "beat": 111.25,
+          "value": 87
+        },
+        {
+          "beat": 111.5,
+          "value": 81
+        },
+        {
+          "beat": 111.75,
+          "value": 76
+        },
+        {
+          "beat": 112.0,
+          "value": 70
+        },
+        {
+          "beat": 112.25,
+          "value": 76
+        },
+        {
+          "beat": 112.5,
+          "value": 81
+        },
+        {
+          "beat": 112.75,
+          "value": 87
+        },
+        {
+          "beat": 113.0,
+          "value": 91
+        },
+        {
+          "beat": 113.25,
+          "value": 95
+        },
+        {
+          "beat": 113.5,
+          "value": 98
+        },
+        {
+          "beat": 113.75,
+          "value": 99
+        },
+        {
+          "beat": 114.0,
+          "value": 100
+        },
+        {
+          "beat": 114.25,
+          "value": 99
+        },
+        {
+          "beat": 114.5,
+          "value": 98
+        },
+        {
+          "beat": 114.75,
+          "value": 95
+        },
+        {
+          "beat": 115.0,
+          "value": 91
+        },
+        {
+          "beat": 115.25,
+          "value": 87
+        },
+        {
+          "beat": 115.5,
+          "value": 81
+        },
+        {
+          "beat": 115.75,
+          "value": 76
+        },
+        {
+          "beat": 116.0,
+          "value": 70
+        },
+        {
+          "beat": 116.25,
+          "value": 76
+        },
+        {
+          "beat": 116.5,
+          "value": 81
+        },
+        {
+          "beat": 116.75,
+          "value": 87
+        },
+        {
+          "beat": 117.0,
+          "value": 91
+        },
+        {
+          "beat": 117.25,
+          "value": 95
+        },
+        {
+          "beat": 117.5,
+          "value": 98
+        },
+        {
+          "beat": 117.75,
+          "value": 99
+        },
+        {
+          "beat": 118.0,
+          "value": 100
+        },
+        {
+          "beat": 118.25,
+          "value": 99
+        },
+        {
+          "beat": 118.5,
+          "value": 98
+        },
+        {
+          "beat": 118.75,
+          "value": 95
+        },
+        {
+          "beat": 119.0,
+          "value": 91
+        },
+        {
+          "beat": 119.25,
+          "value": 87
+        },
+        {
+          "beat": 119.5,
+          "value": 81
+        },
+        {
+          "beat": 119.75,
+          "value": 76
+        },
+        {
+          "beat": 120.0,
+          "value": 70
+        },
+        {
+          "beat": 120.25,
+          "value": 76
+        },
+        {
+          "beat": 120.5,
+          "value": 81
+        },
+        {
+          "beat": 120.75,
+          "value": 87
+        },
+        {
+          "beat": 121.0,
+          "value": 91
+        },
+        {
+          "beat": 121.25,
+          "value": 95
+        },
+        {
+          "beat": 121.5,
+          "value": 98
+        },
+        {
+          "beat": 121.75,
+          "value": 99
+        },
+        {
+          "beat": 122.0,
+          "value": 100
+        },
+        {
+          "beat": 122.25,
+          "value": 99
+        },
+        {
+          "beat": 122.5,
+          "value": 98
+        },
+        {
+          "beat": 122.75,
+          "value": 95
+        },
+        {
+          "beat": 123.0,
+          "value": 91
+        },
+        {
+          "beat": 123.25,
+          "value": 87
+        },
+        {
+          "beat": 123.5,
+          "value": 81
+        },
+        {
+          "beat": 123.75,
+          "value": 76
+        },
+        {
+          "beat": 124.0,
+          "value": 70
+        },
+        {
+          "beat": 124.25,
+          "value": 76
+        },
+        {
+          "beat": 124.5,
+          "value": 81
+        },
+        {
+          "beat": 124.75,
+          "value": 87
+        },
+        {
+          "beat": 125.0,
+          "value": 91
+        },
+        {
+          "beat": 125.25,
+          "value": 95
+        },
+        {
+          "beat": 125.5,
+          "value": 98
+        },
+        {
+          "beat": 125.75,
+          "value": 99
+        },
+        {
+          "beat": 126.0,
+          "value": 100
+        },
+        {
+          "beat": 126.25,
+          "value": 99
+        },
+        {
+          "beat": 126.5,
+          "value": 98
+        },
+        {
+          "beat": 126.75,
+          "value": 95
+        },
+        {
+          "beat": 127.0,
+          "value": 91
+        },
+        {
+          "beat": 127.25,
+          "value": 87
+        },
+        {
+          "beat": 127.5,
+          "value": 81
+        },
+        {
+          "beat": 127.75,
+          "value": 76
+        }
+      ],
+      "instrumentFiles": [
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_A#4.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_A#5.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_A#6.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_C#4.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_C#7.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_C4.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_C5.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_C6.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_C7.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_D4.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_D5.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_D6.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_D7.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_E4.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_E5.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_E6.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_F#4.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_F#5.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_F#6.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_G#4.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_G#5.wav",
+        "/Library/Application Support/GarageBand/Instrument Library/Sampler/Sampler Files/Flute Solo/Flute_LV_na_sus_mf/FL1-L_LV_na_sus_mf_G#6.wav"
+      ],
+      "sampleGainDb": 10
+    },
+    {
+      "name": "lantern-strings",
+      "program": 0,
+      "percussion": false,
+      "gain": 0.18,
+      "pan": 0.24,
+      "reverb": 18,
+      "notes": [
+        {
+          "beat": 0.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 0.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 0.063,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 0.072,
+          "pitch": 77,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 4.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 4.054,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 4.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 4.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 8.045,
+          "pitch": 65,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 8.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 8.063,
+          "pitch": 72,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 8.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 12.045,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 12.054,
+          "pitch": 71,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 12.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 12.072,
+          "pitch": 81,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 16.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 16.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 16.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 16.072,
+          "pitch": 77,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 20.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 20.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 20.063,
+          "pitch": 72,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 20.072,
+          "pitch": 79,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 24.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 24.054,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 24.063,
+          "pitch": 71,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 24.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 28.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 28.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 28.063,
+          "pitch": 73,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 28.072,
+          "pitch": 79,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 32.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 65
+        },
+        {
+          "beat": 32.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 64
+        },
+        {
+          "beat": 32.063,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 63
+        },
+        {
+          "beat": 32.072,
+          "pitch": 77,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 36.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 65
+        },
+        {
+          "beat": 36.054,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 64
+        },
+        {
+          "beat": 36.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 63
+        },
+        {
+          "beat": 36.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 40.045,
+          "pitch": 65,
+          "duration": 3.7,
+          "velocity": 65
+        },
+        {
+          "beat": 40.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 64
+        },
+        {
+          "beat": 40.063,
+          "pitch": 72,
+          "duration": 3.7,
+          "velocity": 63
+        },
+        {
+          "beat": 40.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 44.045,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 65
+        },
+        {
+          "beat": 44.054,
+          "pitch": 71,
+          "duration": 3.7,
+          "velocity": 64
+        },
+        {
+          "beat": 44.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 63
+        },
+        {
+          "beat": 44.072,
+          "pitch": 81,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 48.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 65
+        },
+        {
+          "beat": 48.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 64
+        },
+        {
+          "beat": 48.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 63
+        },
+        {
+          "beat": 48.072,
+          "pitch": 77,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 52.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 65
+        },
+        {
+          "beat": 52.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 64
+        },
+        {
+          "beat": 52.063,
+          "pitch": 72,
+          "duration": 3.7,
+          "velocity": 63
+        },
+        {
+          "beat": 52.072,
+          "pitch": 79,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 56.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 65
+        },
+        {
+          "beat": 56.054,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 64
+        },
+        {
+          "beat": 56.063,
+          "pitch": 71,
+          "duration": 3.7,
+          "velocity": 63
+        },
+        {
+          "beat": 56.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 60.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 65
+        },
+        {
+          "beat": 60.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 64
+        },
+        {
+          "beat": 60.063,
+          "pitch": 73,
+          "duration": 3.7,
+          "velocity": 63
+        },
+        {
+          "beat": 60.072,
+          "pitch": 79,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 64.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 64.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 64.063,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 64.072,
+          "pitch": 77,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 68.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 68.054,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 68.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 68.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 72.045,
+          "pitch": 65,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 72.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 72.063,
+          "pitch": 72,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 72.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 76.045,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 76.054,
+          "pitch": 71,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 76.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 76.072,
+          "pitch": 81,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 80.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 80.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 80.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 80.072,
+          "pitch": 77,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 84.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 84.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 84.063,
+          "pitch": 72,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 84.072,
+          "pitch": 79,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 88.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 88.054,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 88.063,
+          "pitch": 71,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 88.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 92.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 62
+        },
+        {
+          "beat": 92.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 61
+        },
+        {
+          "beat": 92.063,
+          "pitch": 73,
+          "duration": 3.7,
+          "velocity": 60
+        },
+        {
+          "beat": 92.072,
+          "pitch": 79,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 96.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 96.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 96.063,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 57
+        },
+        {
+          "beat": 96.072,
+          "pitch": 77,
+          "duration": 3.7,
+          "velocity": 56
+        },
+        {
+          "beat": 100.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 100.054,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 100.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 57
+        },
+        {
+          "beat": 100.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 56
+        },
+        {
+          "beat": 104.045,
+          "pitch": 65,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 104.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 104.063,
+          "pitch": 72,
+          "duration": 3.7,
+          "velocity": 57
+        },
+        {
+          "beat": 104.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 56
+        },
+        {
+          "beat": 108.045,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 108.054,
+          "pitch": 71,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 108.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 57
+        },
+        {
+          "beat": 108.072,
+          "pitch": 81,
+          "duration": 3.7,
+          "velocity": 56
+        },
+        {
+          "beat": 112.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 112.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 112.063,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 57
+        },
+        {
+          "beat": 112.072,
+          "pitch": 77,
+          "duration": 3.7,
+          "velocity": 56
+        },
+        {
+          "beat": 116.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 116.054,
+          "pitch": 67,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 116.063,
+          "pitch": 71,
+          "duration": 3.7,
+          "velocity": 57
+        },
+        {
+          "beat": 116.072,
+          "pitch": 76,
+          "duration": 3.7,
+          "velocity": 56
+        },
+        {
+          "beat": 120.045,
+          "pitch": 64,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 120.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 120.063,
+          "pitch": 73,
+          "duration": 3.7,
+          "velocity": 57
+        },
+        {
+          "beat": 120.072,
+          "pitch": 79,
+          "duration": 3.7,
+          "velocity": 56
+        },
+        {
+          "beat": 124.045,
+          "pitch": 62,
+          "duration": 3.7,
+          "velocity": 59
+        },
+        {
+          "beat": 124.054,
+          "pitch": 69,
+          "duration": 3.7,
+          "velocity": 58
+        },
+        {
+          "beat": 124.063,
+          "pitch": 74,
+          "duration": 3.7,
+          "velocity": 57
+        },
+        {
+          "beat": 124.072,
+          "pitch": 77,
+          "duration": 3.7,
+          "velocity": 56
+        }
+      ],
+      "expression": [
+        {
+          "beat": 0.0,
+          "value": 86
+        },
+        {
+          "beat": 0.25,
+          "value": 86
+        },
+        {
+          "beat": 0.5,
+          "value": 86
+        },
+        {
+          "beat": 0.75,
+          "value": 87
+        },
+        {
+          "beat": 1.0,
+          "value": 87
+        },
+        {
+          "beat": 1.25,
+          "value": 88
+        },
+        {
+          "beat": 1.5,
+          "value": 88
+        },
+        {
+          "beat": 1.75,
+          "value": 89
+        },
+        {
+          "beat": 2.0,
+          "value": 89
+        },
+        {
+          "beat": 2.25,
+          "value": 90
+        },
+        {
+          "beat": 2.5,
+          "value": 90
+        },
+        {
+          "beat": 2.75,
+          "value": 91
+        },
+        {
+          "beat": 3.0,
+          "value": 91
+        },
+        {
+          "beat": 3.25,
+          "value": 91
+        },
+        {
+          "beat": 3.5,
+          "value": 92
+        },
+        {
+          "beat": 3.75,
+          "value": 92
+        },
+        {
+          "beat": 4.0,
+          "value": 93
+        },
+        {
+          "beat": 4.25,
+          "value": 93
+        },
+        {
+          "beat": 4.5,
+          "value": 93
+        },
+        {
+          "beat": 4.75,
+          "value": 94
+        },
+        {
+          "beat": 5.0,
+          "value": 94
+        },
+        {
+          "beat": 5.25,
+          "value": 94
+        },
+        {
+          "beat": 5.5,
+          "value": 94
+        },
+        {
+          "beat": 5.75,
+          "value": 95
+        },
+        {
+          "beat": 6.0,
+          "value": 95
+        },
+        {
+          "beat": 6.25,
+          "value": 95
+        },
+        {
+          "beat": 6.5,
+          "value": 95
+        },
+        {
+          "beat": 6.75,
+          "value": 95
+        },
+        {
+          "beat": 7.0,
+          "value": 95
+        },
+        {
+          "beat": 7.25,
+          "value": 95
+        },
+        {
+          "beat": 7.5,
+          "value": 95
+        },
+        {
+          "beat": 7.75,
+          "value": 95
+        },
+        {
+          "beat": 8.0,
+          "value": 96
+        },
+        {
+          "beat": 8.25,
+          "value": 95
+        },
+        {
+          "beat": 8.5,
+          "value": 95
+        },
+        {
+          "beat": 8.75,
+          "value": 95
+        },
+        {
+          "beat": 9.0,
+          "value": 95
+        },
+        {
+          "beat": 9.25,
+          "value": 95
+        },
+        {
+          "beat": 9.5,
+          "value": 95
+        },
+        {
+          "beat": 9.75,
+          "value": 95
+        },
+        {
+          "beat": 10.0,
+          "value": 95
+        },
+        {
+          "beat": 10.25,
+          "value": 95
+        },
+        {
+          "beat": 10.5,
+          "value": 94
+        },
+        {
+          "beat": 10.75,
+          "value": 94
+        },
+        {
+          "beat": 11.0,
+          "value": 94
+        },
+        {
+          "beat": 11.25,
+          "value": 94
+        },
+        {
+          "beat": 11.5,
+          "value": 93
+        },
+        {
+          "beat": 11.75,
+          "value": 93
+        },
+        {
+          "beat": 12.0,
+          "value": 93
+        },
+        {
+          "beat": 12.25,
+          "value": 92
+        },
+        {
+          "beat": 12.5,
+          "value": 92
+        },
+        {
+          "beat": 12.75,
+          "value": 91
+        },
+        {
+          "beat": 13.0,
+          "value": 91
+        },
+        {
+          "beat": 13.25,
+          "value": 91
+        },
+        {
+          "beat": 13.5,
+          "value": 90
+        },
+        {
+          "beat": 13.75,
+          "value": 90
+        },
+        {
+          "beat": 14.0,
+          "value": 89
+        },
+        {
+          "beat": 14.25,
+          "value": 89
+        },
+        {
+          "beat": 14.5,
+          "value": 88
+        },
+        {
+          "beat": 14.75,
+          "value": 88
+        },
+        {
+          "beat": 15.0,
+          "value": 87
+        },
+        {
+          "beat": 15.25,
+          "value": 87
+        },
+        {
+          "beat": 15.5,
+          "value": 86
+        },
+        {
+          "beat": 15.75,
+          "value": 86
+        },
+        {
+          "beat": 16.0,
+          "value": 86
+        },
+        {
+          "beat": 16.25,
+          "value": 86
+        },
+        {
+          "beat": 16.5,
+          "value": 86
+        },
+        {
+          "beat": 16.75,
+          "value": 87
+        },
+        {
+          "beat": 17.0,
+          "value": 87
+        },
+        {
+          "beat": 17.25,
+          "value": 88
+        },
+        {
+          "beat": 17.5,
+          "value": 88
+        },
+        {
+          "beat": 17.75,
+          "value": 89
+        },
+        {
+          "beat": 18.0,
+          "value": 89
+        },
+        {
+          "beat": 18.25,
+          "value": 90
+        },
+        {
+          "beat": 18.5,
+          "value": 90
+        },
+        {
+          "beat": 18.75,
+          "value": 91
+        },
+        {
+          "beat": 19.0,
+          "value": 91
+        },
+        {
+          "beat": 19.25,
+          "value": 91
+        },
+        {
+          "beat": 19.5,
+          "value": 92
+        },
+        {
+          "beat": 19.75,
+          "value": 92
+        },
+        {
+          "beat": 20.0,
+          "value": 93
+        },
+        {
+          "beat": 20.25,
+          "value": 93
+        },
+        {
+          "beat": 20.5,
+          "value": 93
+        },
+        {
+          "beat": 20.75,
+          "value": 94
+        },
+        {
+          "beat": 21.0,
+          "value": 94
+        },
+        {
+          "beat": 21.25,
+          "value": 94
+        },
+        {
+          "beat": 21.5,
+          "value": 94
+        },
+        {
+          "beat": 21.75,
+          "value": 95
+        },
+        {
+          "beat": 22.0,
+          "value": 95
+        },
+        {
+          "beat": 22.25,
+          "value": 95
+        },
+        {
+          "beat": 22.5,
+          "value": 95
+        },
+        {
+          "beat": 22.75,
+          "value": 95
+        },
+        {
+          "beat": 23.0,
+          "value": 95
+        },
+        {
+          "beat": 23.25,
+          "value": 95
+        },
+        {
+          "beat": 23.5,
+          "value": 95
+        },
+        {
+          "beat": 23.75,
+          "value": 95
+        },
+        {
+          "beat": 24.0,
+          "value": 96
+        },
+        {
+          "beat": 24.25,
+          "value": 95
+        },
+        {
+          "beat": 24.5,
+          "value": 95
+        },
+        {
+          "beat": 24.75,
+          "value": 95
+        },
+        {
+          "beat": 25.0,
+          "value": 95
+        },
+        {
+          "beat": 25.25,
+          "value": 95
+        },
+        {
+          "beat": 25.5,
+          "value": 95
+        },
+        {
+          "beat": 25.75,
+          "value": 95
+        },
+        {
+          "beat": 26.0,
+          "value": 95
+        },
+        {
+          "beat": 26.25,
+          "value": 95
+        },
+        {
+          "beat": 26.5,
+          "value": 94
+        },
+        {
+          "beat": 26.75,
+          "value": 94
+        },
+        {
+          "beat": 27.0,
+          "value": 94
+        },
+        {
+          "beat": 27.25,
+          "value": 94
+        },
+        {
+          "beat": 27.5,
+          "value": 93
+        },
+        {
+          "beat": 27.75,
+          "value": 93
+        },
+        {
+          "beat": 28.0,
+          "value": 93
+        },
+        {
+          "beat": 28.25,
+          "value": 92
+        },
+        {
+          "beat": 28.5,
+          "value": 92
+        },
+        {
+          "beat": 28.75,
+          "value": 91
+        },
+        {
+          "beat": 29.0,
+          "value": 91
+        },
+        {
+          "beat": 29.25,
+          "value": 91
+        },
+        {
+          "beat": 29.5,
+          "value": 90
+        },
+        {
+          "beat": 29.75,
+          "value": 90
+        },
+        {
+          "beat": 30.0,
+          "value": 89
+        },
+        {
+          "beat": 30.25,
+          "value": 89
+        },
+        {
+          "beat": 30.5,
+          "value": 88
+        },
+        {
+          "beat": 30.75,
+          "value": 88
+        },
+        {
+          "beat": 31.0,
+          "value": 87
+        },
+        {
+          "beat": 31.25,
+          "value": 87
+        },
+        {
+          "beat": 31.5,
+          "value": 86
+        },
+        {
+          "beat": 31.75,
+          "value": 86
+        },
+        {
+          "beat": 32.0,
+          "value": 92
+        },
+        {
+          "beat": 32.25,
+          "value": 92
+        },
+        {
+          "beat": 32.5,
+          "value": 93
+        },
+        {
+          "beat": 32.75,
+          "value": 93
+        },
+        {
+          "beat": 33.0,
+          "value": 94
+        },
+        {
+          "beat": 33.25,
+          "value": 94
+        },
+        {
+          "beat": 33.5,
+          "value": 95
+        },
+        {
+          "beat": 33.75,
+          "value": 95
+        },
+        {
+          "beat": 34.0,
+          "value": 96
+        },
+        {
+          "beat": 34.25,
+          "value": 96
+        },
+        {
+          "beat": 34.5,
+          "value": 97
+        },
+        {
+          "beat": 34.75,
+          "value": 97
+        },
+        {
+          "beat": 35.0,
+          "value": 97
+        },
+        {
+          "beat": 35.25,
+          "value": 98
+        },
+        {
+          "beat": 35.5,
+          "value": 98
+        },
+        {
+          "beat": 35.75,
+          "value": 99
+        },
+        {
+          "beat": 36.0,
+          "value": 99
+        },
+        {
+          "beat": 36.25,
+          "value": 99
+        },
+        {
+          "beat": 36.5,
+          "value": 100
+        },
+        {
+          "beat": 36.75,
+          "value": 100
+        },
+        {
+          "beat": 37.0,
+          "value": 100
+        },
+        {
+          "beat": 37.25,
+          "value": 100
+        },
+        {
+          "beat": 37.5,
+          "value": 101
+        },
+        {
+          "beat": 37.75,
+          "value": 101
+        },
+        {
+          "beat": 38.0,
+          "value": 101
+        },
+        {
+          "beat": 38.25,
+          "value": 101
+        },
+        {
+          "beat": 38.5,
+          "value": 101
+        },
+        {
+          "beat": 38.75,
+          "value": 102
+        },
+        {
+          "beat": 39.0,
+          "value": 102
+        },
+        {
+          "beat": 39.25,
+          "value": 102
+        },
+        {
+          "beat": 39.5,
+          "value": 102
+        },
+        {
+          "beat": 39.75,
+          "value": 102
+        },
+        {
+          "beat": 40.0,
+          "value": 102
+        },
+        {
+          "beat": 40.25,
+          "value": 102
+        },
+        {
+          "beat": 40.5,
+          "value": 102
+        },
+        {
+          "beat": 40.75,
+          "value": 102
+        },
+        {
+          "beat": 41.0,
+          "value": 102
+        },
+        {
+          "beat": 41.25,
+          "value": 102
+        },
+        {
+          "beat": 41.5,
+          "value": 101
+        },
+        {
+          "beat": 41.75,
+          "value": 101
+        },
+        {
+          "beat": 42.0,
+          "value": 101
+        },
+        {
+          "beat": 42.25,
+          "value": 101
+        },
+        {
+          "beat": 42.5,
+          "value": 101
+        },
+        {
+          "beat": 42.75,
+          "value": 100
+        },
+        {
+          "beat": 43.0,
+          "value": 100
+        },
+        {
+          "beat": 43.25,
+          "value": 100
+        },
+        {
+          "beat": 43.5,
+          "value": 100
+        },
+        {
+          "beat": 43.75,
+          "value": 99
+        },
+        {
+          "beat": 44.0,
+          "value": 99
+        },
+        {
+          "beat": 44.25,
+          "value": 99
+        },
+        {
+          "beat": 44.5,
+          "value": 98
+        },
+        {
+          "beat": 44.75,
+          "value": 98
+        },
+        {
+          "beat": 45.0,
+          "value": 97
+        },
+        {
+          "beat": 45.25,
+          "value": 97
+        },
+        {
+          "beat": 45.5,
+          "value": 97
+        },
+        {
+          "beat": 45.75,
+          "value": 96
+        },
+        {
+          "beat": 46.0,
+          "value": 96
+        },
+        {
+          "beat": 46.25,
+          "value": 95
+        },
+        {
+          "beat": 46.5,
+          "value": 95
+        },
+        {
+          "beat": 46.75,
+          "value": 94
+        },
+        {
+          "beat": 47.0,
+          "value": 94
+        },
+        {
+          "beat": 47.25,
+          "value": 93
+        },
+        {
+          "beat": 47.5,
+          "value": 93
+        },
+        {
+          "beat": 47.75,
+          "value": 92
+        },
+        {
+          "beat": 48.0,
+          "value": 92
+        },
+        {
+          "beat": 48.25,
+          "value": 92
+        },
+        {
+          "beat": 48.5,
+          "value": 93
+        },
+        {
+          "beat": 48.75,
+          "value": 93
+        },
+        {
+          "beat": 49.0,
+          "value": 94
+        },
+        {
+          "beat": 49.25,
+          "value": 94
+        },
+        {
+          "beat": 49.5,
+          "value": 95
+        },
+        {
+          "beat": 49.75,
+          "value": 95
+        },
+        {
+          "beat": 50.0,
+          "value": 96
+        },
+        {
+          "beat": 50.25,
+          "value": 96
+        },
+        {
+          "beat": 50.5,
+          "value": 97
+        },
+        {
+          "beat": 50.75,
+          "value": 97
+        },
+        {
+          "beat": 51.0,
+          "value": 97
+        },
+        {
+          "beat": 51.25,
+          "value": 98
+        },
+        {
+          "beat": 51.5,
+          "value": 98
+        },
+        {
+          "beat": 51.75,
+          "value": 99
+        },
+        {
+          "beat": 52.0,
+          "value": 99
+        },
+        {
+          "beat": 52.25,
+          "value": 99
+        },
+        {
+          "beat": 52.5,
+          "value": 100
+        },
+        {
+          "beat": 52.75,
+          "value": 100
+        },
+        {
+          "beat": 53.0,
+          "value": 100
+        },
+        {
+          "beat": 53.25,
+          "value": 100
+        },
+        {
+          "beat": 53.5,
+          "value": 101
+        },
+        {
+          "beat": 53.75,
+          "value": 101
+        },
+        {
+          "beat": 54.0,
+          "value": 101
+        },
+        {
+          "beat": 54.25,
+          "value": 101
+        },
+        {
+          "beat": 54.5,
+          "value": 101
+        },
+        {
+          "beat": 54.75,
+          "value": 102
+        },
+        {
+          "beat": 55.0,
+          "value": 102
+        },
+        {
+          "beat": 55.25,
+          "value": 102
+        },
+        {
+          "beat": 55.5,
+          "value": 102
+        },
+        {
+          "beat": 55.75,
+          "value": 102
+        },
+        {
+          "beat": 56.0,
+          "value": 102
+        },
+        {
+          "beat": 56.25,
+          "value": 102
+        },
+        {
+          "beat": 56.5,
+          "value": 102
+        },
+        {
+          "beat": 56.75,
+          "value": 102
+        },
+        {
+          "beat": 57.0,
+          "value": 102
+        },
+        {
+          "beat": 57.25,
+          "value": 102
+        },
+        {
+          "beat": 57.5,
+          "value": 101
+        },
+        {
+          "beat": 57.75,
+          "value": 101
+        },
+        {
+          "beat": 58.0,
+          "value": 101
+        },
+        {
+          "beat": 58.25,
+          "value": 101
+        },
+        {
+          "beat": 58.5,
+          "value": 101
+        },
+        {
+          "beat": 58.75,
+          "value": 100
+        },
+        {
+          "beat": 59.0,
+          "value": 100
+        },
+        {
+          "beat": 59.25,
+          "value": 100
+        },
+        {
+          "beat": 59.5,
+          "value": 100
+        },
+        {
+          "beat": 59.75,
+          "value": 99
+        },
+        {
+          "beat": 60.0,
+          "value": 99
+        },
+        {
+          "beat": 60.25,
+          "value": 99
+        },
+        {
+          "beat": 60.5,
+          "value": 98
+        },
+        {
+          "beat": 60.75,
+          "value": 98
+        },
+        {
+          "beat": 61.0,
+          "value": 97
+        },
+        {
+          "beat": 61.25,
+          "value": 97
+        },
+        {
+          "beat": 61.5,
+          "value": 97
+        },
+        {
+          "beat": 61.75,
+          "value": 96
+        },
+        {
+          "beat": 62.0,
+          "value": 96
+        },
+        {
+          "beat": 62.25,
+          "value": 95
+        },
+        {
+          "beat": 62.5,
+          "value": 95
+        },
+        {
+          "beat": 62.75,
+          "value": 94
+        },
+        {
+          "beat": 63.0,
+          "value": 94
+        },
+        {
+          "beat": 63.25,
+          "value": 93
+        },
+        {
+          "beat": 63.5,
+          "value": 93
+        },
+        {
+          "beat": 63.75,
+          "value": 92
+        },
+        {
+          "beat": 64.0,
+          "value": 87
+        },
+        {
+          "beat": 64.25,
+          "value": 87
+        },
+        {
+          "beat": 64.5,
+          "value": 88
+        },
+        {
+          "beat": 64.75,
+          "value": 88
+        },
+        {
+          "beat": 65.0,
+          "value": 89
+        },
+        {
+          "beat": 65.25,
+          "value": 89
+        },
+        {
+          "beat": 65.5,
+          "value": 90
+        },
+        {
+          "beat": 65.75,
+          "value": 90
+        },
+        {
+          "beat": 66.0,
+          "value": 91
+        },
+        {
+          "beat": 66.25,
+          "value": 91
+        },
+        {
+          "beat": 66.5,
+          "value": 92
+        },
+        {
+          "beat": 66.75,
+          "value": 92
+        },
+        {
+          "beat": 67.0,
+          "value": 92
+        },
+        {
+          "beat": 67.25,
+          "value": 93
+        },
+        {
+          "beat": 67.5,
+          "value": 93
+        },
+        {
+          "beat": 67.75,
+          "value": 94
+        },
+        {
+          "beat": 68.0,
+          "value": 94
+        },
+        {
+          "beat": 68.25,
+          "value": 94
+        },
+        {
+          "beat": 68.5,
+          "value": 95
+        },
+        {
+          "beat": 68.75,
+          "value": 95
+        },
+        {
+          "beat": 69.0,
+          "value": 95
+        },
+        {
+          "beat": 69.25,
+          "value": 95
+        },
+        {
+          "beat": 69.5,
+          "value": 96
+        },
+        {
+          "beat": 69.75,
+          "value": 96
+        },
+        {
+          "beat": 70.0,
+          "value": 96
+        },
+        {
+          "beat": 70.25,
+          "value": 96
+        },
+        {
+          "beat": 70.5,
+          "value": 96
+        },
+        {
+          "beat": 70.75,
+          "value": 97
+        },
+        {
+          "beat": 71.0,
+          "value": 97
+        },
+        {
+          "beat": 71.25,
+          "value": 97
+        },
+        {
+          "beat": 71.5,
+          "value": 97
+        },
+        {
+          "beat": 71.75,
+          "value": 97
+        },
+        {
+          "beat": 72.0,
+          "value": 97
+        },
+        {
+          "beat": 72.25,
+          "value": 97
+        },
+        {
+          "beat": 72.5,
+          "value": 97
+        },
+        {
+          "beat": 72.75,
+          "value": 97
+        },
+        {
+          "beat": 73.0,
+          "value": 97
+        },
+        {
+          "beat": 73.25,
+          "value": 97
+        },
+        {
+          "beat": 73.5,
+          "value": 96
+        },
+        {
+          "beat": 73.75,
+          "value": 96
+        },
+        {
+          "beat": 74.0,
+          "value": 96
+        },
+        {
+          "beat": 74.25,
+          "value": 96
+        },
+        {
+          "beat": 74.5,
+          "value": 96
+        },
+        {
+          "beat": 74.75,
+          "value": 95
+        },
+        {
+          "beat": 75.0,
+          "value": 95
+        },
+        {
+          "beat": 75.25,
+          "value": 95
+        },
+        {
+          "beat": 75.5,
+          "value": 95
+        },
+        {
+          "beat": 75.75,
+          "value": 94
+        },
+        {
+          "beat": 76.0,
+          "value": 94
+        },
+        {
+          "beat": 76.25,
+          "value": 94
+        },
+        {
+          "beat": 76.5,
+          "value": 93
+        },
+        {
+          "beat": 76.75,
+          "value": 93
+        },
+        {
+          "beat": 77.0,
+          "value": 92
+        },
+        {
+          "beat": 77.25,
+          "value": 92
+        },
+        {
+          "beat": 77.5,
+          "value": 92
+        },
+        {
+          "beat": 77.75,
+          "value": 91
+        },
+        {
+          "beat": 78.0,
+          "value": 91
+        },
+        {
+          "beat": 78.25,
+          "value": 90
+        },
+        {
+          "beat": 78.5,
+          "value": 90
+        },
+        {
+          "beat": 78.75,
+          "value": 89
+        },
+        {
+          "beat": 79.0,
+          "value": 89
+        },
+        {
+          "beat": 79.25,
+          "value": 88
+        },
+        {
+          "beat": 79.5,
+          "value": 88
+        },
+        {
+          "beat": 79.75,
+          "value": 87
+        },
+        {
+          "beat": 80.0,
+          "value": 87
+        },
+        {
+          "beat": 80.25,
+          "value": 87
+        },
+        {
+          "beat": 80.5,
+          "value": 88
+        },
+        {
+          "beat": 80.75,
+          "value": 88
+        },
+        {
+          "beat": 81.0,
+          "value": 89
+        },
+        {
+          "beat": 81.25,
+          "value": 89
+        },
+        {
+          "beat": 81.5,
+          "value": 90
+        },
+        {
+          "beat": 81.75,
+          "value": 90
+        },
+        {
+          "beat": 82.0,
+          "value": 91
+        },
+        {
+          "beat": 82.25,
+          "value": 91
+        },
+        {
+          "beat": 82.5,
+          "value": 92
+        },
+        {
+          "beat": 82.75,
+          "value": 92
+        },
+        {
+          "beat": 83.0,
+          "value": 92
+        },
+        {
+          "beat": 83.25,
+          "value": 93
+        },
+        {
+          "beat": 83.5,
+          "value": 93
+        },
+        {
+          "beat": 83.75,
+          "value": 94
+        },
+        {
+          "beat": 84.0,
+          "value": 94
+        },
+        {
+          "beat": 84.25,
+          "value": 94
+        },
+        {
+          "beat": 84.5,
+          "value": 95
+        },
+        {
+          "beat": 84.75,
+          "value": 95
+        },
+        {
+          "beat": 85.0,
+          "value": 95
+        },
+        {
+          "beat": 85.25,
+          "value": 95
+        },
+        {
+          "beat": 85.5,
+          "value": 96
+        },
+        {
+          "beat": 85.75,
+          "value": 96
+        },
+        {
+          "beat": 86.0,
+          "value": 96
+        },
+        {
+          "beat": 86.25,
+          "value": 96
+        },
+        {
+          "beat": 86.5,
+          "value": 96
+        },
+        {
+          "beat": 86.75,
+          "value": 97
+        },
+        {
+          "beat": 87.0,
+          "value": 97
+        },
+        {
+          "beat": 87.25,
+          "value": 97
+        },
+        {
+          "beat": 87.5,
+          "value": 97
+        },
+        {
+          "beat": 87.75,
+          "value": 97
+        },
+        {
+          "beat": 88.0,
+          "value": 97
+        },
+        {
+          "beat": 88.25,
+          "value": 97
+        },
+        {
+          "beat": 88.5,
+          "value": 97
+        },
+        {
+          "beat": 88.75,
+          "value": 97
+        },
+        {
+          "beat": 89.0,
+          "value": 97
+        },
+        {
+          "beat": 89.25,
+          "value": 97
+        },
+        {
+          "beat": 89.5,
+          "value": 96
+        },
+        {
+          "beat": 89.75,
+          "value": 96
+        },
+        {
+          "beat": 90.0,
+          "value": 96
+        },
+        {
+          "beat": 90.25,
+          "value": 96
+        },
+        {
+          "beat": 90.5,
+          "value": 96
+        },
+        {
+          "beat": 90.75,
+          "value": 95
+        },
+        {
+          "beat": 91.0,
+          "value": 95
+        },
+        {
+          "beat": 91.25,
+          "value": 95
+        },
+        {
+          "beat": 91.5,
+          "value": 95
+        },
+        {
+          "beat": 91.75,
+          "value": 94
+        },
+        {
+          "beat": 92.0,
+          "value": 94
+        },
+        {
+          "beat": 92.25,
+          "value": 94
+        },
+        {
+          "beat": 92.5,
+          "value": 93
+        },
+        {
+          "beat": 92.75,
+          "value": 93
+        },
+        {
+          "beat": 93.0,
+          "value": 92
+        },
+        {
+          "beat": 93.25,
+          "value": 92
+        },
+        {
+          "beat": 93.5,
+          "value": 92
+        },
+        {
+          "beat": 93.75,
+          "value": 91
+        },
+        {
+          "beat": 94.0,
+          "value": 91
+        },
+        {
+          "beat": 94.25,
+          "value": 90
+        },
+        {
+          "beat": 94.5,
+          "value": 90
+        },
+        {
+          "beat": 94.75,
+          "value": 89
+        },
+        {
+          "beat": 95.0,
+          "value": 89
+        },
+        {
+          "beat": 95.25,
+          "value": 88
+        },
+        {
+          "beat": 95.5,
+          "value": 88
+        },
+        {
+          "beat": 95.75,
+          "value": 87
+        },
+        {
+          "beat": 96.0,
+          "value": 81
+        },
+        {
+          "beat": 96.25,
+          "value": 81
+        },
+        {
+          "beat": 96.5,
+          "value": 82
+        },
+        {
+          "beat": 96.75,
+          "value": 82
+        },
+        {
+          "beat": 97.0,
+          "value": 83
+        },
+        {
+          "beat": 97.25,
+          "value": 83
+        },
+        {
+          "beat": 97.5,
+          "value": 84
+        },
+        {
+          "beat": 97.75,
+          "value": 84
+        },
+        {
+          "beat": 98.0,
+          "value": 84
+        },
+        {
+          "beat": 98.25,
+          "value": 85
+        },
+        {
+          "beat": 98.5,
+          "value": 85
+        },
+        {
+          "beat": 98.75,
+          "value": 86
+        },
+        {
+          "beat": 99.0,
+          "value": 86
+        },
+        {
+          "beat": 99.25,
+          "value": 87
+        },
+        {
+          "beat": 99.5,
+          "value": 87
+        },
+        {
+          "beat": 99.75,
+          "value": 87
+        },
+        {
+          "beat": 100.0,
+          "value": 88
+        },
+        {
+          "beat": 100.25,
+          "value": 88
+        },
+        {
+          "beat": 100.5,
+          "value": 88
+        },
+        {
+          "beat": 100.75,
+          "value": 89
+        },
+        {
+          "beat": 101.0,
+          "value": 89
+        },
+        {
+          "beat": 101.25,
+          "value": 89
+        },
+        {
+          "beat": 101.5,
+          "value": 89
+        },
+        {
+          "beat": 101.75,
+          "value": 90
+        },
+        {
+          "beat": 102.0,
+          "value": 90
+        },
+        {
+          "beat": 102.25,
+          "value": 90
+        },
+        {
+          "beat": 102.5,
+          "value": 90
+        },
+        {
+          "beat": 102.75,
+          "value": 90
+        },
+        {
+          "beat": 103.0,
+          "value": 90
+        },
+        {
+          "beat": 103.25,
+          "value": 90
+        },
+        {
+          "beat": 103.5,
+          "value": 91
+        },
+        {
+          "beat": 103.75,
+          "value": 91
+        },
+        {
+          "beat": 104.0,
+          "value": 91
+        },
+        {
+          "beat": 104.25,
+          "value": 91
+        },
+        {
+          "beat": 104.5,
+          "value": 91
+        },
+        {
+          "beat": 104.75,
+          "value": 90
+        },
+        {
+          "beat": 105.0,
+          "value": 90
+        },
+        {
+          "beat": 105.25,
+          "value": 90
+        },
+        {
+          "beat": 105.5,
+          "value": 90
+        },
+        {
+          "beat": 105.75,
+          "value": 90
+        },
+        {
+          "beat": 106.0,
+          "value": 90
+        },
+        {
+          "beat": 106.25,
+          "value": 90
+        },
+        {
+          "beat": 106.5,
+          "value": 89
+        },
+        {
+          "beat": 106.75,
+          "value": 89
+        },
+        {
+          "beat": 107.0,
+          "value": 89
+        },
+        {
+          "beat": 107.25,
+          "value": 89
+        },
+        {
+          "beat": 107.5,
+          "value": 88
+        },
+        {
+          "beat": 107.75,
+          "value": 88
+        },
+        {
+          "beat": 108.0,
+          "value": 88
+        },
+        {
+          "beat": 108.25,
+          "value": 87
+        },
+        {
+          "beat": 108.5,
+          "value": 87
+        },
+        {
+          "beat": 108.75,
+          "value": 87
+        },
+        {
+          "beat": 109.0,
+          "value": 86
+        },
+        {
+          "beat": 109.25,
+          "value": 86
+        },
+        {
+          "beat": 109.5,
+          "value": 85
+        },
+        {
+          "beat": 109.75,
+          "value": 85
+        },
+        {
+          "beat": 110.0,
+          "value": 84
+        },
+        {
+          "beat": 110.25,
+          "value": 84
+        },
+        {
+          "beat": 110.5,
+          "value": 84
+        },
+        {
+          "beat": 110.75,
+          "value": 83
+        },
+        {
+          "beat": 111.0,
+          "value": 83
+        },
+        {
+          "beat": 111.25,
+          "value": 82
+        },
+        {
+          "beat": 111.5,
+          "value": 82
+        },
+        {
+          "beat": 111.75,
+          "value": 81
+        },
+        {
+          "beat": 112.0,
+          "value": 81
+        },
+        {
+          "beat": 112.25,
+          "value": 81
+        },
+        {
+          "beat": 112.5,
+          "value": 82
+        },
+        {
+          "beat": 112.75,
+          "value": 82
+        },
+        {
+          "beat": 113.0,
+          "value": 83
+        },
+        {
+          "beat": 113.25,
+          "value": 83
+        },
+        {
+          "beat": 113.5,
+          "value": 84
+        },
+        {
+          "beat": 113.75,
+          "value": 84
+        },
+        {
+          "beat": 114.0,
+          "value": 84
+        },
+        {
+          "beat": 114.25,
+          "value": 85
+        },
+        {
+          "beat": 114.5,
+          "value": 85
+        },
+        {
+          "beat": 114.75,
+          "value": 86
+        },
+        {
+          "beat": 115.0,
+          "value": 86
+        },
+        {
+          "beat": 115.25,
+          "value": 87
+        },
+        {
+          "beat": 115.5,
+          "value": 87
+        },
+        {
+          "beat": 115.75,
+          "value": 87
+        },
+        {
+          "beat": 116.0,
+          "value": 88
+        },
+        {
+          "beat": 116.25,
+          "value": 88
+        },
+        {
+          "beat": 116.5,
+          "value": 88
+        },
+        {
+          "beat": 116.75,
+          "value": 89
+        },
+        {
+          "beat": 117.0,
+          "value": 89
+        },
+        {
+          "beat": 117.25,
+          "value": 89
+        },
+        {
+          "beat": 117.5,
+          "value": 89
+        },
+        {
+          "beat": 117.75,
+          "value": 90
+        },
+        {
+          "beat": 118.0,
+          "value": 90
+        },
+        {
+          "beat": 118.25,
+          "value": 90
+        },
+        {
+          "beat": 118.5,
+          "value": 90
+        },
+        {
+          "beat": 118.75,
+          "value": 90
+        },
+        {
+          "beat": 119.0,
+          "value": 90
+        },
+        {
+          "beat": 119.25,
+          "value": 90
+        },
+        {
+          "beat": 119.5,
+          "value": 91
+        },
+        {
+          "beat": 119.75,
+          "value": 91
+        },
+        {
+          "beat": 120.0,
+          "value": 91
+        },
+        {
+          "beat": 120.25,
+          "value": 91
+        },
+        {
+          "beat": 120.5,
+          "value": 91
+        },
+        {
+          "beat": 120.75,
+          "value": 90
+        },
+        {
+          "beat": 121.0,
+          "value": 90
+        },
+        {
+          "beat": 121.25,
+          "value": 90
+        },
+        {
+          "beat": 121.5,
+          "value": 90
+        },
+        {
+          "beat": 121.75,
+          "value": 90
+        },
+        {
+          "beat": 122.0,
+          "value": 90
+        },
+        {
+          "beat": 122.25,
+          "value": 90
+        },
+        {
+          "beat": 122.5,
+          "value": 89
+        },
+        {
+          "beat": 122.75,
+          "value": 89
+        },
+        {
+          "beat": 123.0,
+          "value": 89
+        },
+        {
+          "beat": 123.25,
+          "value": 89
+        },
+        {
+          "beat": 123.5,
+          "value": 88
+        },
+        {
+          "beat": 123.75,
+          "value": 88
+        },
+        {
+          "beat": 124.0,
+          "value": 88
+        },
+        {
+          "beat": 124.25,
+          "value": 87
+        },
+        {
+          "beat": 124.5,
+          "value": 87
+        },
+        {
+          "beat": 124.75,
+          "value": 87
+        },
+        {
+          "beat": 125.0,
+          "value": 86
+        },
+        {
+          "beat": 125.25,
+          "value": 86
+        },
+        {
+          "beat": 125.5,
+          "value": 85
+        },
+        {
+          "beat": 125.75,
+          "value": 85
+        },
+        {
+          "beat": 126.0,
+          "value": 84
+        },
+        {
+          "beat": 126.25,
+          "value": 84
+        },
+        {
+          "beat": 126.5,
+          "value": 84
+        },
+        {
+          "beat": 126.75,
+          "value": 83
+        },
+        {
+          "beat": 127.0,
+          "value": 83
+        },
+        {
+          "beat": 127.25,
+          "value": 82
+        },
+        {
+          "beat": 127.5,
+          "value": 82
+        },
+        {
+          "beat": 127.75,
+          "value": 81
+        }
+      ],
+      "instrumentFiles": [
+        "/Library/Application Support/Logic/Sampler Instruments/09 Orchestral/09 Strings/String Ensemble.exs"
+      ],
+      "sampleGainDb": 12
+    },
+    {
+      "name": "root-strings",
+      "program": 0,
+      "percussion": false,
+      "gain": 0.23,
+      "pan": -0.18,
+      "reverb": 12,
+      "notes": [
+        {
+          "beat": 0.014,
+          "pitch": 38,
+          "duration": 3.75,
+          "velocity": 71
+        },
+        {
+          "beat": 4.014,
+          "pitch": 40,
+          "duration": 3.75,
+          "velocity": 71
+        },
+        {
+          "beat": 8.014,
+          "pitch": 41,
+          "duration": 3.75,
+          "velocity": 71
+        },
+        {
+          "beat": 12.014,
+          "pitch": 43,
+          "duration": 3.75,
+          "velocity": 71
+        },
+        {
+          "beat": 16.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 71
+        },
+        {
+          "beat": 20.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 71
+        },
+        {
+          "beat": 24.014,
+          "pitch": 43,
+          "duration": 3.75,
+          "velocity": 71
+        },
+        {
+          "beat": 28.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 71
+        },
+        {
+          "beat": 32.014,
+          "pitch": 38,
+          "duration": 3.75,
+          "velocity": 74
+        },
+        {
+          "beat": 36.014,
+          "pitch": 40,
+          "duration": 3.75,
+          "velocity": 74
+        },
+        {
+          "beat": 40.014,
+          "pitch": 41,
+          "duration": 3.75,
+          "velocity": 74
+        },
+        {
+          "beat": 44.014,
+          "pitch": 43,
+          "duration": 3.75,
+          "velocity": 74
+        },
+        {
+          "beat": 48.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 74
+        },
+        {
+          "beat": 52.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 74
+        },
+        {
+          "beat": 56.014,
+          "pitch": 43,
+          "duration": 3.75,
+          "velocity": 74
+        },
+        {
+          "beat": 60.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 74
+        },
+        {
+          "beat": 64.014,
+          "pitch": 38,
+          "duration": 3.75,
+          "velocity": 72
+        },
+        {
+          "beat": 68.014,
+          "pitch": 40,
+          "duration": 3.75,
+          "velocity": 72
+        },
+        {
+          "beat": 72.014,
+          "pitch": 41,
+          "duration": 3.75,
+          "velocity": 72
+        },
+        {
+          "beat": 76.014,
+          "pitch": 43,
+          "duration": 3.75,
+          "velocity": 72
+        },
+        {
+          "beat": 80.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 72
+        },
+        {
+          "beat": 84.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 72
+        },
+        {
+          "beat": 88.014,
+          "pitch": 43,
+          "duration": 3.75,
+          "velocity": 72
+        },
+        {
+          "beat": 92.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 72
+        },
+        {
+          "beat": 96.014,
+          "pitch": 38,
+          "duration": 3.75,
+          "velocity": 69
+        },
+        {
+          "beat": 100.014,
+          "pitch": 40,
+          "duration": 3.75,
+          "velocity": 69
+        },
+        {
+          "beat": 104.014,
+          "pitch": 41,
+          "duration": 3.75,
+          "velocity": 69
+        },
+        {
+          "beat": 108.014,
+          "pitch": 43,
+          "duration": 3.75,
+          "velocity": 69
+        },
+        {
+          "beat": 112.014,
+          "pitch": 38,
+          "duration": 3.75,
+          "velocity": 69
+        },
+        {
+          "beat": 116.014,
+          "pitch": 43,
+          "duration": 3.75,
+          "velocity": 69
+        },
+        {
+          "beat": 120.014,
+          "pitch": 45,
+          "duration": 3.75,
+          "velocity": 69
+        },
+        {
+          "beat": 124.014,
+          "pitch": 38,
+          "duration": 3.75,
+          "velocity": 69
+        }
+      ],
+      "expression": [
+        {
+          "beat": 0.0,
+          "value": 82
+        },
+        {
+          "beat": 0.25,
+          "value": 83
+        },
+        {
+          "beat": 0.5,
+          "value": 84
+        },
+        {
+          "beat": 0.75,
+          "value": 85
+        },
+        {
+          "beat": 1.0,
+          "value": 86
+        },
+        {
+          "beat": 1.25,
+          "value": 86
+        },
+        {
+          "beat": 1.5,
+          "value": 87
+        },
+        {
+          "beat": 1.75,
+          "value": 88
+        },
+        {
+          "beat": 2.0,
+          "value": 89
+        },
+        {
+          "beat": 2.25,
+          "value": 90
+        },
+        {
+          "beat": 2.5,
+          "value": 90
+        },
+        {
+          "beat": 2.75,
+          "value": 91
+        },
+        {
+          "beat": 3.0,
+          "value": 92
+        },
+        {
+          "beat": 3.25,
+          "value": 93
+        },
+        {
+          "beat": 3.5,
+          "value": 93
+        },
+        {
+          "beat": 3.75,
+          "value": 94
+        },
+        {
+          "beat": 4.0,
+          "value": 95
+        },
+        {
+          "beat": 4.25,
+          "value": 95
+        },
+        {
+          "beat": 4.5,
+          "value": 96
+        },
+        {
+          "beat": 4.75,
+          "value": 96
+        },
+        {
+          "beat": 5.0,
+          "value": 97
+        },
+        {
+          "beat": 5.25,
+          "value": 97
+        },
+        {
+          "beat": 5.5,
+          "value": 98
+        },
+        {
+          "beat": 5.75,
+          "value": 98
+        },
+        {
+          "beat": 6.0,
+          "value": 99
+        },
+        {
+          "beat": 6.25,
+          "value": 99
+        },
+        {
+          "beat": 6.5,
+          "value": 99
+        },
+        {
+          "beat": 6.75,
+          "value": 99
+        },
+        {
+          "beat": 7.0,
+          "value": 100
+        },
+        {
+          "beat": 7.25,
+          "value": 100
+        },
+        {
+          "beat": 7.5,
+          "value": 100
+        },
+        {
+          "beat": 7.75,
+          "value": 100
+        },
+        {
+          "beat": 8.0,
+          "value": 100
+        },
+        {
+          "beat": 8.25,
+          "value": 100
+        },
+        {
+          "beat": 8.5,
+          "value": 100
+        },
+        {
+          "beat": 8.75,
+          "value": 100
+        },
+        {
+          "beat": 9.0,
+          "value": 100
+        },
+        {
+          "beat": 9.25,
+          "value": 99
+        },
+        {
+          "beat": 9.5,
+          "value": 99
+        },
+        {
+          "beat": 9.75,
+          "value": 99
+        },
+        {
+          "beat": 10.0,
+          "value": 99
+        },
+        {
+          "beat": 10.25,
+          "value": 98
+        },
+        {
+          "beat": 10.5,
+          "value": 98
+        },
+        {
+          "beat": 10.75,
+          "value": 97
+        },
+        {
+          "beat": 11.0,
+          "value": 97
+        },
+        {
+          "beat": 11.25,
+          "value": 96
+        },
+        {
+          "beat": 11.5,
+          "value": 96
+        },
+        {
+          "beat": 11.75,
+          "value": 95
+        },
+        {
+          "beat": 12.0,
+          "value": 95
+        },
+        {
+          "beat": 12.25,
+          "value": 94
+        },
+        {
+          "beat": 12.5,
+          "value": 93
+        },
+        {
+          "beat": 12.75,
+          "value": 93
+        },
+        {
+          "beat": 13.0,
+          "value": 92
+        },
+        {
+          "beat": 13.25,
+          "value": 91
+        },
+        {
+          "beat": 13.5,
+          "value": 90
+        },
+        {
+          "beat": 13.75,
+          "value": 90
+        },
+        {
+          "beat": 14.0,
+          "value": 89
+        },
+        {
+          "beat": 14.25,
+          "value": 88
+        },
+        {
+          "beat": 14.5,
+          "value": 87
+        },
+        {
+          "beat": 14.75,
+          "value": 86
+        },
+        {
+          "beat": 15.0,
+          "value": 86
+        },
+        {
+          "beat": 15.25,
+          "value": 85
+        },
+        {
+          "beat": 15.5,
+          "value": 84
+        },
+        {
+          "beat": 15.75,
+          "value": 83
+        },
+        {
+          "beat": 16.0,
+          "value": 82
+        },
+        {
+          "beat": 16.25,
+          "value": 83
+        },
+        {
+          "beat": 16.5,
+          "value": 84
+        },
+        {
+          "beat": 16.75,
+          "value": 85
+        },
+        {
+          "beat": 17.0,
+          "value": 86
+        },
+        {
+          "beat": 17.25,
+          "value": 86
+        },
+        {
+          "beat": 17.5,
+          "value": 87
+        },
+        {
+          "beat": 17.75,
+          "value": 88
+        },
+        {
+          "beat": 18.0,
+          "value": 89
+        },
+        {
+          "beat": 18.25,
+          "value": 90
+        },
+        {
+          "beat": 18.5,
+          "value": 90
+        },
+        {
+          "beat": 18.75,
+          "value": 91
+        },
+        {
+          "beat": 19.0,
+          "value": 92
+        },
+        {
+          "beat": 19.25,
+          "value": 93
+        },
+        {
+          "beat": 19.5,
+          "value": 93
+        },
+        {
+          "beat": 19.75,
+          "value": 94
+        },
+        {
+          "beat": 20.0,
+          "value": 95
+        },
+        {
+          "beat": 20.25,
+          "value": 95
+        },
+        {
+          "beat": 20.5,
+          "value": 96
+        },
+        {
+          "beat": 20.75,
+          "value": 96
+        },
+        {
+          "beat": 21.0,
+          "value": 97
+        },
+        {
+          "beat": 21.25,
+          "value": 97
+        },
+        {
+          "beat": 21.5,
+          "value": 98
+        },
+        {
+          "beat": 21.75,
+          "value": 98
+        },
+        {
+          "beat": 22.0,
+          "value": 99
+        },
+        {
+          "beat": 22.25,
+          "value": 99
+        },
+        {
+          "beat": 22.5,
+          "value": 99
+        },
+        {
+          "beat": 22.75,
+          "value": 99
+        },
+        {
+          "beat": 23.0,
+          "value": 100
+        },
+        {
+          "beat": 23.25,
+          "value": 100
+        },
+        {
+          "beat": 23.5,
+          "value": 100
+        },
+        {
+          "beat": 23.75,
+          "value": 100
+        },
+        {
+          "beat": 24.0,
+          "value": 100
+        },
+        {
+          "beat": 24.25,
+          "value": 100
+        },
+        {
+          "beat": 24.5,
+          "value": 100
+        },
+        {
+          "beat": 24.75,
+          "value": 100
+        },
+        {
+          "beat": 25.0,
+          "value": 100
+        },
+        {
+          "beat": 25.25,
+          "value": 99
+        },
+        {
+          "beat": 25.5,
+          "value": 99
+        },
+        {
+          "beat": 25.75,
+          "value": 99
+        },
+        {
+          "beat": 26.0,
+          "value": 99
+        },
+        {
+          "beat": 26.25,
+          "value": 98
+        },
+        {
+          "beat": 26.5,
+          "value": 98
+        },
+        {
+          "beat": 26.75,
+          "value": 97
+        },
+        {
+          "beat": 27.0,
+          "value": 97
+        },
+        {
+          "beat": 27.25,
+          "value": 96
+        },
+        {
+          "beat": 27.5,
+          "value": 96
+        },
+        {
+          "beat": 27.75,
+          "value": 95
+        },
+        {
+          "beat": 28.0,
+          "value": 95
+        },
+        {
+          "beat": 28.25,
+          "value": 94
+        },
+        {
+          "beat": 28.5,
+          "value": 93
+        },
+        {
+          "beat": 28.75,
+          "value": 93
+        },
+        {
+          "beat": 29.0,
+          "value": 92
+        },
+        {
+          "beat": 29.25,
+          "value": 91
+        },
+        {
+          "beat": 29.5,
+          "value": 90
+        },
+        {
+          "beat": 29.75,
+          "value": 90
+        },
+        {
+          "beat": 30.0,
+          "value": 89
+        },
+        {
+          "beat": 30.25,
+          "value": 88
+        },
+        {
+          "beat": 30.5,
+          "value": 87
+        },
+        {
+          "beat": 30.75,
+          "value": 86
+        },
+        {
+          "beat": 31.0,
+          "value": 86
+        },
+        {
+          "beat": 31.25,
+          "value": 85
+        },
+        {
+          "beat": 31.5,
+          "value": 84
+        },
+        {
+          "beat": 31.75,
+          "value": 83
+        },
+        {
+          "beat": 32.0,
+          "value": 82
+        },
+        {
+          "beat": 32.25,
+          "value": 83
+        },
+        {
+          "beat": 32.5,
+          "value": 84
+        },
+        {
+          "beat": 32.75,
+          "value": 85
+        },
+        {
+          "beat": 33.0,
+          "value": 86
+        },
+        {
+          "beat": 33.25,
+          "value": 86
+        },
+        {
+          "beat": 33.5,
+          "value": 87
+        },
+        {
+          "beat": 33.75,
+          "value": 88
+        },
+        {
+          "beat": 34.0,
+          "value": 89
+        },
+        {
+          "beat": 34.25,
+          "value": 90
+        },
+        {
+          "beat": 34.5,
+          "value": 90
+        },
+        {
+          "beat": 34.75,
+          "value": 91
+        },
+        {
+          "beat": 35.0,
+          "value": 92
+        },
+        {
+          "beat": 35.25,
+          "value": 93
+        },
+        {
+          "beat": 35.5,
+          "value": 93
+        },
+        {
+          "beat": 35.75,
+          "value": 94
+        },
+        {
+          "beat": 36.0,
+          "value": 95
+        },
+        {
+          "beat": 36.25,
+          "value": 95
+        },
+        {
+          "beat": 36.5,
+          "value": 96
+        },
+        {
+          "beat": 36.75,
+          "value": 96
+        },
+        {
+          "beat": 37.0,
+          "value": 97
+        },
+        {
+          "beat": 37.25,
+          "value": 97
+        },
+        {
+          "beat": 37.5,
+          "value": 98
+        },
+        {
+          "beat": 37.75,
+          "value": 98
+        },
+        {
+          "beat": 38.0,
+          "value": 99
+        },
+        {
+          "beat": 38.25,
+          "value": 99
+        },
+        {
+          "beat": 38.5,
+          "value": 99
+        },
+        {
+          "beat": 38.75,
+          "value": 99
+        },
+        {
+          "beat": 39.0,
+          "value": 100
+        },
+        {
+          "beat": 39.25,
+          "value": 100
+        },
+        {
+          "beat": 39.5,
+          "value": 100
+        },
+        {
+          "beat": 39.75,
+          "value": 100
+        },
+        {
+          "beat": 40.0,
+          "value": 100
+        },
+        {
+          "beat": 40.25,
+          "value": 100
+        },
+        {
+          "beat": 40.5,
+          "value": 100
+        },
+        {
+          "beat": 40.75,
+          "value": 100
+        },
+        {
+          "beat": 41.0,
+          "value": 100
+        },
+        {
+          "beat": 41.25,
+          "value": 99
+        },
+        {
+          "beat": 41.5,
+          "value": 99
+        },
+        {
+          "beat": 41.75,
+          "value": 99
+        },
+        {
+          "beat": 42.0,
+          "value": 99
+        },
+        {
+          "beat": 42.25,
+          "value": 98
+        },
+        {
+          "beat": 42.5,
+          "value": 98
+        },
+        {
+          "beat": 42.75,
+          "value": 97
+        },
+        {
+          "beat": 43.0,
+          "value": 97
+        },
+        {
+          "beat": 43.25,
+          "value": 96
+        },
+        {
+          "beat": 43.5,
+          "value": 96
+        },
+        {
+          "beat": 43.75,
+          "value": 95
+        },
+        {
+          "beat": 44.0,
+          "value": 95
+        },
+        {
+          "beat": 44.25,
+          "value": 94
+        },
+        {
+          "beat": 44.5,
+          "value": 93
+        },
+        {
+          "beat": 44.75,
+          "value": 93
+        },
+        {
+          "beat": 45.0,
+          "value": 92
+        },
+        {
+          "beat": 45.25,
+          "value": 91
+        },
+        {
+          "beat": 45.5,
+          "value": 90
+        },
+        {
+          "beat": 45.75,
+          "value": 90
+        },
+        {
+          "beat": 46.0,
+          "value": 89
+        },
+        {
+          "beat": 46.25,
+          "value": 88
+        },
+        {
+          "beat": 46.5,
+          "value": 87
+        },
+        {
+          "beat": 46.75,
+          "value": 86
+        },
+        {
+          "beat": 47.0,
+          "value": 86
+        },
+        {
+          "beat": 47.25,
+          "value": 85
+        },
+        {
+          "beat": 47.5,
+          "value": 84
+        },
+        {
+          "beat": 47.75,
+          "value": 83
+        },
+        {
+          "beat": 48.0,
+          "value": 82
+        },
+        {
+          "beat": 48.25,
+          "value": 83
+        },
+        {
+          "beat": 48.5,
+          "value": 84
+        },
+        {
+          "beat": 48.75,
+          "value": 85
+        },
+        {
+          "beat": 49.0,
+          "value": 86
+        },
+        {
+          "beat": 49.25,
+          "value": 86
+        },
+        {
+          "beat": 49.5,
+          "value": 87
+        },
+        {
+          "beat": 49.75,
+          "value": 88
+        },
+        {
+          "beat": 50.0,
+          "value": 89
+        },
+        {
+          "beat": 50.25,
+          "value": 90
+        },
+        {
+          "beat": 50.5,
+          "value": 90
+        },
+        {
+          "beat": 50.75,
+          "value": 91
+        },
+        {
+          "beat": 51.0,
+          "value": 92
+        },
+        {
+          "beat": 51.25,
+          "value": 93
+        },
+        {
+          "beat": 51.5,
+          "value": 93
+        },
+        {
+          "beat": 51.75,
+          "value": 94
+        },
+        {
+          "beat": 52.0,
+          "value": 95
+        },
+        {
+          "beat": 52.25,
+          "value": 95
+        },
+        {
+          "beat": 52.5,
+          "value": 96
+        },
+        {
+          "beat": 52.75,
+          "value": 96
+        },
+        {
+          "beat": 53.0,
+          "value": 97
+        },
+        {
+          "beat": 53.25,
+          "value": 97
+        },
+        {
+          "beat": 53.5,
+          "value": 98
+        },
+        {
+          "beat": 53.75,
+          "value": 98
+        },
+        {
+          "beat": 54.0,
+          "value": 99
+        },
+        {
+          "beat": 54.25,
+          "value": 99
+        },
+        {
+          "beat": 54.5,
+          "value": 99
+        },
+        {
+          "beat": 54.75,
+          "value": 99
+        },
+        {
+          "beat": 55.0,
+          "value": 100
+        },
+        {
+          "beat": 55.25,
+          "value": 100
+        },
+        {
+          "beat": 55.5,
+          "value": 100
+        },
+        {
+          "beat": 55.75,
+          "value": 100
+        },
+        {
+          "beat": 56.0,
+          "value": 100
+        },
+        {
+          "beat": 56.25,
+          "value": 100
+        },
+        {
+          "beat": 56.5,
+          "value": 100
+        },
+        {
+          "beat": 56.75,
+          "value": 100
+        },
+        {
+          "beat": 57.0,
+          "value": 100
+        },
+        {
+          "beat": 57.25,
+          "value": 99
+        },
+        {
+          "beat": 57.5,
+          "value": 99
+        },
+        {
+          "beat": 57.75,
+          "value": 99
+        },
+        {
+          "beat": 58.0,
+          "value": 99
+        },
+        {
+          "beat": 58.25,
+          "value": 98
+        },
+        {
+          "beat": 58.5,
+          "value": 98
+        },
+        {
+          "beat": 58.75,
+          "value": 97
+        },
+        {
+          "beat": 59.0,
+          "value": 97
+        },
+        {
+          "beat": 59.25,
+          "value": 96
+        },
+        {
+          "beat": 59.5,
+          "value": 96
+        },
+        {
+          "beat": 59.75,
+          "value": 95
+        },
+        {
+          "beat": 60.0,
+          "value": 95
+        },
+        {
+          "beat": 60.25,
+          "value": 94
+        },
+        {
+          "beat": 60.5,
+          "value": 93
+        },
+        {
+          "beat": 60.75,
+          "value": 93
+        },
+        {
+          "beat": 61.0,
+          "value": 92
+        },
+        {
+          "beat": 61.25,
+          "value": 91
+        },
+        {
+          "beat": 61.5,
+          "value": 90
+        },
+        {
+          "beat": 61.75,
+          "value": 90
+        },
+        {
+          "beat": 62.0,
+          "value": 89
+        },
+        {
+          "beat": 62.25,
+          "value": 88
+        },
+        {
+          "beat": 62.5,
+          "value": 87
+        },
+        {
+          "beat": 62.75,
+          "value": 86
+        },
+        {
+          "beat": 63.0,
+          "value": 86
+        },
+        {
+          "beat": 63.25,
+          "value": 85
+        },
+        {
+          "beat": 63.5,
+          "value": 84
+        },
+        {
+          "beat": 63.75,
+          "value": 83
+        },
+        {
+          "beat": 64.0,
+          "value": 82
+        },
+        {
+          "beat": 64.25,
+          "value": 83
+        },
+        {
+          "beat": 64.5,
+          "value": 84
+        },
+        {
+          "beat": 64.75,
+          "value": 85
+        },
+        {
+          "beat": 65.0,
+          "value": 86
+        },
+        {
+          "beat": 65.25,
+          "value": 86
+        },
+        {
+          "beat": 65.5,
+          "value": 87
+        },
+        {
+          "beat": 65.75,
+          "value": 88
+        },
+        {
+          "beat": 66.0,
+          "value": 89
+        },
+        {
+          "beat": 66.25,
+          "value": 90
+        },
+        {
+          "beat": 66.5,
+          "value": 90
+        },
+        {
+          "beat": 66.75,
+          "value": 91
+        },
+        {
+          "beat": 67.0,
+          "value": 92
+        },
+        {
+          "beat": 67.25,
+          "value": 93
+        },
+        {
+          "beat": 67.5,
+          "value": 93
+        },
+        {
+          "beat": 67.75,
+          "value": 94
+        },
+        {
+          "beat": 68.0,
+          "value": 95
+        },
+        {
+          "beat": 68.25,
+          "value": 95
+        },
+        {
+          "beat": 68.5,
+          "value": 96
+        },
+        {
+          "beat": 68.75,
+          "value": 96
+        },
+        {
+          "beat": 69.0,
+          "value": 97
+        },
+        {
+          "beat": 69.25,
+          "value": 97
+        },
+        {
+          "beat": 69.5,
+          "value": 98
+        },
+        {
+          "beat": 69.75,
+          "value": 98
+        },
+        {
+          "beat": 70.0,
+          "value": 99
+        },
+        {
+          "beat": 70.25,
+          "value": 99
+        },
+        {
+          "beat": 70.5,
+          "value": 99
+        },
+        {
+          "beat": 70.75,
+          "value": 99
+        },
+        {
+          "beat": 71.0,
+          "value": 100
+        },
+        {
+          "beat": 71.25,
+          "value": 100
+        },
+        {
+          "beat": 71.5,
+          "value": 100
+        },
+        {
+          "beat": 71.75,
+          "value": 100
+        },
+        {
+          "beat": 72.0,
+          "value": 100
+        },
+        {
+          "beat": 72.25,
+          "value": 100
+        },
+        {
+          "beat": 72.5,
+          "value": 100
+        },
+        {
+          "beat": 72.75,
+          "value": 100
+        },
+        {
+          "beat": 73.0,
+          "value": 100
+        },
+        {
+          "beat": 73.25,
+          "value": 99
+        },
+        {
+          "beat": 73.5,
+          "value": 99
+        },
+        {
+          "beat": 73.75,
+          "value": 99
+        },
+        {
+          "beat": 74.0,
+          "value": 99
+        },
+        {
+          "beat": 74.25,
+          "value": 98
+        },
+        {
+          "beat": 74.5,
+          "value": 98
+        },
+        {
+          "beat": 74.75,
+          "value": 97
+        },
+        {
+          "beat": 75.0,
+          "value": 97
+        },
+        {
+          "beat": 75.25,
+          "value": 96
+        },
+        {
+          "beat": 75.5,
+          "value": 96
+        },
+        {
+          "beat": 75.75,
+          "value": 95
+        },
+        {
+          "beat": 76.0,
+          "value": 95
+        },
+        {
+          "beat": 76.25,
+          "value": 94
+        },
+        {
+          "beat": 76.5,
+          "value": 93
+        },
+        {
+          "beat": 76.75,
+          "value": 93
+        },
+        {
+          "beat": 77.0,
+          "value": 92
+        },
+        {
+          "beat": 77.25,
+          "value": 91
+        },
+        {
+          "beat": 77.5,
+          "value": 90
+        },
+        {
+          "beat": 77.75,
+          "value": 90
+        },
+        {
+          "beat": 78.0,
+          "value": 89
+        },
+        {
+          "beat": 78.25,
+          "value": 88
+        },
+        {
+          "beat": 78.5,
+          "value": 87
+        },
+        {
+          "beat": 78.75,
+          "value": 86
+        },
+        {
+          "beat": 79.0,
+          "value": 86
+        },
+        {
+          "beat": 79.25,
+          "value": 85
+        },
+        {
+          "beat": 79.5,
+          "value": 84
+        },
+        {
+          "beat": 79.75,
+          "value": 83
+        },
+        {
+          "beat": 80.0,
+          "value": 82
+        },
+        {
+          "beat": 80.25,
+          "value": 83
+        },
+        {
+          "beat": 80.5,
+          "value": 84
+        },
+        {
+          "beat": 80.75,
+          "value": 85
+        },
+        {
+          "beat": 81.0,
+          "value": 86
+        },
+        {
+          "beat": 81.25,
+          "value": 86
+        },
+        {
+          "beat": 81.5,
+          "value": 87
+        },
+        {
+          "beat": 81.75,
+          "value": 88
+        },
+        {
+          "beat": 82.0,
+          "value": 89
+        },
+        {
+          "beat": 82.25,
+          "value": 90
+        },
+        {
+          "beat": 82.5,
+          "value": 90
+        },
+        {
+          "beat": 82.75,
+          "value": 91
+        },
+        {
+          "beat": 83.0,
+          "value": 92
+        },
+        {
+          "beat": 83.25,
+          "value": 93
+        },
+        {
+          "beat": 83.5,
+          "value": 93
+        },
+        {
+          "beat": 83.75,
+          "value": 94
+        },
+        {
+          "beat": 84.0,
+          "value": 95
+        },
+        {
+          "beat": 84.25,
+          "value": 95
+        },
+        {
+          "beat": 84.5,
+          "value": 96
+        },
+        {
+          "beat": 84.75,
+          "value": 96
+        },
+        {
+          "beat": 85.0,
+          "value": 97
+        },
+        {
+          "beat": 85.25,
+          "value": 97
+        },
+        {
+          "beat": 85.5,
+          "value": 98
+        },
+        {
+          "beat": 85.75,
+          "value": 98
+        },
+        {
+          "beat": 86.0,
+          "value": 99
+        },
+        {
+          "beat": 86.25,
+          "value": 99
+        },
+        {
+          "beat": 86.5,
+          "value": 99
+        },
+        {
+          "beat": 86.75,
+          "value": 99
+        },
+        {
+          "beat": 87.0,
+          "value": 100
+        },
+        {
+          "beat": 87.25,
+          "value": 100
+        },
+        {
+          "beat": 87.5,
+          "value": 100
+        },
+        {
+          "beat": 87.75,
+          "value": 100
+        },
+        {
+          "beat": 88.0,
+          "value": 100
+        },
+        {
+          "beat": 88.25,
+          "value": 100
+        },
+        {
+          "beat": 88.5,
+          "value": 100
+        },
+        {
+          "beat": 88.75,
+          "value": 100
+        },
+        {
+          "beat": 89.0,
+          "value": 100
+        },
+        {
+          "beat": 89.25,
+          "value": 99
+        },
+        {
+          "beat": 89.5,
+          "value": 99
+        },
+        {
+          "beat": 89.75,
+          "value": 99
+        },
+        {
+          "beat": 90.0,
+          "value": 99
+        },
+        {
+          "beat": 90.25,
+          "value": 98
+        },
+        {
+          "beat": 90.5,
+          "value": 98
+        },
+        {
+          "beat": 90.75,
+          "value": 97
+        },
+        {
+          "beat": 91.0,
+          "value": 97
+        },
+        {
+          "beat": 91.25,
+          "value": 96
+        },
+        {
+          "beat": 91.5,
+          "value": 96
+        },
+        {
+          "beat": 91.75,
+          "value": 95
+        },
+        {
+          "beat": 92.0,
+          "value": 95
+        },
+        {
+          "beat": 92.25,
+          "value": 94
+        },
+        {
+          "beat": 92.5,
+          "value": 93
+        },
+        {
+          "beat": 92.75,
+          "value": 93
+        },
+        {
+          "beat": 93.0,
+          "value": 92
+        },
+        {
+          "beat": 93.25,
+          "value": 91
+        },
+        {
+          "beat": 93.5,
+          "value": 90
+        },
+        {
+          "beat": 93.75,
+          "value": 90
+        },
+        {
+          "beat": 94.0,
+          "value": 89
+        },
+        {
+          "beat": 94.25,
+          "value": 88
+        },
+        {
+          "beat": 94.5,
+          "value": 87
+        },
+        {
+          "beat": 94.75,
+          "value": 86
+        },
+        {
+          "beat": 95.0,
+          "value": 86
+        },
+        {
+          "beat": 95.25,
+          "value": 85
+        },
+        {
+          "beat": 95.5,
+          "value": 84
+        },
+        {
+          "beat": 95.75,
+          "value": 83
+        },
+        {
+          "beat": 96.0,
+          "value": 82
+        },
+        {
+          "beat": 96.25,
+          "value": 83
+        },
+        {
+          "beat": 96.5,
+          "value": 84
+        },
+        {
+          "beat": 96.75,
+          "value": 85
+        },
+        {
+          "beat": 97.0,
+          "value": 86
+        },
+        {
+          "beat": 97.25,
+          "value": 86
+        },
+        {
+          "beat": 97.5,
+          "value": 87
+        },
+        {
+          "beat": 97.75,
+          "value": 88
+        },
+        {
+          "beat": 98.0,
+          "value": 89
+        },
+        {
+          "beat": 98.25,
+          "value": 90
+        },
+        {
+          "beat": 98.5,
+          "value": 90
+        },
+        {
+          "beat": 98.75,
+          "value": 91
+        },
+        {
+          "beat": 99.0,
+          "value": 92
+        },
+        {
+          "beat": 99.25,
+          "value": 93
+        },
+        {
+          "beat": 99.5,
+          "value": 93
+        },
+        {
+          "beat": 99.75,
+          "value": 94
+        },
+        {
+          "beat": 100.0,
+          "value": 95
+        },
+        {
+          "beat": 100.25,
+          "value": 95
+        },
+        {
+          "beat": 100.5,
+          "value": 96
+        },
+        {
+          "beat": 100.75,
+          "value": 96
+        },
+        {
+          "beat": 101.0,
+          "value": 97
+        },
+        {
+          "beat": 101.25,
+          "value": 97
+        },
+        {
+          "beat": 101.5,
+          "value": 98
+        },
+        {
+          "beat": 101.75,
+          "value": 98
+        },
+        {
+          "beat": 102.0,
+          "value": 99
+        },
+        {
+          "beat": 102.25,
+          "value": 99
+        },
+        {
+          "beat": 102.5,
+          "value": 99
+        },
+        {
+          "beat": 102.75,
+          "value": 99
+        },
+        {
+          "beat": 103.0,
+          "value": 100
+        },
+        {
+          "beat": 103.25,
+          "value": 100
+        },
+        {
+          "beat": 103.5,
+          "value": 100
+        },
+        {
+          "beat": 103.75,
+          "value": 100
+        },
+        {
+          "beat": 104.0,
+          "value": 100
+        },
+        {
+          "beat": 104.25,
+          "value": 100
+        },
+        {
+          "beat": 104.5,
+          "value": 100
+        },
+        {
+          "beat": 104.75,
+          "value": 100
+        },
+        {
+          "beat": 105.0,
+          "value": 100
+        },
+        {
+          "beat": 105.25,
+          "value": 99
+        },
+        {
+          "beat": 105.5,
+          "value": 99
+        },
+        {
+          "beat": 105.75,
+          "value": 99
+        },
+        {
+          "beat": 106.0,
+          "value": 99
+        },
+        {
+          "beat": 106.25,
+          "value": 98
+        },
+        {
+          "beat": 106.5,
+          "value": 98
+        },
+        {
+          "beat": 106.75,
+          "value": 97
+        },
+        {
+          "beat": 107.0,
+          "value": 97
+        },
+        {
+          "beat": 107.25,
+          "value": 96
+        },
+        {
+          "beat": 107.5,
+          "value": 96
+        },
+        {
+          "beat": 107.75,
+          "value": 95
+        },
+        {
+          "beat": 108.0,
+          "value": 95
+        },
+        {
+          "beat": 108.25,
+          "value": 94
+        },
+        {
+          "beat": 108.5,
+          "value": 93
+        },
+        {
+          "beat": 108.75,
+          "value": 93
+        },
+        {
+          "beat": 109.0,
+          "value": 92
+        },
+        {
+          "beat": 109.25,
+          "value": 91
+        },
+        {
+          "beat": 109.5,
+          "value": 90
+        },
+        {
+          "beat": 109.75,
+          "value": 90
+        },
+        {
+          "beat": 110.0,
+          "value": 89
+        },
+        {
+          "beat": 110.25,
+          "value": 88
+        },
+        {
+          "beat": 110.5,
+          "value": 87
+        },
+        {
+          "beat": 110.75,
+          "value": 86
+        },
+        {
+          "beat": 111.0,
+          "value": 86
+        },
+        {
+          "beat": 111.25,
+          "value": 85
+        },
+        {
+          "beat": 111.5,
+          "value": 84
+        },
+        {
+          "beat": 111.75,
+          "value": 83
+        },
+        {
+          "beat": 112.0,
+          "value": 82
+        },
+        {
+          "beat": 112.25,
+          "value": 83
+        },
+        {
+          "beat": 112.5,
+          "value": 84
+        },
+        {
+          "beat": 112.75,
+          "value": 85
+        },
+        {
+          "beat": 113.0,
+          "value": 86
+        },
+        {
+          "beat": 113.25,
+          "value": 86
+        },
+        {
+          "beat": 113.5,
+          "value": 87
+        },
+        {
+          "beat": 113.75,
+          "value": 88
+        },
+        {
+          "beat": 114.0,
+          "value": 89
+        },
+        {
+          "beat": 114.25,
+          "value": 90
+        },
+        {
+          "beat": 114.5,
+          "value": 90
+        },
+        {
+          "beat": 114.75,
+          "value": 91
+        },
+        {
+          "beat": 115.0,
+          "value": 92
+        },
+        {
+          "beat": 115.25,
+          "value": 93
+        },
+        {
+          "beat": 115.5,
+          "value": 93
+        },
+        {
+          "beat": 115.75,
+          "value": 94
+        },
+        {
+          "beat": 116.0,
+          "value": 95
+        },
+        {
+          "beat": 116.25,
+          "value": 95
+        },
+        {
+          "beat": 116.5,
+          "value": 96
+        },
+        {
+          "beat": 116.75,
+          "value": 96
+        },
+        {
+          "beat": 117.0,
+          "value": 97
+        },
+        {
+          "beat": 117.25,
+          "value": 97
+        },
+        {
+          "beat": 117.5,
+          "value": 98
+        },
+        {
+          "beat": 117.75,
+          "value": 98
+        },
+        {
+          "beat": 118.0,
+          "value": 99
+        },
+        {
+          "beat": 118.25,
+          "value": 99
+        },
+        {
+          "beat": 118.5,
+          "value": 99
+        },
+        {
+          "beat": 118.75,
+          "value": 99
+        },
+        {
+          "beat": 119.0,
+          "value": 100
+        },
+        {
+          "beat": 119.25,
+          "value": 100
+        },
+        {
+          "beat": 119.5,
+          "value": 100
+        },
+        {
+          "beat": 119.75,
+          "value": 100
+        },
+        {
+          "beat": 120.0,
+          "value": 100
+        },
+        {
+          "beat": 120.25,
+          "value": 100
+        },
+        {
+          "beat": 120.5,
+          "value": 100
+        },
+        {
+          "beat": 120.75,
+          "value": 100
+        },
+        {
+          "beat": 121.0,
+          "value": 100
+        },
+        {
+          "beat": 121.25,
+          "value": 99
+        },
+        {
+          "beat": 121.5,
+          "value": 99
+        },
+        {
+          "beat": 121.75,
+          "value": 99
+        },
+        {
+          "beat": 122.0,
+          "value": 99
+        },
+        {
+          "beat": 122.25,
+          "value": 98
+        },
+        {
+          "beat": 122.5,
+          "value": 98
+        },
+        {
+          "beat": 122.75,
+          "value": 97
+        },
+        {
+          "beat": 123.0,
+          "value": 97
+        },
+        {
+          "beat": 123.25,
+          "value": 96
+        },
+        {
+          "beat": 123.5,
+          "value": 96
+        },
+        {
+          "beat": 123.75,
+          "value": 95
+        },
+        {
+          "beat": 124.0,
+          "value": 95
+        },
+        {
+          "beat": 124.25,
+          "value": 94
+        },
+        {
+          "beat": 124.5,
+          "value": 93
+        },
+        {
+          "beat": 124.75,
+          "value": 93
+        },
+        {
+          "beat": 125.0,
+          "value": 92
+        },
+        {
+          "beat": 125.25,
+          "value": 91
+        },
+        {
+          "beat": 125.5,
+          "value": 90
+        },
+        {
+          "beat": 125.75,
+          "value": 90
+        },
+        {
+          "beat": 126.0,
+          "value": 89
+        },
+        {
+          "beat": 126.25,
+          "value": 88
+        },
+        {
+          "beat": 126.5,
+          "value": 87
+        },
+        {
+          "beat": 126.75,
+          "value": 86
+        },
+        {
+          "beat": 127.0,
+          "value": 86
+        },
+        {
+          "beat": 127.25,
+          "value": 85
+        },
+        {
+          "beat": 127.5,
+          "value": 84
+        },
+        {
+          "beat": 127.75,
+          "value": 83
+        }
+      ],
+      "instrumentFiles": [
+        "/Library/Application Support/Logic/Sampler Instruments/09 Orchestral/09 Strings/String Ensemble.exs"
+      ],
+      "sampleGainDb": 12
+    },
+    {
+      "name": "earth-percussion",
+      "program": 0,
+      "percussion": true,
+      "gain": 0.12,
+      "pan": 0.05,
+      "reverb": 8,
+      "notes": [
+        {
+          "beat": 32,
+          "pitch": 41,
+          "duration": 0.35,
+          "velocity": 50
+        },
+        {
+          "beat": 48,
+          "pitch": 41,
+          "duration": 0.35,
+          "velocity": 50
+        },
+        {
+          "beat": 80,
+          "pitch": 41,
+          "duration": 0.35,
+          "velocity": 50
+        },
+        {
+          "beat": 96,
+          "pitch": 41,
+          "duration": 0.35,
+          "velocity": 50
+        }
+      ],
+      "expression": [
+        {
+          "beat": 0.0,
+          "value": 105
+        },
+        {
+          "beat": 0.25,
+          "value": 105
+        },
+        {
+          "beat": 0.5,
+          "value": 105
+        },
+        {
+          "beat": 0.75,
+          "value": 105
+        },
+        {
+          "beat": 1.0,
+          "value": 105
+        },
+        {
+          "beat": 1.25,
+          "value": 105
+        },
+        {
+          "beat": 1.5,
+          "value": 105
+        },
+        {
+          "beat": 1.75,
+          "value": 105
+        },
+        {
+          "beat": 2.0,
+          "value": 105
+        },
+        {
+          "beat": 2.25,
+          "value": 105
+        },
+        {
+          "beat": 2.5,
+          "value": 105
+        },
+        {
+          "beat": 2.75,
+          "value": 105
+        },
+        {
+          "beat": 3.0,
+          "value": 105
+        },
+        {
+          "beat": 3.25,
+          "value": 105
+        },
+        {
+          "beat": 3.5,
+          "value": 105
+        },
+        {
+          "beat": 3.75,
+          "value": 105
+        },
+        {
+          "beat": 4.0,
+          "value": 105
+        },
+        {
+          "beat": 4.25,
+          "value": 105
+        },
+        {
+          "beat": 4.5,
+          "value": 105
+        },
+        {
+          "beat": 4.75,
+          "value": 105
+        },
+        {
+          "beat": 5.0,
+          "value": 105
+        },
+        {
+          "beat": 5.25,
+          "value": 105
+        },
+        {
+          "beat": 5.5,
+          "value": 105
+        },
+        {
+          "beat": 5.75,
+          "value": 105
+        },
+        {
+          "beat": 6.0,
+          "value": 105
+        },
+        {
+          "beat": 6.25,
+          "value": 105
+        },
+        {
+          "beat": 6.5,
+          "value": 105
+        },
+        {
+          "beat": 6.75,
+          "value": 105
+        },
+        {
+          "beat": 7.0,
+          "value": 105
+        },
+        {
+          "beat": 7.25,
+          "value": 105
+        },
+        {
+          "beat": 7.5,
+          "value": 105
+        },
+        {
+          "beat": 7.75,
+          "value": 105
+        },
+        {
+          "beat": 8.0,
+          "value": 105
+        },
+        {
+          "beat": 8.25,
+          "value": 105
+        },
+        {
+          "beat": 8.5,
+          "value": 105
+        },
+        {
+          "beat": 8.75,
+          "value": 105
+        },
+        {
+          "beat": 9.0,
+          "value": 105
+        },
+        {
+          "beat": 9.25,
+          "value": 105
+        },
+        {
+          "beat": 9.5,
+          "value": 105
+        },
+        {
+          "beat": 9.75,
+          "value": 105
+        },
+        {
+          "beat": 10.0,
+          "value": 105
+        },
+        {
+          "beat": 10.25,
+          "value": 105
+        },
+        {
+          "beat": 10.5,
+          "value": 105
+        },
+        {
+          "beat": 10.75,
+          "value": 105
+        },
+        {
+          "beat": 11.0,
+          "value": 105
+        },
+        {
+          "beat": 11.25,
+          "value": 105
+        },
+        {
+          "beat": 11.5,
+          "value": 105
+        },
+        {
+          "beat": 11.75,
+          "value": 105
+        },
+        {
+          "beat": 12.0,
+          "value": 105
+        },
+        {
+          "beat": 12.25,
+          "value": 105
+        },
+        {
+          "beat": 12.5,
+          "value": 105
+        },
+        {
+          "beat": 12.75,
+          "value": 105
+        },
+        {
+          "beat": 13.0,
+          "value": 105
+        },
+        {
+          "beat": 13.25,
+          "value": 105
+        },
+        {
+          "beat": 13.5,
+          "value": 105
+        },
+        {
+          "beat": 13.75,
+          "value": 105
+        },
+        {
+          "beat": 14.0,
+          "value": 105
+        },
+        {
+          "beat": 14.25,
+          "value": 105
+        },
+        {
+          "beat": 14.5,
+          "value": 105
+        },
+        {
+          "beat": 14.75,
+          "value": 105
+        },
+        {
+          "beat": 15.0,
+          "value": 105
+        },
+        {
+          "beat": 15.25,
+          "value": 105
+        },
+        {
+          "beat": 15.5,
+          "value": 105
+        },
+        {
+          "beat": 15.75,
+          "value": 105
+        },
+        {
+          "beat": 16.0,
+          "value": 105
+        },
+        {
+          "beat": 16.25,
+          "value": 105
+        },
+        {
+          "beat": 16.5,
+          "value": 105
+        },
+        {
+          "beat": 16.75,
+          "value": 105
+        },
+        {
+          "beat": 17.0,
+          "value": 105
+        },
+        {
+          "beat": 17.25,
+          "value": 105
+        },
+        {
+          "beat": 17.5,
+          "value": 105
+        },
+        {
+          "beat": 17.75,
+          "value": 105
+        },
+        {
+          "beat": 18.0,
+          "value": 105
+        },
+        {
+          "beat": 18.25,
+          "value": 105
+        },
+        {
+          "beat": 18.5,
+          "value": 105
+        },
+        {
+          "beat": 18.75,
+          "value": 105
+        },
+        {
+          "beat": 19.0,
+          "value": 105
+        },
+        {
+          "beat": 19.25,
+          "value": 105
+        },
+        {
+          "beat": 19.5,
+          "value": 105
+        },
+        {
+          "beat": 19.75,
+          "value": 105
+        },
+        {
+          "beat": 20.0,
+          "value": 105
+        },
+        {
+          "beat": 20.25,
+          "value": 105
+        },
+        {
+          "beat": 20.5,
+          "value": 105
+        },
+        {
+          "beat": 20.75,
+          "value": 105
+        },
+        {
+          "beat": 21.0,
+          "value": 105
+        },
+        {
+          "beat": 21.25,
+          "value": 105
+        },
+        {
+          "beat": 21.5,
+          "value": 105
+        },
+        {
+          "beat": 21.75,
+          "value": 105
+        },
+        {
+          "beat": 22.0,
+          "value": 105
+        },
+        {
+          "beat": 22.25,
+          "value": 105
+        },
+        {
+          "beat": 22.5,
+          "value": 105
+        },
+        {
+          "beat": 22.75,
+          "value": 105
+        },
+        {
+          "beat": 23.0,
+          "value": 105
+        },
+        {
+          "beat": 23.25,
+          "value": 105
+        },
+        {
+          "beat": 23.5,
+          "value": 105
+        },
+        {
+          "beat": 23.75,
+          "value": 105
+        },
+        {
+          "beat": 24.0,
+          "value": 105
+        },
+        {
+          "beat": 24.25,
+          "value": 105
+        },
+        {
+          "beat": 24.5,
+          "value": 105
+        },
+        {
+          "beat": 24.75,
+          "value": 105
+        },
+        {
+          "beat": 25.0,
+          "value": 105
+        },
+        {
+          "beat": 25.25,
+          "value": 105
+        },
+        {
+          "beat": 25.5,
+          "value": 105
+        },
+        {
+          "beat": 25.75,
+          "value": 105
+        },
+        {
+          "beat": 26.0,
+          "value": 105
+        },
+        {
+          "beat": 26.25,
+          "value": 105
+        },
+        {
+          "beat": 26.5,
+          "value": 105
+        },
+        {
+          "beat": 26.75,
+          "value": 105
+        },
+        {
+          "beat": 27.0,
+          "value": 105
+        },
+        {
+          "beat": 27.25,
+          "value": 105
+        },
+        {
+          "beat": 27.5,
+          "value": 105
+        },
+        {
+          "beat": 27.75,
+          "value": 105
+        },
+        {
+          "beat": 28.0,
+          "value": 105
+        },
+        {
+          "beat": 28.25,
+          "value": 105
+        },
+        {
+          "beat": 28.5,
+          "value": 105
+        },
+        {
+          "beat": 28.75,
+          "value": 105
+        },
+        {
+          "beat": 29.0,
+          "value": 105
+        },
+        {
+          "beat": 29.25,
+          "value": 105
+        },
+        {
+          "beat": 29.5,
+          "value": 105
+        },
+        {
+          "beat": 29.75,
+          "value": 105
+        },
+        {
+          "beat": 30.0,
+          "value": 105
+        },
+        {
+          "beat": 30.25,
+          "value": 105
+        },
+        {
+          "beat": 30.5,
+          "value": 105
+        },
+        {
+          "beat": 30.75,
+          "value": 105
+        },
+        {
+          "beat": 31.0,
+          "value": 105
+        },
+        {
+          "beat": 31.25,
+          "value": 105
+        },
+        {
+          "beat": 31.5,
+          "value": 105
+        },
+        {
+          "beat": 31.75,
+          "value": 105
+        },
+        {
+          "beat": 32.0,
+          "value": 105
+        },
+        {
+          "beat": 32.25,
+          "value": 105
+        },
+        {
+          "beat": 32.5,
+          "value": 105
+        },
+        {
+          "beat": 32.75,
+          "value": 105
+        },
+        {
+          "beat": 33.0,
+          "value": 105
+        },
+        {
+          "beat": 33.25,
+          "value": 105
+        },
+        {
+          "beat": 33.5,
+          "value": 105
+        },
+        {
+          "beat": 33.75,
+          "value": 105
+        },
+        {
+          "beat": 34.0,
+          "value": 105
+        },
+        {
+          "beat": 34.25,
+          "value": 105
+        },
+        {
+          "beat": 34.5,
+          "value": 105
+        },
+        {
+          "beat": 34.75,
+          "value": 105
+        },
+        {
+          "beat": 35.0,
+          "value": 105
+        },
+        {
+          "beat": 35.25,
+          "value": 105
+        },
+        {
+          "beat": 35.5,
+          "value": 105
+        },
+        {
+          "beat": 35.75,
+          "value": 105
+        },
+        {
+          "beat": 36.0,
+          "value": 105
+        },
+        {
+          "beat": 36.25,
+          "value": 105
+        },
+        {
+          "beat": 36.5,
+          "value": 105
+        },
+        {
+          "beat": 36.75,
+          "value": 105
+        },
+        {
+          "beat": 37.0,
+          "value": 105
+        },
+        {
+          "beat": 37.25,
+          "value": 105
+        },
+        {
+          "beat": 37.5,
+          "value": 105
+        },
+        {
+          "beat": 37.75,
+          "value": 105
+        },
+        {
+          "beat": 38.0,
+          "value": 105
+        },
+        {
+          "beat": 38.25,
+          "value": 105
+        },
+        {
+          "beat": 38.5,
+          "value": 105
+        },
+        {
+          "beat": 38.75,
+          "value": 105
+        },
+        {
+          "beat": 39.0,
+          "value": 105
+        },
+        {
+          "beat": 39.25,
+          "value": 105
+        },
+        {
+          "beat": 39.5,
+          "value": 105
+        },
+        {
+          "beat": 39.75,
+          "value": 105
+        },
+        {
+          "beat": 40.0,
+          "value": 105
+        },
+        {
+          "beat": 40.25,
+          "value": 105
+        },
+        {
+          "beat": 40.5,
+          "value": 105
+        },
+        {
+          "beat": 40.75,
+          "value": 105
+        },
+        {
+          "beat": 41.0,
+          "value": 105
+        },
+        {
+          "beat": 41.25,
+          "value": 105
+        },
+        {
+          "beat": 41.5,
+          "value": 105
+        },
+        {
+          "beat": 41.75,
+          "value": 105
+        },
+        {
+          "beat": 42.0,
+          "value": 105
+        },
+        {
+          "beat": 42.25,
+          "value": 105
+        },
+        {
+          "beat": 42.5,
+          "value": 105
+        },
+        {
+          "beat": 42.75,
+          "value": 105
+        },
+        {
+          "beat": 43.0,
+          "value": 105
+        },
+        {
+          "beat": 43.25,
+          "value": 105
+        },
+        {
+          "beat": 43.5,
+          "value": 105
+        },
+        {
+          "beat": 43.75,
+          "value": 105
+        },
+        {
+          "beat": 44.0,
+          "value": 105
+        },
+        {
+          "beat": 44.25,
+          "value": 105
+        },
+        {
+          "beat": 44.5,
+          "value": 105
+        },
+        {
+          "beat": 44.75,
+          "value": 105
+        },
+        {
+          "beat": 45.0,
+          "value": 105
+        },
+        {
+          "beat": 45.25,
+          "value": 105
+        },
+        {
+          "beat": 45.5,
+          "value": 105
+        },
+        {
+          "beat": 45.75,
+          "value": 105
+        },
+        {
+          "beat": 46.0,
+          "value": 105
+        },
+        {
+          "beat": 46.25,
+          "value": 105
+        },
+        {
+          "beat": 46.5,
+          "value": 105
+        },
+        {
+          "beat": 46.75,
+          "value": 105
+        },
+        {
+          "beat": 47.0,
+          "value": 105
+        },
+        {
+          "beat": 47.25,
+          "value": 105
+        },
+        {
+          "beat": 47.5,
+          "value": 105
+        },
+        {
+          "beat": 47.75,
+          "value": 105
+        },
+        {
+          "beat": 48.0,
+          "value": 105
+        },
+        {
+          "beat": 48.25,
+          "value": 105
+        },
+        {
+          "beat": 48.5,
+          "value": 105
+        },
+        {
+          "beat": 48.75,
+          "value": 105
+        },
+        {
+          "beat": 49.0,
+          "value": 105
+        },
+        {
+          "beat": 49.25,
+          "value": 105
+        },
+        {
+          "beat": 49.5,
+          "value": 105
+        },
+        {
+          "beat": 49.75,
+          "value": 105
+        },
+        {
+          "beat": 50.0,
+          "value": 105
+        },
+        {
+          "beat": 50.25,
+          "value": 105
+        },
+        {
+          "beat": 50.5,
+          "value": 105
+        },
+        {
+          "beat": 50.75,
+          "value": 105
+        },
+        {
+          "beat": 51.0,
+          "value": 105
+        },
+        {
+          "beat": 51.25,
+          "value": 105
+        },
+        {
+          "beat": 51.5,
+          "value": 105
+        },
+        {
+          "beat": 51.75,
+          "value": 105
+        },
+        {
+          "beat": 52.0,
+          "value": 105
+        },
+        {
+          "beat": 52.25,
+          "value": 105
+        },
+        {
+          "beat": 52.5,
+          "value": 105
+        },
+        {
+          "beat": 52.75,
+          "value": 105
+        },
+        {
+          "beat": 53.0,
+          "value": 105
+        },
+        {
+          "beat": 53.25,
+          "value": 105
+        },
+        {
+          "beat": 53.5,
+          "value": 105
+        },
+        {
+          "beat": 53.75,
+          "value": 105
+        },
+        {
+          "beat": 54.0,
+          "value": 105
+        },
+        {
+          "beat": 54.25,
+          "value": 105
+        },
+        {
+          "beat": 54.5,
+          "value": 105
+        },
+        {
+          "beat": 54.75,
+          "value": 105
+        },
+        {
+          "beat": 55.0,
+          "value": 105
+        },
+        {
+          "beat": 55.25,
+          "value": 105
+        },
+        {
+          "beat": 55.5,
+          "value": 105
+        },
+        {
+          "beat": 55.75,
+          "value": 105
+        },
+        {
+          "beat": 56.0,
+          "value": 105
+        },
+        {
+          "beat": 56.25,
+          "value": 105
+        },
+        {
+          "beat": 56.5,
+          "value": 105
+        },
+        {
+          "beat": 56.75,
+          "value": 105
+        },
+        {
+          "beat": 57.0,
+          "value": 105
+        },
+        {
+          "beat": 57.25,
+          "value": 105
+        },
+        {
+          "beat": 57.5,
+          "value": 105
+        },
+        {
+          "beat": 57.75,
+          "value": 105
+        },
+        {
+          "beat": 58.0,
+          "value": 105
+        },
+        {
+          "beat": 58.25,
+          "value": 105
+        },
+        {
+          "beat": 58.5,
+          "value": 105
+        },
+        {
+          "beat": 58.75,
+          "value": 105
+        },
+        {
+          "beat": 59.0,
+          "value": 105
+        },
+        {
+          "beat": 59.25,
+          "value": 105
+        },
+        {
+          "beat": 59.5,
+          "value": 105
+        },
+        {
+          "beat": 59.75,
+          "value": 105
+        },
+        {
+          "beat": 60.0,
+          "value": 105
+        },
+        {
+          "beat": 60.25,
+          "value": 105
+        },
+        {
+          "beat": 60.5,
+          "value": 105
+        },
+        {
+          "beat": 60.75,
+          "value": 105
+        },
+        {
+          "beat": 61.0,
+          "value": 105
+        },
+        {
+          "beat": 61.25,
+          "value": 105
+        },
+        {
+          "beat": 61.5,
+          "value": 105
+        },
+        {
+          "beat": 61.75,
+          "value": 105
+        },
+        {
+          "beat": 62.0,
+          "value": 105
+        },
+        {
+          "beat": 62.25,
+          "value": 105
+        },
+        {
+          "beat": 62.5,
+          "value": 105
+        },
+        {
+          "beat": 62.75,
+          "value": 105
+        },
+        {
+          "beat": 63.0,
+          "value": 105
+        },
+        {
+          "beat": 63.25,
+          "value": 105
+        },
+        {
+          "beat": 63.5,
+          "value": 105
+        },
+        {
+          "beat": 63.75,
+          "value": 105
+        },
+        {
+          "beat": 64.0,
+          "value": 105
+        },
+        {
+          "beat": 64.25,
+          "value": 105
+        },
+        {
+          "beat": 64.5,
+          "value": 105
+        },
+        {
+          "beat": 64.75,
+          "value": 105
+        },
+        {
+          "beat": 65.0,
+          "value": 105
+        },
+        {
+          "beat": 65.25,
+          "value": 105
+        },
+        {
+          "beat": 65.5,
+          "value": 105
+        },
+        {
+          "beat": 65.75,
+          "value": 105
+        },
+        {
+          "beat": 66.0,
+          "value": 105
+        },
+        {
+          "beat": 66.25,
+          "value": 105
+        },
+        {
+          "beat": 66.5,
+          "value": 105
+        },
+        {
+          "beat": 66.75,
+          "value": 105
+        },
+        {
+          "beat": 67.0,
+          "value": 105
+        },
+        {
+          "beat": 67.25,
+          "value": 105
+        },
+        {
+          "beat": 67.5,
+          "value": 105
+        },
+        {
+          "beat": 67.75,
+          "value": 105
+        },
+        {
+          "beat": 68.0,
+          "value": 105
+        },
+        {
+          "beat": 68.25,
+          "value": 105
+        },
+        {
+          "beat": 68.5,
+          "value": 105
+        },
+        {
+          "beat": 68.75,
+          "value": 105
+        },
+        {
+          "beat": 69.0,
+          "value": 105
+        },
+        {
+          "beat": 69.25,
+          "value": 105
+        },
+        {
+          "beat": 69.5,
+          "value": 105
+        },
+        {
+          "beat": 69.75,
+          "value": 105
+        },
+        {
+          "beat": 70.0,
+          "value": 105
+        },
+        {
+          "beat": 70.25,
+          "value": 105
+        },
+        {
+          "beat": 70.5,
+          "value": 105
+        },
+        {
+          "beat": 70.75,
+          "value": 105
+        },
+        {
+          "beat": 71.0,
+          "value": 105
+        },
+        {
+          "beat": 71.25,
+          "value": 105
+        },
+        {
+          "beat": 71.5,
+          "value": 105
+        },
+        {
+          "beat": 71.75,
+          "value": 105
+        },
+        {
+          "beat": 72.0,
+          "value": 105
+        },
+        {
+          "beat": 72.25,
+          "value": 105
+        },
+        {
+          "beat": 72.5,
+          "value": 105
+        },
+        {
+          "beat": 72.75,
+          "value": 105
+        },
+        {
+          "beat": 73.0,
+          "value": 105
+        },
+        {
+          "beat": 73.25,
+          "value": 105
+        },
+        {
+          "beat": 73.5,
+          "value": 105
+        },
+        {
+          "beat": 73.75,
+          "value": 105
+        },
+        {
+          "beat": 74.0,
+          "value": 105
+        },
+        {
+          "beat": 74.25,
+          "value": 105
+        },
+        {
+          "beat": 74.5,
+          "value": 105
+        },
+        {
+          "beat": 74.75,
+          "value": 105
+        },
+        {
+          "beat": 75.0,
+          "value": 105
+        },
+        {
+          "beat": 75.25,
+          "value": 105
+        },
+        {
+          "beat": 75.5,
+          "value": 105
+        },
+        {
+          "beat": 75.75,
+          "value": 105
+        },
+        {
+          "beat": 76.0,
+          "value": 105
+        },
+        {
+          "beat": 76.25,
+          "value": 105
+        },
+        {
+          "beat": 76.5,
+          "value": 105
+        },
+        {
+          "beat": 76.75,
+          "value": 105
+        },
+        {
+          "beat": 77.0,
+          "value": 105
+        },
+        {
+          "beat": 77.25,
+          "value": 105
+        },
+        {
+          "beat": 77.5,
+          "value": 105
+        },
+        {
+          "beat": 77.75,
+          "value": 105
+        },
+        {
+          "beat": 78.0,
+          "value": 105
+        },
+        {
+          "beat": 78.25,
+          "value": 105
+        },
+        {
+          "beat": 78.5,
+          "value": 105
+        },
+        {
+          "beat": 78.75,
+          "value": 105
+        },
+        {
+          "beat": 79.0,
+          "value": 105
+        },
+        {
+          "beat": 79.25,
+          "value": 105
+        },
+        {
+          "beat": 79.5,
+          "value": 105
+        },
+        {
+          "beat": 79.75,
+          "value": 105
+        },
+        {
+          "beat": 80.0,
+          "value": 105
+        },
+        {
+          "beat": 80.25,
+          "value": 105
+        },
+        {
+          "beat": 80.5,
+          "value": 105
+        },
+        {
+          "beat": 80.75,
+          "value": 105
+        },
+        {
+          "beat": 81.0,
+          "value": 105
+        },
+        {
+          "beat": 81.25,
+          "value": 105
+        },
+        {
+          "beat": 81.5,
+          "value": 105
+        },
+        {
+          "beat": 81.75,
+          "value": 105
+        },
+        {
+          "beat": 82.0,
+          "value": 105
+        },
+        {
+          "beat": 82.25,
+          "value": 105
+        },
+        {
+          "beat": 82.5,
+          "value": 105
+        },
+        {
+          "beat": 82.75,
+          "value": 105
+        },
+        {
+          "beat": 83.0,
+          "value": 105
+        },
+        {
+          "beat": 83.25,
+          "value": 105
+        },
+        {
+          "beat": 83.5,
+          "value": 105
+        },
+        {
+          "beat": 83.75,
+          "value": 105
+        },
+        {
+          "beat": 84.0,
+          "value": 105
+        },
+        {
+          "beat": 84.25,
+          "value": 105
+        },
+        {
+          "beat": 84.5,
+          "value": 105
+        },
+        {
+          "beat": 84.75,
+          "value": 105
+        },
+        {
+          "beat": 85.0,
+          "value": 105
+        },
+        {
+          "beat": 85.25,
+          "value": 105
+        },
+        {
+          "beat": 85.5,
+          "value": 105
+        },
+        {
+          "beat": 85.75,
+          "value": 105
+        },
+        {
+          "beat": 86.0,
+          "value": 105
+        },
+        {
+          "beat": 86.25,
+          "value": 105
+        },
+        {
+          "beat": 86.5,
+          "value": 105
+        },
+        {
+          "beat": 86.75,
+          "value": 105
+        },
+        {
+          "beat": 87.0,
+          "value": 105
+        },
+        {
+          "beat": 87.25,
+          "value": 105
+        },
+        {
+          "beat": 87.5,
+          "value": 105
+        },
+        {
+          "beat": 87.75,
+          "value": 105
+        },
+        {
+          "beat": 88.0,
+          "value": 105
+        },
+        {
+          "beat": 88.25,
+          "value": 105
+        },
+        {
+          "beat": 88.5,
+          "value": 105
+        },
+        {
+          "beat": 88.75,
+          "value": 105
+        },
+        {
+          "beat": 89.0,
+          "value": 105
+        },
+        {
+          "beat": 89.25,
+          "value": 105
+        },
+        {
+          "beat": 89.5,
+          "value": 105
+        },
+        {
+          "beat": 89.75,
+          "value": 105
+        },
+        {
+          "beat": 90.0,
+          "value": 105
+        },
+        {
+          "beat": 90.25,
+          "value": 105
+        },
+        {
+          "beat": 90.5,
+          "value": 105
+        },
+        {
+          "beat": 90.75,
+          "value": 105
+        },
+        {
+          "beat": 91.0,
+          "value": 105
+        },
+        {
+          "beat": 91.25,
+          "value": 105
+        },
+        {
+          "beat": 91.5,
+          "value": 105
+        },
+        {
+          "beat": 91.75,
+          "value": 105
+        },
+        {
+          "beat": 92.0,
+          "value": 105
+        },
+        {
+          "beat": 92.25,
+          "value": 105
+        },
+        {
+          "beat": 92.5,
+          "value": 105
+        },
+        {
+          "beat": 92.75,
+          "value": 105
+        },
+        {
+          "beat": 93.0,
+          "value": 105
+        },
+        {
+          "beat": 93.25,
+          "value": 105
+        },
+        {
+          "beat": 93.5,
+          "value": 105
+        },
+        {
+          "beat": 93.75,
+          "value": 105
+        },
+        {
+          "beat": 94.0,
+          "value": 105
+        },
+        {
+          "beat": 94.25,
+          "value": 105
+        },
+        {
+          "beat": 94.5,
+          "value": 105
+        },
+        {
+          "beat": 94.75,
+          "value": 105
+        },
+        {
+          "beat": 95.0,
+          "value": 105
+        },
+        {
+          "beat": 95.25,
+          "value": 105
+        },
+        {
+          "beat": 95.5,
+          "value": 105
+        },
+        {
+          "beat": 95.75,
+          "value": 105
+        },
+        {
+          "beat": 96.0,
+          "value": 105
+        },
+        {
+          "beat": 96.25,
+          "value": 105
+        },
+        {
+          "beat": 96.5,
+          "value": 105
+        },
+        {
+          "beat": 96.75,
+          "value": 105
+        },
+        {
+          "beat": 97.0,
+          "value": 105
+        },
+        {
+          "beat": 97.25,
+          "value": 105
+        },
+        {
+          "beat": 97.5,
+          "value": 105
+        },
+        {
+          "beat": 97.75,
+          "value": 105
+        },
+        {
+          "beat": 98.0,
+          "value": 105
+        },
+        {
+          "beat": 98.25,
+          "value": 105
+        },
+        {
+          "beat": 98.5,
+          "value": 105
+        },
+        {
+          "beat": 98.75,
+          "value": 105
+        },
+        {
+          "beat": 99.0,
+          "value": 105
+        },
+        {
+          "beat": 99.25,
+          "value": 105
+        },
+        {
+          "beat": 99.5,
+          "value": 105
+        },
+        {
+          "beat": 99.75,
+          "value": 105
+        },
+        {
+          "beat": 100.0,
+          "value": 105
+        },
+        {
+          "beat": 100.25,
+          "value": 105
+        },
+        {
+          "beat": 100.5,
+          "value": 105
+        },
+        {
+          "beat": 100.75,
+          "value": 105
+        },
+        {
+          "beat": 101.0,
+          "value": 105
+        },
+        {
+          "beat": 101.25,
+          "value": 105
+        },
+        {
+          "beat": 101.5,
+          "value": 105
+        },
+        {
+          "beat": 101.75,
+          "value": 105
+        },
+        {
+          "beat": 102.0,
+          "value": 105
+        },
+        {
+          "beat": 102.25,
+          "value": 105
+        },
+        {
+          "beat": 102.5,
+          "value": 105
+        },
+        {
+          "beat": 102.75,
+          "value": 105
+        },
+        {
+          "beat": 103.0,
+          "value": 105
+        },
+        {
+          "beat": 103.25,
+          "value": 105
+        },
+        {
+          "beat": 103.5,
+          "value": 105
+        },
+        {
+          "beat": 103.75,
+          "value": 105
+        },
+        {
+          "beat": 104.0,
+          "value": 105
+        },
+        {
+          "beat": 104.25,
+          "value": 105
+        },
+        {
+          "beat": 104.5,
+          "value": 105
+        },
+        {
+          "beat": 104.75,
+          "value": 105
+        },
+        {
+          "beat": 105.0,
+          "value": 105
+        },
+        {
+          "beat": 105.25,
+          "value": 105
+        },
+        {
+          "beat": 105.5,
+          "value": 105
+        },
+        {
+          "beat": 105.75,
+          "value": 105
+        },
+        {
+          "beat": 106.0,
+          "value": 105
+        },
+        {
+          "beat": 106.25,
+          "value": 105
+        },
+        {
+          "beat": 106.5,
+          "value": 105
+        },
+        {
+          "beat": 106.75,
+          "value": 105
+        },
+        {
+          "beat": 107.0,
+          "value": 105
+        },
+        {
+          "beat": 107.25,
+          "value": 105
+        },
+        {
+          "beat": 107.5,
+          "value": 105
+        },
+        {
+          "beat": 107.75,
+          "value": 105
+        },
+        {
+          "beat": 108.0,
+          "value": 105
+        },
+        {
+          "beat": 108.25,
+          "value": 105
+        },
+        {
+          "beat": 108.5,
+          "value": 105
+        },
+        {
+          "beat": 108.75,
+          "value": 105
+        },
+        {
+          "beat": 109.0,
+          "value": 105
+        },
+        {
+          "beat": 109.25,
+          "value": 105
+        },
+        {
+          "beat": 109.5,
+          "value": 105
+        },
+        {
+          "beat": 109.75,
+          "value": 105
+        },
+        {
+          "beat": 110.0,
+          "value": 105
+        },
+        {
+          "beat": 110.25,
+          "value": 105
+        },
+        {
+          "beat": 110.5,
+          "value": 105
+        },
+        {
+          "beat": 110.75,
+          "value": 105
+        },
+        {
+          "beat": 111.0,
+          "value": 105
+        },
+        {
+          "beat": 111.25,
+          "value": 105
+        },
+        {
+          "beat": 111.5,
+          "value": 105
+        },
+        {
+          "beat": 111.75,
+          "value": 105
+        },
+        {
+          "beat": 112.0,
+          "value": 105
+        },
+        {
+          "beat": 112.25,
+          "value": 105
+        },
+        {
+          "beat": 112.5,
+          "value": 105
+        },
+        {
+          "beat": 112.75,
+          "value": 105
+        },
+        {
+          "beat": 113.0,
+          "value": 105
+        },
+        {
+          "beat": 113.25,
+          "value": 105
+        },
+        {
+          "beat": 113.5,
+          "value": 105
+        },
+        {
+          "beat": 113.75,
+          "value": 105
+        },
+        {
+          "beat": 114.0,
+          "value": 105
+        },
+        {
+          "beat": 114.25,
+          "value": 105
+        },
+        {
+          "beat": 114.5,
+          "value": 105
+        },
+        {
+          "beat": 114.75,
+          "value": 105
+        },
+        {
+          "beat": 115.0,
+          "value": 105
+        },
+        {
+          "beat": 115.25,
+          "value": 105
+        },
+        {
+          "beat": 115.5,
+          "value": 105
+        },
+        {
+          "beat": 115.75,
+          "value": 105
+        },
+        {
+          "beat": 116.0,
+          "value": 105
+        },
+        {
+          "beat": 116.25,
+          "value": 105
+        },
+        {
+          "beat": 116.5,
+          "value": 105
+        },
+        {
+          "beat": 116.75,
+          "value": 105
+        },
+        {
+          "beat": 117.0,
+          "value": 105
+        },
+        {
+          "beat": 117.25,
+          "value": 105
+        },
+        {
+          "beat": 117.5,
+          "value": 105
+        },
+        {
+          "beat": 117.75,
+          "value": 105
+        },
+        {
+          "beat": 118.0,
+          "value": 105
+        },
+        {
+          "beat": 118.25,
+          "value": 105
+        },
+        {
+          "beat": 118.5,
+          "value": 105
+        },
+        {
+          "beat": 118.75,
+          "value": 105
+        },
+        {
+          "beat": 119.0,
+          "value": 105
+        },
+        {
+          "beat": 119.25,
+          "value": 105
+        },
+        {
+          "beat": 119.5,
+          "value": 105
+        },
+        {
+          "beat": 119.75,
+          "value": 105
+        },
+        {
+          "beat": 120.0,
+          "value": 105
+        },
+        {
+          "beat": 120.25,
+          "value": 105
+        },
+        {
+          "beat": 120.5,
+          "value": 105
+        },
+        {
+          "beat": 120.75,
+          "value": 105
+        },
+        {
+          "beat": 121.0,
+          "value": 105
+        },
+        {
+          "beat": 121.25,
+          "value": 105
+        },
+        {
+          "beat": 121.5,
+          "value": 105
+        },
+        {
+          "beat": 121.75,
+          "value": 105
+        },
+        {
+          "beat": 122.0,
+          "value": 105
+        },
+        {
+          "beat": 122.25,
+          "value": 105
+        },
+        {
+          "beat": 122.5,
+          "value": 105
+        },
+        {
+          "beat": 122.75,
+          "value": 105
+        },
+        {
+          "beat": 123.0,
+          "value": 105
+        },
+        {
+          "beat": 123.25,
+          "value": 105
+        },
+        {
+          "beat": 123.5,
+          "value": 105
+        },
+        {
+          "beat": 123.75,
+          "value": 105
+        },
+        {
+          "beat": 124.0,
+          "value": 105
+        },
+        {
+          "beat": 124.25,
+          "value": 105
+        },
+        {
+          "beat": 124.5,
+          "value": 105
+        },
+        {
+          "beat": 124.75,
+          "value": 105
+        },
+        {
+          "beat": 125.0,
+          "value": 105
+        },
+        {
+          "beat": 125.25,
+          "value": 105
+        },
+        {
+          "beat": 125.5,
+          "value": 105
+        },
+        {
+          "beat": 125.75,
+          "value": 105
+        },
+        {
+          "beat": 126.0,
+          "value": 105
+        },
+        {
+          "beat": 126.25,
+          "value": 105
+        },
+        {
+          "beat": 126.5,
+          "value": 105
+        },
+        {
+          "beat": 126.75,
+          "value": 105
+        },
+        {
+          "beat": 127.0,
+          "value": 105
+        },
+        {
+          "beat": 127.25,
+          "value": 105
+        },
+        {
+          "beat": 127.5,
+          "value": 105
+        },
+        {
+          "beat": 127.75,
+          "value": 105
+        }
+      ]
+    }
+  ],
+  "chimes": [
+    {
+      "beat": 0.2,
+      "pitch": 89,
+      "gain": 0.026
+    },
+    {
+      "beat": 16.2,
+      "pitch": 89,
+      "gain": 0.026
+    },
+    {
+      "beat": 44.2,
+      "pitch": 93,
+      "gain": 0.026
+    },
+    {
+      "beat": 64.2,
+      "pitch": 89,
+      "gain": 0.026
+    },
+    {
+      "beat": 80.2,
+      "pitch": 89,
+      "gain": 0.026
+    },
+    {
+      "beat": 108.2,
+      "pitch": 93,
+      "gain": 0.026
+    },
+    {
+      "beat": 124.2,
+      "pitch": 89,
+      "gain": 0.026
+    }
+  ],
+  "plucks": [
+    {
+      "beat": 0.016,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 1.466,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 2.516,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 4.016,
+      "pitch": 67,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 5.466,
+      "pitch": 74,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 6.516,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 8.016,
+      "pitch": 72,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 9.466,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 10.516,
+      "pitch": 65,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 12.016,
+      "pitch": 81,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 13.466,
+      "pitch": 67,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 14.516,
+      "pitch": 71,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 16.016,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 17.466,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 18.516,
+      "pitch": 74,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 20.016,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 21.466,
+      "pitch": 72,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 22.516,
+      "pitch": 79,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 24.016,
+      "pitch": 71,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 25.466,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 26.516,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 28.016,
+      "pitch": 79,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 29.466,
+      "pitch": 64,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 30.516,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 32.016,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 33.466,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 34.516,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 36.016,
+      "pitch": 67,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 37.466,
+      "pitch": 74,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 38.516,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 40.016,
+      "pitch": 72,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 41.466,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 42.516,
+      "pitch": 65,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 44.016,
+      "pitch": 81,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 45.466,
+      "pitch": 67,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 46.516,
+      "pitch": 71,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 48.016,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 49.466,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 50.516,
+      "pitch": 74,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 52.016,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 53.466,
+      "pitch": 72,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 54.516,
+      "pitch": 79,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 56.016,
+      "pitch": 71,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 57.466,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 58.516,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 60.016,
+      "pitch": 79,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 61.466,
+      "pitch": 64,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 62.516,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 64.016,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 65.466,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 66.516,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 68.016,
+      "pitch": 67,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 69.466,
+      "pitch": 74,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 70.516,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 72.016,
+      "pitch": 72,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 73.466,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 74.516,
+      "pitch": 65,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 76.016,
+      "pitch": 81,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 77.466,
+      "pitch": 67,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 78.516,
+      "pitch": 71,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 80.016,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 81.466,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 82.516,
+      "pitch": 74,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 84.016,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 85.466,
+      "pitch": 72,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 86.516,
+      "pitch": 79,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 88.016,
+      "pitch": 71,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 89.466,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 90.516,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 92.016,
+      "pitch": 79,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 93.466,
+      "pitch": 64,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 94.516,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 96.016,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 97.466,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 98.516,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 100.016,
+      "pitch": 67,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 101.466,
+      "pitch": 74,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 102.516,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 104.016,
+      "pitch": 72,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 105.466,
+      "pitch": 76,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 106.516,
+      "pitch": 65,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 108.016,
+      "pitch": 81,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 109.466,
+      "pitch": 67,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 110.516,
+      "pitch": 71,
+      "duration": 1.25,
+      "velocity": 58
+    },
+    {
+      "beat": 112.016,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 114.416,
+      "pitch": 69,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 116.016,
+      "pitch": 67,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 118.416,
+      "pitch": 71,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 120.016,
+      "pitch": 73,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 122.416,
+      "pitch": 79,
+      "duration": 1.25,
+      "velocity": 50
+    },
+    {
+      "beat": 124.016,
+      "pitch": 77,
+      "duration": 1.25,
+      "velocity": 66
+    },
+    {
+      "beat": 126.416,
+      "pitch": 62,
+      "duration": 1.25,
+      "velocity": 50
+    }
+  ]
+}
