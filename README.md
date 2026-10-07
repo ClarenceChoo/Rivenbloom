@@ -9,7 +9,8 @@ platforms, fight with a crescent blade, learn magical arts, and restore the root
 _Your journey begins in Wren's Rest. Follow the objective at the top right and the interaction prompt at the bottom._
 
 [Start playing](#start-playing) · [Controls](#controls) · [Combat and magic](#combat-and-magic) ·
-[Exploration and progression](#exploration-and-progression) · [Saves](#saving-and-continuing)
+[Exploration and progression](#exploration-and-progression) · [Saves](#saving-and-continuing) ·
+[Latest verification](docs/polish-verification.md)
 
 ## Start playing
 
@@ -106,7 +107,7 @@ The playable adventure crosses five areas:
 
 **Wren's Rest → Brackenreach → Singing Hollows → Rootglass Reliquary → Hollow Choir**
 
-![Mara exploring the violet-lit Root-Memory Chamber, beside a glowing Seed-Lantern and blue mineral platforms](docs/images/singing-hollows.png)
+![Mara exploring the violet-lit Root-Memory Chamber, beside a glowing Seed-Lantern and violet stone ground](docs/images/singing-hollows.png)
 
 _Seed-Lanterns offer a place to recover as you explore the Singing Hollows._
 

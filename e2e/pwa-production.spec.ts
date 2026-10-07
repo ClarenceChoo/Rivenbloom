@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
 import { readFile, writeFile } from 'node:fs/promises';
 import { computedContrastRatio } from './contrast';
+import { ProductionDriver } from './productionDriver';
+import { observeProductionCanvas } from './productionObservation';
 
 test('fresh production route reaches the Sentinel after the Dash Trial', async ({
   page,
@@ -8,6 +10,8 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   test.setTimeout(600_000);
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
+  const canvas = process.env.RIVENBLOOM_TEST_RENDERER === 'canvas';
+  if (canvas) await observeProductionCanvas(page);
   await page.goto('/');
   await page.getByRole('button', { name: 'Begin journey for Journey 1' }).click();
   await page
@@ -86,25 +90,20 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
   await expect(page.getByText('Resin: 20', { exact: true })).toBeVisible();
   const trailheadPrompt = page.getByText('E · Rest at Trailhead Seed-Lantern');
   await expect(trailheadPrompt).toBeVisible();
+  const healthMeter = page.getByRole('progressbar', { name: /Health:/ });
+  await page.screenshot({ path: testInfo.outputPath('production-briar-approach.png') });
   await page.keyboard.down('ArrowRight');
   try {
     await expect(trailheadPrompt).toBeHidden({ timeout: 5_000 });
-    await page.waitForTimeout(1_600);
+    await expect
+      .poll(() => healthMeter.evaluate((meter) => (meter as HTMLProgressElement).value), {
+        timeout: 20_000,
+      })
+      .toBeLessThan(100);
   } finally {
     await page.keyboard.up('ArrowRight');
   }
-  await page.screenshot({ path: testInfo.outputPath('production-briar-approach.png') });
-  await page.keyboard.down('ArrowRight');
-  await page.waitForTimeout(1_400);
-  await page.keyboard.up('ArrowRight');
-  await page.keyboard.down('ArrowRight');
-  await page.waitForTimeout(1_200);
-  await page.keyboard.up('ArrowRight');
   await page.screenshot({ path: testInfo.outputPath('production-briar-engage.png') });
-  const healthMeter = page.getByRole('progressbar', { name: /Health:/ });
-  expect(await healthMeter.evaluate((meter) => (meter as HTMLProgressElement).value)).toBeLessThan(
-    100,
-  );
   for (let combo = 0; combo < 3; combo += 1) {
     await page.keyboard.press('KeyJ');
     await page.waitForTimeout(100);
@@ -361,15 +360,34 @@ test('fresh production route reaches the Sentinel after the Dash Trial', async (
     await page.keyboard.press('ArrowRight', { delay: 100 });
   }
   await expect(climbPrompt).toBeVisible();
-  await page.keyboard.down('ArrowUp');
-  await page.waitForTimeout(1_800);
-  await page.keyboard.up('ArrowUp');
-  await page.keyboard.down('ArrowLeft');
-  await page.waitForTimeout(500);
-  await page.keyboard.up('ArrowLeft');
-  await page.keyboard.down('ArrowLeft');
-  await page.waitForTimeout(2_200);
-  await page.keyboard.up('ArrowLeft');
+  if (canvas) {
+    const controls = new ProductionDriver(page);
+    await controls.move(4570);
+    await page.keyboard.down('ArrowUp');
+    try {
+      await expect
+        .poll(async () => (await controls.state()).player.y, { timeout: 10000 })
+        .toBeLessThanOrEqual(1440);
+    } finally {
+      await page.keyboard.up('ArrowUp');
+    }
+    await controls.move(4480);
+    await controls.move(3904);
+    await controls.move(4992);
+  } else {
+    await page.keyboard.down('ArrowUp');
+    try {
+      await page.waitForTimeout(1_800);
+    } finally {
+      await page.keyboard.up('ArrowUp');
+    }
+    await page.keyboard.down('ArrowLeft');
+    await page.waitForTimeout(500);
+    await page.keyboard.up('ArrowLeft');
+    await page.keyboard.down('ArrowLeft');
+    await page.waitForTimeout(2_200);
+    await page.keyboard.up('ArrowLeft');
+  }
   const sentinelObjective = page.getByText(
     'Claim a briar core from the Thorn Sentinel east of the Root-Memory Chamber.',
   );

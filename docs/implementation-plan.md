@@ -1,5 +1,7 @@
 # Rivenbloom Vertical Slice Implementation Plan
 
+Historical implementation plan. For current completed scope and remaining qualification, use [progress](progress.md), the [release checklist](remaining-work-checklist.md) and [October 7 verification](polish-verification.md); the original task checkboxes below are retained as planning history.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use
 > `superpowers:subagent-driven-development` (recommended) or
 > `superpowers:executing-plans` to implement this plan task-by-task. Steps use

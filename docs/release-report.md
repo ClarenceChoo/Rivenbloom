@@ -2,6 +2,8 @@
 
 Date: 2026-10-05
 
+October 7 update: see the [polish verification](polish-verification.md) for the newer art/audio/input pass and fresh production journey through credits and reload. The results below remain the historical October 5 record.
+
 **Status: implementation candidate; release qualification remains open. No public deployment.**
 The reviewed gameplay and presentation gaps now have implementations and focused regressions. This is not a claim that Gates A–D of the [share-ready plan](superpowers/plans/2026-09-23-share-ready-release.md) have passed. Human playtesting, physical controls, listening, performance, and hosted delivery remain separate evidence.
 
