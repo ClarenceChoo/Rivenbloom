@@ -1,4 +1,5 @@
 import type { SaveSettings } from '../saves/SaveSchema';
+import { soundVoices } from './SoundCue';
 
 export type AudioLayer =
   | 'menu'
@@ -68,12 +69,13 @@ export class AudioDirector {
   private fadeTimers = new Set<ReturnType<typeof globalThis.setTimeout>>();
   private heartTimer: ReturnType<typeof globalThis.setTimeout> | null = null;
   private disposed = false;
+  private readonly voices = new Map<OscillatorNode, GainNode>();
   private readonly unlock = () => void this.ensureContext();
   private readonly visibility = () => this.applyVisibility();
 
   public constructor(private readonly options: AudioDirectorOptions = {}) {
-    globalThis.addEventListener('keydown', this.unlock, { once: true });
-    globalThis.addEventListener('pointerdown', this.unlock, { once: true });
+    globalThis.addEventListener('keydown', this.unlock);
+    globalThis.addEventListener('pointerdown', this.unlock);
     globalThis.document?.addEventListener('visibilitychange', this.visibility);
   }
 
@@ -104,17 +106,29 @@ export class AudioDirector {
     const context = this.context;
     const destination = this.sfx;
     if (context === null || destination === null) return;
-    const oscillator = context.createOscillator();
-    const gain = context.createGain();
-    const frequency = 180 + (stableHash(cueId) % 520);
-    oscillator.type = cueId.includes('cantor') ? 'sine' : 'triangle';
-    oscillator.frequency.setValueAtTime(frequency, context.currentTime);
-    gain.gain.setValueAtTime(0.0001, context.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.12, context.currentTime + 0.012);
-    gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.18);
-    oscillator.connect(gain).connect(destination);
-    oscillator.start();
-    oscillator.stop(context.currentTime + 0.2);
+    if (context.state !== 'running') return;
+    for (const voice of soundVoices(cueId)) {
+      if (this.voices.size >= 16) break;
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      const start = context.currentTime + voice.delay;
+      oscillator.type = voice.wave;
+      oscillator.frequency.setValueAtTime(voice.frequency, start);
+      oscillator.frequency.exponentialRampToValueAtTime(voice.endFrequency, start + voice.duration);
+      gain.gain.setValueAtTime(0.0001, context.currentTime);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(voice.volume, start + 0.008);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + voice.duration);
+      oscillator.connect(gain).connect(destination);
+      this.voices.set(oscillator, gain);
+      oscillator.onended = () => {
+        oscillator.disconnect();
+        gain.disconnect();
+        this.voices.delete(oscillator);
+      };
+      oscillator.start(start);
+      oscillator.stop(start + voice.duration + 0.01);
+    }
   }
 
   public dispose(): boolean {
@@ -136,6 +150,13 @@ export class AudioDirector {
     }
     this.tracks.clear();
     this.playing = [];
+    for (const [oscillator, gain] of this.voices) {
+      oscillator.onended = null;
+      oscillator.stop();
+      oscillator.disconnect();
+      gain.disconnect();
+    }
+    this.voices.clear();
     void this.context?.close().catch(() => undefined);
     this.context = null;
     return true;
@@ -180,8 +201,9 @@ export class AudioDirector {
     let incoming = this.tracks.get(cue.file);
     if (
       incoming !== undefined &&
+      this.playing.includes(incoming) &&
       incoming.retirement === null &&
-      (incoming.starting || !incoming.audio.paused)
+      (incoming.starting || !incoming.audio.paused || (!cue.loop && incoming.audio.ended))
     )
       return;
     if (incoming === undefined) {
@@ -274,7 +296,7 @@ export class AudioDirector {
 
   private applyVisibility(): void {
     this.applyGains();
-    if (!globalThis.document?.hidden) void this.ensureContext();
+    if (!globalThis.document?.hidden && this.context !== null) void this.ensureContext();
   }
 }
 
@@ -285,12 +307,6 @@ export function captionForCue(cueId: string): string | null {
   if (cueId.includes('defeat') || cueId.includes('release')) return '[The hollow song releases]';
   if (cueId.includes('cantor')) return '[The Pallid Cantor intones]';
   return null;
-}
-
-function stableHash(value: string): number {
-  let hash = 0;
-  for (const character of value) hash = (hash * 31 + character.charCodeAt(0)) >>> 0;
-  return hash;
 }
 
 function isAudioLayer(value: string): value is AudioLayer {

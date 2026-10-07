@@ -168,35 +168,38 @@ describe('WorldObjectRuntime', () => {
     ]);
   });
 
-  test('accepts a resonant-pulse puzzle step while the player is casting', () => {
-    const baseline = save();
-    const current = {
-      ...baseline,
-      player: {
-        ...baseline.player,
-        unlockedAbilities: [...baseline.player.unlockedAbilities, abilityId('resonant-pulse')],
-      },
-      quests: {
-        ...baseline.quests,
-        flags: [...baseline.quests.flags, stableId<'quest-flag'>('resonant-pulse-awakened')],
-      },
-    };
-    const runtime = room('rootglass-reliquary', 'resonance-gallery', current);
+  test.each([7488, 7664])(
+    'accepts a reached pulse while casting at x=%i, even outside body overlap',
+    (x) => {
+      const baseline = save();
+      const current = {
+        ...baseline,
+        player: {
+          ...baseline.player,
+          unlockedAbilities: [...baseline.player.unlockedAbilities, abilityId('resonant-pulse')],
+        },
+        quests: {
+          ...baseline.quests,
+          flags: [...baseline.quests.flags, stableId<'quest-flag'>('resonant-pulse-awakened')],
+        },
+      };
+      const runtime = room('rootglass-reliquary', 'resonance-gallery', current);
 
-    const step = runtime.step({
-      playerPosition: { x: 7488, y: 900 },
-      playerState: 'cast',
-      interactBufferId: null,
-      pulseMechanismIds: [stableId<'mechanism'>('gallery-memory-lens')],
-      nowMs: 17,
-      save: current,
-    });
+      const step = runtime.step({
+        playerPosition: { x, y: 900 },
+        playerState: 'cast',
+        interactBufferId: null,
+        pulseMechanismIds: [stableId<'mechanism'>('gallery-memory-lens')],
+        nowMs: 17,
+        save: current,
+      });
 
-    expect(step.proposal).toMatchObject({
-      kind: 'puzzle-advanced',
-      puzzleId: 'gallery-choir-seal',
-    });
-  });
+      expect(step.proposal).toMatchObject({
+        kind: 'puzzle-advanced',
+        puzzleId: 'gallery-choir-seal',
+      });
+    },
+  );
 
   test('routes only an accepted positive player attack to a breakable shortcut proposal', () => {
     const runtime = room('brackenreach', 'brackenreach-trail');

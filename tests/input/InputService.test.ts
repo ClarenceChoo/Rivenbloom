@@ -520,6 +520,45 @@ describe('InputService sustained actions and transient clearing', () => {
     expect(input.sample(50).actions.block).toMatchObject({ held: true, pressed: true });
   });
 
+  it('accepts a fresh movement press immediately after clearing menu input', () => {
+    const port = new FakeInputDevicePort();
+    const input = new InputService(port);
+    input.sample(0);
+    input.clearTransient();
+    port.snapshot = snapshot({
+      heldCodes: ['ArrowRight'],
+      pressed: [{ code: 'ArrowRight', atMs: 10 }],
+    });
+    expect(input.sample(10).move.x).toBe(1);
+  });
+
+  it('retains a fresh quick tap before the first resumed frame', () => {
+    const port = new FakeInputDevicePort();
+    const input = new InputService(port);
+    input.sample(0);
+    input.clearTransient();
+    port.snapshot = snapshot({
+      pressed: [{ code: 'Space', atMs: 10 }],
+      released: [{ code: 'Space', atMs: 11 }],
+    });
+    expect(input.sample(12).actions.jump).toMatchObject({ pressed: true, released: true });
+  });
+
+  it('does not reopen held controls when a different key is pressed during the neutral gate', () => {
+    const port = new FakeInputDevicePort();
+    const input = new InputService(port);
+    port.snapshot = snapshot({ heldCodes: ['KeyL'], pressed: [{ code: 'KeyL', atMs: 0 }] });
+    input.sample(0);
+    input.clearTransient();
+    port.snapshot = snapshot({
+      heldCodes: ['KeyL', 'ArrowRight'],
+      pressed: [{ code: 'ArrowRight', atMs: 10 }],
+    });
+    const frame = input.sample(10);
+    expect(frame.actions.block.held).toBe(false);
+    expect(frame.move.x).toBe(0);
+  });
+
   it('replaces the equal-time cache with a neutral frame when transients clear without repolling', () => {
     const port = new FakeInputDevicePort();
     const input = new InputService(port);

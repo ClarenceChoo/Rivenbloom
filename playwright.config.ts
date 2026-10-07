@@ -7,8 +7,10 @@ if (!['chromium', 'firefox', 'webkit', 'all'].includes(browser)) {
 }
 
 export default defineConfig({
-  testMatch: production ? '**/pwa-production.spec.ts' : '**/*.spec.ts',
-  testIgnore: production ? [] : ['**/pwa-production.spec.ts'],
+  testMatch: production
+    ? ['**/pwa-production.spec.ts', '**/production-journey.spec.ts']
+    : '**/*.spec.ts',
+  testIgnore: production ? [] : ['**/pwa-production.spec.ts', '**/production-journey.spec.ts'],
   testDir: './e2e',
   outputDir: 'test-results',
   timeout: 15_000,
@@ -26,7 +28,14 @@ export default defineConfig({
       name: 'chromium-desktop',
       use: {
         ...devices['Desktop Chrome'],
-        channel: process.env.RIVENBLOOM_SOAK === '1' ? undefined : 'chromium',
+        channel:
+          process.env.RIVENBLOOM_SOAK === '1' || process.env.RIVENBLOOM_CHROMIUM_PATH
+            ? undefined
+            : 'chromium',
+        launchOptions: {
+          executablePath: process.env.RIVENBLOOM_CHROMIUM_PATH,
+          args: process.env.RIVENBLOOM_TEST_RENDERER === 'canvas' ? ['--disable-webgl'] : [],
+        },
         viewport: { width: 1280, height: 720 },
       },
     },

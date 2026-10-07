@@ -914,9 +914,10 @@ select:hover {
     url('/assets/art/rivenbloom-world-panorama.png') center / cover;
 }
 
-.ending-panel {
+.transition-panel.ending-panel {
   width: min(760px, 86%);
-  max-height: 88%;
+  max-height: 100%;
+  padding: clamp(20px, 3vw, 40px);
   overflow: auto;
   background: rgb(23 19 37 / 88%);
 }

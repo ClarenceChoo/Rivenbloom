@@ -2,10 +2,24 @@
 
 Date: 2026-10-07
 
+This report combines local release fixes with upstream's [October 7 polish verification](polish-verification.md), including its fresh production journey through credits and reload. Results belong to their described candidates; the merged build has separate verification requirements.
+
 **Status: implementation candidate; release qualification remains open. No public deployment.**
 The reviewed gameplay and presentation gaps now have implementations and focused regressions. This is not a claim that Gates A–D of the [share-ready plan](superpowers/plans/2026-09-23-share-ready-release.md) have passed. Human playtesting, physical controls, listening, performance, and hosted delivery remain separate evidence.
 
-## October 7 release fixes
+## October 7 merged-main verification
+
+The merge combines local commit `12ad4a9` with upstream main `2dbacb0`. It retains the newer generated backgrounds, terrain and actor art, bounded music cache, trial guidance, 200% settings and zero-Resin required reforge, while incorporating upstream's bounded coral briars, sound motifs, fresh-Resume input, pulse-range progression and ending-layout fixes. Optional installed-Chromium/Canvas test settings coexist with the isolated development test server and three-engine projects. The README and wiki now describe the core-only reforge consistently.
+
+The merged runtime passed formatting, ESLint, strict TypeScript, **107 files / 705 unit tests**, and the production build (main JavaScript 1,698.19 KB / 449.05 KB gzip, with Vite's existing chunk-size advisory). The complete Chromium development suite passed **77/77 in one run**, including canonical traversal, both boss scenarios, durable credits/reload and the new Resume/pulse checks. All four ordinary production checks passed together; the Canvas-only route and opt-in soak were skipped in that default run. The separate fresh Canvas production checkpoint route then passed in 1.3 minutes. It reaches Reliquary Verge through earned caches, memory recovery and the timed trial; it does not cover the full ending. The merged production 20-cycle measurement stayed at **3,028 DOM nodes before and after**. Wiki unit tests passed 6/6 and its production build passed.
+
+The merge exposed one audio compatibility defect: protecting completed non-looping music also suppressed that cached track during a later journey. A failing regression now passes; completed music remains silent on subsequent input in the same ending, while a track retired after returning to the menu can play for a later journey. All ten audio lifecycle/cache tests pass. The Canvas observer was adapted to current authored crop rectangles and dimensions rather than URLs, because Phaser loads images through blob URLs. Its first rerun then stalled on two-frame movement bursts; holding movement until an observed target corrected that driver failure. No combat statistics or puzzle window were changed to obtain the passing route.
+
+Firefox and WebKit smoke checks passed **38/38** on the merged source, including immediate Resume input, title focus, saved 200% text scale and save/re-entry. Together with the corresponding Chromium scenarios in the complete development run, all 57 current three-engine smoke scenarios have passing evidence. Final observer/driver lint, strict TypeScript and repository formatting checks pass. All verification workers and their automatically owned servers exited after the suites; no task-started test browser remains for review.
+
+Upstream's documented fresh production ending remains evidence for its own candidate. The combined build still needs full ordinary-input ending/reload revalidation, first-time testers, physical devices/listening, target-hardware and long-run checks, actual Safari/browser-zoom qualification, hosted HTTPS delivery and native prerequisites. The earlier local 30-minute soak below belongs to the pre-merge candidate.
+
+## October 7 local release fixes before the upstream merge
 
 The Dash Trial now exposes its authored instructions, plate count and simulation-time countdown as selectable HUD text. Expired plate lights reset in the projection; the nine-second puzzle rule and saved fields are unchanged. Captions, interaction prompts, boss health and essential trial help share a bottom stack. Portrait layout uses compact selectable trial help and health/mana meters while retaining both numeric values and save status. Regressions caught vertical guidance overlap and overlapping health/mana glyphs at the actual 200% setting; both pass after the layout changes, with screenshot review at 390×844.
 
@@ -26,6 +40,20 @@ All 54 distinct Chromium/Firefox/WebKit smoke scenarios have passing evidence ac
 A separate ordinary-control continuation died in Singing Hollows, respawned with quest progress intact, solved the trial and rested at Reliquary Verge. It did not establish a Sentinel win. Its temporary driver then failed while attempting save export because its Manage-button locator was incorrect and its pending download wait was not handled. That is a driver failure, not evidence of a game export failure. No fresh full-route or balance claim comes from this attempt.
 
 Task-owned browser workers and the production preview were stopped after verification. No listeners remained on 4173, 4174 or 4176 at the final check; the pre-existing 4173 process was not stopped by this task. Temporary drivers, logs and screenshots stayed outside the repository.
+
+## October 5 browser playability pass
+
+A journey created from an empty browser profile reached the ending through ordinary keyboard input and UI interactions. It defeated the Thorn Sentinel and claimed its briar core, reforged the blade, solved the Dash Trial and dungeon puzzles, collected the health/mana discoveries, completed both optional quests, bought five Sunmoss Draughts with earned Resin, opened the Choir seal, defeated both Cantor phases, and returned to Sela. Continuing after the ending retained all three completed quests and exactly one Cantor Sigil. Endgame upgrades were earned: 120 maximum health, 56 maximum mana and weapon level 2. Four draughts remained after the boss and return journey.
+
+This was a development-browser journey using the bridge only for read-only observations. No save imports, semantic enemy defeats, debug routes or stat mutations were used. It included death recovery and resumed sessions while the automation's movement, encounter-loading and shop helpers were corrected. It establishes progression through the existing browser game; it is not a continuous production run, a deathless run, first-time-player balance evidence or a measurement of the intended 20–40 minutes. The separate production route still ends at Sentinel contact.
+
+Two application fixes have failing-then-passing regressions. A quick Escape tap could be sampled on a render frame without a physics step and disappear before the pause observer ran. Pause now uses the same short input buffer as other discrete actions and is consumed exactly once. The menu scenarios passed three repeats (6/6). Ending screenshot review found that focusing Continue exploring scrolled the panel and clipped its heading. Ending focus now preserves scroll position, and the panel uses the available height with smaller padding. The desktop heading and buttons fit together; keyboard Tab reaches Return to title in a short landscape window. The desktop regression passed three repeats, and the extended short-window check passed.
+
+The final source passed formatting, ESLint, strict TypeScript and **104 files / 682 unit tests**. The complete development-browser matrix passed **67/67** in one run (13.3 minutes), including the canonical traversal, both boss scenarios and the extended ending regression. Browser IndexedDB passed **7/7**. The production build passed with the existing chunk-size advisory (main JavaScript 1,690.68 KB / 446.65 KB gzip). Screenshots of the normal-input boss defeat and ending were inspected, followed by desktop and short-window captures of the corrected ending layout.
+
+Both built-production scenarios passed (**2/2**, 3.2 minutes): the fresh no-hook route through Dash Trial and live Sentinel contact, and offline reload, unrelated-cache preservation, update acceptance and durable saves. These production scenarios retain their existing scope; the complete normal-input ending journey above used the development build.
+
+Cloud checks use system Chromium 151 and Phaser's Canvas renderer on Node.js 24. Software WebGL on this CPU-only host was substantially slower; these results do not qualify hardware WebGL performance. Linux Tauri diagnostics confirmed that Rust/Cargo/rustup, WebKitGTK 4.1 and librsvg are absent, so native compilation was not run. macOS packaging requires a Mac and its separate toolchain prerequisites.
 
 ## September 23–24 follow-up QA
 
@@ -102,7 +130,7 @@ Generated music score exports under `music/score-v1/` are excluded from Prettier
 - Authorized dedicated HTTPS destination, host cache headers, installation and update verification on the actual public origin. The artifact is local `dist/`.
 - Optional native distribution requires toolchain installation and independent signed/tester packaging decisions.
 
-The September 23–24 candidate was rated **6/10 — Not Ready**. The most important remaining work is a fresh normal-stat Sentinel win, the dungeon and boss continuation through ending/reload, first-time player testing, target-hardware performance and physical controls, and hosted PWA qualification. This rating does not certify public distribution. See [known issues](known-issues.md) and [remaining checklist](remaining-work-checklist.md).
+Upstream's later production journey supersedes the earlier absence of fresh ending evidence on its own candidate. It does not establish a fresh complete journey on the merged implementation. Public release qualification still needs merged-build revalidation, first-time player testing, target-hardware performance, physical controls and hosted PWA qualification. See [known issues](known-issues.md) and [remaining checklist](remaining-work-checklist.md).
 
 ## Historical evidence — superseded September 19 assessment
 

@@ -153,6 +153,32 @@ installed Hyperframes skill, licensed under SIL Open Font License 1.1; both lice
 included in `composition/assets/fonts/`. The composition, title motion, edit, poster, and share
 copy were authored by Codex for this request. No third-party game references were used.
 
+## 2026-10-05 player guide screenshots
+
+These documentation images are unedited 1280×720 PNG screenshots captured from
+Rivenbloom in Chromium with Playwright. They show this project's original runtime
+art and HTML interface. No external game images, image-generation references,
+compositing, or developer overlays were used. They are used in the README only.
+
+| Image                                 | Source and scene                                                                                                                                                              |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `docs/images/wrens-rest.png`          | Fresh development journey at Wren's Rest after accepting Sela's quest through ordinary controls.                                                                              |
+| `docs/images/brackenreach-combat.png` | Fresh production playthrough artifact `production-briar-combat.png`; ordinary movement, melee, and Lumen Bolt input with live enemies. Copied unchanged.                      |
+| `docs/images/singing-hollows.png`     | Fresh production playthrough artifact `production-root-memory-chamber.png`; arrival in the Root-Memory Chamber through ordinary controls. Copied unchanged.                   |
+| `docs/images/wayfinder-ledger.png`    | Map opened through the pause menu on the saved October 5 normal-stat development journey. Rooms were discovered during ordinary play; no imported save or developer mutation. |
+
+## 2026-10-07 continuous terrain and sound polish
+
+This section records the upstream polish candidate. The merged game uses the later generated terrain strips/fill and actor/background art documented below, while retaining these SVG terrain sources, the bounded coral briar material and the synthesized sound cues. The screenshot refresh below depicts that upstream candidate's terrain.
+
+- `public/assets/art/terrain/{wren-rest,brackenreach,singing-hollows,rootglass-reliquary,hollow-choir}.svg`: original SVG illustrations authored for Rivenbloom, with carved mineral faces, interrupted strata, root veins and area-specific moss/copper/lichen colours. No external source or purchased assets. The 256 × 320 sheets contain a repeating body, a 24px surface rim and a 40px ledge. Runtime crops preserve material scale and place the upper edge exactly on each authored collision plane. One-way ledges stay thin; solid faces fill their collision bounds.
+- `public/assets/art/terrain/thorns.svg`: original interwoven briar illustration with coral tips and a restrained danger haze. Tiled horizontally within the authored hazard bounds; no decorative enlargement of the damaging region.
+- `src/game/audio/SoundCue.ts`: original synthesized impact, descending danger and rising resonance motifs. No samples or third-party audio. Voices have short gain envelopes, a 16-voice cap and explicit cleanup. Existing ten-track music remains unchanged.
+
+## 2026-10-07 guide screenshot refresh
+
+The three gameplay screenshots in `docs/images/` were refreshed with unedited current-build Chromium captures. `wrens-rest.png` uses the October 7 desktop gameplay capture. `brackenreach-combat.png` and `singing-hollows.png` use the final passing production route's combat and Root-Memory Chamber captures respectively. The October 5 `wayfinder-ledger.png` remains a valid illustration of the unchanged discovered-room map UI. These show the new terrain and this project's original art/UI; no external images, compositing or developer overlays were used. Historical October 5 source descriptions above are retained as provenance history.
+
 ## 2026-10-07 illustrated wiki
 
 All wiki artwork is original, generated with the built-in OpenAI image-generation

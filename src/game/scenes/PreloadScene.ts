@@ -18,6 +18,20 @@ import { SceneKeys } from './SceneKeys';
 
 export const PRELOAD_MANIFEST = Object.freeze([
   {
+    key: 'terrain-thorns',
+    group: 'readable hazards',
+    kind: 'image',
+    url: '/assets/art/terrain/thorns.svg',
+  },
+  ...['wren-rest', 'brackenreach', 'singing-hollows', 'rootglass-reliquary', 'hollow-choir'].map(
+    (area) => ({
+      key: `terrain-${area}`,
+      group: 'area terrain',
+      kind: 'image' as const,
+      url: `/assets/art/terrain/${area}.svg`,
+    }),
+  ),
+  {
     key: 'rivenbloom-npc-sprites',
     group: 'village portraits',
     kind: 'image',

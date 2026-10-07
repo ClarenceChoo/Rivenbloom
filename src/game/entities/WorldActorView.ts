@@ -133,6 +133,16 @@ export class WorldActorView {
     this.renderSurfaces(area, room);
 
     for (const zone of area.zones.filter((candidate) => candidate.roomId === room.roomId)) {
+      if (zone.kind === 'hazard' && zone.attackId === 'bramble-thorn-contact') {
+        const { x, y, width, height } = zone.bounds;
+        const thorns = this.scene.add
+          .tileSprite(x, y, width, height, 'terrain-thorns')
+          .setOrigin(0, 0)
+          .setDepth(-2);
+        thorns.tileScaleY = height / 128;
+        this.environmentSprites.push(thorns);
+        continue;
+      }
       this.addEnvironment(
         zone.kind === 'climb'
           ? 5
@@ -143,7 +153,7 @@ export class WorldActorView {
             : 13,
         zone.bounds,
         zone.kind === 'climb' ? 8 : -2,
-      );
+      ).setDisplaySize(zone.bounds.width, zone.bounds.height);
     }
     for (const checkpoint of area.checkpoints.filter(
       (candidate) => candidate.roomId === room.roomId,

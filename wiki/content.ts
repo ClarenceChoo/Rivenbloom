@@ -97,7 +97,7 @@ export const ARTICLES: readonly Article[] = [
       {
         id: 'first-steps',
         title: 'Before you leave the village',
-        html: `<p>You play as <strong>Mara Vey</strong>, a wayfinder in a moss cloak with a luminous thread-scarf and a folding crescent blade. Begin a new journey in one of the three save slots.</p><ol><li>Speak to <strong>Sela Quill</strong> at the chart table and accept <a href="#walkthrough">The Silent Bloom</a>.</li><li>Interact with the <strong>Village Seed-Lantern</strong>. Resting sets your return point and restores health and mana.</li><li>Meet <strong>Piri Moss</strong> and <strong>Orin Fen</strong>. Keep 50 Resin for the story-required reforge.</li><li>Head east into Brackenreach. Learn the enemy’s warning before committing to an attack.</li></ol><p>Mara begins with ${MARA_ACTOR.stats.maxHealth} health and ${MARA_ACTOR.stats.maxMana} mana. <strong>Lumen Bolt</strong> is available immediately; Dash, Aegis Veil, and Resonant Pulse are learned along the journey.</p>`,
+        html: `<p>You play as <strong>Mara Vey</strong>, a wayfinder in a moss cloak with a luminous thread-scarf and a folding crescent blade. Begin a new journey in one of the three save slots.</p><ol><li>Speak to <strong>Sela Quill</strong> at the chart table and accept <a href="#walkthrough">The Silent Bloom</a>.</li><li>Interact with the <strong>Village Seed-Lantern</strong>. Resting sets your return point and restores health and mana.</li><li>Meet <strong>Piri Moss</strong> and <strong>Orin Fen</strong>. The story-required reforge consumes an earned Briar Core and costs no Resin.</li><li>Head east into Brackenreach. Learn the enemy’s warning before committing to an attack.</li></ol><p>Mara begins with ${MARA_ACTOR.stats.maxHealth} health and ${MARA_ACTOR.stats.maxMana} mana. <strong>Lumen Bolt</strong> is available immediately; Dash, Aegis Veil, and Resonant Pulse are learned along the journey.</p>`,
       },
       {
         id: 'controls',
@@ -168,7 +168,7 @@ export const ARTICLES: readonly Article[] = [
         id: 'reforge',
         title: 'IV. Heart of the Briar',
         spoiler: true,
-        html: '<p>Rest at the Reliquary Verge lantern, then face the <strong>Thorn Sentinel</strong>. Watch both parts of its spear sweep. Defeat it and claim the <strong>Briar Core</strong>.</p><p>Bring <strong>1 Briar Core and 50 Resin</strong> to <strong>Orin</strong> in Wren’s Rest. Buy <strong>Reforge Surveyor Edge</strong> from his shop. This upgrades the weapon to level 1 and opens the route from Reliquary Verge into the dungeon.</p><aside class="note"><strong>Short on Resin?</strong><p>The Wayfarer Cache on Brackenreach Trail holds 20, the Survey Cache at Listening Arch holds 30, and the optional Split Cedar Resin Cache holds 25.</p></aside>',
+        html: '<p>Rest at the Reliquary Verge lantern, then face the <strong>Thorn Sentinel</strong>. Watch both parts of its spear sweep. Defeat it and claim the <strong>Briar Core</strong>.</p><p>Bring <strong>1 Briar Core</strong> to <strong>Orin</strong> in Wren’s Rest. Buy <strong>Reforge Surveyor Edge</strong> from his shop. The reforge costs no Resin. This upgrades the weapon to level 1 and opens the route from Reliquary Verge into the dungeon.</p><aside class="note"><strong>Optional supply caches</strong><p>The Wayfarer Cache on Brackenreach Trail holds 20, the Survey Cache at Listening Arch holds 30, and the optional Split Cedar Resin Cache holds 25.</p></aside>',
       },
       {
         id: 'reliquary',
@@ -209,7 +209,7 @@ export const ARTICLES: readonly Article[] = [
       {
         id: 'people',
         title: 'People of Wren’s Rest',
-        html: '<dl><dt>Sela Quill · Cartographer</dt><dd>Begins and completes The Silent Bloom. Return her missing folio for Quiet Step, 25 Resin, and 60 XP.</dd><dt>Orin Fen · Smith</dt><dd>Reforges the Surveyor Edge with a Briar Core and 50 Resin.</dd><dt>Piri Moss · Herbalist</dt><dd>Sells remedies and charms, teaches Aegis Veil after the root-memory delivery, and receives the memorial-lantern quest.</dd></dl>',
+        html: '<dl><dt>Sela Quill · Cartographer</dt><dd>Begins and completes The Silent Bloom. Return her missing folio for Quiet Step, 25 Resin, and 60 XP.</dd><dt>Orin Fen · Smith</dt><dd>Reforges the Surveyor Edge with a Briar Core and no Resin cost.</dd><dt>Piri Moss · Herbalist</dt><dd>Sells remedies and charms, teaches Aegis Veil after the root-memory delivery, and receives the memorial-lantern quest.</dd></dl>',
       },
     ],
   },
@@ -296,7 +296,7 @@ export const ARTICLES: readonly Article[] = [
           [
             [
               'Briar Core',
-              'Defeat the Thorn Sentinel at Reliquary Verge. Orin consumes one core and 50 Resin for the reforge.',
+              'Defeat the Thorn Sentinel at Reliquary Verge. Orin consumes one core for the reforge; no Resin is required.',
             ],
             [
               'Rootglass Index Key',

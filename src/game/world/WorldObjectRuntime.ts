@@ -431,8 +431,14 @@ export class WorldObjectRuntime {
       }
     }
     for (const mechanism of this.mechanisms) {
+      const match = this.puzzleMechanisms.find(
+        ({ definition }) => definition.mechanismId === mechanism.mechanismId,
+      );
+      const reachedByPulse =
+        match?.step.activation === 'resonant-pulse' &&
+        input.pulseMechanismIds.includes(mechanism.mechanismId);
       if (
-        !overlaps(mechanism.bounds, playerBounds) ||
+        (!overlaps(mechanism.bounds, playerBounds) && !reachedByPulse) ||
         !mechanismRequirements(mechanism, input.save)
       ) {
         continue;
@@ -454,9 +460,6 @@ export class WorldObjectRuntime {
         }
         continue;
       }
-      const match = this.puzzleMechanisms.find(
-        ({ definition }) => definition.mechanismId === mechanism.mechanismId,
-      );
       if (
         match === undefined ||
         input.save.worldProgress.solvedPuzzles.includes(match.puzzle.puzzleId)

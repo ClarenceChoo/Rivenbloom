@@ -1,108 +1,223 @@
 # Rivenbloom
 
-Rivenbloom is an original side-view fantasy action-adventure built with Phaser 3 and strict
-TypeScript. The vertical slice follows Mara from Wren's Rest through Brackenreach, the Singing
-Hollows, and the Rootglass Reliquary to a multi-phase confrontation in the Hollow Choir.
+Explore a valley of living roots, forgotten paths, and luminous glass as **Mara Vey**.
+Rivenbloom is an original side-view fantasy action-adventure: jump across woodland
+platforms, fight with a crescent blade, learn magical arts, and restore the root-song.
 
-## Run the browser build
+![Mara beside Sela and a glowing Seed-Lantern in the tree-built village of Wren's Rest](docs/images/wrens-rest.png)
 
-Verified environment: Node.js 24.3.0 and npm 11.4.2. Dependencies must support your installed Node version.
+_Your journey begins in Wren's Rest. Follow the objective at the top right and the interaction prompt at the bottom._
+
+[Start playing](#start-playing) · [Controls](#controls) · [Combat and magic](#combat-and-magic) ·
+[Exploration and progression](#exploration-and-progression) · [Saves](#saving-and-continuing) ·
+[Latest verification](docs/polish-verification.md)
+
+## Start playing
+
+Use a desktop browser with a keyboard or gamepad. To run the current browser build
+locally, install [Node.js](https://nodejs.org/) (24.x recommended), then:
 
 ```bash
+git clone https://github.com/ClarenceChoo/Rivenbloom.git
+cd Rivenbloom
 npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite. Production commands:
+Open the local URL printed by Vite. Leave that terminal running while you play.
 
-```bash
-npm run build
-npm run preview
-```
+1. On the title screen, choose **Begin journey** on an empty Journey card, then
+   confirm **Begin journey**. There are three independent save slots.
+2. Choose **Enter Wren's Rest** to start.
+3. Stand beside the glowing Seed-Lantern and press **E** when the **Rest** prompt
+   appears. Resting refills health and mana and sets your return point.
+4. Walk right to **Sela Quill**, press **E** to talk, and choose **I will listen.**
+   This begins **The Silent Bloom**, the main quest.
+5. Continue east into **Brackenreach**. Follow the objective in the HUD; press
+   **Escape** and open **Journal** whenever you need a reminder.
 
-This candidate is being qualified in desktop Chromium. Safari, Firefox, physical gamepads, and a normal-stat first-time playthrough still need qualification. The intended first journey is 20–40 minutes; that duration is not yet measured. Phone touch gameplay is not supported. Narrow windows show a keyboard/gamepad notice and retain scrollable menus.
+To resume later, open the same browser and game address, then choose **Continue**
+on your Journey card.
 
 ## Controls
 
-| Action                 | Keyboard           | Common gamepad                     |
-| ---------------------- | ------------------ | ---------------------------------- |
-| Move / menu navigation | Arrow keys or WASD | Left stick / D-pad                 |
-| Jump                   | Space              | South face button                  |
-| Light attack           | J                  | West face button                   |
-| Heavy attack           | K                  | North face button                  |
-| Block / parry          | L                  | Left shoulder                      |
-| Wayfinder Dash         | Left Shift         | East face button                   |
-| Cast selected art      | Q                  | Right trigger/button 7             |
-| Cycle cast art         | R                  | Left trigger/button 6              |
-| Interact / confirm     | E / Enter          | Right shoulder / south face button |
-| Pause / cancel         | Escape / Backspace | Menu / east face button            |
+These are the default bindings. Gamepad names below use Xbox / PlayStation labels
+for the common button layout.
 
-Keyboard gameplay bindings, including all four movement directions, can be changed from Pause → Settings and are stored per journey. Hold Up near a ladder to catch and align with it; the HUD shows an Up prompt when a climb is available.
-Settings include difficulty, reduced motion, shake and flash intensity, subtitles, scalable text,
-high-contrast prompts, damage numbers, hold/toggle behavior, separate audio channels, and focus mute.
+| Action                               | Keyboard                             | Common gamepad                           |
+| ------------------------------------ | ------------------------------------ | ---------------------------------------- |
+| Move left / right                    | Left / Right arrows or A / D         | Left stick / D-pad                       |
+| Climb up / down                      | Up / Down arrows or W / S            | Left stick / D-pad up / down             |
+| Jump                                 | Space                                | A / Cross (south)                        |
+| Light attack                         | J                                    | X / Square (west)                        |
+| Heavy attack / charge                | K; hold to charge, release to strike | Y / Triangle (north); hold, then release |
+| Block / parry                        | L                                    | LB / L1                                  |
+| Wayfinder Dash, once learned         | Left Shift                           | B / Circle (east)                        |
+| Cast selected art                    | Q                                    | RT / R2                                  |
+| Cycle magical art                    | R                                    | LT / L2                                  |
+| Talk, open, rest, or use a mechanism | E                                    | RB / R1                                  |
+| Pause / open the Wayfinder Ledger    | Escape                               | Menu / Options                           |
+| Navigate menus                       | Arrow keys or WASD                   | Left stick / D-pad                       |
+| Confirm a menu choice                | Enter or Space                       | A / Cross                                |
+| Cancel / close a menu                | Escape or Backspace                  | B / Circle                               |
 
-## Saves and offline play
+Hold **Up** near a ladder to catch it and climb. Look for the **Up** prompt when
+a ladder is in reach.
 
-The browser build stores three transactional save slots in IndexedDB, preserving the last valid
-record as a recovery copy. Autosaves are debounced during ordinary play; boss defeat, area travel,
-death restoration, and the ending use explicit durable ordering. Export, import preview, recovery,
-and deletion are available from the title screen. Saves are local to this browser profile and origin; they do not sync between devices. Export a backup before clearing browser data or moving to another origin. If durable storage fails, the HUD reports failure or session-only storage instead of Saved.
+Change keyboard gameplay bindings in **Escape → Settings → Keyboard bindings**.
+The HUD prompts follow your bindings. Settings and bindings are saved separately
+for each journey.
 
-The production browser build registers an application-shell service worker and web manifest. It
-supports standalone installation, offline reload, safe cache replacement, and a visible reload
-button when an update is waiting. Accepting an update pauses interaction and flushes saves before reload; a failed flush keeps the current game open.
+## Combat and magic
 
-For hosting, upload the complete `dist/` directory to a dedicated HTTPS origin at `/`. Serve `index.html` and `sw.js` with revalidation (`Cache-Control: no-cache`); fingerprinted `/assets/` files may use `public, max-age=31536000, immutable`. Keep `/assets/art/` and other unhashed public files revalidated. Do not mix files from different builds or use a subpath without changing and retesting all root URLs. No public deployment has been performed. Verify the actual HTTPS origin, installation, offline return, and update flow before distributing its link.
+![Mara facing a Briar Scrapper on moss-covered platforms in Brackenreach, with health and mana displayed](docs/images/brackenreach-combat.png)
 
-## Desktop build
+_Watch enemy windups, keep an eye on health and mana, and make space before attacking._
 
-The Tauri 2 shell uses the same bundled frontend and selects `TauriSaveRepository` at runtime. Its
-Rust commands store transactional records under the platform application-data directory rather than
-the development checkout.
+- **Light attacks:** tap **J** to strike; successive well-timed taps chain a combo.
+  You can also attack in the air.
+- **Charged heavy attacks:** hold **K** for about half a second, then release.
+  Use these against tougher enemies and breakable root barriers.
+- **Guard and parry:** face the attack and hold **L** to guard. Start your guard
+  just before a hit lands to parry it. Watch for enemy tells before committing
+  to an attack.
+- **Dash:** once you learn Wayfinder Dash, press **Left Shift** to move quickly
+  in the direction you face, with a brief window of protection. It costs no mana
+  and has its own cooldown.
+- **Magic:** press **R** to select an unlocked art, then **Q** to cast. The HUD
+  shows your selected **Art**. Spells need mana and time to recharge.
 
-```bash
-npm run tauri -- info
-npm run tauri dev
-npm run tauri build
-```
+| Magical art        | What it does                                                          |
+| ------------------ | --------------------------------------------------------------------- |
+| **Lumen Bolt**     | Your starting ranged attack. Fires in the direction you face.         |
+| **Aegis Veil**     | A temporary protective barrier that can absorb a projectile.          |
+| **Resonant Pulse** | A short-range wave that also awakens compatible rootglass mechanisms. |
 
-Native builds require the stable Rust toolchain, Cargo, full Xcode, and the Apple Command Line Tools.
-See `docs/known-issues.md` for the prerequisites detected on the current host.
+You learn additional arts as the journey progresses. Dash uses its own button
+rather than the spell-cycling controls.
 
-## Architecture
+**Recover before the next fight.** Rest at Seed-Lanterns for full health and mana.
+Piri's herb stall sells **Sunmoss Draughts** (30 health) and **Wellspring Tonics**
+(20 mana). To drink one, open **Escape → Inventory** and choose **Use** beside it.
+Each recovery item can be carried in a stack of up to five.
 
-- Phaser scenes coordinate lifecycle only; pure modules own movement, combat, puzzles, progression,
-  saving, boss rules, and transition ordering.
-- Player, enemy, and boss behavior use explicit finite-state machines.
-- Typed area data defines all rooms, surfaces, zones, triggers, encounters, mechanisms, checkpoints,
-  rewards, and transitions.
-- `InputService`, `SaveRepository`, and the typed event bus isolate platform and cross-system work.
-- Repeated combat feedback uses pools, and every scene owns cleanup through scoped disposers.
-- Production UI is selectable, accessible HTML layered over a fixed 1280×720 Phaser world.
+## Exploration and progression
 
-## Verification
+The playable adventure crosses five areas:
 
-```bash
-npm run format:check
-npm run lint
-npm run typecheck
-npm run test
-npm run test:saves:browser
-npm run test:e2e
-npm run test:browsers:smoke
-npm run build
-npm run test:pwa:production
-npm run test:soak:production
-```
+**Wren's Rest → Brackenreach → Singing Hollows → Rootglass Reliquary → Hollow Choir**
 
-The production PWA test requires a fresh build and tests the built artifact on localhost. It is separate from development integration tests. Some route/boss tests use explicit fixtures or semantic enemy resolution; they do not establish normal combat balance.
+![Mara exploring the violet-lit Root-Memory Chamber, beside a glowing Seed-Lantern and violet stone ground](docs/images/singing-hollows.png)
 
-Development acceptance runs use a separate server on port 4176 with hot reload disabled, leaving the interactive development server on 4173 available. Chromium uses the full browser's hardware renderer when available. Install the pinned browser runtimes with `npx playwright install chromium firefox webkit` before the three-engine smoke suite. The opt-in production soak runs 60 menu/title/save cycles over 30 minutes and measures collected heap and DOM resources in Chromium; it does not certify target-hardware frame rate.
+_Seed-Lanterns offer a place to recover as you explore the Singing Hollows._
 
-The required Surveyor Edge reforge consumes the earned briar core and costs no Resin, so spending on optional supplies cannot block the main quest.
+Look for chests, memorial lanterns, optional paths, and shortcuts. **Resin** is
+your currency for remedies and charms. Orin's required weapon reforge consumes an earned briar core and costs no Resin. Some routes open
+only after a quest, puzzle, or upgrade, so returning to an earlier area is part
+of the journey.
 
-Asset authorship, generation summaries, derivations, and runtime use are recorded in
-`docs/asset-provenance.md`.
+The main quest is **The Silent Bloom**. **The Lost Folio** and
+**Lanterns for the Absent** are optional quests. Hidden discoveries can also
+increase your maximum health or mana.
+
+### Use the Wayfinder Ledger
+
+Press **Escape** to pause and open the Ledger. Choose **Resume** to return to play.
+
+| Tab           | Use it to…                                                                          |
+| ------------- | ----------------------------------------------------------------------------------- |
+| **Map**       | See discovered rooms, connections, Seed-Lanterns, and known quest destinations.     |
+| **Inventory** | Read item descriptions and use recovery items.                                      |
+| **Equipment** | Equip or remove charms in your three charm slots. Owning a charm does not equip it. |
+| **Journal**   | Read the current stage and objective of each quest.                                 |
+| **Settings**  | Change difficulty, controls, accessibility, and audio.                              |
+
+![The Wayfinder Ledger showing connected discovered rooms across the valley, with Wren's Rest marked as the current room](docs/images/wayfinder-ledger.png)
+
+_The map grows as you explore. Scroll inside it to see rooms beyond the visible portion._
+
+Solid connections are open; dashed connections are locked. Undiscovered rooms
+appear when you find them, and a quest marker appears only after its room has
+been discovered. The map shows connections rather than a platform-by-platform
+layout.
+
+### Hints when a path is blocked
+
+Try the interaction shown in the HUD, read **Journal**, and check whether a new
+art or weapon upgrade could help. Dash is earned in the Singing Hollows; pressing
+Shift before you learn it will not dash.
+
+<details>
+<summary>Show progression and puzzle hints (spoilers)</summary>
+
+1. **The Listening Arch:** follow Sela's trail through Brackenreach into the
+   Singing Hollows. Recover the root-memory and bring it back to **Piri**.
+   The opened homeward shortcut makes returning to the village easier.
+2. **Wayfinder Dash:** find the trial beneath the Root-Memory Chamber. Climb into
+   position before starting the timed circuit, then touch all three dew plates
+   before the root-song fades. You earn Dash by completing the trial.
+3. **Orin's reforge:** defeat the Thorn Sentinel beyond the chamber for a
+   **Briar Core**, then bring it to Orin in Wren's Rest. The required reforge costs no Resin.
+4. **The Reliquary:** recover the **Rootglass Index Key** in the West Archive and
+   use it at the Vestibule's Index Seal. After Orin's reforge, awaken the
+   **Rootglass Forge** to strengthen your blade and learn **Resonant Pulse**.
+5. **Threefold Lens:** turn the eastern dials in the order **root → rain → bloom**.
+6. **Choir Seal:** answer **memory → breath → song**. Use Resonant Pulse at the
+   first two lenses, waiting for its cooldown between casts, then interact with
+   the song lens.
+7. **The Hollow Choir:** use what you learned about Resonant Pulse to awaken both
+   resonators when the Cantor's heart is protected. Attack when the heart is exposed.
+8. Follow the final Journal objective back to **Sela** to finish the main quest.
+
+</details>
+
+## Difficulty, comfort, and accessibility
+
+Open **Escape → Settings**, make your changes, and choose **Apply settings**.
+
+- **Story** reduces incoming damage to 75%; **Standard** uses 100%;
+  **Challenging** uses 125%. Rewards and puzzles stay the same.
+- Adjust reduced motion, camera shake, flashes, subtitles, text size,
+  high-contrast prompts, and damage numbers.
+- Choose hold or toggle behavior for sustained actions.
+- Set music, effects, ambience, and master volume separately, or mute the game
+  while its window is unfocused.
+
+Keyboard play has been checked in desktop Chromium. Physical gamepads and
+Safari/Firefox still need qualification. Phone touch controls are not available;
+use a desktop window for gameplay.
+
+## Saving and continuing
+
+The game autosaves your journey. Watch the HUD's **Save** status and wait for
+**Saved** before closing the tab. Use **Escape → Return to title** when you are
+finished playing.
+
+Seed-Lanterns set your return point and restore health and mana. If Mara falls,
+you return to the current checkpoint; persistent quest progress, opened chests,
+solved puzzles, and earned upgrades remain. Ordinary enemies can return after
+resting or restoring the world.
+
+Your three journeys are stored in **this browser profile at this game address**.
+They do not sync between browsers or devices. From the title screen, use
+**Export** to keep a backup and **Import** to preview and restore one. Export
+before clearing browser data or changing the game's address. If storage is
+unavailable, the game reports a save failure or session-only storage.
+
+**Offline play:** the production browser build can be installed through a
+supporting browser and reopened offline after its first complete online load.
+This applies to the built game, rather than the development server. When an
+update is ready, the visible reload button saves your journey before restarting.
+
+## Development and credits
+
+For production builds, desktop packaging, hosting, architecture, and test commands,
+see the [developer guide](docs/development.md).
+Current verification limits are listed in [known issues](docs/known-issues.md).
+
+The world, characters, visuals, and audio are original to Rivenbloom.
+[Asset provenance and screenshot sources](docs/asset-provenance.md) document their
+authorship. The images in this guide are unedited screenshots of the game.
 
 ## Illustrated wiki
 

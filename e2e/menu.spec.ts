@@ -91,3 +91,34 @@ test('opening Pause focuses Resume and Enter keeps the journey open', async ({ p
   await expect(menu).toBeHidden();
   await expect(page.getByLabel('Gameplay status')).toBeVisible();
 });
+
+test('a fresh direction immediately after Resume is not swallowed by the neutral gate', async ({
+  page,
+}) => {
+  await beginJourney(page);
+  await page.keyboard.press('Escape');
+  const resume = page
+    .getByRole('dialog', { name: 'Wayfinder Ledger' })
+    .getByRole('button', { name: 'Resume', exact: true });
+  await expect(resume).toBeVisible();
+  const before = await page.evaluate(() => window.__RIVENBLOOM_TEST__!.read().player!.position.x);
+  // Deliver the public DOM click and keyboard edge in the same task, before
+  // the next animation frame can incidentally open the neutral gate.
+  await resume.evaluate((button) => {
+    (button as HTMLButtonElement).click();
+    window.dispatchEvent(
+      new KeyboardEvent('keydown', { code: 'ArrowRight', key: 'ArrowRight', bubbles: true }),
+    );
+  });
+  try {
+    await expect
+      .poll(async () => page.evaluate(() => window.__RIVENBLOOM_TEST__!.read().player!.position.x))
+      .toBeGreaterThan(before + 40);
+  } finally {
+    await page.evaluate(() =>
+      window.dispatchEvent(
+        new KeyboardEvent('keyup', { code: 'ArrowRight', key: 'ArrowRight', bubbles: true }),
+      ),
+    );
+  }
+});
