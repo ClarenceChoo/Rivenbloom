@@ -75,6 +75,64 @@ describe('CameraDirector', () => {
     expect(camera.scrollX).toBe(0);
   });
 
+  test('eases look-ahead when facing reverses instead of jumping the view', () => {
+    const camera = new RecordingCamera();
+    const director = new CameraDirector(camera);
+    const options = {
+      dt: 1 / 60,
+      deadZone: { width: 320, height: 180 },
+      lookAheadDistance: 120,
+      facing: 'right' as const,
+      verticalSmoothing: 8,
+      reducedMotion: false,
+    };
+    const target = { x: 1_280, y: 500 };
+    director.follow(target, ROOM, options);
+    const before = camera.scrollX;
+
+    director.follow(target, ROOM, { ...options, facing: 'left', dt: 0 });
+    expect(camera.scrollX).toBe(before);
+    director.follow(target, ROOM, { ...options, facing: 'left' });
+    expect(before - camera.scrollX).toBeGreaterThan(0);
+    expect(before - camera.scrollX).toBeLessThan(40);
+
+    for (let frame = 0; frame < 120; frame += 1) {
+      director.follow(target, ROOM, { ...options, facing: 'left' });
+    }
+    expect(camera.scrollX).toBeCloseTo(520, 3);
+
+    const beforeReturn = camera.scrollX;
+    director.follow(target, ROOM, options);
+    expect(camera.scrollX - beforeReturn).toBeGreaterThan(0);
+    expect(camera.scrollX - beforeReturn).toBeLessThan(40);
+  });
+
+  test('look-ahead easing depends on elapsed time rather than frame count', () => {
+    const scrolls = [30, 60, 120].map((fps) => {
+      const camera = new RecordingCamera();
+      const director = new CameraDirector(camera);
+      const options = {
+        dt: 1 / fps,
+        deadZone: { width: 320, height: 180 },
+        lookAheadDistance: 120,
+        facing: 'right' as const,
+        verticalSmoothing: 8,
+        reducedMotion: false,
+      };
+      const target = { x: 1_280, y: 500 };
+      director.follow(target, ROOM, options);
+      for (let frame = 0; frame < fps / 2; frame += 1) {
+        director.follow(target, ROOM, { ...options, facing: 'left' });
+      }
+      return camera.scrollX;
+    });
+
+    expect(scrolls[0]).toBeGreaterThan(520);
+    expect(scrolls[0]).toBeLessThan(530);
+    expect(scrolls[1]).toBeCloseTo(scrolls[0]!, 8);
+    expect(scrolls[2]).toBeCloseTo(scrolls[0]!, 8);
+  });
+
   test('centres camera axes whose room bounds are smaller than the viewport', () => {
     const camera = new RecordingCamera();
     const director = new CameraDirector(camera);

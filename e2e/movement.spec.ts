@@ -122,3 +122,54 @@ test('semantic input moves, jumps, lands, scrolls the camera, and respawns at au
     .toMatchObject({ position: { x: 256, y: 608 }, state: 'idle' });
   expect(errors).toEqual([]);
 });
+
+test('reversing direction eases camera look-ahead without a frame jump', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  page.on('console', (message) => {
+    if (message.type() === 'error') errors.push(message.text());
+  });
+  await enterWrenRest(page);
+  await page.keyboard.down('ArrowRight');
+  await expect.poll(async () => (await bridge(page)).player?.position.x).toBeGreaterThan(1_200);
+  await page.keyboard.up('ArrowRight');
+  await expect.poll(async () => (await bridge(page)).player?.velocity.x).toBe(0);
+
+  for (const direction of ['ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight']) {
+    const before = (await bridge(page)).camera!.scrollX;
+    const [samples] = await Promise.all([
+      page.evaluate(
+        () =>
+          new Promise<readonly Readonly<{ time: number; x: number }>[]>((resolve) => {
+            const samples: { time: number; x: number }[] = [];
+            const record = (): void => {
+              const time = performance.now();
+              const snapshot = (
+                window as Window & { __RIVENBLOOM_TEST__: MovementBridge }
+              ).__RIVENBLOOM_TEST__.read();
+              samples.push({ time, x: snapshot.camera!.scrollX });
+              if (time - samples[0]!.time >= 350) resolve(samples);
+              else requestAnimationFrame(record);
+            };
+            record();
+          }),
+      ),
+      page.keyboard.press(direction, { delay: 180 }),
+    ]);
+    expect(samples.length).toBeGreaterThan(2);
+    for (let index = 1; index < samples.length; index += 1) {
+      const previous = samples[index - 1]!;
+      const current = samples[index]!;
+      // Phaser smooths its delta; rapid browser callbacks can still advance a full game frame.
+      const elapsed = Math.max(1_000 / 60, current.time - previous.time);
+      expect(
+        Math.abs(current.x - previous.x) / (elapsed / 1_000),
+        JSON.stringify({ previous, current }),
+      ).toBeLessThan(2_500);
+    }
+    const after = (await bridge(page)).camera!.scrollX;
+    if (direction === 'ArrowLeft') expect(after).toBeLessThan(before);
+    else expect(after).toBeGreaterThan(before);
+  }
+  expect(errors).toEqual([]);
+});

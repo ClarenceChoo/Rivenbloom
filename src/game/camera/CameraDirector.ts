@@ -1,5 +1,8 @@
 import type { Rect, Vec2 } from '../data/types';
 
+// Settle directional look-ahead over roughly half a second, independent of frame rate.
+const LOOK_AHEAD_RESPONSE_PER_SECOND = 8;
+
 export interface CameraPort {
   readonly viewportWidth: number;
   readonly viewportHeight: number;
@@ -24,6 +27,7 @@ export type CameraFollowOptions = Readonly<{
 
 export class CameraDirector {
   private focus: Vec2 | null = null;
+  private lookAhead: number | null = null;
 
   public constructor(private readonly camera: CameraPort) {}
 
@@ -33,6 +37,7 @@ export class CameraDirector {
       this.camera.setZoom(zoom);
       this.camera.setDeadZone(0, 0);
       this.focus = Object.freeze({ ...options.cinematic.center });
+      this.lookAhead = null;
       const viewportWidth = this.camera.viewportWidth / zoom;
       const viewportHeight = this.camera.viewportHeight / zoom;
       this.camera.setScroll(
@@ -59,12 +64,17 @@ export class CameraDirector {
       y: deadZoneAxis(focus.y, target.y, options.deadZone.height),
     });
     this.focus = nextFocus;
-    const lookAhead = options.reducedMotion
+    const desiredLookAhead = options.reducedMotion
       ? 0
       : options.lookAheadDistance * (options.facing === 'left' ? -1 : 1);
+    const lookAheadAlpha = 1 - Math.exp(-LOOK_AHEAD_RESPONSE_PER_SECOND * Math.max(0, options.dt));
+    this.lookAhead =
+      this.lookAhead === null || options.reducedMotion
+        ? desiredLookAhead
+        : this.lookAhead + (desiredLookAhead - this.lookAhead) * lookAheadAlpha;
     const viewportWidth = this.camera.viewportWidth / this.camera.zoom;
     const viewportHeight = this.camera.viewportHeight / this.camera.zoom;
-    const desiredX = nextFocus.x + lookAhead - viewportWidth / 2;
+    const desiredX = nextFocus.x + this.lookAhead - viewportWidth / 2;
     const desiredY = nextFocus.y - viewportHeight / 2;
     const verticalAlpha =
       firstFrame || options.reducedMotion
@@ -81,6 +91,7 @@ export class CameraDirector {
 
   public dispose(): void {
     this.focus = null;
+    this.lookAhead = null;
     this.camera.setDeadZone(0, 0);
     this.camera.setZoom(1);
     this.camera.stopFollow();
