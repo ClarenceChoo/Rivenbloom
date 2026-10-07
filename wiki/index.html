@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2c2118" />
+    <meta
+      name="description"
+      content="The Wayfinder's Companion: an illustrated Rivenbloom wiki with walkthroughs, combat tips, dungeon solutions, equipment, and quiet secrets."
+    />
+    <title>Rivenbloom Wiki · The Wayfinder's Companion</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#reading">Skip to the guide</a>
+    <div class="book">
+      <aside class="contents-page">
+        <a class="brand" href="#welcome" aria-label="Rivenbloom wiki home">
+          <span class="brand-name">Rivenbloom</span>
+          <span class="brand-subtitle">The Wayfinder’s Companion</span>
+        </a>
+        <div class="ornament" aria-hidden="true"><span>✧</span></div>
+        <button
+          class="contents-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="chapters"
+        >
+          Contents <span aria-hidden="true">＋</span>
+        </button>
+        <h2 class="contents-title">Contents</h2>
+        <nav id="chapters" aria-label="Wiki chapters"></nav>
+        <div class="margin-note">
+          <svg class="botanical" viewBox="0 0 64 64" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M30 58h4V34h4V22h4V10h-4v12h-4v12h-4v12h-4V30h-4v-8h-8v8h4v8h8v8h4zm4-12h8v-4h8v-8h-8v4h-8zm4-20h8v-4h8v-8h-8v4h-8zM22 50h8v4H14v-4h-4v-8h8v4h4z"
+            />
+            <path fill="#9e6540" d="M38 6h8v8h-8zM48 10h8v8h-8zM42 0h6v8h-6z" />
+          </svg>
+          <div class="ornament" aria-hidden="true"><span>✧</span></div>
+          <p>A field guide to a world<br />that remembers.</p>
+        </div>
+      </aside>
+      <div class="reading-page" id="reading" tabindex="-1">
+        <header class="tools">
+          <button class="search-trigger" type="button" aria-haspopup="dialog">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10" cy="10" r="6.5" />
+              <path d="m15 15 6 6" /></svg
+            ><span>Explore the wiki</span><kbd>/</kbd>
+          </button>
+          <a
+            class="github-link"
+            href="https://github.com/ClarenceChoo/Rivenbloom"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub <span aria-hidden="true">↗</span
+            ><span class="sr-only"> (opens in a new tab)</span></a
+          >
+        </header>
+        <main id="article"></main>
+        <footer class="page-footer">
+          <span id="page-number">01</span
+          ><span>Rivenbloom · Field notes for the current playable build</span>
+        </footer>
+      </div>
+    </div>
+    <dialog id="search-dialog" aria-labelledby="search-title">
+      <div class="dialog-heading">
+        <h2 id="search-title">Search the companion</h2>
+        <button class="close-search" type="button" aria-label="Close search">×</button>
+      </div>
+      <label class="sr-only" for="search-input">Search chapters, items, and places</label>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Try “Aegis”, “lanterns”, or “reforge”…"
+        autocomplete="off"
+      />
+      <p id="search-count" class="search-count" role="status" aria-live="polite"></p>
+      <div id="search-results"></div>
+      <p class="search-help">Tab to explore results · Enter to open · Esc to close</p>
+    </dialog>
+    <noscript
+      ><p class="noscript">
+        This companion uses JavaScript for its chapters and search. Enable JavaScript to read the
+        guide.
+      </p></noscript
+    >
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

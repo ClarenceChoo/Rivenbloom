@@ -218,3 +218,11 @@ Current verification limits are listed in [known issues](docs/known-issues.md).
 The world, characters, visuals, and audio are original to Rivenbloom.
 [Asset provenance and screenshot sources](docs/asset-provenance.md) document their
 authorship. The images in this guide are unedited screenshots of the game.
+
+## Illustrated wiki
+
+The Wayfinder’s Companion is a separate storybook wiki with walkthroughs, a world
+atlas, dungeon and boss guides, search, and a discovery checklist. Start it with
+`npm --prefix wiki run dev`, or build its static site with
+`npm --prefix wiki run build`. See [wiki setup and GitHub Pages publishing](wiki/README.md).
+Its Pages workflow publishes only the wiki, not the game.

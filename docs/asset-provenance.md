@@ -1,6 +1,6 @@
 # Rivenbloom Asset Provenance
 
-Last updated: 2026-09-23
+Last updated: 2026-10-07
 
 All production assets below were created specifically for Rivenbloom. No screenshots, maps,
 characters, UI, names, story material, sound, or other assets from Swordigo or another game were
@@ -111,3 +111,23 @@ compositing, or developer overlays were used. They are used in the README only.
 ## 2026-10-07 guide screenshot refresh
 
 The three gameplay screenshots in `docs/images/` were refreshed with unedited current-build Chromium captures. `wrens-rest.png` uses the October 7 desktop gameplay capture. `brackenreach-combat.png` and `singing-hollows.png` use the final passing production route's combat and Root-Memory Chamber captures respectively. The October 5 `wayfinder-ledger.png` remains a valid illustration of the unchanged discovered-room map UI. These show the new terrain and this project's original art/UI; no external images, compositing or developer overlays were used. Historical October 5 source descriptions above are retained as provenance history.
+
+## 2026-10-07 illustrated wiki
+
+All wiki artwork is original, generated with the built-in OpenAI image-generation
+tool from this project's art direction, without external game references. It is
+companion illustration, not a representation of exact gameplay geometry. All wiki
+text and controls remain selectable HTML. No additional fonts are downloaded;
+Georgia, Times New Roman, and Courier New use the reader's system fonts.
+
+| Asset                                                                 | Source and authorship                                                                                             | Prompt and use                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `wiki/assets/open-book.png`                                           | Built-in image generation, 7 October 2026. Copied unchanged from `exec-36ac77c2-5efd-4026-903a-aaf5e7727b0c.png`. | A blank top-down antique leather book with copper corners, quiet pale parchment, botanical margin details, a narrow left page (28%) and wide right page (72%). Remove all text, controls and illustrations from the original wiki design concept. Used as the desktop book background; the mobile layout uses code-native parchment styling.                                                                    |
+| `wiki/assets/wayfarer-village.png`                                    | Built-in image generation, 7 October 2026. Copied unchanged from `exec-73cdd2dd-9b17-4827-8599-6cbdd5995c2c.png`. | Original fine pixel-art Wren's Rest: moss-roofed timber homes under an ancient tree, suspended amber seed-lanterns, copper gutters, winding path, fern woodland, waterfalls, lilac dusk, and a distant translucent rootglass botanical observatory. Wide panoramic scene, no characters, text, watermark, or existing-game references. Displayed as a responsive cropped illustration on the wiki welcome page. |
+| `wiki/public/favicon.svg` and botanical ornament in `wiki/index.html` | Original pixel-aligned SVG paths authored by Codex, 7 October 2026.                                               | A small cream open-book favicon and a moss/copper botanical sprig, using the wiki's palette. No external icons or source imagery.                                                                                                                                                                                                                                                                               |
+
+The design-only concept `exec-4e73f57c-3f99-458a-8bed-0f675bb9fa89.png`
+was also generated with the built-in tool on 7 October 2026: a complete
+Rivenbloom wiki in a brown leather book with parchment contents, moss-green
+navigation, a pixel village panorama, welcome copy, search, and three open
+link columns. It is a design reference only and is not shipped as interface art.
