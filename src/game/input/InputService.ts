@@ -89,6 +89,7 @@ const BUFFERED_ACTIONS: ReadonlySet<InputAction> = new Set([
   'dash',
   'cast',
   'interact',
+  'pause',
 ]);
 
 export class InputService {
@@ -148,8 +149,20 @@ export class InputService {
     }
     if (!this.focused) this.focused = true;
     if (this.neutralGate) {
-      if (isSnapshotNeutral(snapshot)) this.neutralGate = false;
-      return this.cacheNeutralFrame(nowMs);
+      // Edges cleared at the handoff are stale; new edges after it are intentional.
+      // Accept a fresh keyboard action without requiring a spare neutral frame,
+      // but never use it to reactivate another held key or a non-neutral gamepad.
+      const freshCodes = new Set(snapshot.keyboard.pressed.map(({ code }) => code));
+      const freshKeyboardIntent =
+        freshCodes.size > 0 &&
+        snapshot.keyboard.heldCodes.every((code) => freshCodes.has(code)) &&
+        isSnapshotNeutral({ ...snapshot, keyboard: { ...snapshot.keyboard, heldCodes: [] } });
+      if (freshKeyboardIntent) {
+        this.neutralGate = false;
+      } else {
+        if (isSnapshotNeutral(snapshot)) this.neutralGate = false;
+        return this.cacheNeutralFrame(nowMs);
+      }
     }
     const gamepad = this.sampleGamepad(snapshot.gamepad, nowMs);
     this.observeDeviceActivity(snapshot.keyboard, gamepad.activityAtMs, nowMs);

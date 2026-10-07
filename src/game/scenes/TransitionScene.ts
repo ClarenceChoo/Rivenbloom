@@ -107,7 +107,7 @@ export class TransitionScene extends Phaser.Scene {
       if (focusFrame !== null) cancelAnimationFrame(focusFrame);
       focusFrame = requestAnimationFrame(() => {
         focusFrame = null;
-        control.focus();
+        control.focus({ preventScroll: true });
       });
     };
     const transition = new EndingTransition(appServices(this).get('saveService'), (snapshot) => {

@@ -4,21 +4,35 @@ import { stableId } from '../../src/game/core/StableId';
 import { PlayerController } from '../../src/game/entities/player/PlayerController';
 import type { PlayerControllerSnapshot } from '../../src/game/entities/player/PlayerController';
 import { InputService } from '../../src/game/input/InputService';
-import type { InputDevicePort, InputDeviceSnapshot } from '../../src/game/input/InputService';
+import type {
+  InputDevicePort,
+  InputDeviceSnapshot,
+  InputEdge,
+} from '../../src/game/input/InputService';
 import type { SurfaceDefinition } from '../../src/game/data/types';
 import { DEFAULT_SAVE_SETTINGS } from '../../src/game/saves/SaveSchema';
 
 class CountingPort implements InputDevicePort {
   public reads = 0;
   public heldCodes: readonly string[] = [];
+  public pressed: readonly InputEdge[] = [];
+  public released: readonly InputEdge[] = [];
 
   public read(): InputDeviceSnapshot {
     this.reads += 1;
-    return {
+    const snapshot = {
       focused: true,
-      keyboard: { heldCodes: this.heldCodes, pressed: [], released: [], activityAtMs: null },
+      keyboard: {
+        heldCodes: this.heldCodes,
+        pressed: this.pressed,
+        released: this.released,
+        activityAtMs: null,
+      },
       gamepad: null,
     };
+    this.pressed = [];
+    this.released = [];
+    return snapshot;
   }
 
   public clearTransient(): void {}
@@ -33,6 +47,35 @@ const GROUND: SurfaceDefinition = {
 };
 
 describe('PlayerController fixed-step observer', () => {
+  test('delivers a quick pause tap sampled between fixed steps exactly once', () => {
+    const port = new CountingPort();
+    const input = new InputService(port);
+    let pauses = 0;
+    const controller = new PlayerController({
+      input,
+      position: { x: 256, y: 608 },
+      surfaces: [GROUND],
+      zones: [],
+      fixedStepObserver: (frame) => {
+        const pressId = frame.input.pauseBufferId;
+        if (pressId != null && input.consume('pause', pressId)) {
+          pauses += 1;
+          return { halt: true };
+        }
+      },
+    });
+    controller.update(0, 1 / 60);
+    port.pressed = [{ code: 'Escape', atMs: 1 }];
+    port.released = [{ code: 'Escape', atMs: 2 }];
+
+    controller.update(2, 0.001);
+    expect(pauses).toBe(0);
+    controller.update(20, 1 / 60);
+    expect(pauses).toBe(1);
+    controller.update(40, 0.05);
+    expect(pauses).toBe(1);
+  });
+
   test('publishes every advanced substep from one sampled input frame', () => {
     const port = new CountingPort();
     const frames: unknown[] = [];

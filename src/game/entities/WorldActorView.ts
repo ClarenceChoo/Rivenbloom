@@ -2,8 +2,6 @@ import type { WorldObjectSnapshot } from '../world/WorldObjectRuntime';
 import { objectPresentation } from '../world/WorldObjectPresentation';
 import Phaser from 'phaser';
 import {
-  anchoredImageTop,
-  surfaceFrame,
   ENEMY_POSE_ROWS,
   ENEMY_POSE_Y,
   ENEMY_POSE_X,
@@ -39,7 +37,9 @@ export class WorldActorView {
   private readonly layers: Phaser.GameObjects.TileSprite[] = [];
   private readonly backdrop: Phaser.GameObjects.Image;
   private readonly sprites = new Map<string, Phaser.GameObjects.Image>();
-  private readonly environmentSprites: Phaser.GameObjects.Image[] = [];
+  private readonly environmentSprites: (
+    Phaser.GameObjects.Image | Phaser.GameObjects.TileSprite
+  )[] = [];
   private readonly npcSprites: Phaser.GameObjects.Image[] = [];
   private disposed = false;
   private area: AreaDefinition;
@@ -123,6 +123,16 @@ export class WorldActorView {
     this.renderSurfaces(area, room);
 
     for (const zone of area.zones.filter((candidate) => candidate.roomId === room.roomId)) {
+      if (zone.kind === 'hazard' && zone.attackId === 'bramble-thorn-contact') {
+        const { x, y, width, height } = zone.bounds;
+        const thorns = this.scene.add
+          .tileSprite(x, y, width, height, 'terrain-thorns')
+          .setOrigin(0, 0)
+          .setDepth(-2);
+        thorns.tileScaleY = height / 128;
+        this.environmentSprites.push(thorns);
+        continue;
+      }
       this.addEnvironment(
         zone.kind === 'climb'
           ? 5
@@ -133,7 +143,7 @@ export class WorldActorView {
             : 13,
         zone.bounds,
         zone.kind === 'climb' ? 8 : -2,
-      );
+      ).setDisplaySize(zone.bounds.width, zone.bounds.height);
     }
     for (const checkpoint of area.checkpoints.filter(
       (candidate) => candidate.roomId === room.roomId,
@@ -307,28 +317,29 @@ export class WorldActorView {
   }
 
   private renderSurfaces(area: AreaDefinition, room: RoomDefinition): void {
-    const frame = floorFrame(area.areaId);
+    const key = `terrain-${area.areaId}`;
+    const texture = this.scene.textures.get(key);
+    if (!texture.has('body')) {
+      texture.add('body', 0, 0, 0, 256, 256);
+      texture.add('rim', 0, 0, 256, 256, 24);
+      texture.add('ledge', 0, 0, 280, 256, 40);
+    }
     for (const surface of area.surfaces.filter((candidate) => candidate.roomId === room.roomId)) {
-      const targetWidth = surface.kind === 'one-way' ? 220 : 240;
-      const count = Math.max(1, Math.ceil(surface.bounds.width / targetWidth));
-      const width = surface.bounds.width / count;
-      const height = surface.kind === 'one-way' ? 96 : Math.max(118, surface.bounds.height);
-      for (let index = 0; index < count; index += 1) {
+      const { x, y, width, height } = surface.bounds;
+      const addTile = (frame: string, tileHeight: number, depth: number) => {
         const tile = this.scene.add
-          .image(
-            surface.bounds.x + width * (index + 0.5),
-            anchoredImageTop(
-              surface.bounds.y,
-              surfaceFrame(frame).surfaceY,
-              height / WORLD_ART_FRAMES[frame]!.height,
-            ),
-            'rivenbloom-world-atlas',
-            `world-${frame}`,
-          )
-          .setOrigin(0.5, 0)
-          .setDepth(surface.kind === 'one-way' ? -1 : -4);
-        tile.setDisplaySize(width + 6, height);
+          .tileSprite(x, y, width, tileHeight, key, frame)
+          .setOrigin(0, 0)
+          .setDepth(depth);
+        // Keep material scale constant and continuous across adjacent colliders.
+        tile.tilePositionX = x;
         this.environmentSprites.push(tile);
+      };
+      if (surface.kind === 'one-way') {
+        addTile('ledge', Math.min(height, 40), -1);
+      } else {
+        addTile('body', height, -4);
+        addTile('rim', Math.min(height, 24), -3);
       }
     }
   }

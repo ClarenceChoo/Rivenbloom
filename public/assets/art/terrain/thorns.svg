@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+<defs>
+<linearGradient id="briar" x2=".6" y2="1"><stop stop-color="#ee765f"/><stop offset=".25" stop-color="#886453"/><stop offset="1" stop-color="#27213a"/></linearGradient>
+<linearGradient id="mist" x2="0" y2="1"><stop stop-color="#ee765f" stop-opacity=".09"/><stop offset="1" stop-color="#ee765f" stop-opacity=".23"/></linearGradient>
+</defs>
+<path d="M0 0H128V128H0Z" fill="url(#mist)"/>
+<g fill="url(#briar)" stroke="#b47c62" stroke-width="1">
+<path d="M-8 128Q27 72 8 1Q41 33 37 74L53 38L49 84Q77 104 86 128Z"/>
+<path d="M48 128Q93 74 77 0Q107 36 101 70L121 23L114 88Q101 110 107 128Z"/>
+<path d="M0 111Q44 67 128 104L128 122Q62 81 0 128Z"/>
+<path d="M0 80Q61 123 128 70L128 82Q66 143 0 92Z"/>
+</g>
+<g fill="none" stroke="#ee765f" stroke-width="2"><path d="M8 1Q22 18 25 37M77 1Q90 18 92 37M121 24L113 47M53 39L47 55"/></g>
+<g fill="none" stroke="#b49e77" stroke-opacity=".35"><path d="M14 102Q39 79 82 95M91 121Q87 94 96 71M17 115Q52 134 104 104"/></g>
+</svg>

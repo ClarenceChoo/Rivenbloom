@@ -162,3 +162,9 @@ Amber denotes usable machinery; orchid denotes optional secrets.
   primitives are not shippable art.
 - Audio is original synthesis/composition or properly licensed and is recorded
   in `docs/asset-provenance.md`.
+
+## October 7 terrain and sound implementation
+
+Solid faces use continuous area-coloured SVG materials at a fixed tile scale, with a narrow surface rim exactly on the collision plane. One-way platforms use thin ledges within their authored bounds. Coral briars and a restrained hazard haze fill the damaging region without extending it. The existing original scene backgrounds and actor artwork remain unchanged; decorative background shapes are not additional colliders.
+
+Short original synthesized impact, descending-danger and rising-resonance motifs complement the ten-track soundtrack. SFX voices are bounded and cleaned up; music transitions retain a returning track, retry blocked playback after input and respect the existing volume/visibility settings. See [provenance](asset-provenance.md) for asset sources and [verification](polish-verification.md) for visual/audio coverage and limits.
