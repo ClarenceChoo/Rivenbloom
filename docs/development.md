@@ -5,11 +5,11 @@ For controls, exploration, combat, and saves from a player's perspective, see th
 
 ## Browser development
 
-Rivenbloom uses Phaser 3 and strict TypeScript. The October 5 cloud checks used
+Rivenbloom uses Phaser 3 and strict TypeScript. The October 7 cloud checks used
 Node.js 24.19.0 and npm 11.9.0.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -111,14 +111,16 @@ install it before the browser suites:
 npx playwright install chromium
 ```
 
-The cloud onboarding setup uses an available system Chromium with WebGL disabled
-to select Phaser's Canvas renderer on this software-rendered host. That is a
-cloud test configuration; it does not establish performance on target hardware.
+When the pinned Playwright download is unavailable, the end-to-end configuration can use an installed Chromium. On this cloud host:
 
-A fresh-origin development journey has reached the ending and reloaded durable
-progress using ordinary inputs and earned upgrades. A continuous production
-journey through the ending, first-time-player balance, physical controllers,
-Safari/Firefox, target Mac performance, and native packaging still need
-qualification. The intended 20–40 minute first journey remains a target rather
-than a measured duration. See the [release report](release-report.md) and
-[known issues](known-issues.md) for the current evidence and limits.
+```bash
+RIVENBLOOM_CHROMIUM_PATH=/usr/bin/chromium RIVENBLOOM_TEST_RENDERER=canvas npm run test:e2e -- --timeout 60000
+npm run build
+RIVENBLOOM_CHROMIUM_PATH=/usr/bin/chromium RIVENBLOOM_TEST_RENDERER=canvas npm run test:pwa:production
+```
+
+Both environment variables are optional; omitting them retains the normal Playwright browser and renderer defaults. The production paint-observation journey requires Canvas and is explicitly skipped without that option; the ordinary production PWA checks still run. Canvas selects Phaser's existing fallback, without changing the shipped renderer preference. The separate IndexedDB Vitest browser suite uses its own Playwright configuration and installed browser.
+
+The October 7 cloud matrix passed 693 unit tests, seven IndexedDB browser tests, 70 development end-to-end scenarios and three production scenarios. The cloud's software WebGL renderer was slow on both baseline and polished builds; this does not establish target-hardware performance.
+
+A fresh production journey reached the ending, continued exploration and reloaded durable progress using ordinary controls and earned upgrades. It used read-only render/save observations, no imported fixture or developer mutation, and included checkpoint recovery and resumed sessions. First-time-player balance, physical controllers, Safari/Firefox, target Mac performance and native packaging still need qualification. The intended 20–40 minute first journey remains a target rather than a measured first-play duration. See [polish verification](polish-verification.md), the [checked route](fresh-production-route.md) and [known issues](known-issues.md).

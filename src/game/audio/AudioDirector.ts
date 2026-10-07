@@ -1,4 +1,5 @@
 import type { SaveSettings } from '../saves/SaveSchema';
+import { soundVoices } from './SoundCue';
 
 export type AudioLayer =
   | 'menu'
@@ -38,6 +39,7 @@ type PlayingTrack = {
   source: MediaElementAudioSourceNode;
   gain: GainNode;
   starting: boolean;
+  retirement: ReturnType<typeof globalThis.setTimeout> | null;
 };
 
 export function musicTrackFor(layer: AudioLayer): MusicTrack {
@@ -62,15 +64,15 @@ export class AudioDirector {
   private settings: SaveSettings | null = null;
   private layer: AudioLayer = 'menu';
   private playing: PlayingTrack[] = [];
-  private fadeTimers = new Set<ReturnType<typeof globalThis.setTimeout>>();
   private heartTimer: ReturnType<typeof globalThis.setTimeout> | null = null;
   private disposed = false;
+  private readonly voices = new Map<OscillatorNode, GainNode>();
   private readonly unlock = () => void this.ensureContext();
   private readonly visibility = () => this.applyVisibility();
 
   public constructor(private readonly options: AudioDirectorOptions = {}) {
-    globalThis.addEventListener('keydown', this.unlock, { once: true });
-    globalThis.addEventListener('pointerdown', this.unlock, { once: true });
+    globalThis.addEventListener('keydown', this.unlock);
+    globalThis.addEventListener('pointerdown', this.unlock);
     globalThis.document?.addEventListener('visibilitychange', this.visibility);
   }
 
@@ -101,17 +103,29 @@ export class AudioDirector {
     const context = this.context;
     const destination = this.sfx;
     if (context === null || destination === null) return;
-    const oscillator = context.createOscillator();
-    const gain = context.createGain();
-    const frequency = 180 + (stableHash(cueId) % 520);
-    oscillator.type = cueId.includes('cantor') ? 'sine' : 'triangle';
-    oscillator.frequency.setValueAtTime(frequency, context.currentTime);
-    gain.gain.setValueAtTime(0.0001, context.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.12, context.currentTime + 0.012);
-    gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.18);
-    oscillator.connect(gain).connect(destination);
-    oscillator.start();
-    oscillator.stop(context.currentTime + 0.2);
+    if (context.state !== 'running') return;
+    for (const voice of soundVoices(cueId)) {
+      if (this.voices.size >= 16) break;
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      const start = context.currentTime + voice.delay;
+      oscillator.type = voice.wave;
+      oscillator.frequency.setValueAtTime(voice.frequency, start);
+      oscillator.frequency.exponentialRampToValueAtTime(voice.endFrequency, start + voice.duration);
+      gain.gain.setValueAtTime(0.0001, context.currentTime);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(voice.volume, start + 0.008);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + voice.duration);
+      oscillator.connect(gain).connect(destination);
+      this.voices.set(oscillator, gain);
+      oscillator.onended = () => {
+        oscillator.disconnect();
+        gain.disconnect();
+        this.voices.delete(oscillator);
+      };
+      oscillator.start(start);
+      oscillator.stop(start + voice.duration + 0.01);
+    }
   }
 
   public dispose(): boolean {
@@ -122,10 +136,15 @@ export class AudioDirector {
     globalThis.document?.removeEventListener('visibilitychange', this.visibility);
     if (this.heartTimer !== null) globalThis.clearTimeout(this.heartTimer);
     this.heartTimer = null;
-    for (const timer of this.fadeTimers) globalThis.clearTimeout(timer);
-    this.fadeTimers.clear();
     for (const track of this.playing) this.stopTrack(track);
     this.playing = [];
+    for (const [oscillator, gain] of this.voices) {
+      oscillator.onended = null;
+      oscillator.stop();
+      oscillator.disconnect();
+      gain.disconnect();
+    }
+    this.voices.clear();
     void this.context?.close().catch(() => undefined);
     this.context = null;
     return true;
@@ -167,12 +186,15 @@ export class AudioDirector {
     const destination = this.music;
     if (this.disposed || context === null || destination === null) return;
     const cue = musicTrackFor(this.layer);
-    if (
-      this.playing.some(
-        (track) => track.file === cue.file && (track.starting || !track.audio.paused),
-      )
-    )
+    const existing = this.playing.find(
+      (track) =>
+        track.file === cue.file &&
+        (track.starting || !track.audio.paused || (!cue.loop && track.audio.ended)),
+    );
+    if (existing !== undefined) {
+      if (!existing.starting && !existing.audio.ended) this.fadeTo(existing);
       return;
+    }
     const audio = new Audio(`/assets/audio/rivenbloom/${cue.file}`);
     audio.loop = cue.loop;
     audio.preload = 'auto';
@@ -180,7 +202,14 @@ export class AudioDirector {
     gain.gain.value = 0;
     const source = context.createMediaElementSource(audio);
     source.connect(gain).connect(destination);
-    const incoming: PlayingTrack = { file: cue.file, audio, source, gain, starting: true };
+    const incoming: PlayingTrack = {
+      file: cue.file,
+      audio,
+      source,
+      gain,
+      starting: true,
+      retirement: null,
+    };
     this.playing.push(incoming);
     void audio
       .play()
@@ -191,24 +220,31 @@ export class AudioDirector {
           this.stopTrack(incoming);
           return;
         }
-        const now = context.currentTime;
-        gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(1, now + 1.2);
-        for (const old of this.playing.filter((track) => track !== incoming)) {
-          old.gain.gain.cancelScheduledValues(now);
-          old.gain.gain.setValueAtTime(old.gain.gain.value, now);
-          old.gain.gain.linearRampToValueAtTime(0, now + 1.2);
-          const timer = globalThis.setTimeout(() => {
-            this.fadeTimers.delete(timer);
-            this.stopTrack(old);
-          }, 1_250);
-          this.fadeTimers.add(timer);
-        }
+        this.fadeTo(incoming);
       })
       .catch(() => this.stopTrack(incoming));
   }
 
+  private fadeTo(incoming: PlayingTrack): void {
+    const now = this.context!.currentTime;
+    if (incoming.retirement !== null) globalThis.clearTimeout(incoming.retirement);
+    incoming.retirement = null;
+    incoming.gain.gain.cancelScheduledValues(now);
+    incoming.gain.gain.setValueAtTime(incoming.gain.gain.value, now);
+    incoming.gain.gain.linearRampToValueAtTime(1, now + 1.2);
+    for (const old of this.playing.filter((track) => track !== incoming)) {
+      if (old.retirement !== null) continue;
+      old.gain.gain.cancelScheduledValues(now);
+      old.gain.gain.setValueAtTime(old.gain.gain.value, now);
+      old.gain.gain.linearRampToValueAtTime(0, now + 1.2);
+      old.retirement = globalThis.setTimeout(() => this.stopTrack(old), 1_250);
+    }
+  }
+
   private stopTrack(track: PlayingTrack): void {
+    if (!this.playing.includes(track)) return;
+    if (track.retirement !== null) globalThis.clearTimeout(track.retirement);
+    track.retirement = null;
     track.audio.pause();
     track.audio.removeAttribute('src');
     track.source.disconnect();
@@ -229,7 +265,7 @@ export class AudioDirector {
 
   private applyVisibility(): void {
     this.applyGains();
-    if (!globalThis.document?.hidden) void this.ensureContext();
+    if (!globalThis.document?.hidden && this.context !== null) void this.ensureContext();
   }
 }
 
@@ -240,12 +276,6 @@ export function captionForCue(cueId: string): string | null {
   if (cueId.includes('defeat') || cueId.includes('release')) return '[The hollow song releases]';
   if (cueId.includes('cantor')) return '[The Pallid Cantor intones]';
   return null;
-}
-
-function stableHash(value: string): number {
-  let hash = 0;
-  for (const character of value) hash = (hash * 31 + character.charCodeAt(0)) >>> 0;
-  return hash;
 }
 
 function isAudioLayer(value: string): value is AudioLayer {
